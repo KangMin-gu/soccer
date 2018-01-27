@@ -33,7 +33,7 @@
 		<div>
 			<ul id="loginUl">
 				<li class="loginLi"><a href="login.do">Login</a></li>
-				<li class="loginLi"><a href="SignUp.do">SingUp</a></li>
+				<li class="loginLi"><a href="users/signupform.do">SignUp</a></li>
 			</ul>	
 		</div>
 		<!--  나중에 로그인 이프문 돌리기 -->

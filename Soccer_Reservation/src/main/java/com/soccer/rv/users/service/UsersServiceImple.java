@@ -18,8 +18,11 @@ public class UsersServiceImple implements UsersService{
 	
 	@Override
 	public ModelAndView signup(UsersDto dto) {
-		// TODO Auto-generated method stub
-		return null;
+		 dao.insert(dto);
+		 ModelAndView mView = new ModelAndView();
+		 mView.addObject("dto", dto);
+		
+		return mView;
 	}
 
 	@Override
