@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>    
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,13 +32,14 @@
 	<div class="header container">
 		<div>
 			<ul id="loginUl">
-				<li class="loginLi">Login</li>
-				<li class="loginLi">SignUp</li>
+				<li class="loginLi"><a href="login.do">Login</a></li>
+				<li class="loginLi"><a href="SignUp.do">SingUp</a></li>
+				<li><a href="templateform.do">template</a></li>
 			</ul>	
 		</div>
 		<div
 			class="visible-xs visible-sm col-xs-12 col-sm-12 text-center sm-logo">
-			<a rel="home" href="index.html"> <img src="${pageContext.request.contextPath}/resources/img/logo.png" width="200" alt="logo">
+			<a rel="home" href="home.do"> <img src="${pageContext.request.contextPath}/resources/img/soccer.png" width="200" alt="logo">
 			</a>
 		</div>
 	</div>
@@ -51,10 +55,10 @@
 		</div>
 		<div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav">
-				<li class="selected"><a href="index.html">Home</a></li>
+				<li class="selected"><a href="home.do">Home</a></li>
 				<li><a href="service.html">Team</a></li>
 				<li><a href="gallery.html">Gallery</a></li>
-				<li class="hidden-xs hidden-sm"><a rel="home" href="index.html"><img
+				<li class="hidden-xs hidden-sm"><a rel="home" href="home.do"><img
 						class="logo"
 						src="${pageContext.request.contextPath}/resources/img/soccer.png"
 						width="200" alt="logo"></a></li>
@@ -291,7 +295,7 @@
 				<ul class="footer-menus">
 					<li>Home /</li>
 					<li>About</li>
-					<br />
+					<br/>
 					<li>Service /</li>
 					<li>Gallery /</li>
 					<li>Contact</li>
