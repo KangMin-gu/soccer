@@ -34,9 +34,15 @@
 			<ul id="loginUl">
 				<li class="loginLi"><a href="login.do">Login</a></li>
 				<li class="loginLi"><a href="SignUp.do">SingUp</a></li>
-				<li><a href="templateform.do">template</a></li>
 			</ul>	
 		</div>
+		<!--  나중에 로그인 이프문 돌리기 -->
+		<div>
+			<ul id="loginUl">
+				<li class="loginLi"><a href="login.do">My info</a></li>
+				<li class="loginLi"><a href="SignUp.do">Logout</a></li>
+			</ul>	
+		</div>		
 		<div
 			class="visible-xs visible-sm col-xs-12 col-sm-12 text-center sm-logo">
 			<a rel="home" href="home.do"> <img src="${pageContext.request.contextPath}/resources/img/soccer.png" width="200" alt="logo">
