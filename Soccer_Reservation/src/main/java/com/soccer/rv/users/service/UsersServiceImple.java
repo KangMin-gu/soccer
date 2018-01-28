@@ -53,8 +53,7 @@ public class UsersServiceImple implements UsersService{
 
 	@Override
 	public void update(UsersDto dto) {
-		// TODO Auto-generated method stub
-		
+		dao.update(dto);
 	}
 
 	@Override
@@ -65,8 +64,10 @@ public class UsersServiceImple implements UsersService{
 
 	@Override
 	public ModelAndView detail(String id) {
-		// TODO Auto-generated method stub
-		return null;
+		UsersDto dto = dao.getData(id);
+		ModelAndView mView = new ModelAndView();
+		mView.addObject("dto", dto);
+		return mView;
 	}
 
 }

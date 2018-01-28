@@ -2,21 +2,28 @@ package com.soccer.rv.users.dto;
 
 public class UsersDto {
 	private String id;
+	private String name;
 	private String pwd;
 	private String email;
 	private String phone;
 	private String addr;
+	private String findQuestion;
+	private String findAnswer;
 	private String regdate;
 	
 	public UsersDto(){}
 
-	public UsersDto(String id, String pwd, String email, String phone, String addr, String regdate) {
+	public UsersDto(String id, String name, String pwd, String email, String phone, String addr, String findQuestion,
+			String findAnswer, String regdate) {
 		super();
 		this.id = id;
+		this.name = name;
 		this.pwd = pwd;
 		this.email = email;
 		this.phone = phone;
 		this.addr = addr;
+		this.findQuestion = findQuestion;
+		this.findAnswer = findAnswer;
 		this.regdate = regdate;
 	}
 
@@ -26,6 +33,14 @@ public class UsersDto {
 
 	public void setId(String id) {
 		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getPwd() {
@@ -60,6 +75,22 @@ public class UsersDto {
 		this.addr = addr;
 	}
 
+	public String getFindQuestion() {
+		return findQuestion;
+	}
+
+	public void setFindQuestion(String findQuestion) {
+		this.findQuestion = findQuestion;
+	}
+
+	public String getFindAnswer() {
+		return findAnswer;
+	}
+
+	public void setFindAnswer(String findAnswer) {
+		this.findAnswer = findAnswer;
+	}
+
 	public String getRegdate() {
 		return regdate;
 	}
@@ -67,7 +98,8 @@ public class UsersDto {
 	public void setRegdate(String regdate) {
 		this.regdate = regdate;
 	}
-	
+
+
 	
 	
 }

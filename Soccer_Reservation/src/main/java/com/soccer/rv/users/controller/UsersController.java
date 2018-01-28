@@ -1,6 +1,7 @@
 package com.soccer.rv.users.controller;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -50,4 +51,59 @@ public class UsersController {
 		return mView;
 	}
 	
+	//로그아웃
+	@RequestMapping("/users/logout")
+	public ModelAndView logout(HttpSession session){
+		String id = (String)session.getAttribute("id");
+		session.invalidate();
+		ModelAndView mView = new ModelAndView();
+		mView.addObject("msg", id+"님 로그아웃 되었습니다.");
+		mView.setViewName("users/logout_result");
+		return mView;
+	}
+	
+	//회원정보 보기
+	@RequestMapping("/users/info")
+	public ModelAndView info(HttpServletRequest request){
+		HttpSession session = request.getSession();
+		String id = (String)session.getAttribute("id");
+		ModelAndView mView = service.detail(id);
+		mView.setViewName("users/info");
+		return mView;
+	}
+	
+	//회원정보 수정폼
+	@RequestMapping("/users/updateform")
+	public ModelAndView updateform(HttpServletRequest request){
+		HttpSession session = request.getSession();
+		String id = (String)session.getAttribute("id");
+		ModelAndView mView = service.detail(id);
+		mView.setViewName("users/updateform");
+		return mView;
+	}
+	
+	//회원정보 수정
+	@RequestMapping("/users/update")
+	public ModelAndView update(@ModelAttribute UsersDto dto, HttpServletRequest request){
+		service.update(dto);
+		ModelAndView mView = new ModelAndView();
+		mView.setViewName("redirect:/users/info.do");
+		return mView;
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

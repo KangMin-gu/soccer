@@ -30,14 +30,12 @@ public class UsersDaoImple implements UsersDao{
 
 	@Override
 	public UsersDto getData(String id) {
-		// TODO Auto-generated method stub
-		return null;
+		return session.selectOne("users.getData", id);
 	}
 
 	@Override
 	public void update(UsersDto dto) {
-		// TODO Auto-generated method stub
-		
+		session.update("users.update", dto);
 	}
 
 	@Override

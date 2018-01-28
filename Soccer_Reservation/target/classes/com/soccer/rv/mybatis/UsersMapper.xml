@@ -3,11 +3,19 @@
 <mapper namespace="users">
 
 <insert id="insert" parameterType="usersDto">
-	insert into users (id, pwd, email, phone, addr, regdate ) 
-	values (#{id}, #{pwd}, #{email}, #{phone}, #{addr}, SYSDATE)
+	insert into users (id, name, pwd, email, phone, addr, findQuestion, findAnswer, regdate ) 
+	values (#{id}, #{name}, #{pwd}, #{email}, #{phone}, #{addr}, #{findQuestion}, #{findAnswer}, SYSDATE)
 </insert>
 
 <select id="isValid" parameterType="usersDto" resultType="usersDto">
-	select * from users where id=#{id} and pwd=#{pwd}
+	select id from users where id=#{id} and pwd=#{pwd}
 </select>
+
+<select id="getData" parameterType="String" resultType="usersDto">
+	select * from users where id=#{id}
+</select>
+
+<update id="update" parameterType="usersDto">
+	update users set email=#{email}, phone=#{phone}, addr=#{addr} where id=#{id}
+</update>
 </mapper>
