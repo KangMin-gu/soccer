@@ -18,4 +18,8 @@
 <update id="update" parameterType="usersDto">
 	update users set email=#{email}, phone=#{phone}, addr=#{addr} where id=#{id}
 </update>
+
+<delete id="delete" parameterType="String">
+	delete from users where id=#{id}
+</delete>
 </mapper>

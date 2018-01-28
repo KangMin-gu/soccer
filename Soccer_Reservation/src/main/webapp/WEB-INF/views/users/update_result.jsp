@@ -10,7 +10,7 @@
 <body>
 <h3>업데이트성공!</h3>
 <script>
-alert("수정되었습니다.");
+alert("${id}님 수정되었습니다.");
 location.href="info.do";
 </script>
 </body>

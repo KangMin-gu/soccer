@@ -16,6 +16,10 @@
 <input type="text" name="name" id="name" value="${dto.name }" disabled /><br/>
 <label for="id">아이디</label>
 <input type="text" name="id" id="id" value="${dto.id }" disabled /><br/>
+<label for="pwd">비밀번호</label>
+<input type="password" name="pwd" id="pwd" value="${dto.pwd }"/><br/>
+<label for="pwd2">비밀번호 확인</label>
+<input type="password" name="pwd2" id="pwd2" value="${dto.pwd }" /><br/>
 <label for="email">이메일</label>
 <input type="text" name="email" id="email" value="${dto.email }" /><br/>
 <label for="phone">전화번호</label>

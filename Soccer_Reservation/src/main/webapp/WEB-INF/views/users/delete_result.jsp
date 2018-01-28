@@ -5,12 +5,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>users/login_result</title>
+<title>Insert title here</title>
 </head>
 <body>
 <script>
-alert("${msg}");
-location.href="${url}";
+alert("${id} 탈퇴처리 되었습니다. ");
+location.href="${pageContext.request.contextPath}/";
 </script>
 </body>
 </html>

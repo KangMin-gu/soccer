@@ -57,7 +57,7 @@ public class UsersController {
 		String id = (String)session.getAttribute("id");
 		session.invalidate();
 		ModelAndView mView = new ModelAndView();
-		mView.addObject("msg", id+"님 로그아웃 되었습니다.");
+		mView.addObject("id", id);
 		mView.setViewName("users/logout_result");
 		return mView;
 	}
@@ -85,11 +85,21 @@ public class UsersController {
 	//회원정보 수정
 	@RequestMapping("/users/update")
 	public ModelAndView update(@ModelAttribute UsersDto dto, HttpServletRequest request){
-		service.update(dto);
-		ModelAndView mView = new ModelAndView();
-		mView.setViewName("redirect:/users/info.do");
+		HttpSession session = request.getSession();
+		ModelAndView mView = service.update(dto, session);
+		mView.setViewName("users/update_result");
 		return mView;
 	}
+	
+	//회원 탈퇴
+	@RequestMapping("/users/delete")
+	public ModelAndView delete(HttpServletRequest request){
+		HttpSession session = request.getSession();
+		ModelAndView mView = service.delete(session);
+		mView.setViewName("users/delete_result");
+		return mView;
+	}
+	
 }
 
 

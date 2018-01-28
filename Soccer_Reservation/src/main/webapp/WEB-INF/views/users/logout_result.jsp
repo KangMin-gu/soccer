@@ -9,9 +9,7 @@
 </head>
 <body>
 <script>
-	//알림창 띄우기
-	alert("${msg}");
-	//root 로 이동
+	alert("${id}님 로그아웃 되었습니다.");
 	location.href="${pageContext.request.contextPath}/";
 </script>
 </body>
