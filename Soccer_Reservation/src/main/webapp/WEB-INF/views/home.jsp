@@ -32,7 +32,7 @@
 	<div class="header container">
 		<div>
 			<ul id="loginUl">
-				<li class="loginLi"><a href="login.do">Login</a></li>
+				<li class="loginLi"><a href="users/loginform.do">Login</a></li>
 				<li class="loginLi"><a href="users/signupform.do">SignUp</a></li>
 			</ul>	
 		</div>

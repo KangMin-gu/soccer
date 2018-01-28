@@ -1,5 +1,7 @@
 package com.soccer.rv.users.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,4 +27,11 @@ public class UsersController {
 		mView.setViewName("users/signup_result");
 		return mView;
 	}
+	
+	//로그인 폼 이동 
+	@RequestMapping("/users/loginform")
+	public String loginform(){
+		return "users/loginform";
+	}
+	
 }
