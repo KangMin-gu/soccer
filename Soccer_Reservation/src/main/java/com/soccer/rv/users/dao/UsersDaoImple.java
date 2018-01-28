@@ -46,8 +46,12 @@ public class UsersDaoImple implements UsersDao{
 
 	@Override
 	public boolean canUseId(String id) {
-		// TODO Auto-generated method stub
-		return false;
+		String result = session.selectOne("users.canUse", id);
+		if(result == null){
+			return true;
+		}else{
+			return false;
+		}
 	}
 
 }

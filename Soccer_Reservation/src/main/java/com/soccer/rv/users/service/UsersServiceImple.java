@@ -27,8 +27,8 @@ public class UsersServiceImple implements UsersService{
 
 	@Override
 	public boolean canUseId(String id) {
-		// TODO Auto-generated method stub
-		return false;
+		boolean canUse = dao.canUseId(id);
+		return canUse;
 	}
 
 	@Override

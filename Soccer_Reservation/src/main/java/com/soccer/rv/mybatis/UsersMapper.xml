@@ -16,10 +16,14 @@
 </select>
 
 <update id="update" parameterType="usersDto">
-	update users set email=#{email}, phone=#{phone}, addr=#{addr} where id=#{id}
+	update users set pwd=#{pwd}, email=#{email}, phone=#{phone}, addr=#{addr} where id=#{id}
 </update>
 
 <delete id="delete" parameterType="String">
 	delete from users where id=#{id}
 </delete>
+
+<select id="canUse" parameterType="String" resultType="String">
+	select id from users where id=#{id}
+</select>
 </mapper>

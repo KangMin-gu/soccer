@@ -1,12 +1,18 @@
 package com.soccer.rv.users.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.soccer.rv.users.dto.UsersDto;
@@ -100,6 +106,15 @@ public class UsersController {
 		return mView;
 	}
 	
+	//아이디 중복 확인
+	@RequestMapping("/users/checkid")
+	@ResponseBody
+	public Map<String, Object> ßcheckid(@RequestParam String inputId){
+		boolean canUse = service.canUseId(inputId);
+		Map<String, Object> map = new HashMap<>();
+		map.put("canUse", canUse);
+		return map;
+	}
 }
 
 
