@@ -20,7 +20,7 @@ public class UsersServiceImple implements UsersService{
 	public ModelAndView signup(UsersDto dto) {
 		 dao.insert(dto);
 		 ModelAndView mView = new ModelAndView();
-		 mView.addObject("dto", dto);
+		 mView.addObject("id", dto.getId());
 		
 		return mView;
 	}
@@ -33,8 +33,22 @@ public class UsersServiceImple implements UsersService{
 
 	@Override
 	public ModelAndView login(UsersDto dto, HttpServletRequest request) {
-		// TODO Auto-generated method stub
-		return null;
+		boolean isValid = dao.isValid(dto);
+		String url = request.getParameter("url");
+		System.out.println(url);
+		ModelAndView mView = new ModelAndView();
+		if(isValid){
+			request.getSession().setAttribute("id", dto.getId());
+			mView.addObject("msg", dto.getId()+"님 환영합니다.");
+			mView.addObject("url", url);
+		}else{
+			mView.addObject("msg", "아이디 혹은 비밀번호를 확인해주세요.");
+			String location = request.getContextPath()
+					+"/users/loginform.do?url="+url;
+			mView.addObject("url", location);
+		}
+		
+		return mView;
 	}
 
 	@Override

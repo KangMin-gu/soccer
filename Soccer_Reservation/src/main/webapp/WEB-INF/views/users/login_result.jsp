@@ -5,10 +5,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>users/login_result</title>
 </head>
 <body>
-<h3>${id }님 회원가입을 축하합니다.</h3>
-<a href="${pageContext.request.contextPath }/home.do">index go</a>
+<h3>로그인 결과 페이지 입니다.</h3>
+<p>${msg }</p>
+<a href="${url }">이동하기 </a>
+<script>
+</script>
 </body>
 </html>

@@ -30,19 +30,26 @@
 </head>
 <body>
 	<div class="header container">
-		<div>
-			<ul id="loginUl">
-				<li class="loginLi"><a href="users/loginform.do">Login</a></li>
-				<li class="loginLi"><a href="users/signupform.do">SignUp</a></li>
-			</ul>	
-		</div>
-		<!--  나중에 로그인 이프문 돌리기 -->
-		<div>
-			<ul id="loginUl">
-				<li class="loginLi"><a href="login.do">My info</a></li>
-				<li class="loginLi"><a href="SignUp.do">Logout</a></li>
-			</ul>	
-		</div>		
+	<!-- 세션에 id의 유무에따라 보여지는 loginView -->
+	<c:choose>
+		<c:when test="${not empty id }">
+			<div>
+				<ul id="loginUl">
+					<li class="loginLi"><a href="users/info.do">My info</a></li>
+					<li class="loginLi"><a href="users/logout.do">Logout</a></li>
+				</ul>	
+			</div>			
+		</c:when>
+		<c:otherwise>
+			<div>
+				<ul id="loginUl">
+					<li class="loginLi"><a href="users/loginform.do">Login</a></li>
+					<li class="loginLi"><a href="users/signupform.do">SignUp</a></li>
+				</ul>
+			</div>	
+		</c:otherwise>
+	</c:choose>
+	
 		<div
 			class="visible-xs visible-sm col-xs-12 col-sm-12 text-center sm-logo">
 			<a rel="home" href="home.do"> <img src="${pageContext.request.contextPath}/resources/img/soccer.png" width="200" alt="logo">
