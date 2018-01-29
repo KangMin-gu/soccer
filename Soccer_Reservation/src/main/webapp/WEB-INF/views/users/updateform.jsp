@@ -10,8 +10,8 @@
 <body>
 <h3>업데이트 폼입니다.</h3>
 <form action="update.do" method="post" id="myform">
-<input type="hidden" name="id" value="${dto.name }"/>
-<input type="hidden" name="name" value="${dto.id }"/>
+<input type="hidden" name="id" value="${dto.id }"/>
+<input type="hidden" name="name" value="${dto.name }"/>
 <label for="name">이름</label>
 <input type="text" name="name" id="name" value="${dto.name }" disabled /><br/>
 <label for="id">아이디</label>
@@ -31,7 +31,7 @@
 </body>
 <script src="${pageContext.request.contextPath }/resources/js/jquery-3.2.1.js"></script>
 <script>
-
+$(function(){
 	
 	$("#myform").submit(function(){
 		
@@ -83,7 +83,7 @@
 		}
 	});
 
-	
+});	
 	
 
 </script>
