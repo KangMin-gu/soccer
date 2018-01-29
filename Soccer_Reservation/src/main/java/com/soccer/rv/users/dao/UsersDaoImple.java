@@ -54,4 +54,9 @@ public class UsersDaoImple implements UsersDao{
 		}
 	}
 
+	@Override
+	public UsersDto getMap(String id) {
+		return session.selectOne("users.getData", id);
+	}
+
 }

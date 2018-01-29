@@ -115,6 +115,14 @@ public class UsersController {
 		map.put("canUse", canUse);
 		return map;
 	}
+	//나의 주소로 구글맵 연동
+	@RequestMapping("/users/mymap")
+	public ModelAndView map(HttpSession session){
+		String id = (String)session.getAttribute("id");
+		ModelAndView mView = service.map(id);
+		mView.setViewName("users/mymap");
+		return mView;
+	}
 }
 
 

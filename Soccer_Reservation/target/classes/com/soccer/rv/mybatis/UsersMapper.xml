@@ -26,4 +26,8 @@
 <select id="canUse" parameterType="String" resultType="String">
 	select id from users where id=#{id}
 </select>
+
+<select id="map" parameterType="usersDto" resultType="usersDto">
+	select addr from users where id=#{id}
+</select>
 </mapper>
