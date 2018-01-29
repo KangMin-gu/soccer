@@ -24,10 +24,10 @@
  <p>운동장의 마커기능을 추가하면 우리집 주의 예약가능한 운동장이 보입니다.</p>
  <div id="map"></div>
  <script>
-    
+    //DB에서 받아온 좌표정
     var lat = ${lat};
     var lng = ${lng};
-    
+    //구글맵 샘플
       function initMap() {
         var uluru = {lat: lat, lng: lng};
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -40,7 +40,7 @@
         });
       }
  </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnXEObf7lWebcW_r-6VMz1cZDIrjrEBQE&callback=initMap">
- </script>
+ <!-- 구글 맵 API구현 URL -->
+ <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnXEObf7lWebcW_r-6VMz1cZDIrjrEBQE&callback=initMap"></script>
 </body>
 </html>
