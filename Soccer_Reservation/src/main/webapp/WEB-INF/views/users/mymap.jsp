@@ -29,7 +29,7 @@
     var lng = ${lng};
     //구글맵 샘플
       function initMap() {
-        var uluru = {lat: lat, lng: lng};
+        var uluru = { lat: lat, lng: lng};
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 14,
           center: uluru
@@ -38,6 +38,7 @@
           position: uluru,
           map: map
         });
+        
       }
  </script>
  <!-- 구글 맵 API구현 URL -->

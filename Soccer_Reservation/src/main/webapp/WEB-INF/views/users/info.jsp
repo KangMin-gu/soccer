@@ -18,6 +18,8 @@
 <a href="delete.do">회원탈퇴</a>
 <a href="mymap.do">내 위치 찾기</a>
 <a href="fieldlist.do">운동장리스트</a>
+<a href="testmap.do">현재내위치맵</a>
+<a href="testmap2.do">내위치와 운동장리스트</a>
 <a href="${pageContext.request.contextPath}/">인덱스가기</a>
 </body>
 </html>

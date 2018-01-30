@@ -131,6 +131,21 @@ public class UsersController {
 		mView.setViewName("users/fieldlist");
 		return mView;
 	}
+	
+	@RequestMapping("/users/testmap")
+	public ModelAndView testmap(){
+		ModelAndView mView = new ModelAndView();
+		mView.setViewName("users/testmap");
+		return mView;
+	}
+	
+	@RequestMapping("/users/testmap2")
+	public ModelAndView testmap2(){
+		ModelAndView mView = new ModelAndView();
+		mView.setViewName("users/testmap2");
+		return mView;
+	}
+	
 }
 
 
