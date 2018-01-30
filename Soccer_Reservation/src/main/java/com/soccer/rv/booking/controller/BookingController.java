@@ -7,8 +7,11 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.soccer.rv.booking.dto.BookingDto;
 
 @Controller
 public class BookingController {
@@ -31,5 +34,13 @@ public class BookingController {
 		return "booking/bookingform";
 	}
 	
+	@RequestMapping("/booking/bookigSignup")
+	public ModelAndView bookingSignup(@ModelAttribute BookingDto dto) {
+		
+		
+		
+		
+		return null;
+	}
 	
 }

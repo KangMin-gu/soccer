@@ -36,7 +36,7 @@
 		</tbody>
 	</table>
 	
-	<form action="booking/bookingResult" method="post">
+	<form action="booking/bookingSignup" method="post">
 		<table class="table">
 			<caption class="cp_no">사용예약 신청서</caption>
 			<colgroup>
