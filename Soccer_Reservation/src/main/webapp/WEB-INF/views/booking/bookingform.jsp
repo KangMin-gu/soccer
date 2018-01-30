@@ -13,7 +13,7 @@
 <body>
 <div class="container">
 	<h3>예약Form 페이지</h3>
-	<form action="insert.do" method="post">	
+	<form action="bookingSignup.do" method="post">	
 		<table class="table">
 			<caption>예약 기본정보</caption> 
 			<colgroup>

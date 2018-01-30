@@ -9,6 +9,6 @@
 </head>
 <body>
 <h3>예약 완료</h3>
-<p>${msg }</p>
+
 </body>
 </html>

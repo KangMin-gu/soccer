@@ -43,7 +43,7 @@ public class BookingController {
 		return mView;
 	}
 	
-	@RequestMapping("/booking/insert")
+	@RequestMapping("/booking/bookingSignup")
 	public ModelAndView bookingSignup(HttpServletRequest request, 
 			@ModelAttribute BookingDto dto) {
 		
