@@ -16,8 +16,8 @@ public class FieldDaoImpl implements FieldDao{
 
 	@Override
 	public List<FieldDto> getList() {
-		// TODO Auto-generated method stub
-		return null;
+		List<FieldDto> list = session.selectList("field.getList");
+		return list;
 	}
 
 }
