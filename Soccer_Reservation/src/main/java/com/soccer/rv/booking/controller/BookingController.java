@@ -21,10 +21,12 @@ public class BookingController {
 		String reservationAddr = "서울 중구";
 		String reservationTime = "오후 2시 30분";
 		String reservationPrice = "20,000원";
+		String reservationUser = "김구라";
 		
 		mMap.addAttribute("reservationAddr",reservationAddr);
 		mMap.addAttribute("reservationTime",reservationTime);
 		mMap.addAttribute("reservationPrice",reservationPrice);
+		mMap.addAttribute("reservationUser", reservationUser);
 		
 		return "booking/bookingform";
 	}

@@ -13,27 +13,10 @@
 <body>
 <div class="container">
 	<h3>예약Form 페이지</h3>
-	<!-- 
-		예약구장
-		예약일자
-		예약시간
-		예약금액
-		입금자
-	
-		신청자
-		일반전화
-		핸드폰번호
-		주소
-		이용인원
-		단체명
-		기타입력사항
-		예약일자
-		
-	 -->
 	<table class="table">
-		<caption class="cp_no">예약시간 목록, 예약금액 목록</caption>
+		<caption>예약 기본정보</caption> 
 		<colgroup>
-			<col width="20%" />
+			<col width="20%" />  
 			<col />
 		</colgroup>
 		<tbody>
@@ -67,65 +50,67 @@
 			<tbody>
 			<tr>
 				<th scope="row">신청자</th>
-				<td></td>
+				<td>${reservationUser }</td>
 			</tr>
 			<tr>
-				<th scope="row"><label for="rsv_tel0">일반전화</label></th>
+				<th scope="row"><label>일반전화</label></th>
 				<td>
-					<input type="text" style="width:40px;" id="rsv_tel0" name="rsv_tel0" class="txt2" maxlength="4" value="" title="일반전화 지역번호" />
-					- <input type="text" style="width:40px;" id="rsv_tel1" name="rsv_tel1" class="txt2" maxlength="4" value="" title="일반전화 국번입력" />
-					- <input type="text" style="width:40px;" id="rsv_tel2" name="rsv_tel2" class="txt2" maxlength="4" value="" title="일반전화 뒷자리입력" />
+					<input type="text" id="phone01" name="phone01" class="txt2"title="일반전화 지역번호" />
 				</td>
 			</tr>
 			<tr>
-				<th scope="row"><label for="rsv_cel0">핸드폰번호</label></th>
+				<th scope="row"><label>핸드폰번호</label></th>
 				<td>
-					<input type="text" style="width:40px;" id="rsv_cel0" name="rsv_cel0" class="txt2" maxlength="4" value="" title="휴대전화 맨앞자리 입력" />
-					- <input type="text" style="width:40px;" id="rsv_cel1" name="rsv_cel1" class="txt2" maxlength="4" value="" title="휴대전화 중간번호 입력" />
-					- <input type="text" style="width:40px;" id="rsv_cel2" name="rsv_cel2" class="txt2" maxlength="4" value="" title="휴대전화 맨뒷번호 입력" />
+					<input type="text" id="phone02" name="phone02"  title="휴대전화 맨앞자리 입력" />
 				</td>
 			</tr>
 			<tr>
-				<th scope="row"><label for="rsv_zipcode0">주소</label></th>
+				<th scope="row"><label>주소</label></th>  
 				<td>
-					<input type="text" style="width:140px;" id="rsv_zipcode0" name="rsv_zipcode0" class="textbox_soc1" maxlength="10" value="" title="우편번호 찾기를 선택해주세요" /><button type="button" id="postcodify_search_button" onclick="goPopup();return false;" title="우편번호찾기 새창"><img src="./img/member/bt_zip.gif" alt="우편번호찾기" /></button>
-					<input type="hidden" id="rsv_zipcode1" name="rsv_zipcode1" />
-					<p class="p_txt">
-						<input type="text" id="rsv_address1" name="rsv_address1" class="txt2" style="width:280px;" maxlength="100" value="" title="우편주소 입력" /><br />
-						<input type="text" id="rsv_address2" name="rsv_address2" class="txt2" style="width:280px;" maxlength="100" value="" title="상세주소 입력" />
-					</p>
+					<!-- 주소와 우편번호를 입력할 <input>들을 생성하고 적당한 name과 class를 부여한다 -->
+					<input type="text" name="" class="postcodify_postcode5" value="" />
+					<button type="button" id="postcodify_search_button">검색</button><br/>
+					<input type="text" name="addr1" id="addr1" class="postcodify_address" value="" /><br/>  
+					<input type="text" name="addr2" id="addr2" class="postcodify_details"  value="" /><br/>
+					<input type="text" name="addr3" id="addr3" class="postcodify_extra_info"  value="" /><br/> 
+					<!-- jQuery와 Postcodify를 로딩한다 -->
+					<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+					<script src="//d1p7wdleee1q2z.cloudfront.net/post/search.min.js"></script>
+					
+					<!-- "검색" 단추를 누르면 팝업 레이어가 열리도록 설정한다 -->
+					<script> $(function() { $("#postcodify_search_button").postcodifyPopUp(); }); </script>
 				</td>
 			</tr>
 			<tr>
-				<th scope="row"><label for="rsv_userNumber">이용인원</label></th>
+				<th scope="row"><label>이용인원</label></th>
 				<td>
-					<input type="text" style="width:30px;" id="rsv_userNumber" name="rsv_userNumber" class="txt2" maxlength="5" value="" title="이용인원입력" /> 명
+					<input type="text" style="width:30px;" id="userNumber" name="userNumber" title="이용인원입력" /> 명
 				</td>
 			</tr>
 			<tr>
-				<th scope="row"><label for="rsv_orgName">단체명</label></th>
+				<th scope="row"><label>단체명</label></th>
 				<td>
-					<input type="text" style="width:100px;" id="rsv_orgName" name="rsv_orgName" class="txt2" maxlength="64" value="" title="단체명 입력" />
+					<input type="text" style="width:100px;" id="orgName" name="orgName" maxlength="64" value="" title="단체명 입력" />
 				</td>
 			</tr>
 			<tr>
-				<th scope="row"><label for="rsv_etc">기타입력사항</label></th>
+				<th scope="row"><label>기타입력사항</label></th>
 				<td>
-					<textarea id="rsv_etc" name="rsv_etc" cols="90" rows="5" title="기타입력사항 입력" class="f12"></textarea>
+					<textarea id="etc" name="etc" cols="90" rows="5" title="기타입력사항 입력"></textarea>
 				</td>
 			</tr>
 			<tr>
 				<th scope="row">예약일자</th>
-				<td></td>
+				<td>${reservationTime }</td>
 			</tr>
 			<tr>
 				<th scope="row">예약금액</th>
-				<td></td>
+				<td>${reservationPrice }</td>
 			</tr>
 			<tr>
-				<th scope="row"><label for="rsv_payName">입금자</label></th>
+				<th scope="row"><label for="payName">입금자</label></th>
 				<td>
-					<input type="text" style="width:100px;" id="rsv_payName" name="rsv_payName" class="txt2" maxlength="64" value="EL 입력하기" title="입금자 입력" />
+					<input type="text" style="width:100px;" id="payName" name="payName" maxlength="64" value="${reservationUser }" title="입금자 입력" />
 				</td>
 			</tr>
 			</tbody>
@@ -174,18 +159,5 @@
 		</div>
 	</form>
 </div>
-<!-- 주소와 우편번호를 입력할 <input>들을 생성하고 적당한 name과 class를 부여한다 -->
-<input type="text" name="" class="postcodify_postcode5" value="" />
-<button id="postcodify_search_button">검색</button><br />
-<input type="text" name="" class="postcodify_address" value="" /><br />
-<input type="text" name="" class="postcodify_details" value="" /><br />
-<input type="text" name="" class="postcodify_extra_info" value="" /><br />
-
-<!-- jQuery와 Postcodify를 로딩한다 -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<script src="//d1p7wdleee1q2z.cloudfront.net/post/search.min.js"></script>
-
-<!-- "검색" 단추를 누르면 팝업 레이어가 열리도록 설정한다 -->
-<script> $(function() { $("#postcodify_search_button").postcodifyPopUp(); }); </script>
 </body>
 </html>
