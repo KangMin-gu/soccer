@@ -123,6 +123,14 @@ public class UsersController {
 		mView.setViewName("users/mymap");
 		return mView;
 	}
+	
+	//운동장주소와 구글맵 연동
+	@RequestMapping("/users/field")
+	public ModelAndView fieldList(){
+		ModelAndView mView = service.fieldList();
+		mView.setViewName("users/field");
+		return mView;
+	}
 }
 
 
