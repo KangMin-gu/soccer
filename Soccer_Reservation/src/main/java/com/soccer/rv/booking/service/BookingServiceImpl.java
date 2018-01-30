@@ -1,5 +1,9 @@
 package com.soccer.rv.booking.service;
 
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.ModelAndView;
@@ -11,18 +15,45 @@ import com.soccer.rv.booking.dto.BookingDto;
 public class BookingServiceImpl implements BookingService{
 	
 	@Autowired
-	private BookingDao dao;
+	private BookingDao bookingDao;
 
 	@Override
-	public ModelAndView bookingSignup(BookingDto dto) {
+	public void insert(BookingDto dto) {
+		bookingDao.insert(dto);
 		
-		dao.insert(dto);
-		
-		ModelAndView mView = new ModelAndView();
-		mView.addObject("rUser",dto.getrUser());
-		return mView;
 	}
-	
-	
+
+	@Override
+	public void update(BookingDto dto) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(int num) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public ModelAndView list(HttpServletRequest request) {
+		
+		
+		
+		return null;
+	}
+
+	@Override
+	public ModelAndView detail(HttpServletRequest request) {
+		
+		
+		return null;
+	}
+
+	@Override
+	public ModelAndView detail(int num) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }
