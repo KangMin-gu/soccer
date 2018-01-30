@@ -125,10 +125,10 @@ public class UsersController {
 	}
 	
 	//운동장주소와 구글맵 연동
-	@RequestMapping("/users/field")
+	@RequestMapping("/users/fieldlist")
 	public ModelAndView fieldList(){
 		ModelAndView mView = service.fieldList();
-		mView.setViewName("users/field");
+		mView.setViewName("users/fieldlist");
 		return mView;
 	}
 }

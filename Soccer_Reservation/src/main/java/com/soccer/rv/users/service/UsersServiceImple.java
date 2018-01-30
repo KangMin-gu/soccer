@@ -132,31 +132,29 @@ public class UsersServiceImple implements UsersService{
 		List<FieldDto> list = fieldDao.getList();
 		ModelAndView mView = new ModelAndView();
 		List<PositionDto> position = new ArrayList<>();
-		
 		for(FieldDto tmp : list){
 			String location = tmp.getField_addr();
+			System.out.println(location);
 			Geocoder geocoder = new Geocoder();
-			GeocoderRequest geocoderRequest = new GeocoderRequestBuilder() 
+			GeocoderRequest geocoderRequest = new GeocoderRequestBuilder()
 					.setAddress(location).setLanguage("ko").getGeocoderRequest();
 			try {
 				GeocodeResponse geocoderResponse = geocoder.geocode(geocoderRequest);
 				GeocoderResult geocoderResult=geocoderResponse.getResults().iterator().next();
-				LatLng latitudeLongitude = geocoderResult.getGeometry().getLocation(); 
-				Float[] coords = new Float[2]; 
-				coords[0] = latitudeLongitude.getLat().floatValue(); 
+				LatLng latitudeLongitude = geocoderResult.getGeometry().getLocation();
+				Float[] coords = new Float[2];
+				coords[0] = latitudeLongitude.getLat().floatValue();
 				coords[1] = latitudeLongitude.getLng().floatValue();
 				
 				Float lat = coords[0];
 				Float lng = coords[1];
 				
-				PositionDto posDto = new PositionDto(lng, lat);
-				position.add(posDto);
+				PositionDto positions = new PositionDto(lat, lng);
+				position.add(positions);
 				
 			} catch (IOException e) {
-				
 				e.printStackTrace();
 			}
-			
 		}
 		mView.addObject("position", position);
 		return mView;

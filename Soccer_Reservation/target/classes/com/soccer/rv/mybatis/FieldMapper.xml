@@ -3,7 +3,7 @@
 <mapper namespace="field">
 
 <select id="getList" resultType="fieldDto">
-	select * from fieldDto
+	select * from field
 </select>
 
 </mapper>
