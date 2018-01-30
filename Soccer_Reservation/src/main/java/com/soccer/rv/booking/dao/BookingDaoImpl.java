@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.soccer.rv.booking.dto.BookingDto;
 
@@ -33,21 +34,16 @@ public class BookingDaoImpl implements BookingDao{
 	}
 
 	@Override
-	public BookingDto getData(BookingDto dto) {
+	public BookingDto getData(String id) {
 		
-		return session.selectOne("booking.getData", dto);
-	}
-
-	@Override
-	public BookingDto getData(int num) {
-		
-		return  session.selectOne("booking.getData2", num);
+		return session.selectOne("users.update",id);
 	}
 
 	@Override
 	public List<BookingDto> getList(BookingDto dto) {
-		
-		return session.selectList("booking.getList", dto);
+		// TODO Auto-generated method stub
+		return null;
 	}
 
+	
 }

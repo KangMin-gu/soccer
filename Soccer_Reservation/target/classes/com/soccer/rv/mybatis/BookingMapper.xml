@@ -3,9 +3,12 @@
 <mapper namespace="booking">
 
 	<insert id="insert" parameterType="bookingDto">
-		INSERT INTO reservation_form (rUser,phone01, phone02, addr1, addr2, addr3, userNumber, orgName, etc)
-		VALUES(#{rUser}, #{phone01}, #{phone02},
+		INSERT INTO reservation_form (rUser,rAddr,rTime,phone01, phone02, addr1, addr2, addr3, userNumber, orgName, etc)
+		VALUES(#{rUser}, #{rAddr}, #{rTime}, #{phone01}, #{phone02},
 		#{addr1}, #{addr2}, #{addr3}, #{userNumber}, #{orgName}, #{etc})
 	</insert>
 	
+	<select id="getData" parameterType="String" resultType="bookingDto">
+		select * from users where id=#{id}
+	</select>
 </mapper>

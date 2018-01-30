@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>reservation.jsp</title>
+<title>booking_result.jsp</title>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css">
@@ -13,7 +13,7 @@
 <body>
 <div class="container">
 	<h3>예약Form 페이지</h3>
-	<form action="bookingSignup.do" method="post">	
+	<form action="booking_insert.do" method="post">	
 		<table class="table">
 			<caption>예약 기본정보</caption> 
 			<colgroup>
@@ -23,16 +23,11 @@
 			<tbody>
 			<tr>
 				<th scope="row"><label for="rAddr">예약장소</label></th>
-				<td><input type="text" value="${rAddr }"/></td>
-			</tr>
+				<td><input type="text" id="rAddr" name="rAddr"  /></td>
+			</tr> 
 			<tr>
 				<th scope="row"><label for="rTime">예약시간</label></th>
-				<td><input type="text" value="${rTime }" /></td>
-			</tr>
-			<tr>
-				<th scope="row"><label for="rPrice">예약금액</label></th>
-				<td><input type="text"  value="${rPrice }"/><br />			
-				</td>
+				<td><input type="text" id="rTime" name="rTime" /></td>
 			</tr>
 			</tbody>
 		</table>
@@ -45,7 +40,7 @@
 			<tbody>
 			<tr>
 				<th scope="row"><label for="rUser">신청자</label></th>
-				<td><input type="text" id="rUser" name="rUser" /></td>
+				<td><input type="text" id="rUser" name="rUser" value="${rUser }" /></td>
 			</tr>
 			<tr>
 				<th scope="row"><label>일반전화</label></th>

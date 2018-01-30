@@ -37,23 +37,18 @@ public class BookingServiceImpl implements BookingService{
 
 	@Override
 	public ModelAndView list(HttpServletRequest request) {
-		
-		
-		
-		return null;
-	}
-
-	@Override
-	public ModelAndView detail(HttpServletRequest request) {
-		
-		
-		return null;
-	}
-
-	@Override
-	public ModelAndView detail(int num) {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public ModelAndView detail(String id) {
+		BookingDto dto = bookingDao.getData(id);
+		ModelAndView mView = new ModelAndView();
+		mView.addObject("dto",dto);
+		return mView;
+	}
+
+
 
 }

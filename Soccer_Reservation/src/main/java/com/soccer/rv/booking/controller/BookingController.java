@@ -3,6 +3,7 @@ package com.soccer.rv.booking.controller;
 
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.soccer.rv.booking.dto.BookingDto;
 import com.soccer.rv.booking.service.BookingService;
+import com.soccer.rv.users.dto.UsersDto;
 
 @Controller
 public class BookingController {
@@ -22,42 +24,37 @@ public class BookingController {
 	private BookingService bookingservice;
 	
 	
-	//예약 폼 페이지 
+	//예약 폼으로 이동
 	@RequestMapping("/booking/bookingform")
 	public ModelAndView bookingForm(HttpServletRequest request){
 		
-		//테스트 데이터
-		String rAddr = "서울 중구";
-		String rTime = "오후 2시 30분";
-		String rPrice = "20,000원";
-		String rUser = "김구라";
+		HttpSession session = request.getSession();
+		String rUser = (String)session.getAttribute("id");
+		ModelAndView mView = bookingservice.detail(rUser);
 		
-		ModelAndView mView = new ModelAndView();
-		mView.addObject("rAddr",rAddr);
-		mView.addObject("rTime",rTime);
-		mView.addObject("rPrice",rPrice);
-		mView.addObject("rUser",rUser);
 		
 		mView.setViewName("booking/bookingform");
 		
 		return mView;
 	}
 	
-	@RequestMapping("/booking/bookingSignup")
+	
+	@RequestMapping("/booking/booking_insert")
 	public ModelAndView bookingSignup(HttpServletRequest request, 
 			@ModelAttribute BookingDto dto) {
-		
-		String rAddr = (String)request.getAttribute("rAddr");
-		String rPrice = (String)request.getAttribute("rPrice");
-		String rTime = (String)request.getAttribute("rTime");
+	
+		String rUser = (String)request.getSession().getAttribute("id");
+	
+		dto.setrUser(rUser);
 		//서비스를 이용해서 DB 에 저장
 		 bookingservice.insert(dto);
+		 
 		
 		ModelAndView mView = new ModelAndView();
-		mView.addObject("rAddr",rAddr);
-		mView.addObject("rPrice",rPrice);
-		mView.addObject("rTime",rTime);
-		mView.setViewName("booking/bookingSignup");
+//		mView.addObject("rAddr",rAddr);
+//		mView.addObject("rTime",rTime);
+		mView.addObject("msg","예약 완료되었습니다.");
+		mView.setViewName("booking/booking_insert");
 		
 		return mView;
 	}

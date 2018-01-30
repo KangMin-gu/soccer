@@ -9,6 +9,10 @@
 </head>
 <body>
 <h3>예약 완료</h3>
-
+Test중 
+<script>
+	alert("${msg}");
+	location.href="${url}";
+</script>
 </body>
 </html>

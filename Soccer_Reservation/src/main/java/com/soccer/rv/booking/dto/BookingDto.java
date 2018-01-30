@@ -2,6 +2,8 @@ package com.soccer.rv.booking.dto;
 
 public class BookingDto {
 	private String rUser;//신청자 - 입금자
+	private String rAddr;
+	private String rTime;
 	private int phone01;//일반전화
 	private int phone02;//핸드폰
 	private String addr1;//주소1
@@ -15,10 +17,12 @@ public class BookingDto {
 	public BookingDto (){}
 
 
-	public BookingDto(String rUser, int phone01, int phone02, String addr1, String addr2, String addr3, int userNumber,
-			String orgName, String etc) {
+	public BookingDto(String rUser, String rAddr, String rTime, int phone01, int phone02, String addr1,
+			String addr2, String addr3, int userNumber, String orgName, String etc) {
 		super();
 		this.rUser = rUser;
+		this.rAddr = rAddr;
+		this.rTime = rTime;
 		this.phone01 = phone01;
 		this.phone02 = phone02;
 		this.addr1 = addr1;
@@ -38,6 +42,27 @@ public class BookingDto {
 	public void setrUser(String rUser) {
 		this.rUser = rUser;
 	}
+
+
+	public String getrAddr() {
+		return rAddr;
+	}
+
+
+	public void setrAddr(String rAddr) {
+		this.rAddr = rAddr;
+	}
+
+
+	public String getrTime() {
+		return rTime;
+	}
+
+
+	public void setrTime(String rTime) {
+		this.rTime = rTime;
+	}
+
 
 
 	public int getPhone01() {
@@ -118,7 +143,8 @@ public class BookingDto {
 	public void setEtc(String etc) {
 		this.etc = etc;
 	}
-	
+
+
 	
 
 
