@@ -21,7 +21,7 @@ public class ReserveDaoImpl implements ReserveDao {
 	@Override
 	public List<ReserveDto> getList(ReserveDto dto) {
 		
-		return null;
+		return session.selectList("reserve.getList",dto);
 	}
 
 }

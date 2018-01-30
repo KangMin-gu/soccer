@@ -74,10 +74,43 @@
 		</div>
 	</div>
 	<!-- ============ 본문내용 =======================   -->
-		
-		<div id="datepicker">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-4">
+				<div id="datepicker">
 			
+				</div>
+			</div>
+		
+		
+		
+			<div class="col-xs-4">
+				<div>
+					<table>
+						<thead>
+							<tr>
+								<th>운동장</th>
+								<th>시간</th>
+								<th>시간</th>
+								<th>시간</th>								
+							</tr>
+						</thead>
+						<tbody>
+							<c:forEach var="tmp" items="${list }">
+								<tr>
+									<td>${tmp.field_name }</td>
+									<td>${tmp.date1 }</td>
+									<td>${tmp.date2 }</td>
+									<td>${tmp.date3 }</td>
+								</tr>
+							</c:forEach>
+						</tbody>
+					</table>
+				</div>
+			</div>
 		</div>
+	</div>	
+
 	<!-- ============FOOTER============= -->
 	<footer id="footer">
 		<div class="footer-content container">
@@ -140,7 +173,14 @@
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<!-- Place in the <head>, after the three links -->
 	<script>
-		$( "#datepicker" ).datepicker();
+		$( "#datepicker" ).datepicker({
+			
+			onSelect : function(dateText, inst){
+				alert('select');
+			}
+		});
+		
+		
 		
 
 		
