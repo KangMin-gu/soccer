@@ -1,5 +1,10 @@
 package com.soccer.rv.reserve.dao;
 
-public interface ReserveDao {
+import java.util.List;
 
+import com.soccer.rv.reserve.dto.ReserveDto;
+
+public interface ReserveDao {
+	public ReserveDto getData(ReserveDto dto);
+	public List<ReserveDto> getList(ReserveDto dto);
 }

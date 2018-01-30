@@ -32,11 +32,7 @@
 
 
 
-  <script>
-  
-    $( "#datepicker" ).datepicker();
-  
-  </script>
+
 </head>
 <body>
 	<div class="header container">
@@ -123,11 +119,13 @@
 	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
 
- 	
+ 	<script
+		src="${pageContext.request.contextPath}/resources/js/moment.min.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/resources/js/Moment.js"></script>
 	<script
 		src="${pageContext.request.contextPath}/resources/js/bootstrap-datetimepicker.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/resources/js/moment.min.js"></script>
+	
 	<script
 		src="${pageContext.request.contextPath}/resources/js/jquery.min.js"></script>
 	<script
@@ -142,16 +140,9 @@
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<!-- Place in the <head>, after the three links -->
 	<script>
-		$('#datepicker').datepicker();
+		$( "#datepicker" ).datepicker();
 		
-		$('.testimonials-slider').bxSlider({
-			slideWidth : 800,
-			minSlides : 1,
-			maxSlides : 1,
-			slideMargin : 32,
-			auto : true,
-			autoControls : true
-		});
+
 		
 
 
