@@ -1,6 +1,8 @@
 package com.soccer.rv.users.service;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -15,6 +17,9 @@ import com.google.code.geocoder.model.GeocodeResponse;
 import com.google.code.geocoder.model.GeocoderRequest;
 import com.google.code.geocoder.model.GeocoderResult;
 import com.google.code.geocoder.model.LatLng;
+import com.soccer.rv.field.dao.FieldDao;
+import com.soccer.rv.field.dto.FieldDto;
+import com.soccer.rv.position.dto.PositionDto;
 import com.soccer.rv.users.dao.UsersDao;
 import com.soccer.rv.users.dto.UsersDto;
 
@@ -23,6 +28,8 @@ public class UsersServiceImple implements UsersService{
 	
 	@Autowired
 	private UsersDao dao;
+	@Autowired
+	private FieldDao fieldDao;
 	
 	@Override
 	public ModelAndView signup(UsersDto dto) {
@@ -119,10 +126,40 @@ public class UsersServiceImple implements UsersService{
 		return mView;
 		}
 
+	//전체 운동장 주소를 좌표로 변환하여 리턴하는 메소드
 	@Override
 	public ModelAndView fieldList() {
-		// TODO Auto-generated method stub
-		return null;
+		List<FieldDto> list = fieldDao.getList();
+		ModelAndView mView = new ModelAndView();
+		List<PositionDto> position = new ArrayList<>();
+		
+		for(FieldDto tmp : list){
+			String location = tmp.getField_addr();
+			Geocoder geocoder = new Geocoder();
+			GeocoderRequest geocoderRequest = new GeocoderRequestBuilder() 
+					.setAddress(location).setLanguage("ko").getGeocoderRequest();
+			try {
+				GeocodeResponse geocoderResponse = geocoder.geocode(geocoderRequest);
+				GeocoderResult geocoderResult=geocoderResponse.getResults().iterator().next();
+				LatLng latitudeLongitude = geocoderResult.getGeometry().getLocation(); 
+				Float[] coords = new Float[2]; 
+				coords[0] = latitudeLongitude.getLat().floatValue(); 
+				coords[1] = latitudeLongitude.getLng().floatValue();
+				
+				Float lat = coords[0];
+				Float lng = coords[1];
+				
+				PositionDto posDto = new PositionDto(lng, lat);
+				position.add(posDto);
+				
+			} catch (IOException e) {
+				
+				e.printStackTrace();
+			}
+			
+		}
+		mView.addObject("position", position);
+		return mView;
 	}
 
 }
