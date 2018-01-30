@@ -22,20 +22,16 @@
 		<tbody>
 		<tr>
 			<th scope="row">예약장소</th>
-			<td>${reservationAddr }</td>
+			<td>${rAddr }</td>
 		</tr>
 		<tr>
 			<th scope="row">예약시간</th>
-			<td>${reservationTime }</td>
+			<td>${rTime }</td>
 		</tr>
 		<tr>
 			<th scope="row">예약금액</th>
-			<td>${reservationPrice }<br />			
+			<td>${rPrice }<br />			
 			</td>
-		</tr>
-		<tr>
-			<th scope="row"></th>
-			<td></td>
 		</tr>
 		</tbody>
 	</table>
@@ -50,7 +46,7 @@
 			<tbody>
 			<tr>
 				<th scope="row">신청자</th>
-				<td>${reservationUser }</td>
+				<td>${rUser }</td>
 			</tr>
 			<tr>
 				<th scope="row"><label>일반전화</label></th>
@@ -110,7 +106,7 @@
 			<tr>
 				<th scope="row"><label for="payName">입금자</label></th>
 				<td>
-					<input type="text" style="width:100px;" id="payName" name="payName" maxlength="64" value="${reservationUser }" title="입금자 입력" />
+					<input type="text" style="width:100px;" maxlength="64" value="${rUser }" title="입금자 입력" />
 				</td>
 			</tr>
 			</tbody>
