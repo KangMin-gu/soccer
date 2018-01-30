@@ -30,7 +30,7 @@
 	예약일자
 	
  -->
-<table class="table_soc4" summary="이표는 예약신청한 예약구장, 예약일자, 예약시간, 예약금액을 나타냅니다">
+<table class="table">
 	<caption class="cp_no">예약시간 목록, 예약금액 목록</caption>
 	<colgroup>
 		<col width="20%" />
@@ -38,28 +38,26 @@
 	</colgroup>
 	<tbody>
 	<tr>
-		<th scope="row">예약구장</th>
-		<td>박주영 축구장</td>
+		<th scope="row"></th>
+		<td></td>
 	</tr>
 	<tr>
-		<th scope="row">예약일자</th>
-		<td>
-2018년 02월 03일 토요일		</td>
+		<th scope="row"></th>
+		<td></td>
 	</tr>
 	<tr>
-		<th scope="row">예약시간</th>
-		<td>
-80,000 : 13:00 ~ 14:00<br />			
+		<th scope="row"></th>
+		<td><br />			
 		</td>
 	</tr>
 	<tr>
-		<th scope="row">예약금액</th>
-		<td>80,000</td>
+		<th scope="row"></th>
+		<td></td>
 	</tr>
 	</tbody>
 </table>
 
-<table class="table_soc4" summary="이표는 사용예약 신청서로서 신청자, 일반전화, 핸드폰번호, 주소, 이용인원, 단체명, 기타입력사항, 예약일자, 예약금액, 입금자를 입력받고 있습니다.">
+<table class="table">
 	<caption class="cp_no">사용예약 신청서</caption>
 	<colgroup>
 		<col width="20%" />
@@ -68,7 +66,7 @@
 	<tbody>
 	<tr>
 		<th scope="row">신청자</th>
-		<td>주한별</td>
+		<td></td>
 	</tr>
 	<tr>
 		<th scope="row"><label for="rsv_tel0">일반전화</label></th>
@@ -117,12 +115,11 @@
 	</tr>
 	<tr>
 		<th scope="row">예약일자</th>
-		<td>
-2018년 02월 03일 토요일		</td>
+		<td></td>
 	</tr>
 	<tr>
 		<th scope="row">예약금액</th>
-		<td>80,000원</td>
+		<td></td>
 	</tr>
 	<tr>
 		<th scope="row"><label for="rsv_payName">입금자</label></th>
@@ -165,42 +162,16 @@
 - 보유근거 : 민원사무처리에 관한 법률에 의해 민원의 접수 및 처리(민원 이송 포함)
 - 관련법령 : 민원사무처리에관한법률
 	</textarea>
-
+	<br />
 	<p><input type="checkbox" id="agreeCheck" name="agreeCheck" title="개인정보수집 동의" /> <label for="agreeCheck">위의 "개인정보 수집 및 이용"에 동의합니다.</label></p>
 	<p class="p_r_mark">* 「개인정보보호법」 제15조 2항 4호(동의를 거부할 권리가 있다는 사실 및 동의 거부에 따른 불이익이 있는 경우에는 그 불이익의 내용)에 따라서 동의를 거부할 수 있으나 거부할 경우 민원 신청 및 민원 처리결과 통지 등 서비스 이용에 제한이 있습니다.</p>
 </div>
 <!--//개인정보-->
 
-<div class="bt_table_read_c">
+<div class="">
 	<a href="/main/page.htm?mnu_siteid=dongu_k&amp;mnu_uid=3298&amp;fld_uid=1&amp;cmd=step01&amp;viewDate=2018-02-03&amp;rsv_uid=0"><img src="./img/football/foot_btn8.gif" alt="뒤로이동" /></a><input type="image" src="./img/football/foot_btn3.gif" alt="예약신청" /><a href="/main/page.htm?mnu_siteid=dongu_k&amp;mnu_uid=3298&amp;fld_uid=1&amp;cmd=list"><img src="./img/football/foot_btn6.gif" alt="예약취소" /></a>
 </div>
 </form>
 </div>
-<script type="text/javascript">
-<!--
-	function goPopup(){
-		// 주소검색을 수행할 팝업 페이지를 호출합니다.
-		// 호출된 페이지(jusopopup.jsp)에서 실제 주소검색URL(http://www.juso.go.kr/addrlink/addrLinkUrl.do)를 호출하게 됩니다.
-		var pop = window.open("/message/juso/jusoPopup.php","pop","width=570,height=420, scrollbars=yes, resizable=yes"); 
-	}
-	function jusoCallBack(roadFullAddr,roadAddrPart1,addrDetail,roadAddrPart2,engAddr,jibunAddr,zipNo,admCd,rnMgtSn,bdMgtSn){
-		var f = document.frm;
-		f.rsv_zipcode0.value= zipNo.replace('-',''); 
-		f.rsv_address1.value = roadAddrPart1 + ' ' + roadAddrPart2  ;
-		f.rsv_address2.value =addrDetail ;
-	}	
-//-->
-</script><noscript><p>주소입력-Javascript를 지원하지않습니다.</p></noscript><script type="text/javascript">
-//<![CDATA[
-	document.title = document.title +'(예약신청서 입력폼)';
-//]]>
-</script>
- <script type="text/javascript">
-//<![CDATA[
-function showOpenContent(){
-}
-//]]>
-</script>
-
 </body>
 </html>
