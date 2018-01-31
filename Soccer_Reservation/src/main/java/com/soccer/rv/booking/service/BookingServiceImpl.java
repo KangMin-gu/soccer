@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.soccer.rv.booking.dao.BookingDao;
@@ -56,8 +56,8 @@ public class BookingServiceImpl implements BookingService{
 	}
 
 	@Override
-	public ModelAndView getData(int num) {
-		BookingDto dto = bookingDao.getData(num);
+	public ModelAndView getData(String rUser) {
+		BookingDto dto = bookingDao.getData(rUser);
 		
 		ModelAndView mView = new ModelAndView();
 		
@@ -68,14 +68,18 @@ public class BookingServiceImpl implements BookingService{
 
 
 	@Override
-	public ModelAndView detail(int num) {
+	public ModelAndView detail(String rUser)  {
 		//글번호를 이용해서 글정보를 얻어와서
-		BookingDto dto = bookingDao.getData(num);
+		BookingDto dto = bookingDao.getData(rUser);
 		
 		ModelAndView mView = new ModelAndView();
 		mView.addObject("dto",dto);
 		return mView;
 	}
+
+	
+
+
 
 
 
