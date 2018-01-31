@@ -1,6 +1,8 @@
 package com.soccer.rv.users.controller;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -9,12 +11,12 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.soccer.rv.position.dto.PositionDto;
 import com.soccer.rv.users.dto.UsersDto;
 import com.soccer.rv.users.service.UsersService;
 
@@ -126,10 +128,10 @@ public class UsersController {
 	
 	//운동장주소와 구글맵 연동
 	@RequestMapping("/users/fieldlist")
-	public ModelAndView fieldList(){
-		ModelAndView mView = service.fieldList();
-		mView.setViewName("users/fieldlist");
-		return mView;
+	public String fieldList(){
+		//ModelAndView mView = service.fieldList();
+		//mView.setViewName("users/fieldlist");
+		return "users/fieldlist";
 	}
 	
 	@RequestMapping("/users/testmap")
@@ -144,6 +146,13 @@ public class UsersController {
 		ModelAndView mView = new ModelAndView();
 		mView.setViewName("users/testmap2");
 		return mView;
+	}
+	
+	@RequestMapping("/users/fieldPosition")
+	@ResponseBody
+	public List<PositionDto> fieldPosition(){
+		List<PositionDto> positions = service.fieldList();
+		return positions;
 	}
 	
 }

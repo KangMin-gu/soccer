@@ -128,13 +128,14 @@ public class UsersServiceImple implements UsersService{
 
 	//전체 운동장 주소를 좌표로 변환하여 리턴하는 메소드
 	@Override
-	public ModelAndView fieldList() {
+	public  List<PositionDto> fieldList() {
+		
 		List<FieldDto> list = fieldDao.getList();
-		ModelAndView mView = new ModelAndView();
 		List<PositionDto> position = new ArrayList<>();
 		for(FieldDto tmp : list){
 			String location = tmp.getField_addr();
-			System.out.println(location);
+			String title = tmp.getField_name();
+
 			Geocoder geocoder = new Geocoder();
 			GeocoderRequest geocoderRequest = new GeocoderRequestBuilder()
 					.setAddress(location).setLanguage("ko").getGeocoderRequest();
@@ -146,18 +147,18 @@ public class UsersServiceImple implements UsersService{
 				coords[0] = latitudeLongitude.getLat().floatValue();
 				coords[1] = latitudeLongitude.getLng().floatValue();
 				
-				Float lat = coords[0];
-				Float lng = coords[1];
+				Float lng = coords[0];
+				Float lat = coords[1];
 				
-				PositionDto positions = new PositionDto(lat, lng);
+				PositionDto positions = new PositionDto(title, lat, lng);
 				position.add(positions);
-				
+			
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
-		mView.addObject("position", position);
-		return mView;
+		
+		return position;
 	}
 
 }
