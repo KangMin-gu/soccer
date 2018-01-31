@@ -43,64 +43,45 @@
 	var json = new Object();
 	var a = new Object();
 	
-	json.lat=${tmp.lat};
-	json.lng=${tmp.lng};
-
+	json.lat=${tmp.lng};
+	json.lng=${tmp.lat};
 	//a.position=json;
-	
 	//result.push(a);
 	result.push(json);
-	
 	</c:forEach>
-	//alert("joninfo="+JSON.stringify(result));
+	//alert("joninfo="+JSON.stringify(result[1]));
 	
-    //DB에서 받아온 좌표정
-    var lat = 37.595771;
-    var lng = 126.944839;
-    function initMap(){
-    	var map = new google.maps.Map(document.getElementById('map'), {
-    		zoom: 14,
-    		center: {lat: lat, lng: lng}
-    	});
-    }
-    function setMarkers(map){
-    	for (var i = 0; i < result.length; i++){
-    		var res = result[i];
-    		var marker = new google.maps.Marker({
-    			position : {lat: res[1], lng: res[2]},
-    			map: map
-    		});
-    	}
-    }
+	
+	
+	 //DB에서 받아온 좌표정
+    var lat = 37.597218;
+    var lng = 126.949743;
+    //구글맵 샘플
 
-/*       function initMap() {
-        var uluru = { "lat": lat, "lng": lng};
+    
+      function initMap() {
+        var uluru = { lat: lat, lng: lng};
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 14,
           center: uluru
         });
-        
-/*         var marker = new google.maps.Marker({position: uluru});
-        marker.setMap(map); 
-
-        for(var i=0; i<result.length; i++ ){
-        	
-           	var marker = new google.maps.Marker({position: resutl[i]});
-           	a.setMap(map);	
-           	
-            }; 
-            
-        	
-        }   */
-    
-        
-      
+       
+        setMarkers(map);
+   }
+		function setMarkers(map){
+	
+	    	   for(var i = 0; i< result.length; i++){
+	      		 // var lat = result[i].lat;
+	      		 //  var lng = result[i].lng;
+	      		   var latlng = result[i];
+	      		   var marker = new google.maps.Marker({
+	      			    position: latlng ,
+	      			    map: map,
+	      			  });
+			}
+		}	    
 
 </script>
-
-
- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnXEObf7lWebcW_r-6VMz1cZDIrjrEBQE&callback=initMap"></script>
-
-
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnXEObf7lWebcW_r-6VMz1cZDIrjrEBQE&callback=initMap"></script>
 </body>
 </html>
