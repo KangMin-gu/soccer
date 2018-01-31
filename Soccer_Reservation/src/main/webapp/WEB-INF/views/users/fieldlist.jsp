@@ -30,24 +30,32 @@
 	   
 	    setMarkers(map);
 	}
+	
+		
   var icon="http://maps.google.com/mapfiles/kml/pal2/icon57.png";
+  
 	function setMarkers(map){	
 		$.ajax({
 			url:"fieldPosition.do",
 			method:"GET",
 			success:function(data){
 				console.log(data);
+				
+				
+			
+
 				// data = [{},{}]
 				var latlng=data;
 				for(var i = 0; i< data.length; i++){
 		      		var latlng = data[i];
+		      		var contentString = latlng.title;
 		      		var marker = new google.maps.Marker({
 		      			position: latlng ,
-		      			title : latlng,
+		      			title : latlng.title,
 		      			map: map,
 		      			icon: icon
 		      		});
-				}
+				}//반복	
 			}
 		});
 	}
