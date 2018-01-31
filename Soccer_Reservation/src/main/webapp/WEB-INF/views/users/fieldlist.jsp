@@ -30,7 +30,7 @@
 	   
 	    setMarkers(map);
 	}
-  
+  var icon="http://maps.google.com/mapfiles/kml/pal2/icon57.png";
 	function setMarkers(map){	
 		$.ajax({
 			url:"fieldPosition.do",
@@ -45,6 +45,7 @@
 		      			position: latlng ,
 		      			title : latlng,
 		      			map: map,
+		      			icon: icon
 		      		});
 				}
 			}
