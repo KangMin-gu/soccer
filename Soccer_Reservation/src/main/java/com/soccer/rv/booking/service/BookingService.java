@@ -15,6 +15,7 @@ public interface BookingService {
 	public void delete(int num);
 	public ModelAndView getlist();
 	public ModelAndView getData(int num);
-	public ModelAndView detail(String id);
+	public ModelAndView detail(int num);
+
 
 }	

@@ -2,7 +2,7 @@ package com.soccer.rv.booking.service;
 
 import java.util.List;
 
-
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -65,11 +65,19 @@ public class BookingServiceImpl implements BookingService{
 		return mView;
 	}
 
+
+
 	@Override
-	public ModelAndView detail(String id) {
-		// TODO Auto-generated method stub
-		return null;
+	public ModelAndView detail(int num) {
+		//글번호를 이용해서 글정보를 얻어와서
+		BookingDto dto = bookingDao.getData(num);
+		
+		ModelAndView mView = new ModelAndView();
+		mView.addObject("dto",dto);
+		return mView;
 	}
+
+
 
 	
 

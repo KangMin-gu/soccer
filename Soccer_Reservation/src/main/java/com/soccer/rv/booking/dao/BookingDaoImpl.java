@@ -29,7 +29,7 @@ public class BookingDaoImpl implements BookingDao{
 
 	@Override
 	public void delete(int num) {
-		session.delete("bookig.delete",num);
+		session.delete("booking.delete",num);
 		
 	}
 
@@ -44,6 +44,8 @@ public class BookingDaoImpl implements BookingDao{
 		List<BookingDto> list = session.selectList("booking.getList");
 		return list;
 	}
+
+
 
 	
 
