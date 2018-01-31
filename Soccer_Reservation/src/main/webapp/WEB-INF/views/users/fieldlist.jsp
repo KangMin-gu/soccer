@@ -17,7 +17,7 @@
 <div id="map"></div>
 <script src="${pageContext.request.contextPath}/resources/js/jquery-3.2.1.js"></script>
 <script type="text/javascript">
-	//
+	
 	function initMap() {
 		  
 		var lat = 37.597218;
@@ -41,20 +41,24 @@
 			success:function(data){
 				console.log(data);
 				
+				var marker, i;
+				var infowindow = new google.maps.InfoWindow();
 				
-			
-
-				// data = [{},{}]
-				var latlng=data;
 				for(var i = 0; i< data.length; i++){
 		      		var latlng = data[i];
-		      		var contentString = latlng.title;
 		      		var marker = new google.maps.Marker({
 		      			position: latlng ,
-		      			title : latlng.title,
 		      			map: map,
 		      			icon: icon
 		      		});
+		      	
+					google.maps.event.addListener(marker, 'click', (function(marker, i){
+						return function(){
+							infowindow.setContent(data[i].title);
+							infowindow.open(map, marker);
+						}
+					})(marker, i));
+		      		     		
 				}//반복	
 			}
 		});
