@@ -15,8 +15,10 @@
 </head>
 <h3> 나의 위치와 운동장위치 </h3>
 <p>나의 주소는 ${addr }</p>
-<p> ${lat }</p>
-<p> ${lng }</p>
+<p>주소 위도는:  ${lat }</p>
+<p>주소 경도는: ${lng }</p>
+<a href="info.do">나의 정보로 돌아가기</a>
+<a href="${pageContext.request.contextPath}/">홈으로 돌아가기</a>
 <div id="map"></div>
 <script src="${pageContext.request.contextPath}/resources/js/jquery-3.2.1.js"></script>
 <script type="text/javascript">
