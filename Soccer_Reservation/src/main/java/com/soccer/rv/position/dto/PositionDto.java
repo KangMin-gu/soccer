@@ -1,17 +1,27 @@
 package com.soccer.rv.position.dto;
 
 public class PositionDto {
+	private int num;
 	private String title;
 	private float lat;
 	private float lng;
 	
 	public PositionDto(){}
 
-	public PositionDto(String title, float lng, float lat) {
+	public PositionDto(int num, String title, float lat, float lng) {
 		super();
+		this.num = num;
 		this.title = title;
-		this.lng = lng;
 		this.lat = lat;
+		this.lng = lng;
+	}
+
+	public int getNum() {
+		return num;
+	}
+
+	public void setNum(int num) {
+		this.num = num;
 	}
 
 	public String getTitle() {
@@ -22,6 +32,14 @@ public class PositionDto {
 		this.title = title;
 	}
 
+	public float getLat() {
+		return lat;
+	}
+
+	public void setLat(float lat) {
+		this.lat = lat;
+	}
+
 	public float getLng() {
 		return lng;
 	}
@@ -30,14 +48,6 @@ public class PositionDto {
 		this.lng = lng;
 	}
 
-	public float getLat() {
-		return lat;
-	}
-
-	public void setLat(float lat) {
-		this.lat = lat;
-	}
-	
 	
 
 }

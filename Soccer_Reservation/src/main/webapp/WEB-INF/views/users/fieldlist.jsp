@@ -17,6 +17,7 @@
 <p>나의 주소는 ${addr }</p>
 <p>주소 위도는:  ${lat }</p>
 <p>주소 경도는: ${lng }</p>
+
 <a href="info.do">나의 정보로 돌아가기</a>
 <a href="${pageContext.request.contextPath}/">홈으로 돌아가기</a>
 <div id="map"></div>
@@ -55,16 +56,24 @@
 				var infowindow = new google.maps.InfoWindow();
 			//구글 맵 마커 등록	
 				for(var i = 0; i< data.length; i++){
-		      		var latlng = data[i];
+		      		var lats= data[i].lat;
+		      		var lngs= data[i].lng;
+		      		var latlng = {lat : lats, lng : lngs};
+		      		console.log(JSON.stringify(data[i].lat));
+		      		//마커 등록
 		      		var marker = new google.maps.Marker({
-		      			position: latlng ,
+		      			position: latlng,
 		      			map: map,
 		      			icon: icon
 		      		});
-		      	//구글 맵 마커 클릭시 운동장 이름 호출
+		      	//구글 맵 마커 클릭시 운동장 이름 호출	
+		      		var str = JSON.stringify(data[i].title);
+		      		var num = data[i].num;
+		      		console.log(str);
+		      		console.log(num);
 					google.maps.event.addListener(marker, 'click', (function(marker, i){
 						return function(){
-							infowindow.setContent(data[i].title);
+							infowindow.setContent(str+'<a href="rv.do?num='+(num)+'">'+'예약하기</a>');
 							infowindow.open(map, marker);
 						}
 					})(marker, i));

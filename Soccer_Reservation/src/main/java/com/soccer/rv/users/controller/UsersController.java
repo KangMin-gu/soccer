@@ -136,6 +136,10 @@ public class UsersController {
 		return positions;
 	}
 	
+	@RequestMapping("/users/rv")
+	public String rv(){
+		return "users/rv";
+	}
 }
 
 

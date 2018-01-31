@@ -97,7 +97,6 @@ public class UsersServiceImple implements UsersService{
 	public ModelAndView map(String id) {
 		
 		UsersDto dto = dao.getMap(id);
-		
 		String location = dto.getAddr(); // DB에서 받은 주소를 location에 담는다.
 		System.out.println(location);
 		ModelAndView mView = new ModelAndView();
@@ -133,7 +132,8 @@ public class UsersServiceImple implements UsersService{
 		for(FieldDto tmp : list){
 			String location = tmp.getField_addr();
 			String title = tmp.getField_name();
-
+			int num = tmp.getNum();
+			System.out.println(tmp.getNum());
 			Geocoder geocoder = new Geocoder();
 			GeocoderRequest geocoderRequest = new GeocoderRequestBuilder()
 					.setAddress(location).setLanguage("ko").getGeocoderRequest();
@@ -145,11 +145,12 @@ public class UsersServiceImple implements UsersService{
 				coords[0] = latitudeLongitude.getLat().floatValue();
 				coords[1] = latitudeLongitude.getLng().floatValue();
 				
-				Float lng = coords[0];
-				Float lat = coords[1];
+				Float lat = coords[0];
+				Float lng = coords[1];
 				
-				PositionDto positions = new PositionDto(title, lat, lng);
+				PositionDto positions = new PositionDto(num, title, lat, lng);
 				position.add(positions);
+				System.out.println(positions.getNum());
 			
 			} catch (IOException e) {
 				e.printStackTrace();
