@@ -10,7 +10,7 @@ import org.springframework.stereotype.Controller;
 
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.soccer.rv.booking.dto.BookingDto;
@@ -24,39 +24,49 @@ public class BookingController {
 	private BookingService bookingservice;
 	
 	
+	
+	//예약 목록 요청처리
+	@RequestMapping("/booking/booking_list")
+	public ModelAndView bookinglist(){
+		
+		ModelAndView mView = bookingservice.getlist();
+		mView.setViewName("booking/booking_list");
+		return mView;
+	}
+	
 	//예약 폼으로 이동
 	@RequestMapping("/booking/bookingform")
 	public ModelAndView bookingForm(HttpServletRequest request){
-		
-		HttpSession session = request.getSession();
-		String rUser = (String)session.getAttribute("id");
-		ModelAndView mView = bookingservice.detail(rUser);
-		
-		
+	
+		ModelAndView mView = new ModelAndView();
 		mView.setViewName("booking/bookingform");
 		
 		return mView;
 	}
 	
 	
+	//예약목록 저장 처리
 	@RequestMapping("/booking/booking_insert")
-	public ModelAndView bookingSignup(HttpServletRequest request, 
-			@ModelAttribute BookingDto dto) {
-	
-		String rUser = (String)request.getSession().getAttribute("id");
-	
-		dto.setrUser(rUser);
-		//서비스를 이용해서 DB 에 저장
-		 bookingservice.insert(dto);
-		 
+	public ModelAndView bookingSignup(HttpServletRequest request, @ModelAttribute BookingDto dto) {
 		
-		ModelAndView mView = new ModelAndView();
-//		mView.addObject("rAddr",rAddr);
-//		mView.addObject("rTime",rTime);
-		mView.addObject("msg","예약 완료되었습니다.");
-		mView.setViewName("booking/booking_insert");
+		ModelAndView mView = bookingservice.insert(dto);
+		
+		mView.setViewName("booking/booking_alert");
 		
 		return mView;
 	}
+	
+	//예약 목록 삭제 요청 처리
+	@RequestMapping("/booking/booking_delete")
+	public String booking_delete(@RequestParam int num){
+		
+		bookingservice.delete(num);
+		
+		return "redirect:/booking/booking_list.do";
+	}
+	
+	
+	
+	
 	
 }

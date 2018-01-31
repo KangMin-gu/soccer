@@ -9,6 +9,8 @@ addr1 VARCHAR2(100),
 addr2 VARCHAR2(100),
 addr3 VARCHAR2(100),
 userNumber NUMBER,
-orgName VARCHAR2(50),
-etc VARCHAR2(300)
+orgName VARCHAR2(100),
+etc CLOB
 );
+
+CREATE SEQUENCE reservation_form_seq;

@@ -23,27 +23,29 @@ public class BookingDaoImpl implements BookingDao{
 
 	@Override
 	public void update(BookingDto dto) {
-		// TODO Auto-generated method stub
+		session.update("booking.update",dto);
 		
 	}
 
 	@Override
 	public void delete(int num) {
-		// TODO Auto-generated method stub
+		session.delete("bookig.delete",num);
 		
 	}
 
 	@Override
-	public BookingDto getData(String id) {
-		
-		return session.selectOne("users.update",id);
+	public BookingDto getData(int num) {
+		BookingDto dto = session.selectOne("booking.getData",num);
+		return dto;
 	}
 
 	@Override
-	public List<BookingDto> getList(BookingDto dto) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<BookingDto> getList() {
+		List<BookingDto> list = session.selectList("booking.getList");
+		return list;
 	}
+
+	
 
 	
 }

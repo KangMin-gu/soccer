@@ -76,7 +76,7 @@
 						src="${pageContext.request.contextPath}/resources/img/soccer.png"
 						width="200" alt="logo"></a></li>
 				<li><a href="team.html">Reservation</a></li>
-				<li><a href="donate.html">Review</a></li>
+				<li><a href="booking/bookingform.do">Review</a></li>
 				<li><a href="contact.html">Question</a></li>
 			</ul>
 		</div>

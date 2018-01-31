@@ -5,14 +5,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>bookig/bookigSignup.jsp</title>
+<title>booking_alert.jsp</title>
 </head>
 <body>
-<h3>예약 완료</h3>
-Test중 
 <script>
-	alert("${msg}");
-	location.href="${url}";
+alert("${msg}");
+location.href="${pageContext.request.contextPath }/booking/booking_list.do";
 </script>
 </body>
 </html>
