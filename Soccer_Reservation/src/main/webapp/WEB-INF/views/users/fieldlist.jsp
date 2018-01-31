@@ -37,21 +37,43 @@
 <script type="text/javascript">
 
 	var result = new Array();
-	
+
+	// a = [ "position" : {"lat": lat, "lng" : lng},  ]
 	<c:forEach items="${position}" var="tmp">
 	var json = new Object();
+	var a = new Object();
+	
 	json.lat=${tmp.lat};
 	json.lng=${tmp.lng};
+
+	//a.position=json;
+	
+	//result.push(a);
 	result.push(json);
+	
 	</c:forEach>
-	alert("joninfo="+JSON.stringify(result));
+	//alert("joninfo="+JSON.stringify(result));
 	
     //DB에서 받아온 좌표정
     var lat = 37.595771;
     var lng = 126.944839;
-    
-    //구글맵 샘플
-      function initMap() {
+    function initMap(){
+    	var map = new google.maps.Map(document.getElementById('map'), {
+    		zoom: 14,
+    		center: {lat: lat, lng: lng}
+    	});
+    }
+    function setMarkers(map){
+    	for (var i = 0; i < result.length; i++){
+    		var res = result[i];
+    		var marker = new google.maps.Marker({
+    			position : {lat: res[1], lng: res[2]},
+    			map: map
+    		});
+    	}
+    }
+
+/*       function initMap() {
         var uluru = { "lat": lat, "lng": lng};
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 14,
@@ -59,7 +81,7 @@
         });
         
 /*         var marker = new google.maps.Marker({position: uluru});
-        marker.setMap(map); */
+        marker.setMap(map); 
 
         for(var i=0; i<result.length; i++ ){
         	
@@ -69,7 +91,7 @@
             }; 
             
         	
-        }  
+        }   */
     
         
       
