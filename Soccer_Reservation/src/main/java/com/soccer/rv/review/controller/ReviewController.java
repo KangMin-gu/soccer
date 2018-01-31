@@ -96,4 +96,15 @@ public class ReviewController {
 		return mView;
 	}
 	
+	//덧글 추가하는 요청 처리
+	@RequestMapping("/review/comment_insert")
+	public ModelAndView authCommentInsert(HttpServletRequest request){
+		reviewService.commentInsert(request);
+		
+		//글번호를 읽어와서 글 자세히 보기 페이지로 리다일렉트 이동
+		String num=request.getParameter("ref_group");
+		
+		return new ModelAndView("redirect:/review/detail.do?num="+num);
+	}
+	
 }
