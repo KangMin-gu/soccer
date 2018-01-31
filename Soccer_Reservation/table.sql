@@ -9,7 +9,7 @@ create table field
 (num number primary key, 
 field_name varchar2(100), 
 field_addr varchar2(200), 
-field_mornig varchar2(200),
+field_morning varchar2(200),
 field_afternoon varchar2(200),
 field_night varchar2(200)
 );

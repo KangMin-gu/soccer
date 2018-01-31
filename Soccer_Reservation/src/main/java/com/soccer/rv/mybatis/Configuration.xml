@@ -13,6 +13,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	<mappers>
 		<mapper resource="com/soccer/rv/mybatis/UsersMapper.xml"/>
 		<mapper resource="com/soccer/rv/mybatis/FieldMapper.xml"/>
+		<mapper resource="com/soccer/rv/mybatis/ReservationMapper.xml"/>
 	</mappers>	
 	
 </configuration>

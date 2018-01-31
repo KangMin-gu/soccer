@@ -1,6 +1,5 @@
 package com.soccer.rv.users.controller;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -16,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.soccer.rv.field.dto.FieldDto;
 import com.soccer.rv.position.dto.PositionDto;
 import com.soccer.rv.users.dto.UsersDto;
 import com.soccer.rv.users.service.UsersService;
@@ -136,10 +136,6 @@ public class UsersController {
 		return positions;
 	}
 	
-	@RequestMapping("/users/rv")
-	public String rv(){
-		return "users/rv";
-	}
 }
 
 
