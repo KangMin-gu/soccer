@@ -8,7 +8,7 @@
 	</insert>
 	
 	<select id="getData" parameterType="int" >
-		select * 
+		select rUser,rAddr,rTime,phone01,phone02,addr1,addr2,addr3,userNumber,orgName,etc
 		from reservation_form 
 		where rUser=#{rUser}
 	</select>
@@ -23,4 +23,11 @@
 		DELETE FROM reservation_form
 		WHERE rUser=#{rUser}
 	</delete>
+	
+	<update id="update" parameterType="int">
+		UPDATE reservation_form
+		SET phone01=#{phone01}, phone02=#{phone02},
+		addr1=#{addr1}, addr2=#{addr2}, addr3=#{addr3}, userNumber=#{userNumber}, orgName=#{orgName}, etc=#{etc}
+		WHERE rUser=#{rUser}
+	</update>
 </mapper>

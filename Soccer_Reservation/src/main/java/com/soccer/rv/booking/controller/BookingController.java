@@ -58,13 +58,42 @@ public class BookingController {
 	
 	//예약 목록 삭제 요청 처리
 	@RequestMapping("/booking/booking_delete")
-	public String booking_delete(@RequestParam int num){
+	public String bookingDelete(@RequestParam int num){
 		
 		bookingservice.delete(num);
 		
 		return "redirect:/booking/booking_list.do";
 	}
 	
+	//예약 수정 요청 처리
+	@RequestMapping("/booking/booking_updateform")
+	public ModelAndView bookingUpdateForm(@RequestParam int num){
+		
+		ModelAndView mView = bookingservice.getData(num);
+		mView.setViewName("booking/booking_updateform");
+		return mView;
+	}
+	
+	//예약 수정 반영 요청처리
+	@RequestMapping("/booking/booking_update")
+	public ModelAndView bookingUpdate(@ModelAttribute BookingDto dto){
+		
+		ModelAndView mView = bookingservice.update(dto);
+		
+		mView.setViewName("booking/booking_alert");
+		return mView;
+	}
+	
+	//예약 목록 자세히 보기 요청 처리
+	@RequestMapping("/booking/booking_detail")
+	public ModelAndView bookingDetail(@RequestParam int num){
+		
+		ModelAndView mView = bookingservice.getData(num);
+		
+		mView.setViewName("booking/booking_detail");
+		
+		return mView;
+	}
 	
 	
 	

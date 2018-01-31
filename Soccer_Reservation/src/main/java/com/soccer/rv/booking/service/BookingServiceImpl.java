@@ -30,8 +30,13 @@ public class BookingServiceImpl implements BookingService{
 
 	@Override
 	public ModelAndView update(BookingDto dto) {
-		// TODO Auto-generated method stub
-		return null;
+		bookingDao.update(dto);
+		
+		ModelAndView mView = new ModelAndView();
+		
+		mView.addObject("msg","예약정보를 수정했습니다.");
+		
+		return mView;
 	}
 
 	@Override
