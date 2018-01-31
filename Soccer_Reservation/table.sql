@@ -5,6 +5,19 @@ pwd varchar2(100),
 email varchar2(200), 
 phone varchar2(200), 
 addr varchar2(200), 
+detailaddr varchar2(200),
 findquestion varchar2(200), 
 findAnswer varchar2(200), 
 regdate date)
+
+create table review 
+(num NUMBER PRIMARY KEY,
+writer VARCHAR2(50),
+title VARCHAR2(50), 
+content CLOB,
+regdate date,
+viewCount NUMBER
+);
+
+create sequence review_seq;
+
