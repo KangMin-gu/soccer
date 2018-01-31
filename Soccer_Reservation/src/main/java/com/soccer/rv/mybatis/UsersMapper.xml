@@ -28,6 +28,6 @@
 </select>
 
 <select id="map" parameterType="usersDto" resultType="usersDto">
-	select addr from users where id=#{id}
+	select * from users where id=#{id}
 </select>
 </mapper>

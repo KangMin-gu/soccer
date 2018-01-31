@@ -14,21 +14,28 @@
     </style>
 </head>
 <h3> 나의 위치와 운동장위치 </h3>
+<p>나의 주소는 ${addr }</p>
+<p> ${lat }</p>
+<p> ${lng }</p>
 <div id="map"></div>
 <script src="${pageContext.request.contextPath}/resources/js/jquery-3.2.1.js"></script>
 <script type="text/javascript">
 
 // 페이지 로딩시 구글맵 센터 좌표 	
 	function initMap() {
-		  
-		var lat = 37.597218;
-		var lng = 126.949743;
-	    var uluru = { lat: lat, lng: lng};
+		var lat =  parseFloat("${lat }"); //jquery와 jstl이 충돌나서 String으로 넣은후 원래 타입인 parseFloat으로 형변환.
+		var lng =  parseFloat("${lng }");
+	    var myLocation = { lat : lat, lng : lng };
 	    var map = new google.maps.Map(document.getElementById('map'), {
 	      zoom: 14,
-	      center: uluru
+	      center: myLocation
 	    });
-	   
+	    
+	   	var marker = new google.maps.Marker({
+	   		position : myLocation,
+	   		map: map
+	   	});
+	   	
 	    setMarkers(map);
 	}
 	

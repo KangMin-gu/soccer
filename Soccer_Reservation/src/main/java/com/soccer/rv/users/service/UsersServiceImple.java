@@ -92,20 +92,19 @@ public class UsersServiceImple implements UsersService{
 		return mView;
 	}
 	
-	// 주소를 좌표로 변경해주는 메소드
-
+	//user 정보에 저장되어 있는 주소를 좌표로 변환하는 메소
 	@Override
 	public ModelAndView map(String id) {
 		
 		UsersDto dto = dao.getMap(id);
 		
 		String location = dto.getAddr(); // DB에서 받은 주소를 location에 담는다.
-		
+		System.out.println(location);
 		ModelAndView mView = new ModelAndView();
 		Geocoder geocoder = new Geocoder(); //Geocoder 구글 API 객체 생
 		
 		GeocoderRequest geocoderRequest = new GeocoderRequestBuilder() 
-				.setAddress(location).setLanguage("ko").getGeocoderRequest(); //주소를 좌표로 변경해주는 구글 url을 주소를 java 언어로 표현.
+				.setAddress(location).setLanguage("ko").getGeocoderRequest(); //주소를 좌표로 변경해주는 구글 url 명령어 주소를 java api명령어로 표현.
 		try {
 			GeocodeResponse geocoderResponse = geocoder.geocode(geocoderRequest);
 			GeocoderResult geocoderResult=geocoderResponse.getResults().iterator().next();
@@ -113,11 +112,10 @@ public class UsersServiceImple implements UsersService{
 			Float[] coords = new Float[2]; //Float 타입의 배열에 담는다.
 			coords[0] = latitudeLongitude.getLat().floatValue(); //json형식의 좌표값을 불러온다.
 			coords[1] = latitudeLongitude.getLng().floatValue();
-			String lat = Float.toString(coords[0]); // double 타입을 String 타입으로 형변환 하여 담는다.
-			String lng = Float.toString(coords[1]);
 
-			mView.addObject("lat", lat); //구글 map API에 좌표값을 넣기위해 view로 정보를 담아 보낸다.
-			mView.addObject("lng", lng);
+			mView.addObject("lat", coords[0]); //구글 map API에 좌표값을 넣기위해 view로 정보를 담아 보낸다.
+			mView.addObject("lng", coords[1]);
+			System.out.println("좌표"+coords[0]+coords[1]);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

@@ -25,6 +25,7 @@ public class UsersController {
 	
 	@Autowired
 	private UsersService service;
+	
 	//회원가입 폼으로 이동 
 	@RequestMapping("/users/signupform")
 	public String signupform (){
@@ -118,36 +119,24 @@ public class UsersController {
 		return map;
 	}
 	//나의 주소로 구글맵 연동
-	@RequestMapping("/users/mymap")
-	public ModelAndView map(HttpSession session){
+//	@RequestMapping("/users/mymap")
+//	public ModelAndView map(HttpSession session){
+//		String id = (String)session.getAttribute("id");
+//		ModelAndView mView = service.map(id);
+//		mView.setViewName("users/mymap");
+//		return mView;
+//	}
+	
+	//운동장주소와 나의 주소 위치 호출 구글맵 연동
+	@RequestMapping("/users/fieldlist")
+	public ModelAndView fieldList(HttpSession session){
 		String id = (String)session.getAttribute("id");
 		ModelAndView mView = service.map(id);
-		mView.setViewName("users/mymap");
+		mView.setViewName("users/fieldlist");
 		return mView;
 	}
 	
-	//운동장주소와 구글맵 연동
-	@RequestMapping("/users/fieldlist")
-	public String fieldList(){
-		//ModelAndView mView = service.fieldList();
-		//mView.setViewName("users/fieldlist");
-		return "users/fieldlist";
-	}
-	
-	@RequestMapping("/users/testmap")
-	public ModelAndView testmap(){
-		ModelAndView mView = new ModelAndView();
-		mView.setViewName("users/testmap");
-		return mView;
-	}
-	
-	@RequestMapping("/users/testmap2")
-	public ModelAndView testmap2(){
-		ModelAndView mView = new ModelAndView();
-		mView.setViewName("users/testmap2");
-		return mView;
-	}
-	
+	//ajax 모든 운동장 좌표 DB에서 호출
 	@RequestMapping("/users/fieldPosition")
 	@ResponseBody
 	public List<PositionDto> fieldPosition(){
