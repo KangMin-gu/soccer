@@ -17,7 +17,8 @@
 <div id="map"></div>
 <script src="${pageContext.request.contextPath}/resources/js/jquery-3.2.1.js"></script>
 <script type="text/javascript">
-	
+
+// 페이지 로딩시 구글맵 센터 좌표 	
 	function initMap() {
 		  
 		var lat = 37.597218;
@@ -32,8 +33,8 @@
 	}
 	
 		
-  var icon="http://maps.google.com/mapfiles/kml/pal2/icon57.png";
-  
+  var icon="http://maps.google.com/mapfiles/kml/pal2/icon57.png"; //축구장 아이콘 이미지 웹호출
+  //ajax 구글 운동장 DB 호출
 	function setMarkers(map){	
 		$.ajax({
 			url:"fieldPosition.do",
@@ -43,7 +44,7 @@
 				
 				var marker, i;
 				var infowindow = new google.maps.InfoWindow();
-				
+			//구글 맵 마커 등록	
 				for(var i = 0; i< data.length; i++){
 		      		var latlng = data[i];
 		      		var marker = new google.maps.Marker({
@@ -51,7 +52,7 @@
 		      			map: map,
 		      			icon: icon
 		      		});
-		      	
+		      	//구글 맵 마커 클릭시 운동장 이름 호출
 					google.maps.event.addListener(marker, 'click', (function(marker, i){
 						return function(){
 							infowindow.setContent(data[i].title);
@@ -59,7 +60,7 @@
 						}
 					})(marker, i));
 		      		     		
-				}//반복	
+				}//반복문	
 			}
 		});
 	}
