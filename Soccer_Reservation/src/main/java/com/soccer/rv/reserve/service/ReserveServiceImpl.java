@@ -85,6 +85,72 @@ public class ReserveServiceImpl implements ReserveService {
 		return mView;
 	}
 
+	@Override
+	public ModelAndView detail(HttpServletRequest request) {
+		String keyword=request.getParameter("keyword");
+		String condition=request.getParameter("condition");
+		
+		ModelAndView mView= new ModelAndView();
+		
+		//검색 조건을 알려주기 위한 메시지
+		String msg= null;
+		
+		ReserveDto dto = new ReserveDto();
+		if(keyword != null){
+			if(condition.equals("rUser")){
+				dto.setrUser(keyword);
+				msg="키워드 :"+keyword+"에 대한 검색결과";
+			}else if(condition.equals("rAddr")){
+				dto.setrAddr(keyword);
+				msg="키워드 :" +keyword+"에 대한 검색결과";
+			}else if(condition.equals("rTime")){
+				dto.setrTime(keyword);
+				msg="키워드:" +keyword+"에 대한 검색결과";
+				
+			}
+			
+			mView.addObject("condition", condition);
+			mView.addObject("keyword", keyword);
+			mView.addObject("msg",msg);
+		}
+		
+		int num=Integer.parseInt(request.getParameter("num"));
+		dto.setNum(num);
+		
+		ReserveDto resultDto=reservedao.getData(dto);
+		mView.addObject("dto", resultDto);
+		
+		return mView;
+		
+		
+	}
+
 
 	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

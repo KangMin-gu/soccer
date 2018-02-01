@@ -10,4 +10,5 @@ import com.soccer.rv.reserve.dto.ReserveDto;
 
 public interface ReserveService {
 	public ModelAndView getList(HttpServletRequest request);
+	public ModelAndView detail(HttpServletRequest request);
 }
