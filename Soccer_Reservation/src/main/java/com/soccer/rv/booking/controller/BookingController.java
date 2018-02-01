@@ -46,11 +46,11 @@ public class BookingController {
 		}
 	
 	//예약 목록 요청처리
-	@RequestMapping("/booking/booking_list")
+	@RequestMapping("/booking/b_list")
 	public ModelAndView bookinglist(){
 		
 		ModelAndView mView = bookingservice.getlist();
-		mView.setViewName("booking/booking_list");
+		mView.setViewName("booking/b_list");
 		return mView;
 	}
 	

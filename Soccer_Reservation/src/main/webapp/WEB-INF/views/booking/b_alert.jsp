@@ -10,7 +10,7 @@
 <body>
 <script>
 alert("${msg}");
-location.href="${pageContext.request.contextPath }/booking/booking_list.do";
+location.href="${pageContext.request.contextPath }/booking/b_list.do";
 </script>
 </body>
 </html>

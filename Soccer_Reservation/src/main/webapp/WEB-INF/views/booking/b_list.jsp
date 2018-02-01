@@ -12,29 +12,36 @@
 </head>
 <body>
 <div class="container">
-	<h3>예약목록</h3>
+	<h3>관리자 페이지</h3>
+	<p>예약 목록</p>
 	<table class="table">
 		<thead>
 			<tr>
 				<th>목록번호</th>
-				<th>예약자</th>
-				<th>예약장소</th>
+				<th>운동장 이름</th>
+				<th>오전 타임</th>
+				<th>점심타임</th>
+				<th>저녁타임</th>
 				<th>예약시간</th>
-				<th>예약인원</th>
-				<th>단체명</th>
-				<th>삭제</th>
-				<th>수정</th>
+				<th>팀명</th>
+				<th>팀인원</th>
+				<th>전화번호</th>
+				<th>기타입력사항</th>
 			</tr> 
 		</thead>
 		<tbody>
 			<c:forEach var="tmp" items="${list }">
 				<tr>
 					<td>${tmp.num }</td>
-					<td>${tmp.rUser }</td>
-					<td><a href="booking_detail.do?num=${tmp.num }">${tmp.rAddr }</a></td>
-					<td>${tmp.rTime }</td>
-					<td>${tmp.userNumber }</td>
-					<td>${tmp.orgName }</td>
+					<td>${tmp.playgroundname }</td>
+					<td>${tmp.field_m_tname }</td>
+					<td>${tmp.field_a_tname }</td>
+					<td>${tmp.field_n_tname }</td>
+					<td>${tmp.rv_date}</td>
+					<td>${tmp.teamname  }</td>
+					<td>${tmp.teamnumber }</td>
+					<td>${tmp.phone }</td>
+					<td>${tmp.etc }</td>
 					<td><a href="booking_delete.do?num=${tmp.num }">삭제</a></td>
 					<td><a href="booking_updateform?num=${tmp.num }">수정</a></td>
 				</tr>

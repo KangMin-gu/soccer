@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="join">
+	<select id="getList" resultType="bookingDto">
+		SELECT num, playgroundname, field_m_tname, field_a_tname, field_n_tname, rv_date, teamname, teamnumber, phone, etc
+		FROM order_data D ,order_etc E
+		WHERE D.num = E.num
+	</select>
+</mapper>

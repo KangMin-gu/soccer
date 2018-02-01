@@ -14,6 +14,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<mapper resource="com/soccer/rv/mybatis/UsersMapper.xml"/>
 		<mapper resource="com/soccer/rv/mybatis/OrderDataMapper.xml"/>
 		<mapper resource="com/soccer/rv/mybatis/OrderEtcMapper.xml"/>
+		<mapper resource="com/soccer/rv/mybatis/JoinMapper.xml"/>
 	</mappers>	
 	
 </configuration>

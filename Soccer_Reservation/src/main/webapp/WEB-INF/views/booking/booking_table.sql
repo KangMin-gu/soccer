@@ -1,8 +1,11 @@
 
 
 
+
 --시퀀스
 CREATE SEQUENCE order_data_seq;
+
+CREATE SEQUENCE order_etc_seq;
 
 
 
@@ -19,6 +22,7 @@ rv_date VARCHAR2(200) -- 원하는 시간
 
 --테이블02 (예약자(로그인회원)의 DB )
 CREATE TABLE order_etc(
+num NUMBER PRIMARY KEY,
 teamname VARCHAR2(200), -- 팀명
 teamnumber VARCHAR2(50), -- 팀인원
 phone VARCHAR2(20), -- 전화번호

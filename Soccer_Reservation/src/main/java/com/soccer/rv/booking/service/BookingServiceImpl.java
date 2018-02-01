@@ -33,6 +33,15 @@ public class BookingServiceImpl implements BookingService{
 		mView.addObject("msg","예약완료되었습니다.");
 		return mView;
 	}
+	
+	@Override
+	public ModelAndView getlist() {
+		List<BookingDto> list= bookingDao.getList();
+		
+		ModelAndView mView = new ModelAndView();
+		mView.addObject("list",list);
+		return mView;
+	}
 
 	@Override
 	public ModelAndView update(BookingDto dto) {
@@ -52,14 +61,7 @@ public class BookingServiceImpl implements BookingService{
 		
 	}
 
-	@Override
-	public ModelAndView getlist() {
-		List<BookingDto> list= bookingDao.getList();
-		
-		ModelAndView mView = new ModelAndView();
-		mView.addObject("list",list);
-		return mView;
-	}
+	
 
 	@Override
 	public ModelAndView getData(int num) {

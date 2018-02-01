@@ -3,7 +3,7 @@
 <mapper namespace="orderetc">
 	<insert id="insert" parameterType="bookingDto">
 		INSERT INTO order_etc
-		VALUES( #{teamname}, #{teamnumber}, #{phone}, #{etc})
+		VALUES(order_etc_seq.NEXTVAL, #{teamname}, #{teamnumber}, #{phone}, #{etc})
 	</insert>
 
 </mapper>
