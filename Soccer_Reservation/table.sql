@@ -21,3 +21,13 @@ viewCount NUMBER
 
 create sequence review_seq;
 
+
+create table board_review_comment
+(num NUMBER NOT NULL, 
+writer VARCHAR2(100),
+content VARCHAR2(500),
+target_id VARCHAR2(100),
+ref_group NUMBER,
+content_group NUMBER, 
+regdate date
+)
