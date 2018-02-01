@@ -85,11 +85,11 @@
 		              <span class="caret"></span>
 		            </button>
 		            <ul class="dropdown-menu">
-		              <li><a href="javascript:set('rUser')">운동장</a>
+		              <li><a href="javascript:set('rUser')">신청인</a>
 		              </li>
-		              <li><a href="javascript:set('rAddr')"></a>
+		              <li><a href="javascript:set('rAddr')">운동장</a>
 		              </li>
-		              <li><a href="javascript:set('rTime')">작성자</a>
+		              <li><a href="javascript:set('rTime')">대여시간</a>
 		              </li>
 		            </ul>
 		          </div>
@@ -106,10 +106,8 @@
 		</div>
 	</div>
 
-	<script src="${pageContext.request.contextPath }/resources/js/bootstrap.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/js/jquery-3.2.1.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/resources/js/jquery.min.js"></script>
+<script src="${pageContext.request.contextPath }/resources/js/jquery-3.2.1.js"></script>
+<script src="${pageContext.request.contextPath }/resources/js/bootstrap.js"></script>
 		
 		
 		
@@ -119,11 +117,11 @@
 		function set(condition){
 			if(condition=="rUser" || condition==""){
 				condition="rUser";
-				$("#conditionBtn").text("제목+파일명");
+				$("#conditionBtn").text("신청인");
 			}else if(condition=="rAddr"){
-				$("#conditionBtn").text("제목");
+				$("#conditionBtn").text("운동장");
 			}else if(condition=="rTime"){
-				$("#conditionBtn").text("작성자");
+				$("#conditionBtn").text("대여시간");
 			}
 			$("#condition").val(condition);
 		}

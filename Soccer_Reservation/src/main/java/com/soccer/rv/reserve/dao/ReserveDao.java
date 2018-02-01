@@ -8,4 +8,5 @@ public interface ReserveDao {
 	
 	public List<ReserveDto> getList(ReserveDto dto);
 	public int getCount(ReserveDto dto);
+	public ReserveDto getData(ReserveDto dto);
 }

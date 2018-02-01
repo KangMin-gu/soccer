@@ -29,6 +29,11 @@ public class ReserveController {
 		return mView;
 	}
 	
+	public ModelAndView detail(HttpServletRequest request){
+		ModelAndView mView=service;
+		return null;
+	}
+	
 //	ajax할때 받아오는 Controller
 //	@RequestMapping("/reservation/getList")
 //	@ResponseBody
