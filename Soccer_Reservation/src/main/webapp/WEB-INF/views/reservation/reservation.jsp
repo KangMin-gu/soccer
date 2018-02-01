@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>     
+    <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+     
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,22 +10,37 @@
 </head>
 <body>
 <h3>reservation 페이지</h3>
-<button id="getList">버튼</button>
-	<table>
-		<th>
-			<th>사용자</th>
-			<th>축구장</th>
-			<th>시간</th>
-		</th>
+<!--<button id="getList">버튼</button>  -->
+
+
+
+<table class="table table-bordered table-condensed">
+		<thead>
+			<tr>
+				<th>사용자</th>
+				<th>축구장</th>
+				<th>시간</th>
+			</tr>
+		</thead>
 		<tbody>
-			<tr></tr>
+			<c:forEach var="tmp" items="${list}">
+				<tr>
+					<td>${tmp.rUser }</td>
+					<td>${tmp.rAddr }</td>
+					<td>${tmp.rTime}</td>
+				</tr>
+			</c:forEach>
 		</tbody>
 	</table>
+	
 	<script src="${pageContext.request.contextPath}/resources/js/jquery-3.2.1.js"></script>
 	<script
 		src="${pageContext.request.contextPath}/resources/js/jquery.min.js"></script>
 		<script>
-		$("#getList").click(function(){
+		
+		 
+		/*
+		ajax로 list 뿌려주는거
 			$.ajax({
 				
 				url:"getList.do",
@@ -42,7 +58,8 @@
 					}
 				}
 			});
-		});
-		</script>
+	*/
+	</script>
+		
 </body>
 </html>

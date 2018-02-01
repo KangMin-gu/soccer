@@ -18,12 +18,12 @@ public class ReserveServiceImpl implements ReserveService {
 	private ReserveDao reservedao;
 
 	@Override
-	public List<ReserveDto> list() {
+	public ModelAndView getList() {
 		List<ReserveDto> list = reservedao.getList();
-		for(ReserveDto tmp : list){
-			System.out.println(tmp.getrAddr());
-		}
-		return list;
+		ModelAndView mView= new ModelAndView();
+		
+		mView.addObject("list",list);
+		return mView;
 	}
 	
 }

@@ -21,16 +21,20 @@ public class ReserveController {
 	private ReserveService service;
 	
 	@RequestMapping("/reservation/reservation")
-	public String PageMove(){
+	public ModelAndView list(){
 		
-		return "reservation/reservation";
+		ModelAndView mView=service.getList();
+		
+		mView.setViewName("reservation/reservation");
+		return mView;
 	}
 	
-	@RequestMapping("/reservation/getList")
-	@ResponseBody
-	public List<ReserveDto> list(){
-		List<ReserveDto> list= service.list();
-		System.out.println(list+"controller");
-			return list; 
-	}
+//	ajax할때 받아오는 Controller
+//	@RequestMapping("/reservation/getList")
+//	@ResponseBody
+//	public List<ReserveDto> list(){
+//		List<ReserveDto> list= service.list();
+//		System.out.println(list+"controller");
+//			return list; 
+//	}
 }
