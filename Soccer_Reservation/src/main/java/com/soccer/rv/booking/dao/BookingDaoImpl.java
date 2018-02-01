@@ -31,7 +31,7 @@ public class BookingDaoImpl implements BookingDao{
 
 	@Override
 	public void delete(int num) {
-		session.delete("booking.delete",num);
+		session.delete("orderdata.delete",num);
 		
 	}
 

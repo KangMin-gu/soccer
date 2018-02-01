@@ -13,6 +13,7 @@
 <body>
 <div class="container">
 	<h3>관리자 페이지</h3>
+	<p>${id }</p>
 	<p>예약 목록</p>
 	<table class="table">
 		<thead>
@@ -25,6 +26,8 @@
 				<th>팀인원</th>
 				<th>전화번호</th>
 				<th>기타입력사항</th>
+				<th>수정</th>
+				<th>삭제</th>
 			</tr> 
 		</thead>
 		<tbody>
@@ -38,8 +41,10 @@
 					<td>${tmp.teamnumber }</td>
 					<td>${tmp.phone }</td>
 					<td>${tmp.etc }</td>
-					<td><a href="booking_delete.do?num=${tmp.num }">삭제</a></td>
-					<td><a href="booking_updateform?num=${tmp.num }">수정</a></td>
+					<c:if test="${ id eq 'admin' }">
+						<td><a class="btn btn-info" href="booking_updateform?num=${tmp.num }">수정</a></td>
+						<td><a class="btn btn-warning" href="javascript:deleteCheck()">삭제</a></td>
+					</c:if>	
 				</tr>
 			</c:forEach>
 		</tbody>
@@ -47,6 +52,12 @@
 	<a class="btn btn-primary" href="${pageContext.request.contextPath }/">Home 돌아가기</a>
 </div>
 <script>
+	function deleteCheck(){
+		var isDelete = confirm("${num} 정보를 삭제하시겠습니까?");
+		if(isDelete){
+			location.href="b_delete.do?num=${tmp.num }";
+		}
+	}
 </script>
 </body>
 </html>

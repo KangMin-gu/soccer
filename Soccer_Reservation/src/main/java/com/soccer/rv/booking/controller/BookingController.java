@@ -52,15 +52,17 @@ public class BookingController {
 	
 	//예약 목록 요청처리
 	@RequestMapping("/booking/b_list")
-	public ModelAndView bookinglist(){
+	public ModelAndView bookinglist(HttpSession session){
 		
+		String id =(String)session.getAttribute("id");
 		ModelAndView mView = bookingservice.getlist();
+		mView.addObject("id",id);
 		mView.setViewName("booking/b_list");
 		return mView;
 	}
 	
 	//예약 목록 삭제 요청 처리
-	@RequestMapping("/booking/booking_delete")
+	@RequestMapping("/booking/b_delete")
 	public String bookingDelete(@RequestParam int num){
 		
 		bookingservice.delete(num);

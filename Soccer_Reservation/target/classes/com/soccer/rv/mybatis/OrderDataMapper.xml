@@ -11,4 +11,8 @@
 		FROM order_data
 		ORDER BY num DESC
 	</select>
+	
+	<delete id="delete" parameterType="int">
+		DELETE FROM order_data WHERE num=#{num}
+	</delete>
 </mapper>
