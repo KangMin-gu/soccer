@@ -5,4 +5,10 @@
 	<select id="getData" parameterType="int" resultType="fieldDto">
 		 select * from field where num=#{num}
 	</select>
+	
+	<select id="getinfo" parameterType="resDto" resultType="reservationOrderDto">
+		select * from field_order  
+		where field_name=#{field_name} and field_date=#{field_date}
+	</select>
+	 
 </mapper>

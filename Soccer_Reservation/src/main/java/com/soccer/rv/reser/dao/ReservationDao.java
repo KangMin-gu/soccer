@@ -1,10 +1,12 @@
 package com.soccer.rv.reser.dao;
 
-import java.util.List;
+
 
 import com.soccer.rv.field.dto.FieldDto;
+import com.soccer.rv.reser.orderdto.ResDto;
+import com.soccer.rv.reser.orderdto.ReservationOrderDto;
 
 public interface ReservationDao {
-	public List<FieldDto> getList();
+	public ReservationOrderDto getinfo(ResDto rdto);
 	public FieldDto getData(int num);
 }

@@ -9,23 +9,97 @@
 </head>
 <body>
 <h3>해당 운동장의 정보 자세히보기 페이지입니다.</h3>
+
 <p>운동장 이름: <strong>${dto.field_name }</strong></p>
 <p>운동장 주소: <strong>${dto.field_addr }</strong></p>
-<p>입장 가능 시간</p>
-<p>오전: <strong>${dto.field_morning }</strong></p>
-<p>오전 대여팀 : <strong></strong></p>
-<p>오후: <strong>${dto.field_afternoon }</strong></p>
-<p>오 대여팀 : <strong></strong></p>
-<p>저녁: <strong>${dto.field_night }</strong></p>
-<p>저녁 대여 팀 : <strong></strong></p>
+
+<h3>예약 현황</h3>
+<form action="rv_form.do" method="POST">
+<input type="hidden" id="field_name" name="field_name" value="${dto.field_name }" /><br/>
+<label for="">날짜</label>
+<select name="rv_date" id="rv_date" >
+	<option value="">----날짜선택----</option>
+	<option value="2017-2-10">2017-2-10</option>
+	<option value="2017-2-11">2017-2-11</option>
+</select>
+<select name="rv_time" id="rv_time">
+	<option value="">---타임선택---</option>
+	<option value="${dto.field_morning}">오전</option>
+	<option value="${dto.field_afternoon }">오후</option>
+	<option value="${order.field_night }">저녁</option>
+</select>
+<button type="submit">예약하기</button>
+</form>
+
+<p>오전 시간 : <strong>${dto.field_morning }</strong></p>
+
+ <c:choose>
+<c:when test="${not empty order.field_m_tname }">
+	<p>오전 대여팀 : <strong>${order.field_m_tname }</strong></p>	
+</c:when>
+<c:otherwise>
+	<p><strong>오전 예약 가능</strong></p>
+</c:otherwise>
+</c:choose>
+<br/>
+<p>오후 시간 : <strong>${dto.field_afternoon }</strong></p>
+
+<c:choose>
+<c:when test="${not empty order.field_a_tname }">
+	<p>오후 대여팀 : <strong>${order.field_a_tname }</strong></p>	
+</c:when>
+<c:otherwise>
+	<p><strong>오후 예약 가능</strong></p>
+</c:otherwise>
+</c:choose>
+<br/>
+<p>저녁 시간 : <strong>${dto.field_night }</strong></p>
+
+<c:choose>
+<c:when test="${not empty order.field_n_tname }">
+	<p>저녁 대여팀 : <strong>${order.field_n_tname }</strong></p>	
+</c:when>
+<c:otherwise>
+	<p><strong>저녁 예약 가능</strong></p>
+</c:otherwise>
+</c:choose>
+
+<br/>
+
 <a href="${pageContext.request.contextPath}/users/fieldlist.do">등록 주소의 주변 운동장 보러가기</a>
 <a href="${pageContext.request.contextPath}/">홈으로가기</a>
-<p> 
-오더테이블에서 해당 운동장 이름을 조인해서 해당 오더 정보를 가져온다.
-날짜별로선택 할때마다 대여팀이름이 바뀌어서 출력되어야한다. 
 
-내일 할일은 여기페이지에 날짜 선택 셀렉옵션폼을 만들고  아작스로 해당날짜를 선택할때마다 대여팀이 바뀌게쿼리를짜서 출력한다.
-오전과 대여팀은 if문을 활용해서 만약 날짜가 맞다면 출력 아니면 대여가능이라 표시한다. 일단 여기까지 머리굴림....
-</p>
 </body>
+<script src="${pageContext.request.contextPath}/resources/js/jquery-3.2.1.js"></script>
+<script>
+
+
+
+$("#rv_date").change(function(){
+	
+	var date = $("#rv_date").val();
+	
+	$.ajax({
+		url:"rvfieldinfo.do?field_name="+("${dto.field_name }")+"&field_date="+date,
+		method:"GET",
+		success:function(data){
+			console.log(data);
+		}
+	});
+	
+});
+
+</script>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+

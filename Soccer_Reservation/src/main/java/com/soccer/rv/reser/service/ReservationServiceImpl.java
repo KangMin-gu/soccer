@@ -8,6 +8,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.soccer.rv.field.dto.FieldDto;
 import com.soccer.rv.reser.dao.ReservationDao;
+import com.soccer.rv.reser.orderdto.ResDto;
+import com.soccer.rv.reser.orderdto.ReservationOrderDto;
 
 @Service
 public class ReservationServiceImpl implements ReservationService{
@@ -16,9 +18,17 @@ public class ReservationServiceImpl implements ReservationService{
 	private ReservationDao rvdao;
 	
 	@Override
-	public ModelAndView getList() {
-		// TODO Auto-generated method stub
-		return null;
+	public ReservationOrderDto getData(HttpServletRequest request) {
+		ModelAndView mView = new ModelAndView();
+		String field_name = (String)request.getParameter("field_name");
+		String field_date = (String)request.getParameter("field_date");
+		ResDto rdto = new ResDto(field_name, field_date);
+		System.out.println("d"+rdto.getField_date() + rdto.getField_name());
+		ReservationOrderDto order = rvdao.getinfo(rdto);
+		System.out.println("service"+order.getField_m_phone());
+		//ReservationOrderDto order2 = new ReservationOrderDto(num, field_name, field_m_tname, field_m_phone, field_a_tname, field_a_phone, field_n_tname, field_n_phone, field_date);
+		mView.addObject("order", order);
+		return order;
 	}
 
 	@Override
