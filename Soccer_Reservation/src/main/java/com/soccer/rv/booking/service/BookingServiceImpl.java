@@ -10,18 +10,24 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.soccer.rv.booking.dao.BookingDao;
+
 import com.soccer.rv.booking.dto.BookingDto;
+import com.soccer.rv.users.dto.UsersDto;
 
 @Service
 public class BookingServiceImpl implements BookingService{
 	
 	@Autowired
 	private BookingDao bookingDao;
+	
+
 
 	@Override
 	public ModelAndView insert(BookingDto dto) {
 		//예약정보 저장
 		bookingDao.insert(dto);
+		bookingDao.insert2(dto);
+		
 		
 		ModelAndView mView = new ModelAndView();
 		mView.addObject("msg","예약완료되었습니다.");
@@ -64,6 +70,9 @@ public class BookingServiceImpl implements BookingService{
 		mView.addObject("dto",dto);
 		return mView;
 	}
+
+	
+
 
 
 

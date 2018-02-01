@@ -23,7 +23,27 @@ public class BookingController {
 	@Autowired
 	private BookingService bookingservice;
 	
+	//예약 폼으로 이동
+	@RequestMapping("/booking/booking_insertform")
+	public ModelAndView bookingForm(HttpServletRequest request){
+		
+		HttpSession session = request.getSession();
+		String id =(String)session.getAttribute("id");
 	
+		ModelAndView mView = new ModelAndView();
+		mView.addObject("id",id);
+		mView.setViewName("booking/booking_insertform");
+		return mView;
+	}
+	
+	//예약목록 저장 처리
+		@RequestMapping("/booking/b_insert")
+		public ModelAndView bookingSignup(HttpServletRequest request, @ModelAttribute BookingDto dto) {
+			
+			ModelAndView mView = bookingservice.insert(dto);
+			mView.setViewName("booking/b_alert");
+			return mView;
+		}
 	
 	//예약 목록 요청처리
 	@RequestMapping("/booking/booking_list")
@@ -31,33 +51,6 @@ public class BookingController {
 		
 		ModelAndView mView = bookingservice.getlist();
 		mView.setViewName("booking/booking_list");
-		return mView;
-	}
-	
-	//예약 폼으로 이동
-	@RequestMapping("/booking/bookingform")
-	public ModelAndView bookingForm(HttpServletRequest request){
-		
-		HttpSession session = request.getSession();
-		String id =(String)session.getAttribute("id");
-		
-	
-		ModelAndView mView = new ModelAndView();
-		mView.addObject("id",id);
-		mView.setViewName("booking/bookingform");
-		
-		return mView;
-	}
-	
-	
-	//예약목록 저장 처리
-	@RequestMapping("/booking/booking_insert")
-	public ModelAndView bookingSignup(HttpServletRequest request, @ModelAttribute BookingDto dto) {
-		
-		ModelAndView mView = bookingservice.insert(dto);
-		
-		mView.setViewName("booking/booking_alert");
-		
 		return mView;
 	}
 	
@@ -84,7 +77,6 @@ public class BookingController {
 	public ModelAndView bookingUpdate(@ModelAttribute BookingDto dto){
 		
 		ModelAndView mView = bookingservice.update(dto);
-		
 		mView.setViewName("booking/booking_alert");
 		return mView;
 	}
@@ -92,13 +84,13 @@ public class BookingController {
 	//예약 목록 자세히 보기 요청 처리
 	@RequestMapping("/booking/booking_detail")
 	public ModelAndView bookingDetail(HttpServletRequest request,@RequestParam int num){
+		
 		HttpSession session = request.getSession();
 		String id = (String)session.getAttribute("id");
 	
 		ModelAndView mView = bookingservice.getData(num);
 		mView.addObject("id",id);
 		mView.setViewName("booking/booking_detail");
-		
 		return mView;
 	}
 	

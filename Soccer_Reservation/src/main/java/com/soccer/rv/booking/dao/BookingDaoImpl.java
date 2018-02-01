@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.soccer.rv.booking.dto.BookingDto;
+import com.soccer.rv.users.dto.UsersDto;
 
 @Repository
 public class BookingDaoImpl implements BookingDao{
@@ -17,7 +18,13 @@ public class BookingDaoImpl implements BookingDao{
 
 	@Override
 	public void insert(BookingDto dto) {
-		session.insert("booking.insert",dto);
+		session.insert("orderdata.insert",dto);
+		
+	}
+	
+	@Override
+	public void insert2(BookingDto dto) {
+		session.insert("orderetc.insert",dto);
 		
 	}
 
@@ -45,6 +52,10 @@ public class BookingDaoImpl implements BookingDao{
 		return list;
 	}
 
+
+
+	
+	
 
 
 

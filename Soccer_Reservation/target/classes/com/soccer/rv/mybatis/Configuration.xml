@@ -12,7 +12,8 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	<!-- sql 문을 정의하고 있는 xml 문서 -->
 	<mappers>
 		<mapper resource="com/soccer/rv/mybatis/UsersMapper.xml"/>
-		<mapper resource="com/soccer/rv/mybatis/BookingMapper.xml"/>
+		<mapper resource="com/soccer/rv/mybatis/OrderDataMapper.xml"/>
+		<mapper resource="com/soccer/rv/mybatis/OrderEtcMapper.xml"/>
 	</mappers>	
 	
 </configuration>

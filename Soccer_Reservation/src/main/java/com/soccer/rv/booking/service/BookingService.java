@@ -7,6 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 
 import com.soccer.rv.booking.dto.BookingDto;
+import com.soccer.rv.users.dto.UsersDto;
 
 
 public interface BookingService {
@@ -15,6 +16,8 @@ public interface BookingService {
 	public void delete(int num);
 	public ModelAndView getlist();
 	public ModelAndView getData(int num);
+
+	
 
 
 	
