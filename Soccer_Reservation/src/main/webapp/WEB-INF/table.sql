@@ -1,5 +1,6 @@
 CREATE TABLE reservation_form(
-rUser VARCHAR2(20) PRIMARY KEY,
+num number primary key,
+rUser VARCHAR2(20),
 rAddr VARCHAR2(100),
 rTime VARCHAR2(100),
 phone01 NUMBER,
@@ -13,3 +14,9 @@ etc CLOB
 );
 
 CREATE SEQUENCE reservation_form_seq;
+
+alter table reservation_form ADD(num number primary key );
+
+alter table reservation_form ADD(rUser VARCHAR2(50) );
+
+alter table reservation_form DROP(rUser);
