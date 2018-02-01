@@ -9,5 +9,5 @@ import org.springframework.web.servlet.ModelAndView;
 import com.soccer.rv.reserve.dto.ReserveDto;
 
 public interface ReserveService {
-	public ModelAndView getList();
+	public ModelAndView getList(HttpServletRequest request);
 }

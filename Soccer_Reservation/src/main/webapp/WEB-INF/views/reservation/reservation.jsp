@@ -76,7 +76,7 @@
 	<div class="row">
 		<div class="col-xs-6">
 			<!-- 검색어 관련 form -->
-			<form action="reserve.do" method="post">
+			<form action="reservation.do" method="post">
 				<input type="hidden" id="condition" value="${condition }" name="condition" />
 		        <div class="input-group">
 		          <div class="input-group-btn">
@@ -85,11 +85,11 @@
 		              <span class="caret"></span>
 		            </button>
 		            <ul class="dropdown-menu">
-		              <li><a href="javascript:set('titlecontent')">운동장</a>
+		              <li><a href="javascript:set('rUser')">운동장</a>
 		              </li>
-		              <li><a href="javascript:set('title')"></a>
+		              <li><a href="javascript:set('rAddr')"></a>
 		              </li>
-		              <li><a href="javascript:set('writer')">작성자</a>
+		              <li><a href="javascript:set('rTime')">작성자</a>
 		              </li>
 		            </ul>
 		          </div>
@@ -117,12 +117,12 @@
 		set("${condition}");
 		
 		function set(condition){
-			if(condition=="titlecontent" || condition==""){
-				condition="titlecontent";
+			if(condition=="rUser" || condition==""){
+				condition="rUser";
 				$("#conditionBtn").text("제목+파일명");
-			}else if(condition=="title"){
+			}else if(condition=="rAddr"){
 				$("#conditionBtn").text("제목");
-			}else if(condition=="writer"){
+			}else if(condition=="rTime"){
 				$("#conditionBtn").text("작성자");
 			}
 			$("#condition").val(condition);

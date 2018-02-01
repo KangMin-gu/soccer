@@ -21,9 +21,9 @@ public class ReserveController {
 	private ReserveService service;
 	
 	@RequestMapping("/reservation/reservation")
-	public ModelAndView list(){
+	public ModelAndView list(HttpServletRequest request){
 		
-		ModelAndView mView=service.getList();
+		ModelAndView mView=service.getList(request);
 		
 		mView.setViewName("reservation/reservation");
 		return mView;

@@ -1,10 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="reserve">
+	<sql id="reserveColumns">
+		num, rUser, rAddr, rTime
+	</sql>
+
 	<select id="getList" resultType="reserveDto">
 		SELECT *
-		FROM reservation_form 
+		FROM (SELECT result1.*,ROWNUM rnum
+		FROM (SELECT
+		<include refid="reserveColumns" />
+		FROM reservation_form
+		<where>
+			<if test="rUser != null">
+				OR rUser LIKE '%'||#{rUser}||'%'
+			</if>
+			<if test="rAddr != null">
+				OR rAddr LIKE '%'||#{rAddr}||'%'
+			</if>
+			<if test="rTime != null">
+				OR rTime LIKE '%'||#{rTime}||'%'
+			</if>
+		</where>
+		ORDER BY num DESC) result1
+		)
+		WHERE rnum BETWEEN #{startRowNum} AND #{endRowNum}
+
 	</select>
-	
-	
+
+
+
+
+
+
+	<select id="getCount" parameterType="reserveDto" resultType="int">
+		SELECT NVL(MAX(ROWNUM), 0)
+		FROM reservation_form
+		<where>
+			<if test="rUser != null">
+				OR rUser LIKE '%'||#{rUser}||'%'
+			</if>
+			<if test="rAddr != null">
+				OR rAddr LIKE '%'||#{rAddr}||'%'
+			</if>
+			<if test="rTime != null">
+				OR rTime LIKE '%'||#{rTime}||'%'
+			</if>
+		</where>
+	</select>
 </mapper>

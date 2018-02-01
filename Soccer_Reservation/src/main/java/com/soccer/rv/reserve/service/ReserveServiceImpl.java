@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.gura.step04.cafe.dto.CafeDto;
+
 import com.soccer.rv.reserve.dao.ReserveDao;
 import com.soccer.rv.reserve.dto.ReserveDto;
 
@@ -34,7 +34,7 @@ public class ReserveServiceImpl implements ReserveService {
 		ReserveDto dto = new ReserveDto();
 		if(keyword !=null){
 			if(condition.equals("titlecontent")){
-				dto.setrAddr(rAddr);
+				dto.setrAddr(keyword);
 			}else if(condition.equals("title")){
 				dto.setAddr1(keyword);
 			}else if(condition.equals("writer")){
@@ -84,5 +84,7 @@ public class ReserveServiceImpl implements ReserveService {
 				mView.addObject("totalPageCount", totalPageCount);
 		return mView;
 	}
+
+
 	
 }

@@ -6,6 +6,6 @@ import com.soccer.rv.reserve.dto.ReserveDto;
 
 public interface ReserveDao {
 	
-	public List<ReserveDto> getList();
+	public List<ReserveDto> getList(ReserveDto dto);
 	public int getCount(ReserveDto dto);
 }

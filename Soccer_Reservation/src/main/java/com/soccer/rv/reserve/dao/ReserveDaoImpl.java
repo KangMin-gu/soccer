@@ -15,11 +15,11 @@ public class ReserveDaoImpl implements ReserveDao {
 	private SqlSession session;
 
 	@Override
-	public List<ReserveDto> getList() {
+	public List<ReserveDto> getList(ReserveDto dto) {
 		
-		List<ReserveDto> list = session.selectList("reserve.getList");
+		return session.selectList("reserve.getList", dto);
 		
-		return list;
+		
 	}
 
 	@Override
