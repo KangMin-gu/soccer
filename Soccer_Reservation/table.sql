@@ -30,4 +30,6 @@ target_id VARCHAR2(100),
 ref_group NUMBER,
 content_group NUMBER, 
 regdate date
-)
+);
+
+create sequence board_review_seq;
