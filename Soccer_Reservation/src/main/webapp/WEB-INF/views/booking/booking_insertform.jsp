@@ -15,7 +15,7 @@
 	<h3>예약 폼</h3>
 	<form action="b_insert.do" method="post">
 		<table class="table">
-			<caption>예약시간 목록, 예약금액 목록</caption>
+			<caption>예약 정보</caption>
 			<colgroup>
 				<col width="20%" />
 				<col />
@@ -23,19 +23,19 @@
 			<tbody>
 				<tr>
 					<th scope="row"><label for="playgroundname">운동장이름</label></th>
-					<td><input type="text" name="playgroundname" id="playgroundname" /></td>
+					<td><input type="text" name="playgroundname" id="playgroundname" value="${playgroundname }"disabled/></td>
 				</tr>
 				<tr>
 					<th scope="row"><label for="field_rent">운동장 예약날짜</label></th>
-					<td><input type="text" name="field_rent" id="field_rent" /></td>
+					<td><input type="text" name="field_rent" id="field_rent" value="${field_rent }"disabled/></td>
 				</tr>
 				<tr>
 					<th scope="row"><label for="rv_date">운동장 예약시간</label></th>
-					<td><input type="text" name="rv_date" id="rv_date" /></td>
+					<td><input type="text" name="rv_date" id="rv_date" value="${rv_date }"disabled/></td>
 				</tr>
 				<tr>
 					<th scope="row"><label for="teamname">팀명</label></th>
-					<td><input type="text" name="teamname" id="teamname" value=""/><td>
+					<td><input type="text" name="teamname" id="teamname" /><td>
 				</tr>
 				<tr>
 					<th scope="row"><label for=" teamnumber">팀인원수</label></th>

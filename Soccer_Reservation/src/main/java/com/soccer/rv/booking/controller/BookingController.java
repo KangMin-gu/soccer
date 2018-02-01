@@ -27,8 +27,15 @@ public class BookingController {
 	@RequestMapping("/booking/booking_insertform")
 	public ModelAndView bookingForm(HttpServletRequest request){
 		
+		String playgroundname ="에이콘운동장";
+		String field_rent = "2018년 2월 27일";
+		String rv_date = "오전 11시 30분";
+		
 		HttpSession session = request.getSession();
 		ModelAndView mView = bookingservice.getData2(session);
+		mView.addObject("playgroundname",playgroundname);
+		mView.addObject("field_rent",field_rent);
+		mView.addObject("rv_date",rv_date);
 		mView.setViewName("booking/booking_insertform");
 		return mView;
 	}

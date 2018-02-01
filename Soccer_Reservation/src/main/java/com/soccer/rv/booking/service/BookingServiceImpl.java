@@ -77,7 +77,6 @@ public class BookingServiceImpl implements BookingService{
 		String id = (String) session.getAttribute("id");
 		UsersDto dto = bookingDao.getData2(id);
 		ModelAndView mView = new ModelAndView();
-		System.out.println(dto.getAddr());
 		mView.addObject("dto", dto);
 		return mView;
 	}
