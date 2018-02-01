@@ -56,6 +56,6 @@
 	<context:component-scan base-package="com.soccer.rv.users.*"/>
 	<context:component-scan base-package="com.soccer.rv.reserve.*"/>
 
-
+	<aop:aspectj-autoproxy/>
 
 </beans:beans>

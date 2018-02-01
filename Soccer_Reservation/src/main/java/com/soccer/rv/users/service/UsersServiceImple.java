@@ -33,9 +33,13 @@ public class UsersServiceImple implements UsersService{
 
 	@Override
 	public ModelAndView login(UsersDto dto, HttpServletRequest request) {
+		
 		boolean isValid = dao.isValid(dto);
+		
 		String url = request.getParameter("url");
+		
 		ModelAndView mView = new ModelAndView();
+		
 		if(isValid){
 			request.getSession().setAttribute("id", dto.getId());
 			mView.addObject("msg", dto.getId()+"님 환영합니다.");
@@ -63,9 +67,10 @@ public class UsersServiceImple implements UsersService{
 	public ModelAndView delete(HttpSession session) {
 		String id = (String)session.getAttribute("id");
 		dao.delete(id);
+		session.invalidate();
 		ModelAndView mView = new ModelAndView();
 		mView.addObject("id", id);
-		session.invalidate();
+		
 		return mView;
 	}
 
