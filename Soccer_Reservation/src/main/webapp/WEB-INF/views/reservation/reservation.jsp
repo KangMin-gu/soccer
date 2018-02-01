@@ -13,27 +13,66 @@
 <!--<button id="getList">버튼</button>  -->
 
 
-
+<div class="container">
 <table class="table table-bordered table-condensed">
-		<thead>
+	<thead>
+		<tr>
+			<th>번호</th>
+			<th>사용자</th>
+			<th>축구장</th>
+			<th>시간</th>
+		</tr>
+	</thead>
+	<tbody>
+		<c:forEach var="tmp" items="${list}">
 			<tr>
-				<th>번호</th>
-				<th>사용자</th>
-				<th>축구장</th>
-				<th>시간</th>
+				<td>${tmp.num }</td>
+				<td>${tmp.rUser }</td>
+				<td><a href="detail.do?num=${tmp.num }">${tmp.rAddr }</a></td>
+				<td>${tmp.rTime}</td>
 			</tr>
-		</thead>
-		<tbody>
-			<c:forEach var="tmp" items="${list}">
-				<tr>
-					<td>${tmp.num }</td>
-					<td>${tmp.rUser }</td>
-					<td><a href="detail.do?num=${tmp.num }">${tmp.rAddr }</a></td>
-					<td>${tmp.rTime}</td>
-				</tr>
-			</c:forEach>
-		</tbody>
-	</table>
+		</c:forEach>
+	</tbody>
+</table>
+<ul class="pagination">
+		<c:choose>
+			<c:when test="${startPageNum ne 1 }">
+				<li>
+					<a href="reservation.do?pageNum=${startPageNum-1 }&condition=${condition}&keyword=${keyword}">&laquo;</a>
+				</li>
+			</c:when>
+			<c:otherwise>
+				<li class="disabled">
+					<a href="javascript:">&laquo;</a>
+				</li>
+			</c:otherwise>
+		</c:choose>
+		<c:forEach var="i" begin="${startPageNum }" 
+				end="${endPageNum }">	
+			<c:choose>
+				<c:when test="${i eq pageNum }">
+					<li class="active"><a href="reservation.do?pageNum=${i }&condition=${condition}&keyword=${keyword}">${i }</a></li>
+				</c:when>
+				<c:otherwise>
+					<li><a href="reservation.do?pageNum=${i }&condition=${condition}&keyword=${keyword}">${i }</a></li>
+				</c:otherwise>
+			</c:choose>
+		</c:forEach>
+		<c:choose>
+			<c:when test="${endPageNum lt totalPageCount }">
+				<li>
+					<a href="reservation.do?pageNum=${endPageNum+1 }&condition=${condition}&keyword=${keyword}">&raquo;</a>
+				</li>
+			</c:when>
+			<c:otherwise>
+				<li class="disabled">
+					<a href="javascript:">&raquo;</a>
+				</li>
+			</c:otherwise>
+		</c:choose>
+	</ul>
+</div>
+
 	
 	<script src="${pageContext.request.contextPath}/resources/js/jquery-3.2.1.js"></script>
 	<script
