@@ -11,9 +11,9 @@ import com.soccer.rv.users.dto.UsersDto;
 
 public interface BookingDao {
 	public void insert(BookingDto dto);
-	public void insert2(BookingDto dto);
 	public void update(BookingDto dto);
 	public void delete(int num);
 	public BookingDto getData(int num);
 	public List<BookingDto> getList();
+	public UsersDto getData2(String id);
 }

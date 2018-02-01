@@ -21,45 +21,35 @@
 				<col />
 			</colgroup>
 			<tbody>
-			<tr>
-				<th scope="row"><label for="playgroundname">운동장이름</label></th>
-				<td><input type="text" name="playgroundname" id="playgroundname" /></td>
-			</tr>
-			<tr>
-				<th scope="row"><label for="field_m_tname">운동장 대여시간 (아침)</label></th>
-				<td><input type="text" name="field_m_tname" id="field_m_tname" /></td>
-			</tr>
-			<tr>
-				<th scope="row"><label for="field_a_tname">운동장 대여시간 (점심)</label></th>
-				<td><input type="text" name="field_a_tname" id="field_a_tname"/></td>
-			</tr>
-			<tr>
-				<th scope="row"><label for="field_n_tname">운동장 대여시간 (저녁)</label></th>
-				<td><input type="text" name="field_n_tname" id="field_n_tname"/></td>
-			</tr>
-			<tr>
-				<th scope="row"><label for="rv_date">대여시간</label></th>
-				<td><input type="text" name="rv_date" id="rv_date" /></td>
-			</tr>
+				<tr>
+					<th scope="row"><label for="playgroundname">운동장이름</label></th>
+					<td><input type="text" name="playgroundname" id="playgroundname" /></td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="field_rent">운동장 예약날짜</label></th>
+					<td><input type="text" name="field_rent" id="field_rent" /></td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="rv_date">운동장 예약시간</label></th>
+					<td><input type="text" name="rv_date" id="rv_date" /></td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="teamname">팀명</label></th>
+					<td><input type="text" name="teamname" id="teamname" value=""/><td>
+				</tr>
+				<tr>
+					<th scope="row"><label for=" teamnumber">팀인원수</label></th>
+					<td><input type="text" name="teamnumber" id="teamnumber" />명<td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="phone">전화번호</label></th>
+					<td><input type="text" name="phone" id="phone" value="${dto.phone }"/></td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="etc">기타입력사항</label></th>
+					<td><textarea id="etc" name="etc"  cols="90" rows="5"></textarea></td>
+				</tr>
 			</tbody>
-		</table>
-		<table>
-			<tr>
-				<th><label for="teamname">팀명</label></th>
-				<td><input type="text" name="teamname" id="teamname" /><td>
-			</tr>
-			<tr>
-				<th><label for=" teamnumber">팀인원수</label></th>
-				<td><input type="text" name="teamnumber" id="teamnumber" />명<td>
-			</tr>
-			<tr>
-				<th><label for="phone">전화번호</label></th>
-				<td><input type="text" name="phone" id="phone" /></td>
-			</tr>
-			<tr>
-				<th><label for="etc">기타입력사항</label></th>
-				<td><textarea id="etc" name="etc"  cols="90" rows="5"></textarea></td>
-			</tr>
 		</table>	
 			<button class="btn btn-info" type="reset">취소</button>
 			<button class="btn btn-primary" type="submit">신청</button>

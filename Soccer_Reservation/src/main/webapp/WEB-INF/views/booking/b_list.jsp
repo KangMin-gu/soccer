@@ -19,9 +19,7 @@
 			<tr>
 				<th>목록번호</th>
 				<th>운동장 이름</th>
-				<th>오전 타임</th>
-				<th>점심타임</th>
-				<th>저녁타임</th>
+				<th>예약날짜</th>
 				<th>예약시간</th>
 				<th>팀명</th>
 				<th>팀인원</th>
@@ -34,9 +32,7 @@
 				<tr>
 					<td>${tmp.num }</td>
 					<td>${tmp.playgroundname }</td>
-					<td>${tmp.field_m_tname }</td>
-					<td>${tmp.field_a_tname }</td>
-					<td>${tmp.field_n_tname }</td>
+					<td>${tmp.field_rent }</td>
 					<td>${tmp.rv_date}</td>
 					<td>${tmp.teamname  }</td>
 					<td>${tmp.teamnumber }</td>

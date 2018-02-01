@@ -28,10 +28,7 @@ public class BookingController {
 	public ModelAndView bookingForm(HttpServletRequest request){
 		
 		HttpSession session = request.getSession();
-		String id =(String)session.getAttribute("id");
-	
-		ModelAndView mView = new ModelAndView();
-		mView.addObject("id",id);
+		ModelAndView mView = bookingservice.getData2(session);
 		mView.setViewName("booking/booking_insertform");
 		return mView;
 	}
@@ -40,7 +37,9 @@ public class BookingController {
 		@RequestMapping("/booking/b_insert")
 		public ModelAndView bookingSignup(HttpServletRequest request, @ModelAttribute BookingDto dto) {
 			
+			
 			ModelAndView mView = bookingservice.insert(dto);
+
 			mView.setViewName("booking/b_alert");
 			return mView;
 		}
@@ -82,17 +81,17 @@ public class BookingController {
 	}
 	
 	//예약 목록 자세히 보기 요청 처리
-	@RequestMapping("/booking/booking_detail")
-	public ModelAndView bookingDetail(HttpServletRequest request,@RequestParam int num){
-		
-		HttpSession session = request.getSession();
-		String id = (String)session.getAttribute("id");
-	
-		ModelAndView mView = bookingservice.getData(num);
-		mView.addObject("id",id);
-		mView.setViewName("booking/booking_detail");
-		return mView;
-	}
+//	@RequestMapping("/booking/booking_detail")
+//	public ModelAndView bookingDetail(HttpServletRequest request,@RequestParam int num){
+//		
+//		HttpSession session = request.getSession();
+//		String id = (String)session.getAttribute("id");
+//	
+//		ModelAndView mView = bookingservice.getData(num);
+//		mView.addObject("id",id);
+//		mView.setViewName("booking/booking_detail");
+//		return mView;
+//	}
 	
 	
 	

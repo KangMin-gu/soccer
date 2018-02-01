@@ -3,7 +3,6 @@
 <mapper namespace="orderdata">
 	<insert id="insert" parameterType="bookingDto">
 		INSERT INTO order_data
-		VALUES(order_data_seq.NEXTVAL, #{playgroundname}, #{field_m_tname}, 
-			#{field_a_tname}, #{field_n_tname}, #{rv_date})
+		VALUES(order_data_seq.NEXTVAL, #{playgroundname}, #{field_rent}, #{rv_date},#{teamname}, #{teamnumber}, #{phone}, #{etc})
 	</insert>
 </mapper>

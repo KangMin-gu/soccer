@@ -1,6 +1,7 @@
 package com.soccer.rv.booking.service;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.servlet.ModelAndView;
@@ -16,6 +17,7 @@ public interface BookingService {
 	public void delete(int num);
 	public ModelAndView getlist();
 	public ModelAndView getData(int num);
+	public ModelAndView getData2(HttpSession session);
 
 	
 

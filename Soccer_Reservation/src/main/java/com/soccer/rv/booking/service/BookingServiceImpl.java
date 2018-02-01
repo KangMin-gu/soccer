@@ -3,6 +3,7 @@ package com.soccer.rv.booking.service;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,14 +20,12 @@ public class BookingServiceImpl implements BookingService{
 	
 	@Autowired
 	private BookingDao bookingDao;
-	
 
 
 	@Override
 	public ModelAndView insert(BookingDto dto) {
 		//예약정보 저장
 		bookingDao.insert(dto);
-		bookingDao.insert2(dto);
 		
 		
 		ModelAndView mView = new ModelAndView();
@@ -70,6 +69,16 @@ public class BookingServiceImpl implements BookingService{
 		ModelAndView mView = new ModelAndView();
 		
 		mView.addObject("dto",dto);
+		return mView;
+	}
+
+	@Override
+	public ModelAndView getData2(HttpSession session) {
+		String id = (String) session.getAttribute("id");
+		UsersDto dto = bookingDao.getData2(id);
+		ModelAndView mView = new ModelAndView();
+		System.out.println(dto.getAddr());
+		mView.addObject("dto", dto);
 		return mView;
 	}
 

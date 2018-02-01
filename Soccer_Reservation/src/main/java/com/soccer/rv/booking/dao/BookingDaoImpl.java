@@ -22,11 +22,6 @@ public class BookingDaoImpl implements BookingDao{
 		
 	}
 	
-	@Override
-	public void insert2(BookingDto dto) {
-		session.insert("orderetc.insert",dto);
-		
-	}
 
 	@Override
 	public void update(BookingDto dto) {
@@ -50,6 +45,12 @@ public class BookingDaoImpl implements BookingDao{
 	public List<BookingDto> getList() {
 		List<BookingDto> list = session.selectList("join.getList");
 		return list;
+	}
+
+	@Override
+	public UsersDto getData2(String id) {
+		UsersDto dto = session.selectOne("users.getData2", id);
+		return dto;
 	}
 
 
