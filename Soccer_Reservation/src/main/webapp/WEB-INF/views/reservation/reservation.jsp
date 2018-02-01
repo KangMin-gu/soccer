@@ -7,6 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap.css" />
 </head>
 <body>
 <h3>reservation 페이지</h3>
@@ -72,12 +73,60 @@
 		</c:choose>
 	</ul>
 </div>
+	<div class="row">
+		<div class="col-xs-6">
+			<!-- 검색어 관련 form -->
+			<form action="reserve.do" method="post">
+				<input type="hidden" id="condition" value="${condition }" name="condition" />
+		        <div class="input-group">
+		          <div class="input-group-btn">
+		            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+		              <span id="conditionBtn">검색메뉴</span>
+		              <span class="caret"></span>
+		            </button>
+		            <ul class="dropdown-menu">
+		              <li><a href="javascript:set('titlecontent')">운동장</a>
+		              </li>
+		              <li><a href="javascript:set('title')"></a>
+		              </li>
+		              <li><a href="javascript:set('writer')">작성자</a>
+		              </li>
+		            </ul>
+		          </div>
+		          <!-- /btn-group -->
+		          <input type="text" id="keyword" name="keyword" value="${keyword }" class="form-control"/>
+		          	<span class="input-group-btn">
+			            <button class="btn btn-default" type="submit">
+			              <span class="sr-only">검색</span>
+			              <span class="glyphicon glyphicon-search"></span>
+			            </button>
+          			</span>
+		        </div>			
+			</form>
+		</div>
+	</div>
 
-	
+	<script src="${pageContext.request.contextPath }/resources/js/bootstrap.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/js/jquery-3.2.1.js"></script>
 	<script
 		src="${pageContext.request.contextPath}/resources/js/jquery.min.js"></script>
+		
+		
+		
 		<script>
+		set("${condition}");
+		
+		function set(condition){
+			if(condition=="titlecontent" || condition==""){
+				condition="titlecontent";
+				$("#conditionBtn").text("제목+파일명");
+			}else if(condition=="title"){
+				$("#conditionBtn").text("제목");
+			}else if(condition=="writer"){
+				$("#conditionBtn").text("작성자");
+			}
+			$("#condition").val(condition);
+		}
 		
 		 
 		/*
