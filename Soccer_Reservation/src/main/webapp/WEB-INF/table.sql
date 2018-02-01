@@ -13,6 +13,7 @@ orgName VARCHAR2(100),
 etc CLOB
 );
 
+drop table reservation_form;
 CREATE SEQUENCE reservation_form_seq;
 
 alter table reservation_form ADD(num number primary key );

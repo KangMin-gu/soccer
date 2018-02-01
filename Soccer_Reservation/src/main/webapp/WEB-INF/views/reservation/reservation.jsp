@@ -17,6 +17,7 @@
 <table class="table table-bordered table-condensed">
 		<thead>
 			<tr>
+				<th>번호</th>
 				<th>사용자</th>
 				<th>축구장</th>
 				<th>시간</th>
@@ -25,8 +26,9 @@
 		<tbody>
 			<c:forEach var="tmp" items="${list}">
 				<tr>
+					<td>${tmp.num }</td>
 					<td>${tmp.rUser }</td>
-					<td>${tmp.rAddr }</td>
+					<td><a href="detail.do?num=${tmp.num }">${tmp.rAddr }</a></td>
 					<td>${tmp.rTime}</td>
 				</tr>
 			</c:forEach>
