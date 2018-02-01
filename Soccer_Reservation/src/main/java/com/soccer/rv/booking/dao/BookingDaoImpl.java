@@ -34,8 +34,8 @@ public class BookingDaoImpl implements BookingDao{
 	}
 
 	@Override
-	public BookingDto getData(String rUser) {
-		BookingDto dto = session.selectOne("booking.getData",rUser);
+	public BookingDto getData(int num) {
+		BookingDto dto = session.selectOne("booking.getData",num);
 		return dto;
 	}
 
@@ -44,6 +44,8 @@ public class BookingDaoImpl implements BookingDao{
 		List<BookingDto> list = session.selectList("booking.getList");
 		return list;
 	}
+
+
 
 
 

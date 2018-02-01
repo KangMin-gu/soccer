@@ -56,8 +56,8 @@ public class BookingServiceImpl implements BookingService{
 	}
 
 	@Override
-	public ModelAndView getData(String rUser) {
-		BookingDto dto = bookingDao.getData(rUser);
+	public ModelAndView getData(int num) {
+		BookingDto dto = bookingDao.getData(num);
 		
 		ModelAndView mView = new ModelAndView();
 		
@@ -67,15 +67,8 @@ public class BookingServiceImpl implements BookingService{
 
 
 
-	@Override
-	public ModelAndView detail(String rUser)  {
-		//글번호를 이용해서 글정보를 얻어와서
-		BookingDto dto = bookingDao.getData(rUser);
-		
-		ModelAndView mView = new ModelAndView();
-		mView.addObject("dto",dto);
-		return mView;
-	}
+
+
 
 	
 

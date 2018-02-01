@@ -3,31 +3,32 @@
 <mapper namespace="booking">
 
 	<insert id="insert" parameterType="bookingDto">
-		INSERT INTO reservation_form VALUES(reservation_form_seq.NEXTVAL, #{rAddr}, #{rTime}, #{phone01}, #{phone02},
+		INSERT INTO reservation_form VALUES(reservation_form_seq.NEXTVAL,#{rUser}, #{rAddr}, #{rTime}, #{phone01}, #{phone02},
 		#{addr1}, #{addr2}, #{addr3}, #{userNumber}, #{orgName}, #{etc})
 	</insert>
 	
-	<select id="getData" parameterType="string" resultType="bookingDto">
-		select rUser,rAddr,rTime,phone01,phone02,addr1,addr2,addr3,userNumber,orgName,etc
+	<select id="getData" parameterType="int" resultType="bookingDto">
+		SELECT num,rUser,rAddr,rTime,phone01,phone02,addr1,addr2,addr3,userNumber,orgName,etc
 		from reservation_form 
-		where rUser=#{rUser}
+		where num=#{num}
 	</select>
 	
+	
 	<select id="getList" resultType="bookingDto">
-		SELECT rUser,rAddr,rTime,phone01,phone02,addr1,addr2,addr3,userNumber,orgName,etc
+		SELECT num,rUser,rAddr,rTime,phone01,phone02,addr1,addr2,addr3,userNumber,orgName,etc
 		FROM reservation_form 
-		ORDER BY rUser ASC
+		ORDER BY num ASC
 	</select>
 	
 	<delete id="delete" parameterType="int">
 		DELETE FROM reservation_form
-		WHERE rUser=#{rUser}
+		WHERE num=#{num}
 	</delete>
 	
 	<update id="update" parameterType="int">
 		UPDATE reservation_form
-		SET phone01=#{phone01}, phone02=#{phone02},
+		SET rUser=#{rUser}, rAddr=#{rAddr},rTime=#{rTime}, phone01=#{phone01}, phone02=#{phone02},
 		addr1=#{addr1}, addr2=#{addr2}, addr3=#{addr3}, userNumber=#{userNumber}, orgName=#{orgName}, etc=#{etc}
-		WHERE rUser=#{rUser}
+		WHERE num=#{num}
 	</update>
 </mapper>

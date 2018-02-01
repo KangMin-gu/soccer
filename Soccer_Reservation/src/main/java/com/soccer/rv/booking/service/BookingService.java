@@ -14,8 +14,9 @@ public interface BookingService {
 	public ModelAndView update(BookingDto dto);
 	public void delete(int num);
 	public ModelAndView getlist();
-	public ModelAndView getData(String rUser);
-	public ModelAndView detail(String rUser);
+	public ModelAndView getData(int num);
+
+
 	
 
 

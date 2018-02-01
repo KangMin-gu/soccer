@@ -21,12 +21,16 @@
 			</colgroup>
 			<tbody>
 			<tr>
+				<th>예약 목록 번호</th>
+				<td>${dto.num }</td>
+			</tr>
+			<tr>
 				<th scope="row"><label for="rAddr">예약장소</label></th>
 				<td><input type="text" id="rAddr" name="rAddr" value="${dto.rAddr }" /></td>
 			</tr> 
 			<tr>
 				<th scope="row"><label for="rTime">예약시간</label></th>
-				<td><input type="text" id="rTime" name="rTime" value="${dto.rTime }"/></td>
+				<td><input type="text" id="rTime" name="rTime" value="${dto.rTime }" /></td>
 			</tr>
 			</tbody>
 		</table>

@@ -37,8 +37,13 @@ public class BookingController {
 	//예약 폼으로 이동
 	@RequestMapping("/booking/bookingform")
 	public ModelAndView bookingForm(HttpServletRequest request){
+		
+		HttpSession session = request.getSession();
+		String id =(String)session.getAttribute("id");
+		
 	
 		ModelAndView mView = new ModelAndView();
+		mView.addObject("id",id);
 		mView.setViewName("booking/bookingform");
 		
 		return mView;
@@ -67,9 +72,9 @@ public class BookingController {
 	
 	//예약 수정 요청 처리
 	@RequestMapping("/booking/booking_updateform")
-	public ModelAndView bookingUpdateForm(@RequestParam String rUser){
+	public ModelAndView bookingUpdateForm(@RequestParam int num){
 		
-		ModelAndView mView = bookingservice.getData(rUser);
+		ModelAndView mView = bookingservice.getData(num);
 		mView.setViewName("booking/booking_updateform");
 		return mView;
 	}
@@ -86,10 +91,12 @@ public class BookingController {
 	
 	//예약 목록 자세히 보기 요청 처리
 	@RequestMapping("/booking/booking_detail")
-	public ModelAndView bookingDetail(@RequestParam String rUser){
-		
-		ModelAndView mView = bookingservice.getData(rUser);
-		
+	public ModelAndView bookingDetail(HttpServletRequest request,@RequestParam int num){
+		HttpSession session = request.getSession();
+		String id = (String)session.getAttribute("id");
+	
+		ModelAndView mView = bookingservice.getData(num);
+		mView.addObject("id",id);
 		mView.setViewName("booking/booking_detail");
 		
 		return mView;

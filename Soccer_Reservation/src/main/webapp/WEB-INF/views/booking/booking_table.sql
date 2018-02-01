@@ -1,6 +1,7 @@
---기본 폼 
+--기본 폼 2018.02.01 num 추가
 CREATE TABLE reservation_form(
-rUser VARCHAR2(20) PRIMARY KEY,
+num NUMBER  PRIMARY KEY,
+rUser VARCHAR2(20),
 rAddr VARCHAR2(100),
 rTime VARCHAR2(100),
 phone01 NUMBER,

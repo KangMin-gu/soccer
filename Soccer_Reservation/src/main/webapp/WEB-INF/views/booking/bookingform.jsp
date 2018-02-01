@@ -40,7 +40,7 @@
 			<tbody>
 			<tr>
 				<th scope="row"><label for="rUser">신청자</label></th>
-				<td><input type="text" id="rUser" name="rUser" /></td>
+				<td><input type="text" id="rUser" name="rUser" value="${id }"/></td>
 			</tr>
 			<tr>
 				<th scope="row"><label for="phone01">일반전화</label></th>

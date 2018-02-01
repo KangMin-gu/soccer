@@ -12,7 +12,7 @@ public interface BookingDao {
 	public void insert(BookingDto dto);
 	public void update(BookingDto dto);
 	public void delete(int num);
-	public BookingDto getData(String rUser);
+	public BookingDto getData(int num);
 
 	public List<BookingDto> getList();
 }

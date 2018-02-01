@@ -17,8 +17,8 @@
 <a href="updateform.do">가입정보수정</a>
 <a href="delete.do">회원탈퇴</a>
 <a href="map.do">내 주변 운동장 찾기</a>
-<a href="../booking/bookingform.do">예약바로하러가기</a>
-<a href="../booking/booking_list.do">예약현황 목록</a>
+<a href="../booking/bookingform.do">예약하기 바로가기</a>
+<a href="../booking/booking_list.do">예약현황 목록 바로가기</a>
 <a href="${pageContext.request.contextPath}/">인덱스가기</a>
 </body>
 </html>
