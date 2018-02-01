@@ -5,4 +5,10 @@
 		INSERT INTO order_data
 		VALUES(order_data_seq.NEXTVAL, #{playgroundname}, #{field_rent}, #{rv_date},#{teamname}, #{teamnumber}, #{phone}, #{etc})
 	</insert>
+	
+	<select id="getList" resultType="bookingDto">
+		SELECT num,playgroundname,field_rent, rv_date, teamname, teamnumber, phone, etc
+		FROM order_data
+		ORDER BY num DESC
+	</select>
 </mapper>

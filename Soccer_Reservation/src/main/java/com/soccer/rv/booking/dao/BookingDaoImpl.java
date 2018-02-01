@@ -43,7 +43,7 @@ public class BookingDaoImpl implements BookingDao{
 
 	@Override
 	public List<BookingDto> getList() {
-		List<BookingDto> list = session.selectList("join.getList");
+		List<BookingDto> list = session.selectList("orderdata.getList");
 		return list;
 	}
 

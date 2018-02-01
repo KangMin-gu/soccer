@@ -37,7 +37,6 @@ public class BookingController {
 		@RequestMapping("/booking/b_insert")
 		public ModelAndView bookingSignup(HttpServletRequest request, @ModelAttribute BookingDto dto) {
 			
-			
 			ModelAndView mView = bookingservice.insert(dto);
 
 			mView.setViewName("booking/b_alert");
