@@ -10,18 +10,16 @@ import com.soccer.rv.reserve.dto.ReserveDto;
 
 @Repository
 public class ReserveDaoImpl implements ReserveDao {
+	
 	@Autowired
 	private SqlSession session;
-	@Override
-	public ReserveDto getData(ReserveDto dto) {
-		
-		return session.selectOne("reserve.getData", dto);
-	}
 
 	@Override
-	public List<ReserveDto> getList(ReserveDto dto) {
+	public List<ReserveDto> getList() {
 		
-		return session.selectList("reserve.getList",dto);
+		List<ReserveDto> list = session.selectList("reserve.getList");
+		
+		return list;
 	}
-
+	
 }

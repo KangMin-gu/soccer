@@ -1,11 +1,13 @@
 package com.soccer.rv.reserve.service;
 
-import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.web.servlet.ModelAndView;
 
+import com.soccer.rv.reserve.dto.ReserveDto;
+
 public interface ReserveService {
-	public ModelAndView list(HttpServletRequest request);
-	public ModelAndView detail(HttpServletRequest request);
+	public List<ReserveDto> list();
 }

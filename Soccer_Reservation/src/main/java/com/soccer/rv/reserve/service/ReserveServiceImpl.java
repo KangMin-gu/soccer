@@ -13,32 +13,17 @@ import com.soccer.rv.reserve.dto.ReserveDto;
 
 @Service
 public class ReserveServiceImpl implements ReserveService {
-	@Autowired
-	private ReserveDao dao;
 	
-	@Override
-	public ModelAndView list(HttpServletRequest request) {
-		ReserveDto dto= new ReserveDto();
-		
-		List<ReserveDto> list = dao.getList(dto);
-		
-		ModelAndView mView= new ModelAndView();
-		mView.addObject("list", list);
-		return mView;
-	}
+	@Autowired
+	private ReserveDao reservedao;
 
 	@Override
-	public ModelAndView detail(HttpServletRequest request) {
-		ModelAndView mView= new ModelAndView();
-		
-		ReserveDto dto = new ReserveDto();
-		
-		ReserveDto resultDto=dao.getData(dto);
-		mView.addObject("dto",resultDto);
-		
-		return mView;
+	public List<ReserveDto> list() {
+		List<ReserveDto> list = reservedao.getList();
+		for(ReserveDto tmp : list){
+			System.out.println(tmp.getrAddr());
+		}
+		return list;
 	}
-
-
 	
 }
