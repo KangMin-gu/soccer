@@ -29,9 +29,12 @@ public class ReserveController {
 		return mView;
 	}
 	
+	@RequestMapping("/reservation/detail")
 	public ModelAndView detail(HttpServletRequest request){
-		ModelAndView mView=service;
-		return null;
+		ModelAndView mView=service.detail(request);
+		
+		mView.setViewName("reservation/detail");
+		return mView;
 	}
 	
 //	ajax할때 받아오는 Controller

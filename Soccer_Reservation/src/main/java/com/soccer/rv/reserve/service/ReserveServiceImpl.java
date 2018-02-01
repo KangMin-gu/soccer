@@ -32,13 +32,13 @@ public class ReserveServiceImpl implements ReserveService {
 		ModelAndView mView= new ModelAndView();
 		
 		ReserveDto dto = new ReserveDto();
-		if(keyword !=null){
-			if(condition.equals("titlecontent")){
+		if(keyword != null){
+			if(condition.equals("rUser")){
+				dto.setrUser(keyword);
+			}else if(condition.equals("rAddr")){
 				dto.setrAddr(keyword);
-			}else if(condition.equals("title")){
-				dto.setAddr1(keyword);
-			}else if(condition.equals("writer")){
-				dto.setAddr3(keyword);
+			}else if(condition.equals("rTime")){
+				dto.setrTime(keyword);
 			}
 			
 			mView.addObject("condition", condition);
@@ -92,11 +92,13 @@ public class ReserveServiceImpl implements ReserveService {
 		
 		ModelAndView mView= new ModelAndView();
 		
+		System.out.println("detail 들어옴");
 		//검색 조건을 알려주기 위한 메시지
 		String msg= null;
 		
 		ReserveDto dto = new ReserveDto();
 		if(keyword != null){
+			System.out.println("검색들어옴");
 			if(condition.equals("rUser")){
 				dto.setrUser(keyword);
 				msg="키워드 :"+keyword+"에 대한 검색결과";

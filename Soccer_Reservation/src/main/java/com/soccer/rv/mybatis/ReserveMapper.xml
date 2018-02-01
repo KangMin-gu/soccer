@@ -24,7 +24,8 @@
 		</where>
 		ORDER BY num DESC) result1
 		)
-		WHERE rnum BETWEEN #{startRowNum} AND #{endRowNum}
+		WHERE rnum BETWEEN #{startRowNum} AND
+		#{endRowNum}
 
 	</select>
 
@@ -48,4 +49,30 @@
 			</if>
 		</where>
 	</select>
+
+	<select id="getData" parameterType="reserveDto" resultType="reserveDto">
+		SELECT result1.*
+		FROM
+		( SELECT
+		<include refid="reserveColumns" />
+		,
+		LEAD(num, 1, 0) OVER(ORDER BY num DESC) nextNum,
+		LAG(num, 1, 0) OVER(ORDER BY num DESC) prevNum
+		FROM reservation_form
+		<where>
+			<if test="rUser != null">
+				OR rUser LIKE '%'||#{rUser}||'%'
+			</if>
+			<if test="rAddr != null">
+				OR rAddr LIKE '%'||#{rAddr}||'%'
+			</if>
+			<if test="rTime != null">
+				OR rTime LIKE '%'||#{rTime}||'%'
+			</if>
+		</where>
+		ORDER BY num DESC ) result1
+		WHERE num=#{num}
+	</select>
+
+
 </mapper>
