@@ -83,7 +83,12 @@ $("#rv_date").change(function(){
 		url:"rvfieldinfo.do?field_name="+("${dto.field_name }")+"&field_date="+date,
 		method:"GET",
 		success:function(data){
-			console.log(data);
+			//console.log(data);
+			if(data){
+				console.log(data)
+			}else{
+				console.log("empty");
+			}
 		}
 	});
 	

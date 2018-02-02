@@ -19,15 +19,17 @@ public class ReservationServiceImpl implements ReservationService{
 	
 	@Override
 	public ReservationOrderDto getData(HttpServletRequest request) {
-		ModelAndView mView = new ModelAndView();
+		//ModelAndView mView = new ModelAndView();
 		String field_name = (String)request.getParameter("field_name");
 		String field_date = (String)request.getParameter("field_date");
 		ResDto rdto = new ResDto(field_name, field_date);
 		System.out.println("d"+rdto.getField_date() + rdto.getField_name());
 		ReservationOrderDto order = rvdao.getinfo(rdto);
-		System.out.println("service"+order.getField_m_phone());
+		//System.out.println("service"+order.getField_m_phone());
 		//ReservationOrderDto order2 = new ReservationOrderDto(num, field_name, field_m_tname, field_m_phone, field_a_tname, field_a_phone, field_n_tname, field_n_phone, field_date);
-		mView.addObject("order", order);
+		
+		
+		//ßmView.addObject("order", order);
 		return order;
 	}
 
