@@ -33,37 +33,16 @@
 
 <p>오전 시간 : <strong>${dto.field_morning }</strong></p>
 
- <c:choose>
-<c:when test="${not empty order.field_m_tname }">
-	<p>오전 대여팀 : <strong>${order.field_m_tname }</strong></p>	
-</c:when>
-<c:otherwise>
-	<p><strong>오전 예약 가능</strong></p>
-</c:otherwise>
-</c:choose>
+<strong id="morning"></strong>
+
 <br/>
 <p>오후 시간 : <strong>${dto.field_afternoon }</strong></p>
 
-<c:choose>
-<c:when test="${not empty order.field_a_tname }">
-	<p>오후 대여팀 : <strong>${order.field_a_tname }</strong></p>	
-</c:when>
-<c:otherwise>
-	<p><strong>오후 예약 가능</strong></p>
-</c:otherwise>
-</c:choose>
+<strong id="afternoon"></strong>
 <br/>
 <p>저녁 시간 : <strong>${dto.field_night }</strong></p>
 
-<c:choose>
-<c:when test="${not empty order.field_n_tname }">
-	<p>저녁 대여팀 : <strong>${order.field_n_tname }</strong></p>	
-</c:when>
-<c:otherwise>
-	<p><strong>저녁 예약 가능</strong></p>
-</c:otherwise>
-</c:choose>
-
+<strong id="night"></strong>
 <br/>
 
 <a href="${pageContext.request.contextPath}/users/fieldlist.do">등록 주소의 주변 운동장 보러가기</a>
@@ -86,8 +65,29 @@ $("#rv_date").change(function(){
 			//console.log(data);
 			if(data){
 				console.log(data)
+				if(data.field_m_tname != null){
+					$("#morning").text(data.field_m_tname);
+				}else{
+					$("#morning").text("예약가능합니다.");
+				}
+				if(data.field_a_tname != null){
+					$("#afternoon").text(data.field_a_tname);
+				}else{
+					$("#afternnon").text("예약가능합니다.");
+				}
+				if(data.field_n_tname != null){
+					$("#night").text(data.field_n_tname);
+				}else{
+					$("#night").text("예약가능합니다.");
+				}
+				
+				
 			}else{
 				console.log("empty");
+				$("#morning").text("예약가능합니다.");
+				$("#afternoon").text("예약가능합니다.");
+				$("#night").text("예약가능합니다.");
+				
 			}
 		}
 	});
