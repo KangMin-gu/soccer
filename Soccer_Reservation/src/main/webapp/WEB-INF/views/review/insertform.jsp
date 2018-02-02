@@ -5,12 +5,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>cafe/insertform.jsp</title>
+<title>review/insertform.jsp</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap.css" />
 <style>
 	/* SmartEditor 를 위한 textarea 에 적용할 css */
 	#content{
-		display:none;
 		width:100%;
 		height:400px;
 	}
@@ -48,7 +47,7 @@
 		</div>
 		<div class="form-group">
 			<label for="content">내용</label>
-			<textarea name="content" id="content"></textarea>
+			<textarea class="form-control" rows="3" name="content" id="content">ssss</textarea>
 		</div>
 		<button onclick="submitContents(this);" 
 			class="btn btn-success" type="submit">확인</button>

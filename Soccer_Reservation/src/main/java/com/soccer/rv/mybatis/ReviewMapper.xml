@@ -13,7 +13,7 @@
 		SELECT *
 		FROM (SELECT result1.*,ROWNUM rnum
 			  FROM (SELECT <include refid="reviewColumns"/>
-			  		FROM board_cafe 
+			  		FROM review 
 			  		<where>
 						<if test="writer != null">
 							OR writer LIKE '%'||#{writer}||'%'

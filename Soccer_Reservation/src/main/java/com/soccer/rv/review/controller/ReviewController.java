@@ -21,7 +21,7 @@ public class ReviewController {
 	@RequestMapping("/review/list")
 	public ModelAndView list(HttpServletRequest request){
 		ModelAndView mView=reviewService.list(request);
-		mView.setViewName("cafe/list");
+		mView.setViewName("review/list");
 		return mView;
 	}
 	
@@ -31,7 +31,7 @@ public class ReviewController {
 		return new ModelAndView("review/insertform");
 	}
 	
-	//Cafe 글 저장 요청 처리
+	//review 글 저장 요청 처리
 	@RequestMapping("/review/insert")
 	public ModelAndView authInsert(HttpServletRequest request, 
 			@ModelAttribute ReviewDto dto){
@@ -53,7 +53,7 @@ public class ReviewController {
 	public ModelAndView detail(HttpServletRequest request){
 		ModelAndView mView=reviewService.detail(request);
 		
-		mView.setViewName("cafe/detail");
+		mView.setViewName("review/detail");
 		return mView;
 	}
 	

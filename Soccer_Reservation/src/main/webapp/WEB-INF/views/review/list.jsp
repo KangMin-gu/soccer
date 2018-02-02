@@ -20,7 +20,7 @@
 				<p class="navbar-text pull-right"><a class="navbar-link" href="${pageContext.request.contextPath }/users/info.do"><strong>${id }</strong></a>님 로그인중... </p>
 			</c:when>
 			<c:otherwise>
-				<a class="navbar-text navbar-link pull-right" href="${pageContext.request.contextPath }/users/loginform.do?url=${pageContext.request.contextPath}/cafe/list.do">로그인</a>
+				<a class="navbar-text navbar-link pull-right" href="${pageContext.request.contextPath }/users/loginform.do?url=${pageContext.request.contextPath}/review/list.do">로그인</a>
 			</c:otherwise>
 		</c:choose>
 	</div>
@@ -29,7 +29,7 @@
 	<!-- breadcrumb UI 제공하기 -->
 	<ol class="breadcrumb">
 		<li><a href="${pageContext.request.contextPath }/">Home</a></li>
-		<li class="active">Cafe</li>
+		<li class="active">Review</li>
 	</ol>
 
 	<a class="btn btn-primary btn-xs" href="insertform.do"><i class="glyphicon glyphicon-pencil"></i> 새글 작성</a>
