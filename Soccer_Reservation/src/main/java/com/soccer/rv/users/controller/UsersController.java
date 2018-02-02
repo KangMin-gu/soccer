@@ -70,7 +70,7 @@ public class UsersController {
 	
 	//회원정보 보기
 	@RequestMapping("/users/info")
-	public ModelAndView info(HttpServletRequest request){
+	public ModelAndView authinfo(HttpServletRequest request){
 		HttpSession session = request.getSession();
 		String id = (String)session.getAttribute("id");
 		ModelAndView mView = service.detail(id);
@@ -80,7 +80,7 @@ public class UsersController {
 	
 	//회원정보 수정폼
 	@RequestMapping("/users/updateform")
-	public ModelAndView updateform(HttpServletRequest request){
+	public ModelAndView authupdateform(HttpServletRequest request){
 		HttpSession session = request.getSession();
 		String id = (String)session.getAttribute("id");
 		ModelAndView mView = service.detail(id);
@@ -90,7 +90,7 @@ public class UsersController {
 	
 	//회원정보 수정
 	@RequestMapping("/users/update")
-	public ModelAndView update(@ModelAttribute UsersDto dto, HttpServletRequest request){
+	public ModelAndView authupdate(@ModelAttribute UsersDto dto, HttpServletRequest request){
 		HttpSession session = request.getSession();
 		ModelAndView mView = service.update(dto, session);
 		mView.setViewName("users/update_result");
@@ -99,7 +99,7 @@ public class UsersController {
 	
 	//회원 탈퇴
 	@RequestMapping("/users/delete")
-	public ModelAndView delete(HttpServletRequest request){
+	public ModelAndView authdelete(HttpServletRequest request){
 		HttpSession session = request.getSession();
 		ModelAndView mView = service.delete(session);
 		mView.setViewName("users/delete_result");

@@ -14,7 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Component
 public class AuthAsepct {
 	
-	@Around("execution(*auth*(..))")
+	@Around("execution(* auth*(..))")
 	public Object loginCheck(ProceedingJoinPoint joinPoint) throws Throwable{
 		
 		Object[] args=joinPoint.getArgs();
@@ -41,7 +41,7 @@ public class AuthAsepct {
 				}
 			}
 		}
-		return joinPoint;
+		return joinPoint.proceed();
 		
 	}
 }
