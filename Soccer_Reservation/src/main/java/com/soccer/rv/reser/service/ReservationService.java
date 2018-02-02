@@ -14,4 +14,5 @@ import com.soccer.rv.reser.orderdto.ReservationOrderDto;
 public interface ReservationService {
 	public ReservationOrderDto getData(HttpServletRequest request);
 	public ModelAndView detail(HttpServletRequest request);
+	public ModelAndView rvform(HttpServletRequest request);
 }

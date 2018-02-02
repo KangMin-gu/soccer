@@ -44,4 +44,17 @@ public class ReservationServiceImpl implements ReservationService{
 		
 	}
 
+	@Override
+	public ModelAndView rvform(HttpServletRequest request) {
+		String rv_date = (String)request.getParameter("rv_date");
+		String field_name = (String)request.getParameter("field_name");
+		String rv_time = (String)request.getParameter("rv_time");
+		ModelAndView mView = new ModelAndView ();
+		mView.addObject("rv_date", rv_date);
+		mView.addObject("field_name", field_name);
+		mView.addObject("rv_time", rv_time);
+		return mView;
+	}
+	
+
 }

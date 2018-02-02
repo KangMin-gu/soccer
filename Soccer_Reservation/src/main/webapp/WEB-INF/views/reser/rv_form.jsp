@@ -8,6 +8,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-예약폼입니다.
+<h3>예약 폼 입니다.</h3>
+${rv_time };
+${field_name };
+${rv_date };
 </body>
 </html>

@@ -37,4 +37,13 @@ public class ReservationController {
 		}
 	}
 	
+	@RequestMapping("/reser/rv_form")
+	public ModelAndView rvform(HttpServletRequest request){
+		
+		ModelAndView mView = rvservice.rvform(request);
+		mView.setViewName("reser/rv_form");
+		return mView;
+		
+	}
+	
 }
