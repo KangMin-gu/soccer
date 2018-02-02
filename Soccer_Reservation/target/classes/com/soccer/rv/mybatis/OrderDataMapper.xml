@@ -20,4 +20,10 @@
 		SELECT * FROM order_data WHERE num=#{num}
 	</select>
 	
+	<update id="update" parameterType="bookingDto">
+		UPDATE order_data
+		SET teamname=#{teamname}, teamnumber=#{teamnumber}, phone=#{phone}, etc=#{etc}
+		WHERE num=#{num}
+	</update>
+	
 </mapper>

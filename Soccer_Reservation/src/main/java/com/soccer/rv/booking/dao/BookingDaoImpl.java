@@ -25,7 +25,8 @@ public class BookingDaoImpl implements BookingDao{
 
 	@Override
 	public void update(BookingDto dto) {
-		session.update("ordardata.update",dto);
+		session.update("orderdata.update",dto);
+		System.out.println(session.update("orderdata.update",dto));
 		
 	}
 

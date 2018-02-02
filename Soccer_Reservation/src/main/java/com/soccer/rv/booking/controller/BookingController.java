@@ -64,11 +64,13 @@ public class BookingController {
 	
 	//예약 목록 삭제 요청 처리
 	@RequestMapping("/booking/b_delete")
-	public String authDelete(@RequestParam int num){
+	public ModelAndView authDelete(@RequestParam int num){
 		
 		bookingservice.delete(num);
+		ModelAndView mView = new ModelAndView();
+		mView.setViewName("booking/b_list");
 		
-		return "redirect:/booking/b_list.do";
+		return mView;
 	}
 	
 	//예약 수정 요청 처리
@@ -82,10 +84,10 @@ public class BookingController {
 	
 	//예약 수정 반영 요청처리
 	@RequestMapping("/booking/b_update")
-	public ModelAndView Update(@ModelAttribute BookingDto dto, HttpSession session){
+	public ModelAndView Update(@ModelAttribute BookingDto dto){
 		
 		ModelAndView mView = bookingservice.update(dto);
-		mView.setViewName("booking/booking_alert");
+		mView.setViewName("booking/b_alert");
 		return mView;
 	}
 
