@@ -34,7 +34,7 @@ public class AuthAspect {
 					//query 문자열 읽어오기
 					// a=xxx&b=xxx&c=xxx
 					String query=request.getQueryString();
-					
+					System.out.println(query);
 					//원래 가야할 요청명 
 					String url=null;
 					if(query==null){

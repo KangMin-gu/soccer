@@ -14,7 +14,7 @@ import com.soccer.rv.users.dto.UsersDto;
 public interface BookingService {
 	public ModelAndView insert(BookingDto dto);
 	public ModelAndView update(BookingDto dto);
-	public void delete(int num);
+	public void delete(HttpServletRequest request);
 	public ModelAndView getlist();
 	public ModelAndView getData(int num);
 	public ModelAndView getData2(HttpSession session);

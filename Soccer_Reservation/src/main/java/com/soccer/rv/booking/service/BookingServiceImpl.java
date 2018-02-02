@@ -54,9 +54,10 @@ public class BookingServiceImpl implements BookingService{
 	}
 
 	@Override
-	public void delete(int num) {
-		
+	public void delete(HttpServletRequest request) {
+		int num = Integer.parseInt(request.getParameter("num"));
 		bookingDao.delete(num);
+		
 		
 	}
 

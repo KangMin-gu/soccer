@@ -52,11 +52,13 @@ public class BookingController {
 	
 	//예약 목록 요청처리
 	@RequestMapping("/booking/b_list")
-	public ModelAndView List(HttpSession session){
-
+	public ModelAndView authList(HttpSession session){
+		
 		String id =(String)session.getAttribute("id");
 		ModelAndView mView = bookingservice.getlist();
+		
 		mView.addObject("id",id);
+	
 	
 		mView.setViewName("booking/b_list");
 		return mView;
@@ -64,12 +66,11 @@ public class BookingController {
 	
 	//예약 목록 삭제 요청 처리
 	@RequestMapping("/booking/b_delete")
-	public ModelAndView authDelete(@RequestParam int num){
+	public ModelAndView authDelete(HttpServletRequest request){
 		
-		bookingservice.delete(num);
 		ModelAndView mView = new ModelAndView();
-		mView.setViewName("booking/b_list");
-		
+		bookingservice.delete(request);
+		mView.setViewName("redirect:/booking/b_list.do");
 		return mView;
 	}
 	

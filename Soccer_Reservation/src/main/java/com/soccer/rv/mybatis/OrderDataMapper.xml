@@ -25,4 +25,5 @@
 		SET teamname=#{teamname}, teamnumber=#{teamnumber}, phone=#{phone}, etc=#{etc}
 		WHERE num=#{num}
 	</update>
+	
 </mapper>
