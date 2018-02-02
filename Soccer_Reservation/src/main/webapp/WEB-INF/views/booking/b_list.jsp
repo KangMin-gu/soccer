@@ -48,6 +48,7 @@
 			</c:forEach>
 		</tbody>
 	</table>
+	<a class="btn btn-primary" href="${pageContext.request.contextPath }/">메인바로가기</a>
 </div>
 <script>
 
