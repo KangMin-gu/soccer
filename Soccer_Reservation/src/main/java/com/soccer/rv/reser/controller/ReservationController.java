@@ -1,6 +1,7 @@
 package com.soccer.rv.reser.controller;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -38,8 +39,7 @@ public class ReservationController {
 	}
 	
 	@RequestMapping("/reser/rv_form")
-	public ModelAndView rvform(HttpServletRequest request){
-		
+	public ModelAndView rvform(HttpServletRequest request){ 
 		ModelAndView mView = rvservice.rvform(request);
 		mView.setViewName("reser/rv_form");
 		return mView;

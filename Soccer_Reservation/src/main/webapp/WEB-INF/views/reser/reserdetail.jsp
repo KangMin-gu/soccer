@@ -24,9 +24,9 @@
 </select>
 <select name="rv_time" id="rv_time">
 	<option value="">---타임선택---</option>
-	<option value="${dto.field_morning}">오전</option>
-	<option value="${dto.field_afternoon }">오후</option>
-	<option value="${order.field_night }">저녁</option>
+	<option value="${dto.field_morning}">오전 :10-12</option>
+	<option value="${dto.field_afternoon }">오후 : 13-15</option>
+	<option value="${order.field_night }">저녁 : 16-18</option>
 </select>
 <button type="submit">예약하기</button>
 </form>
@@ -62,25 +62,27 @@ $("#rv_date").change(function(){
 		url:"rvfieldinfo.do?field_name="+("${dto.field_name }")+"&field_date="+date,
 		method:"GET",
 		success:function(data){
-			//console.log(data);
+			console.log(data);
 			if(data){
-				console.log(data)
+		
 				if(data.field_m_tname != null){
 					$("#morning").text(data.field_m_tname);
 				}else{
 					$("#morning").text("예약가능합니다.");
 				}
+				
 				if(data.field_a_tname != null){
 					$("#afternoon").text(data.field_a_tname);
 				}else{
-					$("#afternnon").text("예약가능합니다.");
+				
+					$("#afternoon").text("예약가능합니다.");
 				}
+				
 				if(data.field_n_tname != null){
 					$("#night").text(data.field_n_tname);
 				}else{
 					$("#night").text("예약가능합니다.");
 				}
-				
 				
 			}else{
 				console.log("empty");

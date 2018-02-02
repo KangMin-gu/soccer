@@ -53,6 +53,9 @@ public class UsersServiceImple implements UsersService{
 		ModelAndView mView = new ModelAndView();
 		if(isValid){
 			request.getSession().setAttribute("id", dto.getId());
+			String id = (String)request.getSession().getAttribute("id");
+			UsersDto Udto = dao.getData(id);
+			request.getSession().setAttribute("phone", Udto.getPhone());
 			mView.addObject("msg", dto.getId()+"님 환영합니다.");
 			mView.addObject("url", url);
 		}else{

@@ -1,6 +1,7 @@
 package com.soccer.rv.reser.service;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,7 +17,7 @@ public class ReservationServiceImpl implements ReservationService{
 	
 	@Autowired
 	private ReservationDao rvdao;
-	
+//예약 정보 가져오기	
 	@Override
 	public ReservationOrderDto getData(HttpServletRequest request) {
 		//ModelAndView mView = new ModelAndView();
@@ -32,7 +33,7 @@ public class ReservationServiceImpl implements ReservationService{
 		//ßmView.addObject("order", order);
 		return order;
 	}
-
+//예약 상세페이지요청
 	@Override
 	public ModelAndView detail(HttpServletRequest request) {
 		int num = Integer.parseInt(request.getParameter("num"));
@@ -43,16 +44,21 @@ public class ReservationServiceImpl implements ReservationService{
 		return mView;
 		
 	}
-
+//예약폼 요청
 	@Override
 	public ModelAndView rvform(HttpServletRequest request) {
 		String rv_date = (String)request.getParameter("rv_date");
 		String field_name = (String)request.getParameter("field_name");
 		String rv_time = (String)request.getParameter("rv_time");
+		HttpSession session = request.getSession();
+		String phone = (String) session.getAttribute("phone");
+		System.out.println(phone);
 		ModelAndView mView = new ModelAndView ();
 		mView.addObject("rv_date", rv_date);
 		mView.addObject("field_name", field_name);
 		mView.addObject("rv_time", rv_time);
+		mView.addObject("phone", phone);
+		
 		return mView;
 	}
 	
