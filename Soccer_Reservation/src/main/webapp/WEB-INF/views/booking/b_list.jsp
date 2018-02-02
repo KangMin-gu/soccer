@@ -13,7 +13,7 @@
 <body>
 <div class="container">
 	<h3>관리자 페이지</h3>
-	<p>${id }</p>
+	<p><strong>${id }</strong>(관리자) 접속중...</p>
 	<p>예약 목록</p>
 	<table class="table">
 		<thead>
@@ -42,7 +42,7 @@
 					<td>${tmp.phone }</td>
 					<td>${tmp.etc }</td>
 					<c:if test="${ id eq 'admin' }">
-						<td><a class="btn btn-info" href="booking_updateform?num=${tmp.num }">수정</a></td>
+						<td><a class="btn btn-info" href="b_updateform.do?num=${tmp.num }">수정</a></td>
 						<td><a class="btn btn-warning" href="javascript:deleteCheck()">삭제</a></td>
 					</c:if>	
 				</tr>
@@ -53,9 +53,9 @@
 </div>
 <script>
 	function deleteCheck(){
-		var isDelete = confirm("${num} 정보를 삭제하시겠습니까?");
+		var isDelete=confirm("글을 삭제 하시겠습니까?");
 		if(isDelete){
-			location.href="b_delete.do?num=${tmp.num }";
+			location.href="b_delete.do?num=${dto.num}";
 		}
 	}
 </script>

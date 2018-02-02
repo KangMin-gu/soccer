@@ -3,11 +3,11 @@
 <mapper namespace="orderdata">
 	<insert id="insert" parameterType="bookingDto">
 		INSERT INTO order_data
-		VALUES(order_data_seq.NEXTVAL, #{playgroundname}, #{field_rent}, #{rv_date},#{teamname}, #{teamnumber}, #{phone}, #{etc})
+		VALUES(order_data_seq.NEXTVAL, #{playgroundname}, #{field_rent}, #{rv_date}, #{teamname}, #{teamnumber}, #{phone}, #{etc})
 	</insert>
 	
 	<select id="getList" resultType="bookingDto">
-		SELECT num,playgroundname,field_rent, rv_date, teamname, teamnumber, phone, etc
+		SELECT num, playgroundname, field_rent, rv_date, teamname, teamnumber, phone, etc
 		FROM order_data
 		ORDER BY num DESC
 	</select>
@@ -15,4 +15,9 @@
 	<delete id="delete" parameterType="int">
 		DELETE FROM order_data WHERE num=#{num}
 	</delete>
+	
+	<select id="getData" parameterType="int" resultType="bookingDto">
+		SELECT * FROM order_data WHERE num=#{num}
+	</select>
+	
 </mapper>

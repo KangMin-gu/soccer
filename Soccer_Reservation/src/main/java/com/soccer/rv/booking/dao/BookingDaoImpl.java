@@ -25,7 +25,7 @@ public class BookingDaoImpl implements BookingDao{
 
 	@Override
 	public void update(BookingDto dto) {
-		session.update("booking.update",dto);
+		session.update("ordardata.update",dto);
 		
 	}
 
@@ -37,7 +37,7 @@ public class BookingDaoImpl implements BookingDao{
 
 	@Override
 	public BookingDto getData(int num) {
-		BookingDto dto = session.selectOne("booking.getData",num);
+		BookingDto dto = session.selectOne("orderdata.getData",num);
 		return dto;
 	}
 
