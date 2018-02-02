@@ -78,8 +78,8 @@
 				<li><a href="reservation/reservation.do">Reservation</a></li>
 				<li><a href="donate.html">Review</a></li>
 				<li><a href="contact.html">Question</a></li>
-				<li><a href="users/info.do">AOP 테스트</a></li>
-				<li><a href="users/info.do">AOP테스트</a></li>
+				<li><a href="">AOP 테스트</a></li>
+				<li><a href="">AOP테스트</a></li>
 			</ul>
 		</div>
 	</div>

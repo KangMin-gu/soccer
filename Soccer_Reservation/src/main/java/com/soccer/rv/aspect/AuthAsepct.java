@@ -24,7 +24,7 @@ public class AuthAsepct {
 				HttpServletRequest request=(HttpServletRequest)tmp;
 				String id=(String)request.getSession().getAttribute("id");
 				if(id==null){
-					
+					System.out.println("아이디를 입력하세여");
 					ModelAndView mView = new ModelAndView();
 					
 					String query = request.getQueryString();
@@ -32,8 +32,11 @@ public class AuthAsepct {
 					String url=null;
 					if(query==null){
 						url=request.getRequestURI();
+						
 					}else{
+						
 						url=request.getRequestURI()+"?"+query;
+						
 					}
 					mView.setViewName("redirect:/users/loginform.do?url="+url);
 					
@@ -44,4 +47,69 @@ public class AuthAsepct {
 		return joinPoint.proceed();
 		
 	}
+	
+	@Around("execution(* admin*(..))")
+	public Object adminCheck(ProceedingJoinPoint joinPoint) throws Throwable{
+		
+		Object[] args= joinPoint.getArgs();
+		
+		for(Object tmp:args){
+			
+			if(tmp instanceof HttpServletRequest){
+				
+				HttpServletRequest request=(HttpServletRequest)tmp;
+				
+				String id=(String)request.getSession().getAttribute("id");
+				if(id == null || !id.equals("admin")){
+					ModelAndView mView= new ModelAndView();
+					
+					String query=request.getQueryString();
+					
+					String url=null;
+					if(query==null){
+						url=request.getRequestURI();
+					}else{
+						url=request.getRequestURI()+"?"+query;
+					}
+					
+					mView.setViewName("redirect:/users/loginform.do?url="+url);
+					return mView;
+				}
+			}
+		}
+		
+		
+		
+		
+		return joinPoint.proceed();
+		
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

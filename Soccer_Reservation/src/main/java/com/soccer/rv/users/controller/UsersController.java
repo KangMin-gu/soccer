@@ -75,12 +75,14 @@ public class UsersController {
 		String id = (String)session.getAttribute("id");
 		ModelAndView mView = service.detail(id);
 		mView.setViewName("users/info");
+		
 		return mView;
 	}
 	
 	//회원정보 수정폼
 	@RequestMapping("/users/updateform")
 	public ModelAndView authupdateform(HttpServletRequest request){
+		
 		HttpSession session = request.getSession();
 		String id = (String)session.getAttribute("id");
 		ModelAndView mView = service.detail(id);
@@ -100,6 +102,7 @@ public class UsersController {
 	//회원 탈퇴
 	@RequestMapping("/users/delete")
 	public ModelAndView authdelete(HttpServletRequest request){
+		
 		HttpSession session = request.getSession();
 		ModelAndView mView = service.delete(session);
 		mView.setViewName("users/delete_result");
