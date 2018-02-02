@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -15,9 +16,17 @@ public class UsersServiceImple implements UsersService{
 	
 	@Autowired
 	private UsersDao dao;
+	@Autowired
+	private PasswordEncoder encoder;
 	
 	@Override
 	public ModelAndView signup(UsersDto dto) {
+		
+		String hash=encoder.encode(dto.getPwd());
+		
+		dto.setPwd(hash);
+		
+		
 		 dao.insert(dto);
 		 ModelAndView mView = new ModelAndView();
 		 mView.addObject("id", dto.getId());
@@ -34,7 +43,18 @@ public class UsersServiceImple implements UsersService{
 	@Override
 	public ModelAndView login(UsersDto dto, HttpServletRequest request) {
 		
+		UsersDto resultDto=dao.getData(dto.getId());
+		
+		
 		boolean isValid = dao.isValid(dto);
+		
+		if(resultDto != null){
+			boolean isMatch=encoder.matches(dto.getPwd(), resultDto.getPwd());
+			if(isMatch){
+				isValid=true;
+			}
+			
+		}
 		
 		String url = request.getParameter("url");
 		
