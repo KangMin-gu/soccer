@@ -9,13 +9,13 @@
 </head>
 <body>
 <h3>예약 폼 입니다.</h3>
-<form action="rvInsert" method="POST">
+<form action="rvinsert.do" method="POST">
 <label for="field_name">운동장 이름</label>
 <input type="hidden" id="field_name" name="field_name" value="${field_name }"/>
 <input type="text" id="field_name" name="field_name" value="${field_name }" disabled /><br/>
 <label for="field_date">예약 날짜</label>
-<input type="hidden" id="field_date" name="field_date" value="${rv_date }"/>
-<input type="text" id="field_date" name="field_date" value="${rv_date }" disabled/><br/>
+<input type="hidden" id="field_date" name="field_date" value="${field_date }"/>
+<input type="text" id="field_date" name="field_date" value="${field_date }" disabled/><br/>
 <label for="rv_time">예약할시간대</label>
 <input type="text" id="rv_time" name="rv_time" value="${rv_time }"/><br/>
 <label for="id">예약자 ID</label>

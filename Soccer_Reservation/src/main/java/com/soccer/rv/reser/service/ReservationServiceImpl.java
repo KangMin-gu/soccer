@@ -11,6 +11,7 @@ import com.soccer.rv.field.dto.FieldDto;
 import com.soccer.rv.reser.dao.ReservationDao;
 import com.soccer.rv.reser.orderdto.ResDto;
 import com.soccer.rv.reser.orderdto.ReservationOrderDto;
+import com.soccer.rv.reser.orderdto.RvinsertFormDto;
 
 @Service
 public class ReservationServiceImpl implements ReservationService{
@@ -55,11 +56,65 @@ public class ReservationServiceImpl implements ReservationService{
 		String phone = (String) session.getAttribute("phone");
 		
 		ModelAndView mView = new ModelAndView ();
-		mView.addObject("rv_date", rv_date);
+		mView.addObject("field_date", rv_date);
 		mView.addObject("field_name", field_name);
 		mView.addObject("rv_time", rv_time);
 		mView.addObject("phone", phone);
 		
+		return mView;
+	}
+
+	//예약하기
+	@Override
+	public ModelAndView rvinsert(RvinsertFormDto dtoa) {
+		
+		ModelAndView mView = new ModelAndView();
+		
+		String morning = "10시-12시";
+		String afternoon = "1시-3시";
+		String night = "4시-6시";
+		
+		
+		String field_name = dtoa.getField_name();
+		String field_date = dtoa.getField_date();
+		String rv_time = dtoa.getRv_time();
+		String id = dtoa.getId();
+		String team = dtoa.getTeam();
+		String phone = dtoa.getPhone();
+		int teamNP = dtoa.getTeamNP();
+		String etc = dtoa.getEtc();
+	
+		ReservationOrderDto order = new ReservationOrderDto();
+		
+			order.setField_name(field_name);
+			order.setField_date(field_date);
+			
+		if(rv_time.equals(morning)){
+			order.setField_m_tname(team);
+			order.setField_m_phone(phone);
+			order.setField_m_teamNP(teamNP);
+			order.setField_m_id(id);
+			order.setField_m_etc(etc);
+			
+		}else if(rv_time.equals(afternoon)){
+			order.setField_a_tname(team);
+			order.setField_a_phone(phone);
+			order.setField_a_teamNP(teamNP);
+			order.setField_a_id(id);
+			order.setField_a_etc(etc);
+	
+		}else if(rv_time.equals(night)){
+			order.setField_n_tname(team);
+			order.setField_n_phone(phone);
+			order.setField_n_teamNP(teamNP);
+			order.setField_n_id(id);
+			order.setField_n_etc(etc);
+			
+		}
+		System.out.println(order.getField_m_tname());
+		System.out.println(order.getField_m_etc());
+		System.out.println(order.getField_a_etc());
+			rvdao.rvinsert(order);
 		return mView;
 	}
 	

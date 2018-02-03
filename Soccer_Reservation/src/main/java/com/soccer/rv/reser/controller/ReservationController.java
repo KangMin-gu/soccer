@@ -1,15 +1,17 @@
 package com.soccer.rv.reser.controller;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+
 import com.soccer.rv.reser.orderdto.ReservationOrderDto;
+import com.soccer.rv.reser.orderdto.RvinsertFormDto;
 import com.soccer.rv.reser.service.ReservationService;
 
 @Controller
@@ -45,6 +47,14 @@ public class ReservationController {
 		mView.setViewName("reser/rv_form");
 		return mView;
 		
+	}
+	
+	//예약하기 및 결과페이지로이동
+	@RequestMapping("/reser/rvinsert")
+	public ModelAndView rvinsert(@ModelAttribute RvinsertFormDto dtoa){
+		ModelAndView mView = rvservice.rvinsert(dtoa);
+		mView.setViewName("/reser/rvinsert_result");
+		return mView;
 	}
 	
 }

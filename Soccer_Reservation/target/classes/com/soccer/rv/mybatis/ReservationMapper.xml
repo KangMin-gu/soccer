@@ -10,5 +10,36 @@
 		select * from field_order  
 		where field_name=#{field_name} and field_date=#{field_date}
 	</select>
-	 
+	
+	<insert id="rvinsert" parameterType="reservationOrderDto">
+		
+	merge into field_order 
+	using dual
+	on(field_date=#{field_date})
+	when matched then
+	update set 
+	num=#{num}, field_name=#{field_name, jdbcType=VARCHAR}, field_date=#{field_date, jdbcType=VARCHAR},
+	field_m_tname=#{field_m_tname, jdbcType=VARCHAR}, field_m_phone=#{field_m_phone, jdbcType=VARCHAR}, field_m_teamNP=#{field_m_teamNP, jdbcType=NULL}, field_m_id=#{field_m_id, jdbcType=VARCHAR}, field_m_etc=#{field_m_etc, jdbcType=VARCHAR},
+	field_a_tname=#{field_a_tname, jdbcType=VARCHAR}, field_a_phone=#{field_a_phone, jdbcType=VARCHAR}, field_a_teamNP=#{field_a_teamNP, jdbcType=VARCHAR}, field_a_id=#{field_a_id, jdbcType=VARCHAR}, field_a_etc=#{field_a_etc, jdbcType=VARCHAR},
+	field_n_tname=#{field_n_tname, jdbcType=VARCHAR}, field_n_phone=#{field_n_phone, jdbcType=VARCHAR}, field_n_teamNP=#{field_n_teamNP, jdbcType=VARCHAR}, field_n_id=#{field_n_id, jdbcType=VARCHAR}, field_n_etc=#{field_n_etc, jdbcType=VARCHAR}
+	when not matched then
+	insert into field_order
+	values (field_order_seq.nextval, #{field_name, jdbcType=VARCHAR}, #{field_date, jdbcType=VARCHAR}, 
+	#{field_m_tname, jdbcType=VARCHAR}, #{field_m_teamNP, jdbcType=VARCHAR}, #{field_m_phone, jdbcType=NULL}, #{field_m_id, jdbcType=VARCHAR}, #{field_m_etc, jdbcType=VARCHAR},
+ 	#{field_a_tname, jdbcType=VARCHAR}, #{field_a_teamNP, jdbcType=VARCHAR}, #{field_a_phone, jdbcType=NULL}, #{field_a_id, jdbcType=VARCHAR}, #{field_a_etc, jdbcType=VARCHAR},
+ 	#{field_n_tname, jdbcType=VARCHAR}, #{field_n_teamNP, jdbcType=VARCHAR}, #{field_n_phone, jdbcType=NULL}, #{field_n_id, jdbcType=VARCHAR}, #{field_n_etc, jdbcType=VARCHAR}
+	)   
+	</insert>
 </mapper>
+<!-- 			 insert into field_order 
+		values (field_order_seq.nextval, #{field_name}, #{field_date}, 
+		#{field_m_tname, jdbcType=VARCHAR}, #{field_m_teamNP, jdbcType=VARCHAR}, #{field_m_phone, jdbcType=NULL}, #{field_m_id, jdbcType=VARCHAR}, #{field_m_etc, jdbcType=VARCHAR},
+ 		#{field_a_tname, jdbcType=VARCHAR}, #{field_a_teamNP, jdbcType=VARCHAR}, #{field_a_phone, jdbcType=NULL}, #{field_a_id, jdbcType=VARCHAR}, #{field_a_etc, jdbcType=VARCHAR},
+ 		#{field_n_tname, jdbcType=VARCHAR}, #{field_n_teamNP, jdbcType=VARCHAR}, #{field_n_phone, jdbcType=NULL}, #{field_n_id, jdbcType=VARCHAR}, #{field_n_etc, jdbcType=VARCHAR}
+		) 
+ -->
+
+<!-- isnert into field_order 
+<if test="field_m_tname != null">
+	update set 	fied_a_name=#{field_a_tname},
+</if> -->
