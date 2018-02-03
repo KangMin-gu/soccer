@@ -18,28 +18,29 @@ public class ReservationController {
 	@Autowired
 	private ReservationService rvservice;
 	
+	//예약 현황 페이지로 이동
 	@RequestMapping("/reser/reserdetail")
 	public ModelAndView rvdetail(HttpServletRequest request, @RequestParam int num){
+		
 		ModelAndView mView = rvservice.detail(request);
 		mView.setViewName("reser/reserdetail");
 		return mView;
 	}
 	
+	//ajax 예약 현황 불러오기
 	@RequestMapping("/reser/rvfieldinfo")
 	@ResponseBody
 	public ReservationOrderDto getData(HttpServletRequest request){
+		
 		ReservationOrderDto order = rvservice.getData(request);
-		if(order == null){
-			System.out.println("비여있어요");
 			return order;
-		}else{
-		System.out.println(order.getField_date());
-		return order;
-		}
+		
 	}
 	
+	//예약화면으로 이동
 	@RequestMapping("/reser/rv_form")
 	public ModelAndView rvform(HttpServletRequest request){ 
+		
 		ModelAndView mView = rvservice.rvform(request);
 		mView.setViewName("reser/rv_form");
 		return mView;

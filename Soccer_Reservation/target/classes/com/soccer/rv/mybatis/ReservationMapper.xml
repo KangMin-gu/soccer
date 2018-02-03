@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="reservation">
-
+	<!-- 운동장의 정보를 가져오기 -->
 	<select id="getData" parameterType="int" resultType="fieldDto">
 		 select * from field where num=#{num}
 	</select>
-	
+	<!--ajax 해당 운동장의 예약현황 가져오기 -->
 	<select id="getinfo" parameterType="resDto" resultType="reservationOrderDto">
 		select * from field_order  
 		where field_name=#{field_name} and field_date=#{field_date}
