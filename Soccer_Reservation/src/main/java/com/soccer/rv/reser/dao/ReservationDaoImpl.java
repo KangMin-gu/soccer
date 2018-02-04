@@ -35,7 +35,7 @@ public class ReservationDaoImpl implements ReservationDao{
 	@Override
 	public void rvinsert(ReservationOrderDto order) {
 		
-		rvsession.insert("reservation.rvinsert", order);
+		rvsession.update("reservation.rvinsert", order);
 		System.out.println(order.getField_a_id());
 		
 	}
