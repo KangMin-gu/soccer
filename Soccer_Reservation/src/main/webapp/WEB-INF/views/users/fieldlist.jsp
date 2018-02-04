@@ -17,10 +17,10 @@
 <p>나의 주소는 ${addr }</p>
 <p>주소 위도는:  ${lat }</p>
 <p>주소 경도는: ${lng }</p>
-
+<div id="map"></div>
 <a href="info.do">나의 정보로 돌아가기</a>
 <a href="${pageContext.request.contextPath}/">홈으로 돌아가기</a>
-<div id="map"></div>
+<a href="templateform.do">템플릿확인</a>
 <script src="${pageContext.request.contextPath}/resources/js/jquery-3.2.1.js"></script>
 <script type="text/javascript">
 

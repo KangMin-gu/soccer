@@ -136,6 +136,12 @@ public class UsersController {
 		return positions;
 	}
 	
+	
+	//템플릿 작업 페이지
+	@RequestMapping("/users/templateform")
+	public String template(){
+		return "users/templateform";
+	}
 }
 
 
