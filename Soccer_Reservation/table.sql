@@ -1,10 +1,5 @@
-create table field (field_name varchar2(100) primary key, field_addr varchar2(100));
 
-insert into field values ('서울홍은초등학교', '서울서대문구홍제3동286-5');
-insert into field values ('서울인초등학교', '서울서대문구홍제3동245-1');
-insert into field values ('명지대학교', '서울서대문거북골로34');
-
-수정테이블 
+운동장 정보를 저장할 테이블 
 create table field 
 (num number primary key, 
 field_name varchar2(100) not null, 
@@ -14,12 +9,12 @@ field_afternoon varchar2(200) not null,
 field_night varchar2(200) not null,
 );
 
+field 테이블의 시퀀스 
 create sequence field_seq;
+운동장의 예약가능 시간은 오전타임 10-12 오후타임 13-15  저녁타임 16-18 시 이용시간을고정으로한다. 
 
-insert into field values (field_seq.nextval, '홍은초등학교', '서울특별시서대문구홍제동286-5', '10시-12시', '10시-15시', '16시-18시'); 
-insert into field values (field_seq.nextval, '홍은벽산아파트', '서울특별시서대문구홍은동455', '10시-12시', '10시-15시', '16시-18시'); 
 
-오더테이블 최종
+예약 정보를 저장할 테이블  
 create table field_order (
 num number primary key,
 field_name varchar2(30),
@@ -41,7 +36,8 @@ field_n_id varchar2(50),
 field_n_etc clob
 )
 
-
+field_order 테이블의 시퀀스 
+create sequence field_order_seq
 
 
 

@@ -28,10 +28,10 @@ public class ReservationDaoImpl implements ReservationDao{
 	public FieldDto getData(int num) {
 		
 		FieldDto dto = rvsession.selectOne("reservation.getData", num);
-		
+		System.out.println(dto.getNum());
 		return dto;
 	}
-
+	//예약하
 	@Override
 	public void rvinsert(ReservationOrderDto order) {
 		
@@ -39,5 +39,7 @@ public class ReservationDaoImpl implements ReservationDao{
 		System.out.println(order.getField_n_teamNP());
 		
 	}
-
+	
+	
+	
 }

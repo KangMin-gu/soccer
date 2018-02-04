@@ -14,7 +14,7 @@
 <p>운동장 주소: <strong>${dto.field_addr }</strong></p>
 
 <h3>예약 현황</h3>
-<form action="rv_form.do" method="POST">
+<form action="rv_form.do?num=${dto.num}" method="POST">
 <input type="hidden" id="field_name" name="field_name" value="${dto.field_name }" /><br/>
 <label for="">날짜</label>
 <select name="rv_date" id="rv_date" >
@@ -24,9 +24,9 @@
 </select>
 <select name="rv_time" id="rv_time">
 	<option value="">---타임선택---</option>
-	<option value="${dto.field_morning}">오전 :10-12</option>
-	<option value="${dto.field_afternoon }">오후 : 13-15</option>
-	<option value="${dto.field_night }">저녁 : 16-18</option>
+	<option value="${dto.field_morning}">오전 : ${dto.field_morning}</option>
+	<option value="${dto.field_afternoon }">오후 : ${dto.field_afternoon }</option>
+	<option value="${dto.field_night }">저녁 : ${dto.field_night }</option>
 </select>
 <button type="submit">예약하기</button>
 </form>

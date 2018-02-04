@@ -16,5 +16,5 @@ public interface ReservationService {
 	public ReservationOrderDto getData(HttpServletRequest request);
 	public ModelAndView detail(HttpServletRequest request);
 	public ModelAndView rvform(HttpServletRequest request);
-	public ModelAndView rvinsert(RvinsertFormDto dto);
+	public ModelAndView rvinsert(int num, RvinsertFormDto dto);
 }

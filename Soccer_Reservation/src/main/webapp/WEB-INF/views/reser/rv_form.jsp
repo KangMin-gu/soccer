@@ -9,7 +9,7 @@
 </head>
 <body>
 <h3>예약 폼 입니다.</h3>
-<form action="rvinsert.do" method="POST">
+<form action="rvinsert.do?num=${dto.num }" method="POST">
 <label for="field_name">운동장 이름</label>
 <input type="hidden" id="field_name" name="field_name" value="${field_name }"/>
 <input type="text" id="field_name" name="field_name" value="${field_name }" disabled /><br/>

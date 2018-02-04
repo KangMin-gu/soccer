@@ -10,5 +10,4 @@ public interface ReservationDao {
 	public ReservationOrderDto getinfo(ResDto rdto);
 	public FieldDto getData(int num);
 	public void rvinsert(ReservationOrderDto order);
-
 }

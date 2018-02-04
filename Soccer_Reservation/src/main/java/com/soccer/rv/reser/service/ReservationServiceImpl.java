@@ -49,6 +49,8 @@ public class ReservationServiceImpl implements ReservationService{
 	public ModelAndView rvform(HttpServletRequest request) {
 		
 		HttpSession session = request.getSession();
+		int num = Integer.parseInt(request.getParameter("num"));
+		FieldDto dto = rvdao.getData(num); 
 		
 		String rv_date = (String)request.getParameter("rv_date");
 		String field_name = (String)request.getParameter("field_name");
@@ -60,20 +62,21 @@ public class ReservationServiceImpl implements ReservationService{
 		mView.addObject("field_name", field_name);
 		mView.addObject("rv_time", rv_time);
 		mView.addObject("phone", phone);
-		
+		mView.addObject("dto" , dto);
 		return mView;
 	}
 
 	//예약하기
 	@Override
-	public ModelAndView rvinsert(RvinsertFormDto dtoa) {
-		
+	public ModelAndView rvinsert(int num, RvinsertFormDto dtoa) {
 		ModelAndView mView = new ModelAndView();
+		FieldDto dto = rvdao.getData(num); 
+		System.out.println("a"+dto.getNum());
 		
-		String morning = "10시-12시";
-		String afternoon = "1시-3시";
-		String night = "4시-6시";
-		
+		String morning = dto.getField_morning();
+		String afternoon = dto.getField_afternoon();
+		String night = dto.getField_night();
+		System.out.println(morning);
 		
 		String field_name = dtoa.getField_name();
 		String field_date = dtoa.getField_date();
@@ -104,7 +107,6 @@ public class ReservationServiceImpl implements ReservationService{
 			order.setField_a_etc(etc);
 	
 		}else{
-			System.out.println("ddddddddddd");
 			order.setField_n_tname(team);
 			order.setField_n_phone(phone);
 			order.setField_n_teamNP(teamNP);
