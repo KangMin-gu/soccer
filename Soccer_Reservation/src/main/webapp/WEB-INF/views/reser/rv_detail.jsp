@@ -14,7 +14,7 @@
 <p>운동장 주소: <strong>${dto.field_addr }</strong></p>
 
 <h3>예약 현황</h3>
-<form action="rv_form.do?num=${dto.num}" method="POST">
+<form action="rv_form.do?num=${dto.num}" method="POST" id="reservationform">
 <input type="hidden" id="field_name" name="field_name" value="${dto.field_name }" /><br/>
 <label for="">날짜</label>
 <select name="rv_date" id="rv_date" >
@@ -28,7 +28,7 @@
 	<option id="afternoona" value="${dto.field_afternoon }" disabled="disabled">오후 : ${dto.field_afternoon }</option>
 	<option id="nighta" value="${dto.field_night }" disabled="disabled">저녁 : ${dto.field_night }</option>
 </select>
-<button type="submit">예약하기</button>
+<button id="submit" type="submit">예약하기</button>
 </form>
 
 <p>오전 시간 : <strong>${dto.field_morning }</strong></p>
@@ -69,9 +69,11 @@ $("#rv_date, rv_time").change(function(){
 					if(data.field_m_tname != null){
 						$("#morning").text(data.field_m_tname);
 						$("#morninga").attr('disabled', 'disabled');
+					
 					}else{
 						$("#morning").text("예약가능합니다.");
 						$("#morninga").removeAttr('disabled');
+					
 					}
 					
 					if(data.field_a_tname != null){
@@ -85,9 +87,11 @@ $("#rv_date, rv_time").change(function(){
 					if(data.field_n_tname != null){
 						$("#night").text(data.field_n_tname);
 						$("#nighta").attr('disabled', 'disabled');
+						
 					}else{
 						$("#night").text("예약가능합니다.");
 						$("#nighta").removeAttr('disabled');
+					
 					}
 					
 				}else{
@@ -103,6 +107,21 @@ $("#rv_date, rv_time").change(function(){
 		}
 	});
 	
+});
+
+$("#reservationform").submit(function(){
+	console.log($("#rv_time").val());
+	if($("#rv_date").val() == ""){
+			alert("예약 날짜를 선택하여 조회하세요.");
+			$("#rv_date").focus();
+			return false;
+	}else if($("#rv_time").val() == ""){
+		alert("예약 가능한 시간을 선택하여 주세요.");
+		$("#rv_time").focus();
+		return false;
+	}else{
+		return true;
+	}
 });
 
 </script>
