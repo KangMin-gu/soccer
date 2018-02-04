@@ -115,8 +115,9 @@ public class ReservationServiceImpl implements ReservationService{
 			
 		}
 
-			rvdao.rvinsert(order);
-			
+		rvdao.rvinsert(order);
+		
+		
 		return mView;
 	}
 	

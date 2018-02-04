@@ -27,7 +27,7 @@
 <link href='http://fonts.googleapis.com/css?family=Poiret+One'
 	rel='stylesheet' type='text/css'>
 <!-- 현재 페이지에 적용할 style.css 파일을 여기에서 로딩한다 -->	
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/fieldlist.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/info.css" />
 </head>
 <body>
 	<div class="header container">
@@ -84,17 +84,10 @@
 	</div>
 <!-- ============TOP============= -->
 
-<div class="container">
-	<div class="row">
-		<div class="col-lg-12">
-			<div id="map"></div>
-		</div>
-	</div>
-</div>	
+
 	
 	
-	
-	
+
 	
 	
 	
