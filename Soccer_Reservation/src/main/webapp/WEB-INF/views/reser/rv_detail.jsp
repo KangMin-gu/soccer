@@ -24,9 +24,9 @@
 </select>
 <select name="rv_time" id="rv_time">
 	<option value="">---타임선택---</option>
-	<option value="${dto.field_morning}">오전 : ${dto.field_morning}</option>
-	<option value="${dto.field_afternoon }">오후 : ${dto.field_afternoon }</option>
-	<option value="${dto.field_night }">저녁 : ${dto.field_night }</option>
+	<option id="morninga" value="${dto.field_morning}" disabled="disabled">오전 : ${dto.field_morning}</option>
+	<option id="afternoona" value="${dto.field_afternoon }" disabled="disabled">오후 : ${dto.field_afternoon }</option>
+	<option id="nighta" value="${dto.field_night }" disabled="disabled">저녁 : ${dto.field_night }</option>
 </select>
 <button type="submit">예약하기</button>
 </form>
@@ -54,7 +54,7 @@
 
 
 
-$("#rv_date").change(function(){
+$("#rv_date, rv_time").change(function(){
 	
 	var date = $("#rv_date").val();
 	
@@ -63,34 +63,43 @@ $("#rv_date").change(function(){
 		method:"GET",
 		success:function(data){
 			console.log(data);
-			if(data){
 		
-				if(data.field_m_tname != null){
-					$("#morning").text(data.field_m_tname);
+				if(data){
+					
+					if(data.field_m_tname != null){
+						$("#morning").text(data.field_m_tname);
+						$("#morninga").attr('disabled', 'disabled');
+					}else{
+						$("#morning").text("예약가능합니다.");
+						$("#morninga").removeAttr('disabled');
+					}
+					
+					if(data.field_a_tname != null){
+						$("#afternoon").text(data.field_a_tname);
+						$("#afternoona").attr('disabled', 'disabled');
+					}else{
+						$("#afternoon").text("예약가능합니다.");
+						$("#afternoona").removeAttr('disabled');	
+					}
+					
+					if(data.field_n_tname != null){
+						$("#night").text(data.field_n_tname);
+						$("#nighta").attr('disabled', 'disabled');
+					}else{
+						$("#night").text("예약가능합니다.");
+						$("#nighta").removeAttr('disabled');
+					}
+					
 				}else{
+					console.log("empty");
 					$("#morning").text("예약가능합니다.");
-				}
-				
-				if(data.field_a_tname != null){
-					$("#afternoon").text(data.field_a_tname);
-				}else{
-				
+					$("#morninga").removeAttr('disabled');
 					$("#afternoon").text("예약가능합니다.");
-				}
-				
-				if(data.field_n_tname != null){
-					$("#night").text(data.field_n_tname);
-				}else{
+					$("#afternoona").removeAttr('disabled');
 					$("#night").text("예약가능합니다.");
+					$("#nighta").removeAttr('disabled');
+					
 				}
-				
-			}else{
-				console.log("empty");
-				$("#morning").text("예약가능합니다.");
-				$("#afternoon").text("예약가능합니다.");
-				$("#night").text("예약가능합니다.");
-				
-			}
 		}
 	});
 	
