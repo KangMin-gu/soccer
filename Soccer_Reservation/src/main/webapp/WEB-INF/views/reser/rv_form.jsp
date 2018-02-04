@@ -42,8 +42,5 @@
 <textarea rows="5" cols="50" id="etc" name="etc"></textarea>
 <button type="submit">예약하기</button>
 </form>
-${rv_time };
-${field_name };
-${rv_date };
 </body>
 </html>

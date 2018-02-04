@@ -9,5 +9,8 @@
 </head>
 <body>
 <p>예약완료입니다!</p>
+{id} 님이 예약하신 결과 입니다. 
+
+<a href="${pageContext.request.contextPath}/">홈</a>
 </body>
 </html>

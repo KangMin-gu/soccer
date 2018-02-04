@@ -73,7 +73,7 @@
 		      		console.log(num);
 					google.maps.event.addListener(marker, 'click', (function(marker, i){
 						return function(){
-							infowindow.setContent((data[i].title)+'<a href="${pageContext.request.contextPath}/reser/reserdetail.do?num='+(data[i].num)+'">'+'예약하기</a>');
+							infowindow.setContent((data[i].title)+'<a href="${pageContext.request.contextPath}/reser/rv_detail.do?num='+(data[i].num)+'">'+'예약하기</a>');
 							//infowindow.setContent(str+'<a href="${pageContext.request.contextPath}/reser/reserdetail.do">예약하기</a>');
 							infowindow.open(map, marker);
 						}

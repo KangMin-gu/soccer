@@ -16,8 +16,8 @@ field_night varchar2(200) not null,
 
 create sequence field_seq;
 
-insert into field values (field_seq.nextval, '홍은초등학교', '서울특별시서대문구홍제동286-5', '10시-12시', '1시-3시', '4시-6시'); 
-insert into field values (field_seq.nextval, '홍은벽산아파트', '서울특별시서대문구홍은동455', '10시-12시', '1시-3시', '4시-6시'); 
+insert into field values (field_seq.nextval, '홍은초등학교', '서울특별시서대문구홍제동286-5', '10시-12시', '10시-15시', '16시-18시'); 
+insert into field values (field_seq.nextval, '홍은벽산아파트', '서울특별시서대문구홍은동455', '10시-12시', '10시-15시', '16시-18시'); 
 
 오더테이블 최종
 create table field_order (

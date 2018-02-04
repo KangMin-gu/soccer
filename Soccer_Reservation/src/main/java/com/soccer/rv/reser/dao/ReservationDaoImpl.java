@@ -36,7 +36,7 @@ public class ReservationDaoImpl implements ReservationDao{
 	public void rvinsert(ReservationOrderDto order) {
 		
 		rvsession.update("reservation.rvinsert", order);
-		System.out.println(order.getField_a_id());
+		System.out.println(order.getField_n_teamNP());
 		
 	}
 

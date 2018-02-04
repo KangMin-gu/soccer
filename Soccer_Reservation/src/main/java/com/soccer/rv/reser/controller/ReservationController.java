@@ -21,11 +21,11 @@ public class ReservationController {
 	private ReservationService rvservice;
 	
 	//예약 현황 페이지로 이동
-	@RequestMapping("/reser/reserdetail")
+	@RequestMapping("/reser/rv_detail")
 	public ModelAndView rvdetail(HttpServletRequest request, @RequestParam int num){
 		
 		ModelAndView mView = rvservice.detail(request);
-		mView.setViewName("reser/reserdetail");
+		mView.setViewName("reser/rv_detail");
 		return mView;
 	}
 	

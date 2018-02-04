@@ -103,7 +103,8 @@ public class ReservationServiceImpl implements ReservationService{
 			order.setField_a_id(id);
 			order.setField_a_etc(etc);
 	
-		}else if(rv_time.equals(night)){
+		}else{
+			System.out.println("ddddddddddd");
 			order.setField_n_tname(team);
 			order.setField_n_phone(phone);
 			order.setField_n_teamNP(teamNP);
@@ -111,10 +112,9 @@ public class ReservationServiceImpl implements ReservationService{
 			order.setField_n_etc(etc);
 			
 		}
-		System.out.println(order.getField_m_tname());
-		System.out.println(order.getField_m_etc());
-		System.out.println(order.getField_a_etc());
+
 			rvdao.rvinsert(order);
+			
 		return mView;
 	}
 	

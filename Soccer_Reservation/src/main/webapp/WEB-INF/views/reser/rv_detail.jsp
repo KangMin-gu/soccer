@@ -26,7 +26,7 @@
 	<option value="">---타임선택---</option>
 	<option value="${dto.field_morning}">오전 :10-12</option>
 	<option value="${dto.field_afternoon }">오후 : 13-15</option>
-	<option value="${order.field_night }">저녁 : 16-18</option>
+	<option value="${dto.field_night }">저녁 : 16-18</option>
 </select>
 <button type="submit">예약하기</button>
 </form>
