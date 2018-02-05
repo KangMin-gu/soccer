@@ -18,7 +18,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<mapper resource="com/soccer/rv/mybatis/FieldMapper.xml"/>
 		<mapper resource="com/soccer/rv/mybatis/ReservationMapper.xml"/>
 		<mapper resource="com/soccer/rv/mybatis/PlayListMapper.xml"/>
-		
 	</mappers>	
 	
 </configuration>
