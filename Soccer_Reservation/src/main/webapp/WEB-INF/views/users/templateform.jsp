@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>    
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>  
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,7 +28,7 @@
 <link href='http://fonts.googleapis.com/css?family=Poiret+One'
 	rel='stylesheet' type='text/css'>
 <!-- 현재 페이지에 적용할 style.css 파일을 여기에서 로딩한다 -->	
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/info.css" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/info.css" />
 </head>
 <body>
 	<div class="header container">
@@ -69,7 +70,7 @@
 		</div>
 		<div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav">
-				<li class="selected"><a href="home.do">Home</a></li>
+				<li class="selected"><a href="${pageContext.request.contextPath}/home.do">Home</a></li>
 				<li><a href="myassist.do">Team</a></li>
 				<li><a href="${pageContext.request.contextPath}/users/fieldlist.do">Near Playground</a></li>
 				<li class="hidden-xs hidden-sm"><a rel="home" href="home.do"><img
@@ -83,16 +84,30 @@
 		</div>
 	</div>
 <!-- ============TOP============= -->
+<!-- ===========소제목============ -->
+<div class="container">
+	<div class="row">
+		<div class="divider col-sm-12 col-xs-12 col-md-12">
+			<div class="header-text"> My <span>Information</span></div>
+		</div>
+	</div>
+</div>
 
-
-	
-	
-
-	
-	
-	
-	
-	
+<!-- ============본문============== -->
+    	<div class="container">
+           <div class="row">
+            	<div class="col-md-offset-2 col-md-8 text-center" >
+                  <div class="panel">
+                    <div class="panel-body">
+ 						
+ 					<!-- ===========작업공간=================== -->
+                 
+                     </div>
+               	  </div>
+             	</div>
+             </div>
+		</div>
+		
 <!-- ============FOOTER============= -->
 	<footer id="footer">
 		<div class="footer-content container">
@@ -140,6 +155,7 @@
 		src="${pageContext.request.contextPath}/resources/js/jquery.bxslider.min.js"></script>
 	<script type="text/javascript"
 		src="${pageContext.request.contextPath}/resources/js/main.js"></script>
+
 	<!-- Place in the <head>, after the three links -->
 	<script>
 		$('.testimonials-slider').bxSlider({

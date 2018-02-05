@@ -73,7 +73,7 @@
 				<li class="selected"><a href="${pageContext.request.contextPath}/home.do">Home</a></li>
 				<li><a href="myassist.do">Team</a></li>
 				<li><a href="${pageContext.request.contextPath}/users/fieldlist.do">Near Playground</a></li>
-				<li class="hidden-xs hidden-sm"><a rel="home" href="home.do"><img
+				<li class="hidden-xs hidden-sm"><a rel="home" href="${pageContext.request.contextPath}/home.do"><img
 						class="logo"
 						src="${pageContext.request.contextPath}/resources/img/soccer.png"
 						width="200" alt="logo"></a></li>
@@ -119,7 +119,7 @@
  										<td class="cell">${dto.addr }</td>
  									</tr>
  									<tr>
- 										<td class="cell">가입날짜 :</td>									
+ 										<td class="cell">가입하신 날짜 :</td>									
  										<td class="cell">${dto.regdate }</td>
  									</tr>
  								</tbody>
