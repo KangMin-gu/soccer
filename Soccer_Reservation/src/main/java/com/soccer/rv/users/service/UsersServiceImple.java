@@ -153,8 +153,8 @@ public class UsersServiceImple implements UsersService{
 				
 				PositionDto positions = new PositionDto(num, title, lat, lng);
 				position.add(positions);
-				System.out.println(positions.getNum());
-			
+				System.out.println("ㅁ"+positions.getNum());
+				
 			} catch (IOException e) {
 				e.printStackTrace();
 			}

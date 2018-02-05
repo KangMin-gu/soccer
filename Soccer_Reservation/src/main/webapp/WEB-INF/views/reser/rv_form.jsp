@@ -26,6 +26,7 @@
 <input type="text" id="phone" name="phone" value="${phone }"/><br/>
 <label for="teamNP">예약팀인원수</label>
 <select name="teamNP" id="teamNP">
+	<option value="">--이용 인원 선택--</option>
 	<option value="1">1</option>
 	<option value="2">2</option>
 	<option value="3">3</option>
