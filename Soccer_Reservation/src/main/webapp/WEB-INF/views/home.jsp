@@ -75,7 +75,9 @@
 						class="logo"
 						src="${pageContext.request.contextPath}/resources/img/soccer.png"
 						width="200" alt="logo"></a></li>
+
 				<li><a href="playlist.do">playground List</a></li>
+				<li><a href="playlist/playlist.do">playground List</a></li>
 				<li><a href="donate.html">Review</a></li>
 				<li><a href="contact.html">Question</a></li>
 			</ul>
