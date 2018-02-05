@@ -69,17 +69,15 @@
 		<div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav">
 				<li class="selected"><a href="home.do">Home</a></li>
-				<li><a href="service.html">Team</a></li>
-				<li><a href="gallery.html">Gallery</a></li>
+				<li><a href="myassist.do">Team</a></li>
+				<li><a href="${pageContext.request.contextPath}/users/fieldlist.do">Near Playground</a></li>
 				<li class="hidden-xs hidden-sm"><a rel="home" href="home.do"><img
 						class="logo"
 						src="${pageContext.request.contextPath}/resources/img/soccer.png"
 						width="200" alt="logo"></a></li>
-				<li><a href="reservation/reservation.do">Reservation</a></li>
+				<li><a href="playlist/playlist.do">playground List</a></li>
 				<li><a href="donate.html">Review</a></li>
 				<li><a href="contact.html">Question</a></li>
-				<li><a href="">AOP 테스트</a></li>
-				<li><a href="">AOP테스트</a></li>
 			</ul>
 		</div>
 	</div>

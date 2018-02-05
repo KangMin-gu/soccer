@@ -16,7 +16,7 @@
 <p>가입날짜 : <strong>${dto.regdate }</strong></p>
 <a href="updateform.do">가입정보수정</a>
 <a href="delete.do">회원탈퇴</a>
-<a href="map.do">내 주변 운동장 찾기</a>
+<a href="fieldlist.do">내 주변 운동장 보기</a>
 <a href="${pageContext.request.contextPath}/">인덱스가기</a>
 </body>
 </html>

@@ -1,6 +1,7 @@
 package com.soccer.rv.users.controller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -9,12 +10,13 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.soccer.rv.field.dto.FieldDto;
+import com.soccer.rv.position.dto.PositionDto;
 import com.soccer.rv.users.dto.UsersDto;
 import com.soccer.rv.users.service.UsersService;
 
@@ -23,6 +25,7 @@ public class UsersController {
 	
 	@Autowired
 	private UsersService service;
+	
 	//회원가입 폼으로 이동 
 	@RequestMapping("/users/signupform")
 	public String signupform (){
@@ -70,19 +73,17 @@ public class UsersController {
 	
 	//회원정보 보기
 	@RequestMapping("/users/info")
-	public ModelAndView authinfo(HttpServletRequest request){
+	public ModelAndView info(HttpServletRequest request){
 		HttpSession session = request.getSession();
 		String id = (String)session.getAttribute("id");
 		ModelAndView mView = service.detail(id);
 		mView.setViewName("users/info");
-		
 		return mView;
 	}
 	
 	//회원정보 수정폼
 	@RequestMapping("/users/updateform")
-	public ModelAndView authupdateform(HttpServletRequest request){
-		
+	public ModelAndView updateform(HttpServletRequest request){
 		HttpSession session = request.getSession();
 		String id = (String)session.getAttribute("id");
 		ModelAndView mView = service.detail(id);
@@ -92,7 +93,7 @@ public class UsersController {
 	
 	//회원정보 수정
 	@RequestMapping("/users/update")
-	public ModelAndView authupdate(@ModelAttribute UsersDto dto, HttpServletRequest request){
+	public ModelAndView update(@ModelAttribute UsersDto dto, HttpServletRequest request){
 		HttpSession session = request.getSession();
 		ModelAndView mView = service.update(dto, session);
 		mView.setViewName("users/update_result");
@@ -101,8 +102,7 @@ public class UsersController {
 	
 	//회원 탈퇴
 	@RequestMapping("/users/delete")
-	public ModelAndView authdelete(HttpServletRequest request){
-		
+	public ModelAndView delete(HttpServletRequest request){
 		HttpSession session = request.getSession();
 		ModelAndView mView = service.delete(session);
 		mView.setViewName("users/delete_result");
@@ -117,6 +117,30 @@ public class UsersController {
 		Map<String, Object> map = new HashMap<>();
 		map.put("canUse", canUse);
 		return map;
+	}
+	
+	//운동장주소와 나의 주소 위치 호출 구글맵 연동
+	@RequestMapping("/users/fieldlist")
+	public ModelAndView fieldList(HttpSession session){
+		String id = (String)session.getAttribute("id");
+		ModelAndView mView = service.map(id);
+		mView.setViewName("users/fieldlist");
+		return mView;
+	}
+	
+	//ajax 모든 운동장 좌표 DB에서 호출
+	@RequestMapping("/users/fieldPosition")
+	@ResponseBody
+	public List<PositionDto> fieldPosition(){
+		List<PositionDto> positions = service.fieldList();
+		return positions;
+	}
+	
+	
+	//템플릿 작업 페이지
+	@RequestMapping("/users/templateform")
+	public String template(){
+		return "users/templateform";
 	}
 }
 
