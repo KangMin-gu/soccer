@@ -36,6 +36,8 @@
 	<input type="text" name="phone" id="phone" /><br/>
 	<label for="addr">주소</label>
 	<input type="text" name="addr" id="addr" /><br/>
+	<label for="detailaddr">상세주소</label>
+	<input type="text" name="detailaddr" id="detailaddr" />
 	<button type="submit" id="submit">가입하기</button>
 </form>
 <script src="${pageContext.request.contextPath }/resources/js/jquery-3.2.1.js"></script>

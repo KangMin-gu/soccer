@@ -75,8 +75,8 @@
 						class="logo"
 						src="${pageContext.request.contextPath}/resources/img/soccer.png"
 						width="200" alt="logo"></a></li>
-				<li><a href="playlist/playlist.do">playground List</a></li>
-				<li><a href="donate.html">Review</a></li>
+				<li><a href="${pageContext.request.contextPath}/playlist/playlist.do">playground List</a></li>
+				<li><a href="${pageContext.request.contextPath}/review/list.do">Review</a></li>
 				<li><a href="contact.html">Question</a></li>
 			</ul>
 		</div>
@@ -97,19 +97,19 @@
 				<img
 					src="${pageContext.request.contextPath}/resources/img/slide3.jpg"
 					alt="">
-				<div class="carousel-caption">Make Donation</div>
+				<div class="carousel-caption">어디서든지 우리동네 축구장을 조회하여</div>
 			</div>
 			<div class="item">
 				<img
 					src="${pageContext.request.contextPath}/resources/img/slide2.jpg"
 					alt="">
-				<div class="carousel-caption">Be a Donator</div>
+				<div class="carousel-caption">넓은 필드를 동료들과 함께!</div>
 			</div>
 			<div class="item">
 				<img
 					src="${pageContext.request.contextPath}/resources/img/slide1.jpg"
 					alt="">
-				<div class="carousel-caption">Be a volunteer</div>
+				<div class="carousel-caption">최고의 팀웍과 우정을 나누세요!</div>
 			</div>
 		</div>
 
@@ -126,179 +126,108 @@
 	</div>
 	<div class="container header-start text-center">
 		<div class="heading-icon">
-			<i class="fa fa-3x fa-heart"></i>
+			<img src="${pageContext.request.contextPath}/resources/images/soccerfield.png" alt="" />
 		</div>
-		<h1 class="main-text">You can book a football field at any time.</h1>
+		<h1 class="main-text">언제, 어디든지 원하는 곳의 축구장을 이용하세요!</h1>
 		<p class="text-center sub-text">
-			<em class="first-line">Lorem ipsum dolor sit amet, consectetur
-				adipisiciSng elit, sed do eiusmod tempor </em><em class="next-line">
-				incididunt ut labore et dolore magna aliqua.A sed do eiusmod tempor
-				incididunt ut labore et dolore magna.</em>
-		</p>
+			<em class="first-line">이제는 무료로 운동장을 예약하여 넓은 필드를 동료들과 함께 누려보세요!</em></p>
 	</div>
 
-	<div class="divider col-sm-12 col-xs-12 col-md-12">
-		<div class="header-text">
-			<span>Review</span> News
-		</div>
-	</div>
+   <div class="divider col-sm-12 col-xs-12 col-md-12">
+      <div class="header-text">
+         <span>Review</span> News
+      </div>
+   </div>
 
-	<section class="blog">
-		<div class="item col-md-4">
-			<div class="blok-read-sm">
-				<a href="single1.html" class="hover-image"> <img
-					src="${pageContext.request.contextPath}/resources/img/sea1.jpg"
-					alt="image"> <span class="layer-block"></span>
-				</a>
-				<div class="editor-choice">
-					<i class="fa fa-star"></i> <a href="#">Editor’s Choice</a>
-				</div>
-				<div class="content-block">
-					<span class="point-caption bg-blue-point"></span> <span
-						class="bottom-line bg-blue-point"></span>
-					<h4>Discovering OM: A visit back to The Vedas</h4>
-					<p>Gregor then turned to look out the window at the dull
-						weather. Drops of rain could pane,which made..</p>
-					<div class="button-main bg-fio-point">read more</div>
-					<div class="like-wrap">
-						<a href="#"><i class="fa fa-heart col-red"></i></a><span>224</span>
-						<a href="#"><i class="fa fa-comment col-green"></i></a><span>89</span>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="item col-md-4">
-			<div class="blok-read-sm">
-				<a href="single1.html" class="hover-image"> <img
-					src="${pageContext.request.contextPath}/resources/img/sea2.jpg"
-					alt="image"> <span class="layer-block"></span>
-				</a>
-				<div class="editor-choice">
-					<i class="fa fa-star"></i> <a href="#">Editor’s Choice</a>
-				</div>
-				<div class="content-block">
-					<span class="point-caption bg-blue-point"></span> <span
-						class="bottom-line bg-blue-point"></span>
-					<h4>Discovering OM: A visit back to The Vedas</h4>
-					<p>Gregor then turned to look out the window at the dull
-						weather. Drops of rain could pane,which made..</p>
-					<div class="button-main bg-fio-point">read more</div>
-					<div class="like-wrap">
-						<a href="#"><i class="fa fa-heart col-red"></i></a><span>224</span>
-						<a href="#"><i class="fa fa-comment col-green"></i></a><span>89</span>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="item col-md-4">
-			<div class="blok-read-sm">
-				<a href="single1.html" class="hover-image"> <img
-					src="${pageContext.request.contextPath}/resources/img/sea3.jpg"
-					alt="image"> <span class="layer-block"></span>
-				</a>
-				<div class="editor-choice">
-					<i class="fa fa-star"></i> <a href="#">Editor’s Choice</a>
-				</div>
-				<div class="content-block">
-					<span class="point-caption bg-blue-point"></span> <span
-						class="bottom-line bg-blue-point"></span>
-					<h4>Discovering OM: A visit back to The Vedas</h4>
-					<p>Gregor then turned to look out the window at the dull
-						weather. Drops of rain could pane,which made..</p>
-					<div class="button-main bg-fio-point">read more</div>
-					<div class="like-wrap">
-						<a href="#"><i class="fa fa-heart col-red"></i></a><span>224</span>
-						<a href="#"><i class="fa fa-comment col-green"></i></a><span>89</span>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+   <section class="blog">
+      <div class="item col-md-4">
+         <div class="blok-read-sm">
+         <!-- single1.html 사진을 누르면 너어갈 경로 -->
+            <a href="review/detail.do" class="hover-image"> <img
+               src="${pageContext.request.contextPath}/resources/img/sea1.jpg"
+               alt="image"> <span class="layer-block"></span>
+            </a>
+            <div class="editor-choice">
+               <i class="fa fa-star"></i> <a href="#">Editor’s Choice</a>
+            </div>
+            
+            <c:forEach var="review" items="${list}" varStatus="status">
+            <c:if test="${status.count eq 3 }">
+               <h4>${review.title }</h4>
+               <p>${review.content }</p>
+            </c:if>
+            </c:forEach>
 
+            <div class="content-block">
+               <span class="point-caption bg-blue-point"></span> <span
+                  class="bottom-line bg-blue-point"></span>
+               <div class="button-main bg-fio-point">read more</div>
+               <div class="like-wrap">
+                  <a href="#"><i class="fa fa-heart col-red"></i></a><span>224</span>
+                  <a href="#"><i class="fa fa-comment col-green"></i></a><span>89</span>
+               </div>
+            </div>
+         </div>
+      </div>
+      
+      <div class="item col-md-4">
+         <div class="blok-read-sm">
+            <a href="single1.html" class="hover-image"> <img
+               src="${pageContext.request.contextPath}/resources/img/sea2.jpg"
+               alt="image"> <span class="layer-block"></span>
+            </a>
+            <div class="editor-choice">
+               <i class="fa fa-star"></i> <a href="#">Editor’s Choice</a>
+            </div>
+                        <c:forEach var="review" items="${list}" varStatus="status">
+            <c:if test="${status.count eq 2 }">
+               <h4>${review.title }</h4>
+               <p>${review.content }</p>
+            </c:if>
+            </c:forEach>
+            
+            <div class="content-block">
+               <span class="point-caption bg-blue-point"></span> <span
+                  class="bottom-line bg-blue-point"></span>
+               <div class="button-main bg-fio-point">read more</div>
+               <div class="like-wrap">
+                  <a href="#"><i class="fa fa-heart col-red"></i></a><span>224</span>
+                  <a href="#"><i class="fa fa-comment col-green"></i></a><span>89</span>
+               </div>
+            </div>
+         </div>
+      </div>
 
-	<div class="divider col-sm-12 col-xs-12 col-md-12">
-		<div class="header-text">
-			Our <span>Testimonials</span>
-		</div>
-	</div>
+      <div class="item col-md-4">
+         <div class="blok-read-sm">
+            <a href="detail.do?num=${tmp.num }&condition=${condition}&keyword=${keyword}" class="hover-image"> <img
+               src="${pageContext.request.contextPath}/resources/img/sea3.jpg"
+               alt="image"> <span class="layer-block"></span>
+            </a>
+            <div class="editor-choice">
+               <i class="fa fa-star"></i> <a href="#">Editor’s Choice</a>
+            </div>
+            <c:forEach var="review" items="${list}" varStatus="status">
+            <c:if test="${status.count eq 1 }">
+               <h4>${review.title }</h4>
+               <p>${review.content }</p>
+            </c:if>
+            </c:forEach>
+            <div class="content-block">
+               <span class="point-caption bg-blue-point"></span> <span
+                  class="bottom-line bg-blue-point"></span>
+               <div class="button-main bg-fio-point">read more</div>
+               <div class="like-wrap">
+                  <a href="#"><i class="fa fa-heart col-red"></i></a><span></span>
+                  <a href="#"><i class="fa fa-comment col-green"></i></a><span>89</span>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
 
-	<section class="testimonial">
-		<div class="col-md-7 testimonial-blog">
-			<div id="wrapper">
-				<!-- DEMO -->
-				<div class="testimonials-slider">
-					<div class="slide">
-						<div class="testimonials-carousel-thumbnail">
-							<img width="120" alt=""
-								src="${pageContext.request.contextPath}/resources/images/team1.jpg">
-						</div>
-						<div class="testimonials-carousel-context">
-							<div class="testimonials-name">
-								Rub elvi <span>shuvohabib.com</span>
-							</div>
-							<div class="testimonials-carousel-content">
-								<p>Sed posuere consectetur est at lobortis. Fusce dapibus,
-									tellus ac cursus commodo.Cras mattis consectetur purus sit amet
-									fermentum. Sed posuere consectetur est at lobortis. Fusce
-									dapibus, tellus ac cursus commodo.</p>
-							</div>
-						</div>
-					</div>
+	
 
-					<div class="slide">
-						<div class="testimonials-carousel-thumbnail">
-							<img width="120" alt="" src="${pageContext.request.contextPath}/resources/images/team2.jpg">
-						</div>
-						<div class="testimonials-carousel-context">
-							<div class="testimonials-name">
-								Jewel Jahan <span>technextit.com</span>
-							</div>
-							<div class="testimonials-carousel-content">
-								<p>Cras mattis consectetur purus sit amet fermentum. Sed
-									posuere consectetur est at lobortis. Fusce dapibus, tellus ac
-									cursus commodo.</p>
-							</div>
-						</div>
-					</div>
-
-					<div class="slide">
-						<div class="testimonials-carousel-thumbnail">
-							<img width="120" alt=""
-								src="${pageContext.request.contextPath}/resources/images/team3.jpg">
-						</div>
-						<div class="testimonials-carousel-context">
-							<div class="testimonials-name">
-								Mark Zuckerberg<span>www.Facebook.com</span>
-							</div>
-							<div class="testimonials-carousel-content">
-								<p>It is a long established fact that a reader will be
-									distracted by the readable content of a page when looking at
-									its layout. The point of using Lorem Ipsum is that it has a
-									more-or-less normal..</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- END DEMO -->
-				<div class="clearfix"></div>
-			</div>
-		</div>
-		<div class="col-md-4 subscribe-form">
-			<div class="subscribe">
-				<h4>Subscribe to Newsletter</h4>
-				<div class="email-field">
-					<form action="http://demo.nrgthemes.com/">
-						<div class="email-input">
-							<input type="email" placeholder="Enter your email..." required>
-							<i class="fa fa-check col-green"></i>
-						</div>
-						<button type="submit" class="button-main bg-green">Submit</button>
-					</form>
-					<span>We never spam :)</span>
-				</div>
-			</div>
-		</div>
-	</section>
 
 	<!-- ============FOOTER============= -->
 	<footer id="footer">

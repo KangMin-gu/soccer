@@ -1,3 +1,16 @@
+<<<<<<< HEAD:Soccer_Reservation/users.sql
+create table users 
+(id varchar2(100) primary key, 
+name varchar2(100), 
+pwd varchar2(100), 
+email varchar2(200), 
+phone varchar2(200), 
+addr varchar2(200), 
+detailaddr varchar2(200),
+findquestion varchar2(200), 
+findAnswer varchar2(200), 
+regdate date);
+=======
 
 운동장 정보를 저장할 테이블 
 create table field 
@@ -44,3 +57,4 @@ create sequence field_order_seq
 
 
 
+>>>>>>> 65a6dae11871b1ee0e87fb481e674a24eb02882e:Soccer_Reservation/table.sql
