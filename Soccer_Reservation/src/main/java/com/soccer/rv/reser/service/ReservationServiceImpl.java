@@ -1,5 +1,7 @@
 package com.soccer.rv.reser.service;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -121,6 +123,20 @@ public class ReservationServiceImpl implements ReservationService{
 		
 		return mView;
 	}
+	
+//예약정보 확인하기
+	@Override
+	public ModelAndView myreser(HttpServletRequest request) {
+		String id = (String)request.getSession().getAttribute("id");
+		List<ReservationOrderDto> list = rvdao.myreser(id);
+		System.out.println(id);
+		ModelAndView mView = new ModelAndView();
+		mView.addObject("list", list);
+		mView.addObject("id", id);
+		return mView;
+	}
+	
+	
 	
 
 }

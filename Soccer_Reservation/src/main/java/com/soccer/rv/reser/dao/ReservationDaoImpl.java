@@ -1,5 +1,8 @@
 package com.soccer.rv.reser.dao;
 
+import java.util.List;
+import java.util.Map;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -38,6 +41,13 @@ public class ReservationDaoImpl implements ReservationDao{
 		rvsession.update("reservation.rvinsert", order);
 		System.out.println(order.getField_n_teamNP());
 		
+	}
+
+	//나의 예약 조회하기
+	@Override
+	public List<ReservationOrderDto> myreser(String id) {
+		List<ReservationOrderDto> list = rvsession.selectList("reservation.myreser" , id);
+		return list;
 	}
 	
 	

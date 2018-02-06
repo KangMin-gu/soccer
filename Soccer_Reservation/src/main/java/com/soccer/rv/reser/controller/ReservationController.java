@@ -1,5 +1,7 @@
 package com.soccer.rv.reser.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,4 +59,22 @@ public class ReservationController {
 		return mView;
 	}
 	
+	//나의 예약정보 확인하기
+	@RequestMapping("/reser/myreser")
+	public ModelAndView myreser(HttpServletRequest request){
+		ModelAndView mView = rvservice.myreser(request);
+		mView.setViewName("reser/myreser");
+		return mView;
+	}
+	
 }
+
+
+
+
+
+
+
+
+
+

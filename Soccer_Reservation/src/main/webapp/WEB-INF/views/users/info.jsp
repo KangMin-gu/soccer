@@ -127,7 +127,8 @@
                             <div class="text-center">
                               <ul class="list-unstyled list-inline list-social-sq-primary">
                                 <li><a class="btn btn-default" href="updateform.do">가입정보수정</a></li>
-                                <li><a class="btn btn-default" href="delete.do">회원탈퇴</a></li>
+                                <li><a class="btn btn-default" href="${pageContext.request.contextPath}/reser/myreser.do">나의 예약정보 확인</a></li>
+                                 <li><a class="btn btn-default" href="delete.do">회원탈퇴</a></li>
                               </ul>
                           </div>
                         </div>
