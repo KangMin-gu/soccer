@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.soccer.rv.booking.dao.BookingDao;
 
 import com.soccer.rv.booking.dto.BookingDto;
+import com.soccer.rv.reser.orderdto.ReservationOrderDto;
 import com.soccer.rv.users.dto.UsersDto;
 
 @Service
@@ -34,7 +35,7 @@ public class BookingServiceImpl implements BookingService{
 	}
 	
 	@Override
-	public ModelAndView getlist() {
+	public ModelAndView getList() {
 		List<BookingDto> list= bookingDao.getList();
 		
 		ModelAndView mView = new ModelAndView();
@@ -79,7 +80,17 @@ public class BookingServiceImpl implements BookingService{
 		mView.addObject("dto", dto);
 		return mView;
 	}
+	//예약 목록에서 특정 칼럼 수정 기능
+	@Override
+	public ModelAndView update2(ReservationOrderDto dto) {
+		bookingDao.update2(dto);
+		
+		ModelAndView mView = new ModelAndView();
+		mView.addObject("msg","예약정보가 수정되었습니다.");
+		return mView;
+	}
 
+	
 	
 
 

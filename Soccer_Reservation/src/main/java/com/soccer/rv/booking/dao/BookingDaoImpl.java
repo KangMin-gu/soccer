@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.soccer.rv.booking.dto.BookingDto;
+import com.soccer.rv.reser.orderdto.ReservationOrderDto;
 import com.soccer.rv.users.dto.UsersDto;
 
 @Repository
@@ -54,6 +55,11 @@ public class BookingDaoImpl implements BookingDao{
 		return dto;
 	}
 
+	@Override
+	public void update2(ReservationOrderDto dto) {
+		session.update("orderdata.update2",dto);
+		
+	}
 
 
 

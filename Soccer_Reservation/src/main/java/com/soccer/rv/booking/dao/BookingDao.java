@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.soccer.rv.booking.dto.BookingDto;
+import com.soccer.rv.reser.orderdto.ReservationOrderDto;
 import com.soccer.rv.users.dto.UsersDto;
 
 public interface BookingDao {
@@ -16,4 +17,6 @@ public interface BookingDao {
 	public BookingDto getData(int num);
 	public List<BookingDto> getList();
 	public UsersDto getData2(String id);
+	
+	public void update2(ReservationOrderDto dto);
 }
