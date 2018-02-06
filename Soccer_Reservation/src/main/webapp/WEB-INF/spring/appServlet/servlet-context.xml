@@ -54,6 +54,14 @@
 
 	<context:component-scan base-package="com.soccer.rv" />
 	<context:component-scan base-package="com.soccer.rv.users.*"/>
+<<<<<<< HEAD
 	<context:component-scan base-package="com.soccer.rv.review.*"/>
+=======
+	<context:component-scan base-package="com.soccer.rv.field.*"/>
+	<context:component-scan base-package="com.soccer.rv.position.*"/>
+	<context:component-scan base-package="com.soccer.rv.reser.*"/>
+
+
+>>>>>>> 65a6dae11871b1ee0e87fb481e674a24eb02882e
 
 </beans:beans>

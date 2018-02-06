@@ -2,7 +2,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+<<<<<<< HEAD
 	<groupId>com.soccer</groupId>
+=======
+	<groupId>com.playground</groupId>
+>>>>>>> 65a6dae11871b1ee0e87fb481e674a24eb02882e
 	<artifactId>rv</artifactId>
 	<name>reservation</name>
 	<packaging>war</packaging>
@@ -116,7 +120,12 @@
 			<version>4.7</version>
 			<scope>test</scope>
 		</dependency>
-
+		<!--구글 주소를 좌표로 변환해주는 API Geocoder -->
+		<dependency>
+			<groupId>com.google.code.geocoder-java</groupId>
+			<artifactId>geocoder-java</artifactId>
+			<version>0.16</version>
+		</dependency>
 		<!-- DB연결하기 -->	
 		<!-- MyBatis 라이브러리 -->
 		<dependency>
