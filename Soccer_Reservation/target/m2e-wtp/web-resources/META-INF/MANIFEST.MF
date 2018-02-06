@@ -1,10 +1,5 @@
 Manifest-Version: 1.0
-<<<<<<< HEAD
-Built-By: qkreh
-Build-Jdk: 1.8.0_161
-=======
-Built-By: ￪ﾰﾕ￫ﾯﾼ￪ﾵﾬ
+Built-By: acorn
 Build-Jdk: 1.8.0_151
->>>>>>> 65a6dae11871b1ee0e87fb481e674a24eb02882e
 Created-By: Maven Integration for Eclipse
 
