@@ -67,6 +67,12 @@ public class ReservationController {
 		return mView;
 	}
 	
+	//유저예약취소하기
+	@RequestMapping("/reser/myreserdelete")
+	public ModelAndView myreserdelete(HttpServletRequest request){
+		ModelAndView mView = new ModelAndView();
+		return mView;
+	}
 }
 
 

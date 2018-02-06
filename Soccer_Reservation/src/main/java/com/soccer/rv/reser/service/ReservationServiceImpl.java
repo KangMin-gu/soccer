@@ -95,6 +95,7 @@ public class ReservationServiceImpl implements ReservationService{
 			order.setField_date(field_date);
 			
 		if(rv_time.equals(morning)){
+			order.setField_m_time(rv_time);
 			order.setField_m_tname(team);
 			order.setField_m_phone(phone);
 			order.setField_m_teamNP(teamNP);
@@ -102,6 +103,7 @@ public class ReservationServiceImpl implements ReservationService{
 			order.setField_m_etc(etc);
 			
 		}else if(rv_time.equals(afternoon)){
+			order.setField_a_time(rv_time);
 			order.setField_a_tname(team);
 			order.setField_a_phone(phone);
 			order.setField_a_teamNP(teamNP);
@@ -109,6 +111,7 @@ public class ReservationServiceImpl implements ReservationService{
 			order.setField_a_etc(etc);
 	
 		}else{
+			order.setField_n_time(rv_time);
 			order.setField_n_tname(team);
 			order.setField_n_phone(phone);
 			order.setField_n_teamNP(teamNP);
@@ -136,6 +139,16 @@ public class ReservationServiceImpl implements ReservationService{
 		return mView;
 	}
 	
+//유저의 예약취소
+@Override
+public ModelAndView myreserdelete(HttpServletRequest request) {
+	String id = (String)request.getSession().getAttribute("id");
+	String field_name = (String)request.getSession().getAttribute("fieldname");
+	String field_date = (String)request.getSession().getAttribute("fielddate");
+	return null;
+}
+	
+
 	
 	
 

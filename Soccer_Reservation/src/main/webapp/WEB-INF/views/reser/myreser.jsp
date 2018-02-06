@@ -6,10 +6,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css">
 </head>
 <body>
 
-<table>
+<table class="table table-bordered">
 	<thead>
 		<tr>
 			<th>예약 번호</th>
@@ -29,60 +31,76 @@
 				<td>${tmp.num }</td>
 				<td>${tmp.field_name }</td>
 				<td>${tmp.field_date }</td>
-	
+				
 			<c:choose>
-				<c:when test="${not empty tmp.field_m_tname  }">
-				<td>10-12</td>
-					<td>${tmp.field_m_tname }</td>
+				<c:when test="${not empty tmp.field_m_tname }">
+					<td>${tmp.field_m_time}</td>
 				</c:when>
 				<c:when test="${not empty tmp.field_a_tname }">
-				<td>13-15</td>
-					<td>${tmp.field_a_tname }</td>
-				</c:when>
+					<td>${tmp.field_a_time}</td>
+				</c:when>			
 				<c:otherwise>
-				<td>16-18</td>
-					<td>${tmp.field_n_tname }</td>
-				</c:otherwise>
+					<td>${tmp.field_n_time}</td>
+				</c:otherwise>	
+			</c:choose>		
+			
+			<c:choose>
+				<c:when test="${not empty tmp.field_m_tname }">
+					<td>${tmp.field_m_tname}</td>
+				</c:when>
+				<c:when test="${not empty tmp.field_a_tname }">
+					<td>${tmp.field_a_tname}</td>
+				</c:when>			
+				<c:otherwise>
+					<td>${tmp.field_n_tname}</td>
+				</c:otherwise>	
 			</c:choose>	
+			
 			<c:choose>
-				<c:when test="${not empty tmp.field_m_teamNP }">
-					<td>${tmp.field_m_teamNP }</td>
+				<c:when test="${not empty tmp.field_m_tname }">
+					<td>${tmp.field_m_teamNP}</td>
 				</c:when>
-				<c:when test="${not empty tmp.field_a_teamNP }">
-					<td>${tmp.field_a_teamNP }</td>
-				</c:when>	
+				<c:when test="${not empty tmp.field_a_tname }">
+					<td>${tmp.field_a_teamNP}</td>
+				</c:when>			
 				<c:otherwise>
-					<td>${tmp.field_n_teamNP }</td>
-				</c:otherwise>			
-			</c:choose>
+					<td>${tmp.field_n_teamNP}</td>
+				</c:otherwise>	
+			</c:choose>	
+
 			<c:choose>
-				<c:when test="${not empty tmp.field_m_phone }">
-					<td>${tmp.field_m_phone }</td>
+				<c:when test="${not empty tmp.field_m_tname }">
+					<td>${tmp.field_m_phone}</td>
 				</c:when>
-				<c:when test="${not empty tmp.field_a_phone }">
-					<td>${tmp.field_a_phone }</td>
-				</c:when>	
+				<c:when test="${not empty tmp.field_a_tname }">
+					<td>${tmp.field_a_phone}</td>
+				</c:when>			
 				<c:otherwise>
-					<td>${tmp.field_n_phone }</td>
-				</c:otherwise>			
-			</c:choose>
+					<td>${tmp.field_n_phone}</td>
+				</c:otherwise>	
+			</c:choose>		
+			
 			<c:choose>
-				<c:when test="${not empty tmp.field_m_etc }">
-					<td>${tmp.field_m_etc }</td>
+				<c:when test="${not empty tmp.field_m_tname }">
+					<td>${tmp.field_m_etc}</td>
 				</c:when>
-				<c:when test="${not empty tmp.field_a_etc }">
-					<td>${tmp.field_a_etc }</td>
-				</c:when>	
+				<c:when test="${not empty tmp.field_a_tname }">
+					<td>${tmp.field_a_etc}</td>
+				</c:when>			
 				<c:otherwise>
-					<td>${tmp.field_n_etc }</td>
-				</c:otherwise>			
-			</c:choose>
-				<td><a href="myrvcancel.do?">취소</a></td>
+					<td>${tmp.field_n_etc}</td>
+				</c:otherwise>	
+			</c:choose>								
+					
+					<td><a href="myreserdelete.do?num=${tmp.num }&fieldname=${tmp.field_name}&fielddate=${tmp.field_date}">예약취소</a></td>
 			</tr>
 		</c:forEach>	
 	</tbody>
 </table>
 
+<a href="${pageContext.request.contextPath}/">홈</a>
+
+<script src="${pageContext.request.contextPath}/resources/css/bootstrap.min.css"></script>
 
 </body>
 </html>
