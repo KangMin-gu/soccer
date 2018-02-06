@@ -6,11 +6,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<!-- w3.css 인터넷에서 받아옴 -->
+
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css">
-<!--[if lt IE 9]>
-			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/bootstrap.css">	
 <link href="${pageContext.request.contextPath}/resources/css/styles.css"
 	rel="stylesheet">
 <link rel="stylesheet"
@@ -19,11 +20,19 @@
 	href="${pageContext.request.contextPath}/resources/css/testimonial.css" />
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/font-awesome.min.css">
-<link href='http://fonts.googleapis.com/css?family=Poiret+One'
-	rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Poiret+One'rel='stylesheet' type='text/css'>
+
 <!-- 현재 페이지에 적용할 style.css 파일을 여기에서 로딩한다 -->
-<link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/resources/css/update.css" />
+<style>
+	#myForm input{
+		width: 95%;
+		padding: 12px 20px;
+		margin: 8px 0;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+	}
+</style>
+
 </head>
 <body>
 	<div class="header container">
@@ -91,6 +100,17 @@
 			<div class="divider col-sm-12 col-xs-12 col-md-12">
 				<div class="header-text">
 					My <span>축구장 정보 수정</span>
+										<div class="container header-start text-center">
+						<div class="heading-icon">
+							<img src="https://png.icons8.com/material/96/000000/stadium.png">
+						</div>
+						<h1 class="main-text">관리자 운동장 정보수정</h1>
+						<p class="text-center sub-text">
+							<em class="first-line"></em>
+								<em class="next-line">
+								</em>
+						</p>
+					</div>	
 				</div>
 			</div>
 		</div>
@@ -99,20 +119,22 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-offset-2 col-md-8 text-center">
-				<div class="panel panel-warning">
+				<div class="panel">
 					<div class="panel-body">
 
 						<div class="text-center">
+						
+						
 							<form action="update.do" method="post" id="myForm">
-							
-								<input type="hidden" name="num" value="${dto.num }" /> 
-								<label for="field_name">운동장이름</label>
-								 <input type="text"name="field_name" id="field_name" />
+								
+								<input  type="hidden" name="num" value="${dto.num }" /> 
+								<label for="field_name" placeholder="운동장명" >운동장이름</label>
+								 <input type="text"name="field_name" id="field_name"  />
 								 </br>
-								  <label for="field_addr">운동장주소</label>
+								  <label  for="field_addr">운동장주소</label>
 								<input type="text" name="field_addr" id="field_addr" />
 								</br>
-								 <labelfor="field_morning">오전시간</label>
+								 <label for="field_morning">오전시간</label>
 								 <input type="text" name="field_morning" id="field_morning" value="${dto.field_morning }" />
 								 </br>
 								   <label for="field_afternoon">오후시간</label>
@@ -120,8 +142,8 @@
 								</br>
 								 <label for="field_night">저녁시간</label>
 								<input type="text" name="field_night" id="field_night" value="${dto.field_night }" /> <br />
-								<button class="btn btn-primary" type="submit">수정</button>
-								<a class="btn btn-warning" href="playlist.do">취소</a>
+								<button class="btn btn-default" type="submit">수정</button>
+								<a class="btn btn-default" href="playlist.do">취소</a>
 
 							</form>
 						</div>
@@ -171,10 +193,10 @@
 		src="${pageContext.request.contextPath}/resources/js/jquery.min.js"></script>
 	<script
 		src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
+			<script
+		src="${pageContext.request.contextPath}/resources/js/bootstrap.js"></script>
 	<script
 		src="${pageContext.request.contextPath}/resources/js/nav-hover.min.js"></script>
-	<script type="text/javascript"
-		src="${pageContext.request.contextPath}/resources/js/jquery.bxslider.min.js"></script>
 	<script type="text/javascript"
 		src="${pageContext.request.contextPath}/resources/js/main.js"></script>
 
