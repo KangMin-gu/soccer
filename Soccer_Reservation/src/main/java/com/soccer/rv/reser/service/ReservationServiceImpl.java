@@ -12,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.soccer.rv.field.dto.FieldDto;
 import com.soccer.rv.reser.dao.ReservationDao;
 import com.soccer.rv.reser.orderdto.ResDto;
+import com.soccer.rv.reser.orderdto.ReserDeleteDto;
 import com.soccer.rv.reser.orderdto.ReservationOrderDto;
 import com.soccer.rv.reser.orderdto.RvinsertFormDto;
 
@@ -142,10 +143,18 @@ public class ReservationServiceImpl implements ReservationService{
 //유저의 예약취소
 @Override
 public ModelAndView myreserdelete(HttpServletRequest request) {
+	int num = Integer.parseInt(request.getParameter("num"));
 	String id = (String)request.getSession().getAttribute("id");
 	String field_name = (String)request.getSession().getAttribute("fieldname");
 	String field_date = (String)request.getSession().getAttribute("fielddate");
-	return null;
+	
+	ReserDeleteDto deldto = new ReserDeleteDto(num, id, field_name, field_date);
+	rvdao.myreserdelete(deldto);
+	
+	ModelAndView mView = new ModelAndView();
+	mView.addObject("id", id);
+	
+	return mView;
 }
 	
 

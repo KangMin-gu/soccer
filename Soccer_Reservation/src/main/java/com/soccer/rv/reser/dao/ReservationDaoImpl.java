@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import com.soccer.rv.field.dto.FieldDto;
 import com.soccer.rv.reser.orderdto.ResDto;
+import com.soccer.rv.reser.orderdto.ReserDeleteDto;
 import com.soccer.rv.reser.orderdto.ReservationOrderDto;
 
 @Repository
@@ -34,7 +35,7 @@ public class ReservationDaoImpl implements ReservationDao{
 		System.out.println(dto.getNum());
 		return dto;
 	}
-	//예약하
+	//예약하기
 	@Override
 	public void rvinsert(ReservationOrderDto order) {
 		
@@ -48,6 +49,13 @@ public class ReservationDaoImpl implements ReservationDao{
 	public List<ReservationOrderDto> myreser(String id) {
 		List<ReservationOrderDto> list = rvsession.selectList("reservation.myreser" , id);
 		return list;
+	}
+
+	//예약 취소하기(하나의 로우에서 칼럼을 null 값으로 바꿔야하기에 delete가 아닌 update)
+	@Override
+	public void myreserdelete(ReserDeleteDto deldto) {
+		rvsession.update("reservation.myreserdelete", deldto);
+		
 	}
 	
 	
