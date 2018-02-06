@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="orderdata">
-	<insert id="insert" parameterType="bookingDto">
+		<insert id="insert" parameterType="bookingDto">
 		INSERT INTO order_data
 		VALUES(order_data_seq.NEXTVAL, #{playgroundname}, #{field_rent}, #{rv_date}, #{teamname}, #{teamnumber}, #{phone}, #{etc})
 	</insert>
 	
-	<select id="getList" resultType="bookingDto">
-		SELECT num, playgroundname, field_rent, rv_date, teamname, teamnumber, phone, etc
-		FROM order_data
+	<select id="getList" resultType="reservationOrderDto">
+		SELECT *
+		FROM field_order
 		ORDER BY num DESC
 	</select>
 	
 	<delete id="delete" parameterType="int">
-		DELETE FROM order_data WHERE num=#{num}
+		DELETE FROM field_order WHERE field_m_phone=#{field_m_phone}, field_m_teamNP=#{field_m_teamNP}, field_m_etc=#{field_m_etc}
 	</delete>
 	
 	<select id="getData" parameterType="int" resultType="bookingDto">
@@ -25,5 +25,39 @@
 		SET teamname=#{teamname}, teamnumber=#{teamnumber}, phone=#{phone}, etc=#{etc}
 		WHERE num=#{num}
 	</update>
+	
+	<update id="update2" parameterType="reservationOrderDto">
+		MERGE INTO field_order
+		USING dual
+		ON (num=#{num})
+		WHEN MATCHED THEN
+		UPDATE
+		<set>
+			<if test="field_m_tname != null">
+				field_m_tname=#{field_m_tname, jdbcType=VARCHAR}, field_m_phone=#{field_m_phone, jdbcType=NULL}, field_m_teamNP=#{field_m_teamNP, jdbcType=VARCHAR}, 
+				field_m_id=#{field_m_id, jdbcType=VARCHAR}, field_m_etc=#{field_m_etc, jdbcType=VARCHAR}
+			</if>
+			<if test="field_a_tname != null">
+				field_a_tname=#{field_a_tname, jdbcType=VARCHAR}, field_a_phone= #{field_a_phone, jdbcType=NULL}, field_a_teamNP= #{field_a_teamNP, jdbcType=VARCHAR}, 
+				field_a_id= #{field_a_id, jdbcType=VARCHAR}, field_a_etc=#{field_a_etc, jdbcType=VARCHAR}
+			</if>
+			<if test="field_n_tname != null">
+				field_n_tname=#{field_n_tname, jdbcType=VARCHAR}, field_n_phone=#{field_n_phone, jdbcType=NULL}, field_n_teamNP=#{field_n_teamNP, jdbcType=VARCHAR}, 
+				field_n_id=#{field_n_id, jdbcType=VARCHAR}, field_n_etc=#{field_n_etc, jdbcType=VARCHAR}
+			</if> 
+		</set>
+		WHEN NOT MATCHED THEN
+		INSERT  (
+		num, field_name, field_Date, 
+		field_m_tname, field_m_teamNP, field_m_phone, field_m_id, field_m_etc,
+		field_a_tname, field_a_teamNP, field_a_phone, field_a_id, field_a_etc,
+		field_n_tname, field_n_teamNP, field_n_phone, field_n_id, field_n_etc
+		)
+		VALUES (field_order_seq.nextval, #{field_name}, #{field_date}, 
+		#{field_m_tname, jdbcType=VARCHAR}, #{field_m_teamNP, jdbcType=VARCHAR}, #{field_m_phone, jdbcType=NULL}, #{field_m_id, jdbcType=VARCHAR}, #{field_m_etc, jdbcType=VARCHAR},
+	 	#{field_a_tname, jdbcType=VARCHAR}, #{field_a_teamNP, jdbcType=VARCHAR}, #{field_a_phone, jdbcType=NULL}, #{field_a_id, jdbcType=VARCHAR}, #{field_a_etc, jdbcType=VARCHAR},
+	 	#{field_n_tname, jdbcType=VARCHAR}, #{field_n_teamNP, jdbcType=VARCHAR}, #{field_n_phone, jdbcType=NULL}, #{field_n_id, jdbcType=VARCHAR}, #{field_n_etc, jdbcType=VARCHAR}
+		)   
+	</update> 
 	
 </mapper>
