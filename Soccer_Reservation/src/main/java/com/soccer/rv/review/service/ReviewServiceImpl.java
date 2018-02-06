@@ -181,7 +181,7 @@ public class ReviewServiceImpl implements ReviewService{
 		ReviewDto dto=reviewDao.getData(num);
 		//ModelAndView 객체에 담아서 
 		ModelAndView mView=new ModelAndView();
-		mView.addObject("dto", dto);
+		mView.addObject("reviewDTO", dto);
 		//리턴해 준다.
 		return mView;
 	}

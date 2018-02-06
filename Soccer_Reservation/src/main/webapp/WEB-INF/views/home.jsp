@@ -146,19 +146,25 @@
 	<section class="blog">
 		<div class="item col-md-4">
 			<div class="blok-read-sm">
-				<a href="single1.html" class="hover-image"> <img
+			<!-- single1.html 사진을 누르면 너어갈 경로 -->
+				<a href="review/detail.do" class="hover-image"> <img
 					src="${pageContext.request.contextPath}/resources/img/sea1.jpg"
 					alt="image"> <span class="layer-block"></span>
 				</a>
 				<div class="editor-choice">
 					<i class="fa fa-star"></i> <a href="#">Editor’s Choice</a>
 				</div>
+				
+				<c:forEach var="review" items="${list}" varStatus="status">
+				<c:if test="${status.count eq 3 }">
+					<h4>${review.title }</h4>
+					<p>${review.content }</p>
+				</c:if>
+				</c:forEach>
+
 				<div class="content-block">
 					<span class="point-caption bg-blue-point"></span> <span
 						class="bottom-line bg-blue-point"></span>
-					<h4>Discovering OM: A visit back to The Vedas</h4>
-					<p>Gregor then turned to look out the window at the dull
-						weather. Drops of rain could pane,which made..</p>
 					<div class="button-main bg-fio-point">read more</div>
 					<div class="like-wrap">
 						<a href="#"><i class="fa fa-heart col-red"></i></a><span>224</span>
@@ -167,6 +173,7 @@
 				</div>
 			</div>
 		</div>
+		
 		<div class="item col-md-4">
 			<div class="blok-read-sm">
 				<a href="single1.html" class="hover-image"> <img
@@ -176,12 +183,16 @@
 				<div class="editor-choice">
 					<i class="fa fa-star"></i> <a href="#">Editor’s Choice</a>
 				</div>
+								<c:forEach var="review" items="${list}" varStatus="status">
+				<c:if test="${status.count eq 2 }">
+					<h4>${review.title }</h4>
+					<p>${review.content }</p>
+				</c:if>
+				</c:forEach>
+				
 				<div class="content-block">
 					<span class="point-caption bg-blue-point"></span> <span
 						class="bottom-line bg-blue-point"></span>
-					<h4>Discovering OM: A visit back to The Vedas</h4>
-					<p>Gregor then turned to look out the window at the dull
-						weather. Drops of rain could pane,which made..</p>
 					<div class="button-main bg-fio-point">read more</div>
 					<div class="like-wrap">
 						<a href="#"><i class="fa fa-heart col-red"></i></a><span>224</span>
@@ -190,24 +201,28 @@
 				</div>
 			</div>
 		</div>
+
 		<div class="item col-md-4">
 			<div class="blok-read-sm">
-				<a href="single1.html" class="hover-image"> <img
+				<a href="detail.do?num=${tmp.num }&condition=${condition}&keyword=${keyword}" class="hover-image"> <img
 					src="${pageContext.request.contextPath}/resources/img/sea3.jpg"
 					alt="image"> <span class="layer-block"></span>
 				</a>
 				<div class="editor-choice">
 					<i class="fa fa-star"></i> <a href="#">Editor’s Choice</a>
 				</div>
+				<c:forEach var="review" items="${list}" varStatus="status">
+				<c:if test="${status.count eq 1 }">
+					<h4>${review.title }</h4>
+					<p>${review.content }</p>
+				</c:if>
+				</c:forEach>
 				<div class="content-block">
 					<span class="point-caption bg-blue-point"></span> <span
 						class="bottom-line bg-blue-point"></span>
-					<h4>Discovering OM: A visit back to The Vedas</h4>
-					<p>Gregor then turned to look out the window at the dull
-						weather. Drops of rain could pane,which made..</p>
 					<div class="button-main bg-fio-point">read more</div>
 					<div class="like-wrap">
-						<a href="#"><i class="fa fa-heart col-red"></i></a><span>224</span>
+						<a href="#"><i class="fa fa-heart col-red"></i></a><span></span>
 						<a href="#"><i class="fa fa-comment col-green"></i></a><span>89</span>
 					</div>
 				</div>
