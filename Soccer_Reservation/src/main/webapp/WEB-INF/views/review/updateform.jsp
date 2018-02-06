@@ -49,7 +49,7 @@
 		</div>
 		<div class="form-group">
 			<label for="content">내용</label>
-			<textarea name="content" id="content">${dto.content }</textarea>
+			<textarea class="form-control" rows="3" name="content" id="content">${dto.content }</textarea>
 		</div>
 		<button onclick="submitContents(this);" 
 			class="btn btn-success" type="submit">수정 확인</button>
