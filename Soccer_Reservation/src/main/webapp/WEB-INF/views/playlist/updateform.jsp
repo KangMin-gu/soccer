@@ -99,7 +99,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-offset-2 col-md-8 text-center">
-				<div class="panel">
+				<div class="panel panel-warning">
 					<div class="panel-body">
 
 						<div class="text-center">
@@ -121,7 +121,7 @@
 								 <label for="field_night">저녁시간</label>
 								<input type="text" name="field_night" id="field_night" value="${dto.field_night }" /> <br />
 								<button class="btn btn-primary" type="submit">수정</button>
-								<button class="btn brn-warning" type="reset">취소</button>
+								<a class="btn btn-warning" href="playlist.do">취소</a>
 
 							</form>
 						</div>

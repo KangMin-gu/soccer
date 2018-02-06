@@ -44,7 +44,7 @@
 					<tr>
 						<td>${tmp.num }</td>
 						<td>${tmp.field_name }</td>
-						<td><a href="detail.do?num=${tmp.num }">${tmp.field_addr }</a></td>
+						<td>${tmp.field_addr }</a></td>
 						<td>${tmp.field_morning }</td>
 						<td>${tmp.field_afternoon }</td>
 						<td>${tmp.field_night }</td>
