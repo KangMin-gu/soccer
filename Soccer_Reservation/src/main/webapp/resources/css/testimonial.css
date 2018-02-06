@@ -1,12 +1,4 @@
- #loginUl{
-float:right;
-}
-
-.loginLi{
-	display:inline;
-}
- 
- .bx-wrapper .testimonials-thumbnail {
+.bx-wrapper .testimonials-thumbnail {
     margin: 0px 0px 15px;
 }
 
@@ -79,7 +71,7 @@ float:right;
 
 .bx-wrapper .bx-loading {
     min-height: 50px;
-    background: url(../images/bx_loader.gif) center center no-repeat #fff;
+    background: url(images/bx_loader.gif) center center no-repeat #fff;
     height: 100%;
     width: 100%;
     position: absolute;
