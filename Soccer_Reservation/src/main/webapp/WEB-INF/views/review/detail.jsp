@@ -174,10 +174,10 @@
 											<div class="reply_icon"><i class="fa fa-comments-o fa-2x" aria-hidden="true"></i></div>
 										</c:if>
 										<div class='left-box'>
-											from <strong>${tmp.writer }</strong>
+											From&nbsp;<strong>${tmp.writer }</strong>
 											${tmp.regdate }<br/>
-											to <strong>${tmp.target_id }</strong>
-											<a href="javascript:">답글</a>
+											To&nbsp;<strong>${tmp.target_id }</strong>
+											<a class="btn btn-default btn-xs" href="javascript:">답글</a>
 										</div>
 										<textarea id="texta" rows="2" disabled>${tmp.content }</textarea>
 										<form class="form" action="comment_insert.do" method="post">

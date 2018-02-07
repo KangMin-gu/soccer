@@ -131,8 +131,8 @@
 									<label for="content">내용</label>
 									<textarea name="content" id="content">${dto.content }</textarea>
 								</div>
-								<button onclick="submitContents(this);" 
-									class="btn btn-default" type="submit">수정 확인</button>
+								<button  class="btn btn-default" onclick="submitContents(this);" 
+									 type="submit">수정 확인</button>
 							</form>
 					</div>
 				</div>

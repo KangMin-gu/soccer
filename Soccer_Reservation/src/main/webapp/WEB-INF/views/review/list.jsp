@@ -108,7 +108,7 @@
 							<div style="float:left;">
 								<a class="btn btn-default btn-md " href="insertform.do"><i class="glyphicon glyphicon-pencil"></i> 새글 작성</a>
 								<h3>후기글 목록입니다.</h3>
-								<table class="table table-bordered ">
+								<table  id="listtable" class="table table-hover ">
 									<thead>
 										<tr>
 											<th>번호</th>
@@ -188,7 +188,7 @@
 									            </ul>
 									          </div>
 									          <!-- /btn-group -->
-									          <input type="text" id="keyword" name="keyword" value="${keyword }" class="form-control"/>
+									          <input  type="text" id="keyword" name="keyword" value="${keyword }" class="form-control"/>
 									          	<span class="input-group-btn">
 										            <button class="btn btn-default" type="submit">
 										              <span class="sr-only">검색</span>
