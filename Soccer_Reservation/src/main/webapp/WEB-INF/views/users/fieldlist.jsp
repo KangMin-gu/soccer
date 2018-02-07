@@ -86,9 +86,9 @@
 						class="logo"
 						src="${pageContext.request.contextPath}/resources/img/soccer.png"
 						width="200" alt="logo"></a></li>
-				<li><a href="playlist.do">playground List</a></li>
-				<li><a href="donate.html">Review</a></li>
-				<li><a href="contact.html">Question</a></li>
+				<li><a href="${pageContext.request.contextPath}/playlist/playlist.do">playground List</a></li>
+				<li><a href="${pageContext.request.contextPath}/review/list.do">Review</a></li>
+				<li><a href="${pageContext.request.contextPath}/">Question</a></li>
 			</ul>
 		</div>
 	</div>
@@ -128,7 +128,7 @@
 				</div>
 				<div class="text-center">
 		           <ul class="list-unstyled list-inline list-social-sq-primary">
-		           <li><a class="btn btn-default" href="${pageContext.request.contextPath}/playgroundlist.do">동네별 축구장 검색하기</a></li>
+		           <li><a class="btn btn-default" href="${pageContext.request.contextPath}/playlist/playlist.do">동네별 축구장 검색하기</a></li>
 		           </ul>
 	            </div>
 			</div>
