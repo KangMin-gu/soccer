@@ -3,12 +3,12 @@
 <mapper namespace="users">
 
 <insert id="insert" parameterType="usersDto">
-	insert into users (id, name, pwd, email, phone, addr, findQuestion, findAnswer, regdate ) 
-	values (#{id}, #{name}, #{pwd}, #{email}, #{phone}, #{addr}, #{findQuestion}, #{findAnswer}, SYSDATE)
+	insert into users (id, name, pwd, email, phone, addr, detailaddr, findQuestion, findAnswer, regdate ) 
+	values (#{id}, #{name}, #{pwd}, #{email}, #{phone}, #{addr}, #{findQuestion},#{detailaddr}, #{findAnswer}, SYSDATE)
 </insert>
 
 <select id="isValid" parameterType="usersDto" resultType="usersDto">
-	select id from users where id=#{id} and pwd=#{pwd}
+	select * from users where id=#{id} and pwd=#{pwd}
 </select>
 
 <select id="getData" parameterType="String" resultType="usersDto">
@@ -16,7 +16,7 @@
 </select>
 
 <update id="update" parameterType="usersDto">
-	update users set pwd=#{pwd}, email=#{email}, phone=#{phone}, addr=#{addr} where id=#{id}
+	update users set pwd=#{pwd}, email=#{email}, phone=#{phone}, addr=#{addr}, detailaddr=#{detailaddr}, where id=#{id}
 </update>
 
 <delete id="delete" parameterType="String">
@@ -27,7 +27,7 @@
 	select id from users where id=#{id}
 </select>
 
-<select id="getData2" parameterType="String" resultType="usersDto">
+<select id="map" parameterType="usersDto" resultType="usersDto">
 	select * from users where id=#{id}
 </select>
 </mapper>

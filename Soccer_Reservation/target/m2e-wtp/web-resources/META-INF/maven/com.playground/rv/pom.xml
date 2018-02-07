@@ -116,7 +116,12 @@
 			<version>4.7</version>
 			<scope>test</scope>
 		</dependency>
-
+		<!--구글 주소를 좌표로 변환해주는 API Geocoder -->
+		<dependency>
+			<groupId>com.google.code.geocoder-java</groupId>
+			<artifactId>geocoder-java</artifactId>
+			<version>0.16</version>
+		</dependency>
 		<!-- DB연결하기 -->	
 		<!-- MyBatis 라이브러리 -->
 		<dependency>
