@@ -7,6 +7,7 @@ public class UsersDto {
 	private String email;
 	private String phone;
 	private String addr;
+	private String detailaddr;
 	private String findQuestion;
 	private String findAnswer;
 	private String regdate;
@@ -14,7 +15,7 @@ public class UsersDto {
 	public UsersDto(){}
 
 	public UsersDto(String id, String name, String pwd, String email, String phone, String addr, String findQuestion,
-			String findAnswer, String regdate) {
+			String findAnswer, String regdate, String detailaddr) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -25,6 +26,15 @@ public class UsersDto {
 		this.findQuestion = findQuestion;
 		this.findAnswer = findAnswer;
 		this.regdate = regdate;
+		this.detailaddr = detailaddr;
+	}
+
+	public String getDetailaddr() {
+		return detailaddr;
+	}
+
+	public void setDetailaddr(String detailaddr) {
+		this.detailaddr = detailaddr;
 	}
 
 	public String getId() {
