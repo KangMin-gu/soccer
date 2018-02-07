@@ -107,7 +107,7 @@
 					<div class="panel-body">
 							<div style="float:left;">
 								<a class="btn btn-default btn-md " href="insertform.do"><i class="glyphicon glyphicon-pencil"></i> 새글 작성</a>
-								<h3>카페 글 목록입니다.</h3>
+								<h3>후기글 목록입니다.</h3>
 								<table class="table table-bordered ">
 									<thead>
 										<tr>
