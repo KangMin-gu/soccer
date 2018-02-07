@@ -3,6 +3,7 @@ package com.soccer.rv.reser.service;
 
 
 
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.web.servlet.ModelAndView;
@@ -17,4 +18,6 @@ public interface ReservationService {
 	public ModelAndView detail(HttpServletRequest request);
 	public ModelAndView rvform(HttpServletRequest request);
 	public ModelAndView rvinsert(int num, RvinsertFormDto dto);
+	public ModelAndView myreser(HttpServletRequest request);
+	public ModelAndView myreserdelete(HttpServletRequest request);
 }
