@@ -11,7 +11,8 @@
 </head>
 <body>
 
-<table class="table table-bordered">
+
+	<table class="table table-bordered">
 	<thead>
 		<tr>
 			<th>예약 번호</th>
@@ -27,80 +28,56 @@
 	</thead>
 	<tbody>
 		<c:forEach var="tmp" items="${list }">
-			<tr>
-				<td>${tmp.num }</td>
-				<td>${tmp.field_name }</td>
-				<td>${tmp.field_date }</td>
-				
-			<c:choose>
-				<c:when test="${not empty tmp.field_m_tname }">
-					<td>${tmp.field_m_time}</td>
-				</c:when>
-				<c:when test="${not empty tmp.field_a_tname }">
-					<td>${tmp.field_a_time}</td>
-				</c:when>			
-				<c:otherwise>
-					<td>${tmp.field_n_time}</td>
-				</c:otherwise>	
-			</c:choose>		
-			
-			<c:choose>
-				<c:when test="${not empty tmp.field_m_tname }">
-					<td>${tmp.field_m_tname}</td>
-				</c:when>
-				<c:when test="${not empty tmp.field_a_tname }">
-					<td>${tmp.field_a_tname}</td>
-				</c:when>			
-				<c:otherwise>
-					<td>${tmp.field_n_tname}</td>
-				</c:otherwise>	
-			</c:choose>	
-			
-			<c:choose>
-				<c:when test="${not empty tmp.field_m_tname }">
-					<td>${tmp.field_m_teamNP}</td>
-				</c:when>
-				<c:when test="${not empty tmp.field_a_tname }">
-					<td>${tmp.field_a_teamNP}</td>
-				</c:when>			
-				<c:otherwise>
-					<td>${tmp.field_n_teamNP}</td>
-				</c:otherwise>	
-			</c:choose>	
+		<tr>	
+		<c:if test="${tmp.field_m_id eq id }">
+					<td>${tmp.num }</td>
+					<td>${tmp.field_name }</td>
+					<td>${tmp.field_date }</td>
+					<td>${tmp.field_m_time }</td>
+					<td>${tmp.field_m_tname }</td>
+					<td>${tmp.field_m_teamNP }</td>
+					<td>${tmp.field_m_phone }</td>
+					<td>${tmp.field_m_etc }</td>
+					<td><a href="rvdelete.do?fieldname=${tmp.field_name}&fielddate=${tmp.field_date}&fieldmornig=${tmp.field_m_time}&fieldafternoon=${tmp.field_a_time}&fieldnight=${tmp.field_n_time}">예약취소</a></td>
+		</c:if>
+		</tr>
+		<tr>
+				<c:if test="${tmp.field_a_id eq id }">
+					<td>${tmp.num }</td>
+					<td>${tmp.field_name }</td>
+					<td>${tmp.field_date }</td>
+					<td>${tmp.field_a_time }</td>
+					<td>${tmp.field_a_tname }</td>
+					<td>${tmp.field_a_teamNP }</td>
+					<td>${tmp.field_a_phone }</td>
+					<td>${tmp.field_a_etc }</td>
+					<td><a href="rvdelete.do?fieldname=${tmp.field_name}&fielddate=${tmp.field_date}&fieldmornig=${tmp.field_m_time}&fieldafternoon=${tmp.field_a_time}&fieldnight=${tmp.field_n_time}">예약취소</a></td>
+		</c:if>
+		</tr>
+		<tr>
+				<c:if test="${tmp.field_n_id eq id }">
+					<td>${tmp.num }</td>
+					<td>${tmp.field_name }</td>
+					<td>${tmp.field_date }</td>
+					<td>${tmp.field_n_time }</td>
+					<td>${tmp.field_n_tname }</td>
+					<td>${tmp.field_n_teamNP }</td>
+					<td>${tmp.field_n_phone }</td>
+					<td>${tmp.field_n_etc }</td>
+					<td><a href="rvdelete.do?fieldname=${tmp.field_name}&fielddate=${tmp.field_date}&fieldmornig=${tmp.field_m_time}&fieldafternoon=${tmp.field_a_time}&fieldnight=${tmp.field_n_time}">예약취소</a></td>
+		</c:if>
+		</tr>
+			</c:forEach>
+		</tbody>
+</table>	
 
-			<c:choose>
-				<c:when test="${not empty tmp.field_m_tname }">
-					<td>${tmp.field_m_phone}</td>
-				</c:when>
-				<c:when test="${not empty tmp.field_a_tname }">
-					<td>${tmp.field_a_phone}</td>
-				</c:when>			
-				<c:otherwise>
-					<td>${tmp.field_n_phone}</td>
-				</c:otherwise>	
-			</c:choose>		
-			
-			<c:choose>
-				<c:when test="${not empty tmp.field_m_tname }">
-					<td>${tmp.field_m_etc}</td>
-				</c:when>
-				<c:when test="${not empty tmp.field_a_tname }">
-					<td>${tmp.field_a_etc}</td>
-				</c:when>			
-				<c:otherwise>
-					<td>${tmp.field_n_etc}</td>
-				</c:otherwise>	
-			</c:choose>								
-					
-					<td><a href="myreserdelete.do?num=${tmp.num }&fieldname=${tmp.field_name}&fielddate=${tmp.field_date}">예약취소</a></td>
-			</tr>
-		</c:forEach>	
-	</tbody>
-</table>
+	
 
 <a href="${pageContext.request.contextPath}/">홈</a>
 
 <script src="${pageContext.request.contextPath}/resources/css/bootstrap.min.css"></script>
+<script>
 
+</script>
 </body>
 </html>

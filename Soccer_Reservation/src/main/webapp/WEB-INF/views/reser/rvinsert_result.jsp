@@ -39,6 +39,17 @@
 	</c:otherwise>
 </c:choose>
 <c:choose>
+	<c:when test="${not empty order.field_m_time }">
+		<p>예약시간대 :<strong>${order.field_m_time }</strong></p>
+	</c:when>
+	<c:when test="${not empty order.field_a_time }">
+		<p>예약시간대 :<strong>${order.field_a_time }</strong></p>
+	</c:when>
+	<c:otherwise>
+		<p>예약시간대 :<strong>${order.field_n_time }</strong></p>
+	</c:otherwise>
+</c:choose>
+<c:choose>
 	<c:when test="${not empty order.field_m_phone }">
 		<p>연락처 : <strong>${order.field_m_phone }</strong></p>
 	</c:when>
@@ -46,7 +57,7 @@
 		<p>연락처 : <strong>${order.field_a_phone }</strong></p>
 	</c:when>
 	<c:otherwise>
-		<p>팀 이름 :<strong>${order.field_n_phone }</strong></p>
+		<p>연락처 : <strong>${order.field_n_phone }</strong></p>
 	</c:otherwise>
 </c:choose>
 <c:choose>

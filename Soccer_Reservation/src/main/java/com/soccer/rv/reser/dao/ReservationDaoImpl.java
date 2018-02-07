@@ -1,5 +1,6 @@
 package com.soccer.rv.reser.dao;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -9,7 +10,6 @@ import org.springframework.stereotype.Repository;
 
 import com.soccer.rv.field.dto.FieldDto;
 import com.soccer.rv.reser.orderdto.ResDto;
-import com.soccer.rv.reser.orderdto.ReserDeleteDto;
 import com.soccer.rv.reser.orderdto.ReservationOrderDto;
 
 @Repository
@@ -53,11 +53,18 @@ public class ReservationDaoImpl implements ReservationDao{
 
 	//예약 취소하기(하나의 로우에서 칼럼을 null 값으로 바꿔야하기에 delete가 아닌 update)
 	@Override
-	public void myreserdelete(ReserDeleteDto deldto) {
-		rvsession.update("reservation.myreserdelete", deldto);
-		
+	public void myreserdelete(ReservationOrderDto order) {
+		System.out.println(order.getField_name()+order.getField_date()+order.getField_m_id()+order.getField_a_id()+order.getField_n_id());
+		rvsession.update("reservation.myreserdelete", order);
+
 	}
-	
+
+	@Override
+	public FieldDto getData2(String field_name) {
+		FieldDto dto = rvsession.selectOne("reservation.gettime",field_name);
+		return dto;
+	}
+
 	
 	
 }

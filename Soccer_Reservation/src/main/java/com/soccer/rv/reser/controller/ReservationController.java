@@ -68,10 +68,11 @@ public class ReservationController {
 	}
 	
 	//유저예약취소하기
-	@RequestMapping("/reser/myreserdelete")
+	@RequestMapping("/reser/rvdelete")
 	public ModelAndView myreserdelete(HttpServletRequest request){
-		ModelAndView mView = rvservice.myreserdelete(request);
-		mView.setViewName("reser/myreserdel_result");
+		rvservice.myreserdelete(request);
+		ModelAndView mView = new ModelAndView();
+		mView.setViewName("/reser/myreserdel_result");
 		return mView;
 	}
 }
