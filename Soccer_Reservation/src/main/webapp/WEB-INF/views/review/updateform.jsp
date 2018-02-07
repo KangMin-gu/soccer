@@ -6,7 +6,27 @@
 <head>
 <meta charset="UTF-8">
 <title>review/updateform.jsp</title>
-<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap.css" />
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath }/resources/css/bootstrap.min.css" />
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css">
+<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+<link href="${pageContext.request.contextPath}/resources/css/styles.css"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/demo.css" />
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/testimonial.css" />
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/font-awesome.min.css">
+<link href='http://fonts.googleapis.com/css?family=Poiret+One'
+	rel='stylesheet' type='text/css'>
+<!-- 현재 페이지에 적용할 style.css 파일을 여기에서 로딩한다 -->
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/resources/css/playlist.css" />
+	
 <style>
 	/* SmartEditor 를 위한 textarea 에 적용할 css */
 	#content{
@@ -19,41 +39,106 @@
 <script src="${pageContext.request.contextPath }/SmartEditor/js/HuskyEZCreator.js"></script>
 </head>
 <body>
-<div class="navbar navbar-inverse">
-	<div class="container">
-		<div class="navbar-header">
-			<a class="navbar-brand" href="${pageContext.request.contextPath }/home.do">Acorn</a>
+<div class="header container">
+		<!-- 세션에 id의 유무에따라 보여지는 loginView -->
+		<c:choose>
+			<c:when test="${not empty id }">
+				<div>
+					<ul id="loginUl">
+						<li class="loginLi"><a
+							href="${pageContext.request.contextPath}/users/info.do">My
+								info</a></li>
+						<li class="loginLi"><a
+							href="${pageContext.request.contextPath}/users/logout.do">Logout</a></li>
+					</ul>
+				</div>
+			</c:when>
+			<c:otherwise>
+				<div>
+					<ul id="loginUl">
+						<li class="loginLi"><a href="users/loginform.do">Login</a></li>
+						<li class="loginLi"><a href="users/signupform.do">SignUp</a></li>
+					</ul>
+				</div>
+			</c:otherwise>
+		</c:choose>
+
+		<div
+			class="visible-xs visible-sm col-xs-12 col-sm-12 text-center sm-logo">
+			<a rel="home" href="home.do"> <img
+				src="${pageContext.request.contextPath}/resources/img/soccer.png"
+				width="200" alt="logo">
+			</a>
 		</div>
-		<a class="btn btn-warning btn-xs navbar-btn pull-right" href="${pageContext.request.contextPath}/users/logout.do">로그아웃</a>
-		<p class="navbar-text pull-right"><a class="navbar-link" href="${pageContext.request.contextPath }/users/info.do"><strong>${id }</strong></a>님 로그인중... </p>		
 	</div>
-</div>
+	<div class="navbar" role="navigation">
+
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target=".navbar-collapse">
+				<span class="sr-only">Toggle navigation</span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+		</div>
+		<div class="collapse navbar-collapse">
+			<ul class="nav navbar-nav">
+				<li class="selected"><a
+					href="${pageContext.request.contextPath}/home.do">Home</a></li>
+				<li><a href="myassist.do">Team</a></li>
+				<li><a
+					href="${pageContext.request.contextPath}/users/fieldlist.do">Near
+						Playground</a></li>
+				<li class="hidden-xs hidden-sm"><a rel="home"
+					href="${pageContext.request.contextPath}/home.do"><img
+						class="logo"
+						src="${pageContext.request.contextPath}/resources/img/soccer.png"
+						width="200" alt="logo"></a></li>
+				<li><a href="playlist.do">playground List</a></li>
+				<li><a href="donate.html">Review</a></li>
+				<li><a href="contact.html">Question</a></li>
+			</ul>
+		</div>
+	</div>
+<!-- ============TOP============= -->
+	<div class="container">
+		<div class="row">
+			<div class="divider col-sm-12 col-xs-12 col-md-12">
+					<h3 class="main-text">후기 글 자세히 보기</h3>
+				
+			</div>
+		</div>
+	</div>
+	<!-- ================ Main ============= -->
 <div class="container">
-	<!-- breadcrumb UI 제공하기 -->
-	<ol class="breadcrumb">
-		<li><a href="${pageContext.request.contextPath }/">Home</a></li>
-		<li><a href="list.do">Cafe</a></li>
-		<li class="active">글 수정 페이지</li>
-	</ol>
-	
-	<!-- 글 수정 form -->
-	<form action="update.do" method="post">
-		<input type="hidden" name="num" value="${dto.num }"/>
-		<div class="form-group">
-			<label for="writer">작성자</label>
-			<input class="form-control" type="text" id="writer" value="${id }" disabled/>
+	<div class="row">
+			<div class=" col-md-12 text-center">
+				<div class="panel">
+					<div class="panel-body">
+							<div style="float:center;">
+							<!-- 글 수정 form -->
+							<form action="update.do" method="post">
+								<input type="hidden" name="num" value="${dto.num }"/>
+								<div class="form-group">
+									<label for="writer">작성자</label>
+									<input class="form-control" type="text" id="writer" value="${id }" disabled/>
+								</div>
+								<div class="form-group">
+									<label for="title">제목</label>
+									<input class="form-control" type="text" name="title" id="title" value="${dto.title }"/>
+								</div>
+								<div class="form-group">
+									<label for="content">내용</label>
+									<textarea name="content" id="content">${dto.content }</textarea>
+								</div>
+								<button onclick="submitContents(this);" 
+									class="btn btn-default" type="submit">수정 확인</button>
+							</form>
+					</div>
+				</div>
+			</div>
 		</div>
-		<div class="form-group">
-			<label for="title">제목</label>
-			<input class="form-control" type="text" name="title" id="title" value="${dto.title }"/>
-		</div>
-		<div class="form-group">
-			<label for="content">내용</label>
-			<textarea class="form-control" rows="3" name="content" id="content">${dto.content }</textarea>
-		</div>
-		<button onclick="submitContents(this);" 
-			class="btn btn-success" type="submit">수정 확인</button>
-	</form>
+	</div>
 </div>
 <script>
 var oEditors = [];
