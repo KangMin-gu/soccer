@@ -138,8 +138,6 @@ public class PlayListServiceImpl implements PlayListService {
 	public ModelAndView update(PlayListDto dto) {
 		
 		dao.update(dto);
-		
-		
 		ModelAndView mView= new ModelAndView();
 		
 		mView.addObject("msg","수정하였습니다");
