@@ -16,7 +16,9 @@
 	}
 </style>
 <!-- SmartEditor 관련 javascript 로딩 -->
-<script src="${pageContext.request.contextPath }/SmartEditor/js/HuskyEZCreator.js"></script>
+
+<script src="${pageContext.request.contextPath }/Smarteditor/js/HuskyEZCreator.js"></script>
+
 </head>
 <body>
 <div class="navbar navbar-inverse">
@@ -38,18 +40,19 @@
 	
 	<!-- 글 수정 form -->
 	<form action="update.do" method="post">
-		<input type="hidden" name="num" value="${dto.num }"/>
+
+		<input type="hidden" name="num" value="${reviewDTO.num }"/>
 		<div class="form-group">
 			<label for="writer">작성자</label>
 			<input class="form-control" type="text" id="writer" value="${id }" disabled/>
 		</div>
 		<div class="form-group">
 			<label for="title">제목</label>
-			<input class="form-control" type="text" name="title" id="title" value="${dto.title }"/>
+			<input class="form-control" type="text" name="title" id="title" value="${reviewDTO.title }"/>
 		</div>
 		<div class="form-group">
 			<label for="content">내용</label>
-			<textarea class="form-control" rows="3" name="content" id="content">${dto.content }</textarea>
+			<textarea class="form-control" rows="3" name="content" id="content">${reviewDTO.content }</textarea>
 		</div>
 		<button onclick="submitContents(this);" 
 			class="btn btn-success" type="submit">수정 확인</button>
@@ -64,7 +67,7 @@ var oEditors = [];
 nhn.husky.EZCreator.createInIFrame({
 	oAppRef: oEditors,
 	elPlaceHolder: "content",
-	sSkinURI: "${pageContext.request.contextPath}/SmartEditor/SmartEditor2Skin.html",	
+	sSkinURI: "${pageContext.request.contextPath}/Smarteditor/SmartEditor2Skin.html",	
 	htParams : {
 		bUseToolbar : true,				// 툴바 사용 여부 (true:사용/ false:사용하지 않음)
 		bUseVerticalResizer : true,		// 입력창 크기 조절바 사용 여부 (true:사용/ false:사용하지 않음)

@@ -7,7 +7,9 @@
 <meta charset="UTF-8">
 <title>상세 보기</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.css" />
-<script src="${pageContext.request.contextPath}/SmartEditor/js/HuskyEZCreator.js"></script>
+
+<script src="${pageContext.request.contextPath}/smartEditor/js/HuskyEZCreator.js"></script>
+
 <style>
 	textarea{resize:none;}
 	#content{display:none;width:100%;height:300px;}

@@ -19,7 +19,7 @@ public class PlayListController {
 	PlayListService service;
 	
 	@RequestMapping("/playlist/playlist")
-	public ModelAndView list(HttpServletRequest request){
+	public ModelAndView authlist(HttpServletRequest request){
 		
 		ModelAndView mView=service.getList(request);
 		
