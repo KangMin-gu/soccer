@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.google.code.geocoder.Geocoder;
@@ -36,7 +37,7 @@ public class UsersServiceImple implements UsersService{
 	@Autowired
 	private PasswordEncoder encoder;
 	
-	
+	//회원가입
 	@Override
 	public ModelAndView signup(UsersDto dto) {
 		
@@ -49,13 +50,13 @@ public class UsersServiceImple implements UsersService{
 		
 		return mView;
 	}
-
+	//id 사용가능유무
 	@Override
 	public boolean canUseId(String id) {
 		boolean canUse = dao.canUseId(id);
 		return canUse;
 	}
-
+	//로그인 기능
 	@Override
 	public ModelAndView login(UsersDto dto, HttpServletRequest request) {
 		
@@ -91,7 +92,8 @@ public class UsersServiceImple implements UsersService{
 		
 		return mView;
 	}
-
+	
+	//유저정보 업데이트
 	@Override
 	public ModelAndView update(UsersDto dto, HttpSession session) {
 		String id = (String)session.getAttribute("id");
@@ -100,7 +102,7 @@ public class UsersServiceImple implements UsersService{
 		mView.addObject("id", id);
 		return mView;
 	}
-
+	//회원탈퇴 및 세션에서 id 지우기
 	@Override
 	public ModelAndView delete(HttpSession session) {
 		String id = (String)session.getAttribute("id");
@@ -110,7 +112,7 @@ public class UsersServiceImple implements UsersService{
 		session.invalidate();
 		return mView;
 	}
-
+	//user 상세보기페이지
 	@Override
 	public ModelAndView detail(String id) {
 		UsersDto dto = dao.getData(id);
@@ -186,5 +188,7 @@ public class UsersServiceImple implements UsersService{
 		
 		return position;
 	}
+	
+	
 
 }

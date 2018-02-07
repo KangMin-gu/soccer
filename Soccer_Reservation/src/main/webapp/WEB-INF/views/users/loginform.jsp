@@ -17,6 +17,5 @@
 	<input type="password" id="pwd" name="pwd" />
 	<button type="submit">로그인하기</button>
 </form>
-<p>${url }</p>
 </body>
 </html>
