@@ -27,8 +27,10 @@
 <!-- 현재 페이지에 적용할 style.css 파일을 여기에서 로딩한다 -->
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/css/playlist.css" />
-
-<script src="${pageContext.request.contextPath}/SmartEditor/js/HuskyEZCreator.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/resources/css/reviewDetail.css" />	
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="${pageContext.request.contextPath}/smarteditor/js/HuskyEZCreator.js"></script>
 <style>
 	textarea{resize:none;}
 	#content{display:none;width:100%;height:300px;}
@@ -50,9 +52,9 @@
 		width: 20px;
 		height: 20px;
 		top:0;
-		left:-20px;
-		border-left: 2px solid green;
-		border-bottom: 2px solid green;
+		left:-50px;
+	
+		
 	}	
 </style>
 </head>
@@ -169,15 +171,15 @@
 								<c:forEach var="tmp" items="${commentList }">
 									<div class="comment" <c:if test="${tmp.num ne tmp.comment_group }">style="margin-left:100px"</c:if> >
 										<c:if test="${tmp.num ne tmp.comment_group }">
-											<div class="reply_icon"></div>
+											<div class="reply_icon"><i class="fa fa-comments-o fa-2x" aria-hidden="true"></i></div>
 										</c:if>
-										<div>
+										<div class='left-box'>
 											from <strong>${tmp.writer }</strong>
 											${tmp.regdate }<br/>
 											to <strong>${tmp.target_id }</strong>
 											<a href="javascript:">답글</a>
 										</div>
-										<textarea rows="5" disabled>${tmp.content }</textarea>
+										<textarea id="texta" rows="2" disabled>${tmp.content }</textarea>
 										<form class="form" action="comment_insert.do" method="post">
 											<!-- 덧글 작성자 -->
 											<input type="hidden" name="writer" value="${id }"/>
@@ -186,8 +188,8 @@
 											<!-- 덧글 대상 -->
 											<input type="hidden" name="target_id" value="${tmp.writer }" />
 											<input type="hidden" name="comment_group" value="${tmp.comment_group }" />
-											<textarea name="content" cols="50" rows="2"></textarea>
-											<button type="submit">등록</button>
+											<textarea name="content"  class="form-control" ></textarea>
+											<button class="btn btn-default" type="submit">등록</button>
 										</form>		
 									</div>
 								</c:forEach>
@@ -202,8 +204,9 @@
 									<input type="hidden" name="ref_group" value="${dto.num }" />
 									<!-- 덧글 대상 -->
 									<input type="hidden" name="target_id" value="${dto.writer }" />
-									<textarea name="content" cols="50" rows="2"></textarea>
-									<button type="submit">등록</button>
+									<br />
+									<textarea id="texta" name="content"  rows="2"  cols="75" placeholder="댓글을 입력하세요"></textarea>
+									<button class="btn btn-default" type="submit">등록</button>
 								</form>
 							</div>    
 					</div>
@@ -265,31 +268,6 @@
 		src="${pageContext.request.contextPath }/resources/js/bootstrap.min.js"></script>
 	<script
 		src="${pageContext.request.contextPath }/resources/js/bootstrap.js"></script>	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <script src="${pageContext.request.contextPath }/resources/js/jquery-3.2.1.js"></script>
 <script>
