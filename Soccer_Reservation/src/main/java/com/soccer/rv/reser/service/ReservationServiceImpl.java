@@ -1,5 +1,7 @@
 package com.soccer.rv.reser.service;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -76,7 +78,7 @@ public class ReservationServiceImpl implements ReservationService{
 		String morning = dto.getField_morning();
 		String afternoon = dto.getField_afternoon();
 		String night = dto.getField_night();
-		System.out.println(morning);
+		
 		
 		String field_name = dtoa.getField_name();
 		String field_date = dtoa.getField_date();
@@ -86,13 +88,14 @@ public class ReservationServiceImpl implements ReservationService{
 		String phone = dtoa.getPhone();
 		int teamNP = dtoa.getTeamNP();
 		String etc = dtoa.getEtc();
-	
+		System.out.println(rv_time);
 		ReservationOrderDto order = new ReservationOrderDto();
 		
 			order.setField_name(field_name);
 			order.setField_date(field_date);
 			
 		if(rv_time.equals(morning)){
+			order.setField_m_time(rv_time);
 			order.setField_m_tname(team);
 			order.setField_m_phone(phone);
 			order.setField_m_teamNP(teamNP);
@@ -100,13 +103,16 @@ public class ReservationServiceImpl implements ReservationService{
 			order.setField_m_etc(etc);
 			
 		}else if(rv_time.equals(afternoon)){
+			order.setField_a_time(rv_time);
 			order.setField_a_tname(team);
 			order.setField_a_phone(phone);
 			order.setField_a_teamNP(teamNP);
 			order.setField_a_id(id);
 			order.setField_a_etc(etc);
+
 	
 		}else{
+			order.setField_n_time(rv_time);
 			order.setField_n_tname(team);
 			order.setField_n_phone(phone);
 			order.setField_n_teamNP(teamNP);
@@ -114,6 +120,9 @@ public class ReservationServiceImpl implements ReservationService{
 			order.setField_n_etc(etc);
 			
 		}
+		System.out.println("m타임체크"+order.getField_m_time());
+		System.out.println("a타임체크"+order.getField_a_time());
+		System.out.println("n타임체크"+order.getField_n_time());
 
 		rvdao.rvinsert(order);
 		
@@ -121,6 +130,64 @@ public class ReservationServiceImpl implements ReservationService{
 		
 		return mView;
 	}
+	
+//예약정보 확인하기
+	@Override
+	public ModelAndView myreser(HttpServletRequest request) {
+		String id = (String)request.getSession().getAttribute("id");
+		List<ReservationOrderDto> list = rvdao.myreser(id);
+		ModelAndView mView = new ModelAndView();
+		mView.addObject("list", list);
+		mView.addObject("id", id);
+		return mView;
+	}
+	
+//유저의 예약취소
+@Override
+public ModelAndView myreserdelete(HttpServletRequest request) {
+	String field_name = (String)request.getParameter("fieldname");
+	String field_date = (String)request.getParameter("fielddate");
+	String field_m_time=(String)request.getParameter("fieldmornig");
+	String field_a_time=(String)request.getParameter("fieldafternoon");
+	String field_n_time=(String)request.getParameter("fieldnight");
+	String id = (String) request.getSession().getAttribute("id");
+	
+	FieldDto dto = rvdao.getData2(field_name);
+	String morning = dto.getField_morning();
+	String afternoon = dto.getField_afternoon();
+	String night = dto.getField_night();
+	System.out.println(dto.getField_morning());
+	System.out.println("비교할타임!"+morning);
+	System.out.println("비교할타임!"+afternoon);
+	System.out.println("비교할타임!"+night);
+	System.out.println("비교대상자!"+field_m_time);
+	System.out.println("비교대상자!"+field_a_time);
+	
+	ReservationOrderDto order = new ReservationOrderDto();
+	
+	order.setField_name(field_name);
+	order.setField_date(field_date);
+	if(field_m_time.equals(morning)){
+		System.out.println("여기들어왔다.");
+		order.setField_m_id(id);
+	}else if(field_a_time.equals(afternoon)){
+		order.setField_a_id(id);
+	}else{
+		order.setField_n_id(id);
+	}
+	
+	System.out.println(order.getField_name()+order.getField_date()+order.getField_m_id()+order.getField_a_id()+order.getField_n_id());
+	
+	
+	rvdao.myreserdelete(order);
+	ModelAndView mView = new ModelAndView();
+
+	
+	return mView;
+}
+	
+
+	
 	
 
 }

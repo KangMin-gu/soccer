@@ -158,6 +158,7 @@
             </c:if>
             </c:forEach>
 
+
             <div class="content-block">
                <span class="point-caption bg-blue-point"></span> <span
                   class="bottom-line bg-blue-point"></span>
@@ -226,7 +227,6 @@
       </div>
    </section>
 
-	
 
 
 	<!-- ============FOOTER============= -->
