@@ -34,6 +34,7 @@ public class UsersController {
 	//회원가입 
 	@RequestMapping("/users/signup")
 	public ModelAndView signup(UsersDto dto){
+		
 		ModelAndView mView = service.signup(dto);
 		mView.setViewName("users/signup_result");
 		return mView;

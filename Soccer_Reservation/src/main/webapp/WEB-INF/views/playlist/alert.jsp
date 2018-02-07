@@ -8,7 +8,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-<p>${msg }</p>
-<a href="${pageContext.request.contextPath }/playlist/playlist.do">목록보기</a>
+<script>
+
+location.href = "${pageContext.request.contextPath }/playlist/playlist.do"
+alert("완료");
+</script>
+
 </body>
 </html>
