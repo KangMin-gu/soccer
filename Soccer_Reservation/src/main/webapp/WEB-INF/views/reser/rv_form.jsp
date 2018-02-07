@@ -9,7 +9,7 @@
 </head>
 <body>
 <h3>예약 폼 입니다.</h3>
-<form action="rvinsert.do?num=${dto.num }" method="POST">
+<form action="rvinsert.do?num=${dto.num }" method="POST" id="rvform">
 <label for="field_name">운동장 이름</label>
 <input type="hidden" id="field_name" name="field_name" value="${field_name }"/>
 <input type="text" id="field_name" name="field_name" value="${field_name }" disabled /><br/>
@@ -41,7 +41,27 @@
 </select><br/>
 <label for="etc">기타입력사항</label><br/>
 <textarea rows="5" cols="50" id="etc" name="etc"></textarea>
-<button type="submit">예약하기</button>
+<button id="submit" type="submit">예약하기</button>
 </form>
+<script src="${pageContext.request.contextPath}/resources/js/jquery-3.2.1.js"></script>
+<script type="text/javascript">
+
+
+$("#rvform").submit(function(){
+	
+	if($("#team").val() == ""){
+		alert("팀명을 넣어주세요!");
+		$("#team").focus();
+		return false;
+	}else if($("#teamNP").val()=="--이용 인원 선택--"){
+		alert("이용 인원수를 선택해주세요.");
+		$("#teamNP").focus();
+		return false;	
+	}else{
+		return true;
+	}
+	
+});
+</script>
 </body>
 </html>
