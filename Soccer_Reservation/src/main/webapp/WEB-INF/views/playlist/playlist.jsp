@@ -50,8 +50,8 @@
 			<c:otherwise>
 				<div>
 					<ul id="loginUl">
-						<li class="loginLi"><a href="users/loginform.do">Login</a></li>
-						<li class="loginLi"><a href="users/signupform.do">SignUp</a></li>
+						<li class="loginLi"><a href="${pageContext.request.contextPath}/users/loginform.do">Login</a></li>
+						<li class="loginLi"><a href="${pageContext.request.contextPath}/users/signupform.do">SignUp</a></li>
 					</ul>
 				</div>
 			</c:otherwise>
@@ -89,7 +89,7 @@
 						src="${pageContext.request.contextPath}/resources/img/soccer.png"
 						width="200" alt="logo"></a></li>
 				<li><a href="playlist.do">playground List</a></li>
-				<li><a href="donate.html">Review</a></li>
+				<li><a href="${pageContext.request.contextPath}/review/list.do">Review</a></li>
 				<li><a href="contact.html">Question</a></li>
 			</ul>
 		</div>
@@ -122,10 +122,10 @@
 		<div class="row">
 			<div class=" col-md-12 text-center">
 				<div class="panel">
-					<div class="panel-body">
-							<div style="float:left;">
+					<div class="panel-body" style="background-color: #def0f1;">
+							<div style="float:right;">
 								<c:if test="${id eq 'admin' }">
-									<a class="btn btn-default btn-md" href="insertform.do">운동장추가</a>
+									<a class="btn  btn-md" href="insertform.do">운동장추가</a>
 								</c:if>
 							</div>
 						<table id="listtable" class="table table-hover ">

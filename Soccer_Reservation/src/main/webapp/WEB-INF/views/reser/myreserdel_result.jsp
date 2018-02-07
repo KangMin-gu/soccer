@@ -9,10 +9,8 @@
 </head>
 <body>
 <script>
-
-location.href = "${pageContext.request.contextPath }/playlist/playlist.do"
-alert("완료");
+alert("${id}님 예약취소 완료 하였습니다.");
+location.href="${pageContext.request.contextPath}/reser/myreser.do";
 </script>
-
 </body>
 </html>

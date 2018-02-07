@@ -8,8 +8,9 @@
 <title>error/my.jsp</title>
 </head>
 <body>
-<h3> MyException type 예외 발생!</h3>
-<p>정보 : <strong>${exception.message }</strong></p>
-<a href="${pageContext.request.contextPath }/">Home 으로</a>
+<script>
+	alert("오류가 발생하여  메인페이지로 이동합니다. ");
+	location.href="${pageContext.request.contextPath}/";
+</script>
 </body>
 </html>

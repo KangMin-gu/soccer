@@ -1,5 +1,7 @@
 package com.soccer.rv.transaction;
 
+import java.util.NoSuchElementException;
+
 import org.springframework.dao.DataAccessException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -23,6 +25,16 @@ public class ExceptionController {
 		ModelAndView mView = new ModelAndView();
 		mView.addObject("exception",dae);
 		mView.setViewName("error/data_access");
+		return mView;
+	}
+	
+	//NoSuchElementException
+	@ExceptionHandler(NoSuchElementException.class)
+	public ModelAndView handleNoSuchElementException(NoSuchElementException nse){
+		
+		ModelAndView mView = new ModelAndView();
+		mView.addObject("exception",nse);
+		mView.setViewName("error/nosuch_exception");
 		return mView;
 	}
 }

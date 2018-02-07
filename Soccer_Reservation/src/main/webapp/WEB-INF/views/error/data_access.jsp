@@ -8,9 +8,10 @@
 <title>error/data_access.jsp</title>
 </head>
 <body>
-<h3>에러가 발생했습니다.</h3>
-<p>예외 정보 : ${exception.message }</p>
-<a href="${pageContext.request.contextPath }/">확인</a>
+<script>
+	alert("데이터 불러오는중 오류가 발생하여   메인페이지로 이동합니다. ");
+	location.href="${pageContext.request.contextPath}/";
+</script>
 </body>
 </html>
 

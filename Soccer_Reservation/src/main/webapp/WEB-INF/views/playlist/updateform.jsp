@@ -25,12 +25,15 @@
 <!-- 현재 페이지에 적용할 style.css 파일을 여기에서 로딩한다 -->
 <style>
 	#myForm input{
-		width: 95%;
-		padding: 12px 20px;
-		margin: 8px 0;
+		width: 50%;
+		padding: 8px 8px;
+		margin: 8px 0 0 -10px;
 		border: 1px solid #ccc;
 		border-radius: 4px;
 	}
+	
+	input:focus::-webkit-input-placeholder { 
+		color: transparent; }
 </style>
 
 </head>
@@ -88,7 +91,7 @@
 						src="${pageContext.request.contextPath}/resources/img/soccer.png"
 						width="200" alt="logo"></a></li>
 				<li><a href="playlist.do">playground List</a></li>
-				<li><a href="donate.html">Review</a></li>
+				<li><a href="${pageContext.request.contextPath}/review/list.do">Review</a></li>
 				<li><a href="contact.html">Question</a></li>
 			</ul>
 		</div>
@@ -120,32 +123,30 @@
 		<div class="row">
 			<div class="col-md-offset-2 col-md-8 text-center">
 				<div class="panel">
-					<div class="panel-body">
+					<div class="panel-body" style="background-color: #def0f1;">
 
 						<div class="text-center">
-						
-						
 							<form action="update.do" method="post" id="myForm">
-								
-								<input  type="hidden" name="num" value="${dto.num }" /> 
-								<label for="field_name" placeholder="운동장명" >운동장이름</label>
-								 <input type="text"name="field_name" id="field_name"  />
-								 </br>
-								  <label  for="field_addr">운동장주소</label>
-								<input type="text" name="field_addr" id="field_addr" />
+								<input type="hidden" name="num" value="${dto.num }"/>
+								<label style="float:left; margin-top: 15px; margin-left: 70px;" for="field_name">운동장이름</label>
+								<input  type="text" name="field_name" id="field_name" placeholder="운동장이름"    />
 								</br>
-								 <label for="field_morning">오전시간</label>
-								 <input type="text" name="field_morning" id="field_morning" value="${dto.field_morning }" />
-								 </br>
-								   <label for="field_afternoon">오후시간</label>
-								<input type="text" name="field_afternoon" id="field_afternoon" value="${dto.field_afternoon }" />
+								<label style="float:left; margin-top: 15px; margin-left: 70px;" for="field_addr">운동장주소</label>
+								<input type="text" name="field_addr" id="field_addr" placeholder="운동장주소"  />
 								</br>
-								 <label for="field_night">저녁시간</label>
-								<input type="text" name="field_night" id="field_night" value="${dto.field_night }" /> <br />
+								<label style="float:left; margin-top: 15px; margin-right: 12px; margin-left: 70px;"  for="field_morning">오전시간</label>
+								<input type="text" name="field_morning" id="field_morning" placeholder="오전시간대" />
+								</br>
+								<label style="float:left; margin-top: 15px; margin-right: 12px; margin-left: 70px;" for="field_afternoon">오후시간</label>
+								<input type="text" name="field_afternoon" id="field_afternoon" placeholder="오후시간대" />
+								</br>
+								<label style="float:left; margin-top: 15px; margin-right: 12px; margin-left: 70px;" for="field_night">저녁시간</label>
+								<input type="text" name="field_night" id="field_night" style="margin-bottom: 20px;" placeholder="저녁시간대" />
+								<br/>
 								<button class="btn btn-default" type="submit">수정</button>
 								<a class="btn btn-default" href="playlist.do">취소</a>
 
-							</form>
+							</form>						
 						</div>
 					</div>
 				</div>
@@ -201,16 +202,7 @@
 		src="${pageContext.request.contextPath}/resources/js/main.js"></script>
 
 	<!-- Place in the <head>, after the three links -->
-	<script>
-		$('.testimonials-slider').bxSlider({
-			slideWidth : 800,
-			minSlides : 1,
-			maxSlides : 1,
-			slideMargin : 32,
-			auto : true,
-			autoControls : true
-		});
-	</script>
+
 	<script type="text/javascript">
 		
 	</script>
