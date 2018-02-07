@@ -5,16 +5,22 @@
 <html>
 <head>
 <meta charset="UTF-8">
+
+
 <title>users/signup_form.jsp</title>
 <style>
 
 	#myForm input{
-		width: 70%;
+		width: 50%;
 		padding: 8px 8px;
-		margin: 8px 0;
+		margin: 8px 0 0 -10px;
 		border: 1px solid #ccc;
 		border-radius: 4px;
 	}
+	input:focus::-webkit-input-placeholder { 
+		color: transparent; }
+	
+
 
 </style>
 <link rel="stylesheet"
@@ -76,7 +82,7 @@
 			</button>
 		</div>
 		<div class="collapse navbar-collapse">
-			<ul class="nav navbar-nav">
+			<ul class="nav navbar-nav" id="navvv">
 				<li class="selected"><a
 					href="${pageContext.request.contextPath}/home.do">Home</a></li>
 				<li><a href="myassist.do">Team</a></li>
@@ -89,7 +95,7 @@
 						src="${pageContext.request.contextPath}/resources/img/soccer.png"
 						width="200" alt="logo"></a></li>
 				<li><a href="playlist.do">playground List</a></li>
-				<li><a href="donate.html">Review</a></li>
+				<li><a href="${pageContext.request.contextPath}/review/list.do">Review</a></li>
 				<li><a href="contact.html">Question</a></li>
 			</ul>
 		</div>
@@ -122,25 +128,25 @@
 		<div class="row">
 			<div class="hidden-xs col-md-offset-2 col-md-8 text-center">
 				<div  class="panel">
-					<div  class="panel-body">
+					<div  class="panel-body" style="background-color: #def0f1; ">
 
 						<div class="text-center">
 							<form action="insert.do" method="post" id="myForm">
 									
-								<label style="float:left; margin-top: 15px;" for="field_name">운동장이름</label>
-								<input type="text" name="field_name" id="field_name" />
+								<label style="float:left; margin-top: 15px; margin-left: 70px;" for="field_name" >운동장이름</label>
+								<input type="text" name="field_name" id="field_name" placeholder="운동장이름" />
 								</br>
-								<label style="float:left; margin-top: 15px;" for="field_addr">운동장주소</label>
-								<input type="text" name="field_addr" id="field_addr" />
+								<label style="float:left; margin-top: 15px; margin-left: 70px;" for="field_addr">운동장주소</label>
+								<input type="text" name="field_addr" id="field_addr" placeholder="운동장주소" />
 								</br>
-								<label style="float:left; margin-top: 15px; margin-right: 12px;"  for="field_morning">오전시간</label>
-								<input type="text" name="field_morning" id="field_morning" />
+								<label style="float:left; margin-top: 15px; margin-right: 12px; margin-left: 70px;"  for="field_morning">오전시간</label>
+								<input type="text" name="field_morning" id="field_morning"  placeholder="오전시간대" />
 								</br>
-								<label style="float:left; margin-top: 15px; margin-right: 12px;" for="field_afternoon">오후시간</label>
-								<input type="text" name="field_afternoon" id="field_afternoon" />
+								<label style="float:left; margin-top: 15px; margin-right: 12px; margin-left: 70px;" for="field_afternoon">오후시간</label>
+								<input type="text" name="field_afternoon" id="field_afternoon" placeholder="오후시간대" />
 								</br>
-								<label style="float:left; margin-top: 15px; margin-right: 12px;" for="field_night">저녁시간</label>
-								<input type="text" name="field_night" id="field_night" style="margin-bottom: 20px;" />
+								<label style="float:left; margin-top: 15px; margin-right: 12px; margin-left: 70px;" for="field_night">저녁시간</label>
+								<input type="text" name="field_night" id="field_night" style="margin-bottom: 20px;" placeholder="저녁시간대" />
 								<br/>
 								<button class="btn btn-default" type="submit">추가</button>
 								<a class="btn btn-default" href="playlist.do">취소</a>

@@ -48,6 +48,7 @@ public class PlayListDaoImpl implements PlayListDao {
 		session.update("playlist.update", dto);
 		System.out.println(dto.getNum());
 		
+		
 	}
 
 	@Override

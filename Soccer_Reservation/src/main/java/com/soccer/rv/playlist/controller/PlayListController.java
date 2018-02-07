@@ -80,7 +80,7 @@ public class PlayListController {
 	@RequestMapping("/playlist/update")
 	public ModelAndView Update( @ModelAttribute PlayListDto dto){
 		ModelAndView mView= service.update(dto);
-		
+		mView.addObject("num",dto.getNum());
 		mView.setViewName("playlist/alert");
 		return mView;
 		

@@ -29,6 +29,15 @@
 	rel='stylesheet' type='text/css'>
 <!-- 현재 페이지에 적용할 style.css 파일을 여기에서 로딩한다 -->	
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/fieldlist.css" />
+<meta charset="UTF-8">
+<title>Insert title here</title>
+    <style>
+       #map {
+        height: 400px;
+        width: 100%;
+        
+       }
+    </style>
 </head>
 <body>
 	<div class="header container">
