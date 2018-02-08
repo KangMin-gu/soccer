@@ -16,7 +16,7 @@
 </select>
 
 <update id="update" parameterType="usersDto">
-	update users set pwd=#{pwd}, email=#{email}, phone=#{phone}, addr=#{addr}, detailaddr=#{detailaddr}, where id=#{id}
+	update users set pwd=#{pwd}, email=#{email}, phone=#{phone}, addr=#{addr}, detailaddr=#{detailaddr} where id=#{id}
 </update>
 
 <delete id="delete" parameterType="String">

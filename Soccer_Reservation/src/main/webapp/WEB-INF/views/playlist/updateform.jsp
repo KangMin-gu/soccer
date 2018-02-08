@@ -129,19 +129,19 @@
 							<form action="update.do" method="post" id="myForm">
 								<input type="hidden" name="num" value="${dto.num }"/>
 								<label style="float:left; margin-top: 15px; margin-left: 70px;" for="field_name">운동장이름</label>
-								<input  type="text" name="field_name" id="field_name" placeholder="운동장이름"    />
+								<input  type="text" name="field_name" id="field_name" value="${dto.field_name}"    />
 								</br>
 								<label style="float:left; margin-top: 15px; margin-left: 70px;" for="field_addr">운동장주소</label>
-								<input type="text" name="field_addr" id="field_addr" placeholder="운동장주소"  />
+								<input type="text" name="field_addr" id="field_addr" value="${dto.field_addr }"  />
 								</br>
 								<label style="float:left; margin-top: 15px; margin-right: 12px; margin-left: 70px;"  for="field_morning">오전시간</label>
-								<input type="text" name="field_morning" id="field_morning" placeholder="오전시간대" />
+								<input type="text" name="field_morning" id="field_morning" value="${dto.field_morning }" />
 								</br>
 								<label style="float:left; margin-top: 15px; margin-right: 12px; margin-left: 70px;" for="field_afternoon">오후시간</label>
-								<input type="text" name="field_afternoon" id="field_afternoon" placeholder="오후시간대" />
+								<input type="text" name="field_afternoon" id="field_afternoon" value="${dto.field_afternoon }" />
 								</br>
 								<label style="float:left; margin-top: 15px; margin-right: 12px; margin-left: 70px;" for="field_night">저녁시간</label>
-								<input type="text" name="field_night" id="field_night" style="margin-bottom: 20px;" placeholder="저녁시간대" />
+								<input type="text" name="field_night" id="field_night" style="margin-bottom: 20px;" value="${dto.field_night }" />
 								<br/>
 								<button class="btn btn-default" type="submit">수정</button>
 								<a class="btn btn-default" href="playlist.do">취소</a>

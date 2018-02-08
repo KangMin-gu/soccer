@@ -116,12 +116,13 @@
  									</tr> 						
  									<tr>
  										<td class="cell">주소 :</td>								
- 										<td class="cell">${dto.addr }</td>
+ 										<td class="cell">${dto.addr } &nbsp ${dto.detailaddr }</td>
  									</tr>
  									<tr>
  										<td class="cell">가입하신 날짜 :</td>									
  										<td class="cell">${dto.regdate }</td>
  									</tr>
+ 									
  								</tbody>
  						</table>
                             <div class="text-center">
