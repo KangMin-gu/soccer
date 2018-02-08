@@ -117,12 +117,12 @@
  									<tr>
  										<td class="cell">주소 :</td>								
  										<td class="cell">${dto.addr } &nbsp ${dto.detailaddr }</td>
+
  									</tr>
  									<tr>
  										<td class="cell">가입하신 날짜 :</td>									
  										<td class="cell">${dto.regdate }</td>
- 									</tr>
- 									
+ 									</tr>						
  								</tbody>
  						</table>
                             <div class="text-center">
@@ -130,6 +130,10 @@
                                 <li><a class="btn btn-default" href="updateform.do">가입정보수정</a></li>
                                 <li><a class="btn btn-default" href="${pageContext.request.contextPath}/reser/myreser.do">나의 예약정보 확인</a></li>
                                  <li><a class="btn btn-default" href="delete.do">회원탈퇴</a></li>
+                                 <!-- 관리자로 접속시 회원관리 페이지이동 버튼 생성 -->
+                                 <c:if test="${id eq 'admin' }">
+									<li><a class="btn  btn-default" href="${pageContext.request.contextPath}/admin/adminlist.do">회원관리 및 예약관리</a></li>
+								</c:if>
                               </ul>
                           </div>
                         </div>

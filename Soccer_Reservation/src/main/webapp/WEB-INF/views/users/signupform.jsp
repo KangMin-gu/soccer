@@ -204,7 +204,7 @@
 		</div>
 		<div class="move-top-page"></div>
 	</footer>
-
+	
 <script src="${pageContext.request.contextPath }/resources/js/jquery-3.2.1.js"></script>
 	<script
 		src="${pageContext.request.contextPath}/resources/js/jquery.min.js"></script>

@@ -89,7 +89,11 @@ public class ReviewController {
 		
 		//수정 결과 페이지로 이동하면서 글번호를 가지고 간다. 
 		ModelAndView mView=new ModelAndView();
+<<<<<<< HEAD
 		
+=======
+		System.out.println(dto.getNum()+"review / update num 입니다.");
+>>>>>>> hanbyeol
 		mView.addObject("num", dto.getNum());
 		mView.setViewName("review/update_result");
 		

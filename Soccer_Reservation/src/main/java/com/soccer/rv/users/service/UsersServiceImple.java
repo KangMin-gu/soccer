@@ -37,6 +37,7 @@ public class UsersServiceImple implements UsersService{
 	@Autowired
 	private PasswordEncoder encoder;
 	
+	
 	//회원가입
 	@Override
 	public ModelAndView signup(UsersDto dto) {
@@ -188,7 +189,5 @@ public class UsersServiceImple implements UsersService{
 		
 		return position;
 	}
-	
-	
 
 }

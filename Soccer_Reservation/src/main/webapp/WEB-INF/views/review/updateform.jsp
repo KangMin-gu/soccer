@@ -6,7 +6,31 @@
 <head>
 <meta charset="UTF-8">
 <title>review/updateform.jsp</title>
+<<<<<<< HEAD
 <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap.css" />
+=======
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath }/resources/css/bootstrap.min.css" />
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css">
+<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+<link href="${pageContext.request.contextPath}/resources/css/styles.css"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/demo.css" />
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/testimonial.css" />
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/font-awesome.min.css">
+<link href='http://fonts.googleapis.com/css?family=Poiret+One'
+	rel='stylesheet' type='text/css'>
+<!-- 현재 페이지에 적용할 style.css 파일을 여기에서 로딩한다 -->
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/resources/css/playlist.css" />
+	
+>>>>>>> hanbyeol
 <style>
 	/* SmartEditor 를 위한 textarea 에 적용할 css */
 	#content{
@@ -16,6 +40,7 @@
 	}
 </style>
 <!-- SmartEditor 관련 javascript 로딩 -->
+<<<<<<< HEAD
 
 
 <script src="${pageContext.request.contextPath }/Smarteditor/js/HuskyEZCreator.js"></script>
@@ -59,6 +84,110 @@
 		<button onclick="submitContents(this);" 
 			class="btn btn-success" type="submit">수정 확인</button>
 	</form>
+=======
+<script src="${pageContext.request.contextPath }/smarteditor/js/HuskyEZCreator.js"></script>
+</head>
+<body>
+<div class="header container">
+		<!-- 세션에 id의 유무에따라 보여지는 loginView -->
+		<c:choose>
+			<c:when test="${not empty id }">
+				<div>
+					<ul id="loginUl">
+						<li class="loginLi"><a
+							href="${pageContext.request.contextPath}/users/info.do">My
+								info</a></li>
+						<li class="loginLi"><a
+							href="${pageContext.request.contextPath}/users/logout.do">Logout</a></li>
+					</ul>
+				</div>
+			</c:when>
+			<c:otherwise>
+				<div>
+					<ul id="loginUl">
+						<li class="loginLi"><a href="users/loginform.do">Login</a></li>
+						<li class="loginLi"><a href="users/signupform.do">SignUp</a></li>
+					</ul>
+				</div>
+			</c:otherwise>
+		</c:choose>
+
+		<div
+			class="visible-xs visible-sm col-xs-12 col-sm-12 text-center sm-logo">
+			<a rel="home" href="home.do"> <img
+				src="${pageContext.request.contextPath}/resources/img/soccer.png"
+				width="200" alt="logo">
+			</a>
+		</div>
+	</div>
+	<div class="navbar" role="navigation">
+
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target=".navbar-collapse">
+				<span class="sr-only">Toggle navigation</span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+		</div>
+		<div class="collapse navbar-collapse">
+			<ul class="nav navbar-nav">
+				<li class="selected"><a
+					href="${pageContext.request.contextPath}/home.do">Home</a></li>
+				<li><a href="myassist.do">Team</a></li>
+				<li><a
+					href="${pageContext.request.contextPath}/users/fieldlist.do">Near
+						Playground</a></li>
+				<li class="hidden-xs hidden-sm"><a rel="home"
+					href="${pageContext.request.contextPath}/home.do"><img
+						class="logo"
+						src="${pageContext.request.contextPath}/resources/img/soccer.png"
+						width="200" alt="logo"></a></li>
+				<li><a href="playlist.do">playground List</a></li>
+				<li><a href="donate.html">Review</a></li>
+				<li><a href="contact.html">Question</a></li>
+			</ul>
+		</div>
+	</div>
+<!-- ============TOP============= -->
+	<div class="container">
+		<div class="row">
+			<div class="divider col-sm-12 col-xs-12 col-md-12">
+					<h3 class="main-text">후기 글 자세히 보기</h3>
+			</div>
+		</div>
+	</div>
+	<!-- ================ Main ============= -->
+<div class="container">
+	<div class="row">
+			<div class=" col-md-12 text-center">
+				<div class="panel">
+					<div class="panel-body">
+							<div style="float:center;">
+							<!-- 글 수정 form -->
+							<form action="update.do" method="post">
+								<input type="hidden" name="num" value="${dto.num }"/>
+								<div class="form-group">
+									<label for="writer">작성자</label>
+									<input class="form-control" type="text" id="writer" value="${id }" disabled/>
+								</div>
+								<div class="form-group">
+									<label for="title">제목</label>
+									<input class="form-control" type="text" name="title" id="title" value="${dto.title }"/>
+								</div>
+								<div class="form-group">
+									<label for="content">내용</label>
+									<textarea name="content" id="content">${dto.content }</textarea>
+								</div>
+								<button  class="btn btn-default" onclick="submitContents(this);" 
+									 type="submit">수정 확인</button>
+							</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+>>>>>>> hanbyeol
 </div>
 <script>
 var oEditors = [];
@@ -70,10 +199,14 @@ nhn.husky.EZCreator.createInIFrame({
 	oAppRef: oEditors,
 	elPlaceHolder: "content",
 <<<<<<< HEAD
+<<<<<<< HEAD
 	sSkinURI: "${pageContext.request.contextPath}/smarteditor/SmartEditor2Skin.html",	
 =======
 	sSkinURI: "${pageContext.request.contextPath}/Smarteditor/SmartEditor2Skin.html",	
 >>>>>>> yongwon
+=======
+	sSkinURI: "${pageContext.request.contextPath}/smarteditor/SmartEditor2Skin.html",	
+>>>>>>> hanbyeol
 	htParams : {
 		bUseToolbar : true,				// 툴바 사용 여부 (true:사용/ false:사용하지 않음)
 		bUseVerticalResizer : true,		// 입력창 크기 조절바 사용 여부 (true:사용/ false:사용하지 않음)

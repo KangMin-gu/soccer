@@ -122,8 +122,14 @@ public class UsersController {
 	
 	//운동장주소와 나의 주소 위치 호출 구글맵 연동
 	@RequestMapping("/users/fieldlist")
+<<<<<<< HEAD
 	public ModelAndView authfieldList(HttpServletRequest request){
 		ModelAndView mView = service.map(request);
+=======
+	public ModelAndView fieldList(HttpSession session){
+		String id = (String)session.getAttribute("id");
+		ModelAndView mView = service.map(id);
+>>>>>>> hanbyeol
 		mView.setViewName("users/fieldlist");
 		return mView;
 	}
@@ -135,9 +141,19 @@ public class UsersController {
 		List<PositionDto> positions = service.fieldList();
 		return positions;
 	}
+<<<<<<< HEAD
 
 	
 	
+=======
+	
+	
+	//템플릿 작업 페이지
+	@RequestMapping("/users/templateform")
+	public String template(){
+		return "users/templateform";
+	}
+>>>>>>> hanbyeol
 }
 
 
