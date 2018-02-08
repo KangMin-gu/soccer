@@ -18,7 +18,7 @@ public class AdminController {
 	
 	//회원 목록 요청 처리
 	@RequestMapping("/admin/adminlist")
-	public ModelAndView List(HttpServletRequest request){
+	public ModelAndView authList(HttpServletRequest request){
 		
 		ModelAndView mView = adminservice.List(request);
 		mView.setViewName("admin/adminlist");
@@ -60,14 +60,14 @@ public class AdminController {
 	
 	//회원 예약 정보 확인 요청처리
 	@RequestMapping("/admin/adminrvlist")
-	public ModelAndView adminRvList(HttpServletRequest request){
+	public ModelAndView authAdminRvList(HttpServletRequest request){
 		ModelAndView mView = adminservice.rvList(request);
 		mView.setViewName("admin/adminrvlist");
 		return mView;
 	}
 	//회원 예약 취소 요청 처리
 	@RequestMapping("/admin/adminrvdelete")
-	public ModelAndView adminRvDelete(HttpServletRequest request){
+	public ModelAndView RvDelete(HttpServletRequest request){
 		ModelAndView mView = adminservice.rvDelete(request);
 		mView.setViewName("admin/adminrvdel_result");
 		return mView;

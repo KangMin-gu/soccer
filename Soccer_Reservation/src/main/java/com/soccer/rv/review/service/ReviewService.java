@@ -13,7 +13,7 @@ public interface ReviewService {
 	public void delete(int num);
 	public ModelAndView list(HttpServletRequest request);
 	public ModelAndView detail(HttpServletRequest request);
-	public ModelAndView detail(int num);
+	public ModelAndView update(int num);
 	//덧글 추가하는 메소드
 	public void commentInsert(HttpServletRequest request);
 }

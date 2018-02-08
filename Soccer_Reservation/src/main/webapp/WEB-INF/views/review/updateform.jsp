@@ -6,9 +6,6 @@
 <head>
 <meta charset="UTF-8">
 <title>review/updateform.jsp</title>
-<<<<<<< HEAD
-<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap.css" />
-=======
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath }/resources/css/bootstrap.min.css" />
 <link rel="stylesheet"
@@ -30,7 +27,7 @@
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/css/playlist.css" />
 	
->>>>>>> hanbyeol
+
 <style>
 	/* SmartEditor 를 위한 textarea 에 적용할 css */
 	#content{
@@ -40,51 +37,7 @@
 	}
 </style>
 <!-- SmartEditor 관련 javascript 로딩 -->
-<<<<<<< HEAD
 
-
-<script src="${pageContext.request.contextPath }/Smarteditor/js/HuskyEZCreator.js"></script>
-
-
-</head>
-<body>
-<div class="navbar navbar-inverse">
-	<div class="container">
-		<div class="navbar-header">
-			<a class="navbar-brand" href="${pageContext.request.contextPath }/home.do">Acorn</a>
-		</div>
-		<a class="btn btn-warning btn-xs navbar-btn pull-right" href="${pageContext.request.contextPath}/users/logout.do">로그아웃</a>
-		<p class="navbar-text pull-right"><a class="navbar-link" href="${pageContext.request.contextPath }/users/info.do"><strong>${id }</strong></a>님 로그인중... </p>		
-	</div>
-</div>
-<div class="container">
-	<!-- breadcrumb UI 제공하기 -->
-	<ol class="breadcrumb">
-		<li><a href="${pageContext.request.contextPath }/">Home</a></li>
-		<li><a href="list.do">Cafe</a></li>
-		<li class="active">글 수정 페이지</li>
-	</ol>
-	
-	<!-- 글 수정 form -->
-	<form action="update.do" method="post">
-
-		<input type="hidden" name="num" value="${reviewDTO.num }"/>
-		<div class="form-group">
-			<label for="writer">작성자</label>
-			<input class="form-control" type="text" id="writer" value="${id }" disabled/>
-		</div>
-		<div class="form-group">
-			<label for="title">제목</label>
-			<input class="form-control" type="text" name="title" id="title" value="${reviewDTO.title }"/>
-		</div>
-		<div class="form-group">
-			<label for="content">내용</label>
-			<textarea class="form-control" rows="3" name="content" id="content">${reviewDTO.content }</textarea>
-		</div>
-		<button onclick="submitContents(this);" 
-			class="btn btn-success" type="submit">수정 확인</button>
-	</form>
-=======
 <script src="${pageContext.request.contextPath }/smarteditor/js/HuskyEZCreator.js"></script>
 </head>
 <body>
@@ -166,18 +119,18 @@
 							<div style="float:center;">
 							<!-- 글 수정 form -->
 							<form action="update.do" method="post">
-								<input type="hidden" name="num" value="${dto.num }"/>
+								<input type="hidden" name="num" value="${reviewDTO.num }"/>
 								<div class="form-group">
 									<label for="writer">작성자</label>
 									<input class="form-control" type="text" id="writer" value="${id }" disabled/>
 								</div>
 								<div class="form-group">
 									<label for="title">제목</label>
-									<input class="form-control" type="text" name="title" id="title" value="${dto.title }"/>
+									<input class="form-control" type="text" name="title" id="title" value="${reviewDTO.title }"/>
 								</div>
 								<div class="form-group">
 									<label for="content">내용</label>
-									<textarea name="content" id="content">${dto.content }</textarea>
+									<textarea name="content" id="content">${reviewDTO.content }</textarea>
 								</div>
 								<button  class="btn btn-default" onclick="submitContents(this);" 
 									 type="submit">수정 확인</button>
@@ -187,7 +140,6 @@
 			</div>
 		</div>
 	</div>
->>>>>>> hanbyeol
 </div>
 <script>
 var oEditors = [];
@@ -198,15 +150,9 @@ var oEditors = [];
 nhn.husky.EZCreator.createInIFrame({
 	oAppRef: oEditors,
 	elPlaceHolder: "content",
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 	sSkinURI: "${pageContext.request.contextPath}/smarteditor/SmartEditor2Skin.html",	
-=======
-	sSkinURI: "${pageContext.request.contextPath}/Smarteditor/SmartEditor2Skin.html",	
->>>>>>> yongwon
-=======
-	sSkinURI: "${pageContext.request.contextPath}/smarteditor/SmartEditor2Skin.html",	
->>>>>>> hanbyeol
+
 	htParams : {
 		bUseToolbar : true,				// 툴바 사용 여부 (true:사용/ false:사용하지 않음)
 		bUseVerticalResizer : true,		// 입력창 크기 조절바 사용 여부 (true:사용/ false:사용하지 않음)

@@ -176,7 +176,7 @@ public class ReviewServiceImpl implements ReviewService{
 
 
 	@Override
-	public ModelAndView detail(int num) {
+	public ModelAndView update(int num) {
 		//글번호를 이용해서 글정보를 얻어와서 
 		ReviewDto dto=reviewDao.getData2(num);
 

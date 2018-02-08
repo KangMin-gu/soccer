@@ -5,13 +5,6 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>상세 보기</title>
-<<<<<<< HEAD
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.css" />
-
-<script src="${pageContext.request.contextPath}/smartEditor/js/HuskyEZCreator.js"></script>
-
-=======
 <title>review/insertform.jsp</title>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath }/resources/css/bootstrap.min.css" />
@@ -37,7 +30,7 @@
 	href="${pageContext.request.contextPath}/resources/css/reviewDetail.css" />	
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="${pageContext.request.contextPath}/smarteditor/js/HuskyEZCreator.js"></script>
->>>>>>> hanbyeol
+
 <style>
 	textarea{resize:none;}
 	#content{display:none;width:100%;height:300px;}
@@ -59,101 +52,14 @@
 		width: 20px;
 		height: 20px;
 		top:0;
-<<<<<<< HEAD
-		left:-20px;
-		border-left: 2px solid green;
-		border-bottom: 2px solid green;
-=======
 		left:-50px;
 	
-		
->>>>>>> hanbyeol
+	
 	}	
 </style>
 </head>
 <body>
-<<<<<<< HEAD
-<div class="navbar navbar-inverse">
-	<div class="container">
-		<div class="navbar-header">
-			<a class="navbar-brand" href="${pageContext.request.contextPath }/home.do">Acorn</a>
-		</div>
-		<a class="btn btn-warning btn-xs navbar-btn pull-right" href="${pageContext.request.contextPath}/users/logout.do">로그아웃</a>
-		<p class="navbar-text pull-right"><a class="navbar-link" href="${pageContext.request.contextPath }/users/info.do"><strong>${id }</strong></a>님 로그인중... </p>
-	</div>
-</div>
-<div class="container">
-	<!-- breadcrumb UI 제공하기 -->
-	<ul class="breadcrumb">
-		<li><a href="${pageContext.request.contextPath}/home.do">Home</a></li>
-		<li><a href="${pageContext.request.contextPath}/review/list.do">review</a></li>
-		<li class="active">상세 보기</li>
-	</ul>
-	<c:if test="${not empty msg }">
-		<div class="alert alert-success">${msg }</div>
-	</c:if>
-	   <%-- 로그인한 회원이 작성한 글이라면  수정, 삭제 링크를 출력한다. --%>
-   <c:if test="${dto.prevNum ne 0 }">
-   	<a class="btn btn-default btn-sm" href="detail.do?num=${dto.prevNum}&condition=${condition}&keyword=${keyword}"><i class="glyphicon glyphicon-chevron-up"></i></a>
-   </c:if>
-   <c:if test="${dto.nextNum ne 0 }">
-   	<a class="btn btn-default btn-sm" href="detail.do?num=${dto.nextNum}&condition=${condition}&keyword=${keyword}"><i class="glyphicon glyphicon-chevron-down"></i></a>
-   </c:if>
-   	<h1><strong>${dto.title }</strong></h1>
-	<p>${dto.regdate} <em>By</em> <strong>${dto.writer}</strong></p>   
-	<hr/>
-    <div class="content">${dto.content }</div>
-    <hr/>
-    <a class="btn btn-default btn-xs" href="${pageContext.request.contextPath}/review/list.do">리스트로 가기</a>
-    <c:if test="${id eq dto.writer }">
-    <a class="btn btn-default btn-xs" href="updateform.do?num=${dto.num }">수정</a>
-    <a class="btn btn-default btn-xs" href="javascript:deleteCheck()">삭제</a>
-    </c:if>
-	<!-- 덧글 목록 출력하기 -->
-	<div class="comments">
-		<c:forEach var="tmp" items="${commentList }">
-			<div class="comment" <c:if test="${tmp.num ne tmp.comment_group }">style="margin-left:100px"</c:if> >
-				<c:if test="${tmp.num ne tmp.comment_group }">
-					<div class="reply_icon"></div>
-				</c:if>
-				<div>
-					from <strong>${tmp.writer }</strong>
-					${tmp.regdate }<br/>
-					to <strong>${tmp.target_id }</strong>
-					<a href="javascript:">답글</a>
-				</div>
-				<textarea rows="5" disabled>${tmp.content }</textarea>
-				<form action="comment_insert.do" method="post">
-					<!-- 덧글 작성자 -->
-					<input type="hidden" name="writer" value="${id }"/>
-					<!-- 덧글 그룹 -->
-					<input type="hidden" name="ref_group" value="${dto.num }" />
-					<!-- 덧글 대상 -->
-					<input type="hidden" name="target_id" value="${tmp.writer }" />
-					<input type="hidden" name="comment_group" value="${tmp.comment_group }" />
-					<textarea name="content"></textarea>
-					<button type="submit">등록</button>
-				</form>		
-			</div>
-		</c:forEach>
-	</div>
-	
-	<!-- 원글에 대한 덧글 입력 폼 -->
-	<div class="comment_form">
-		<form action="comment_insert.do" method="post">
-			<!-- 덧글 작성자 -->
-			<input type="hidden" name="writer" value="${id }"/>
-			<!-- 덧글 그룹 -->
-			<input type="hidden" name="ref_group" value="${dto.num }" />
-			<!-- 덧글 대상 -->
-			<input type="hidden" name="target_id" value="${dto.writer }" />
-			<textarea name="content"></textarea>
-			<button type="submit">등록</button>
-		</form>
-	</div>    
-    
-</div>
-=======
+
 <div class="header container">
 		<!-- 세션에 id의 유무에따라 보여지는 loginView -->
 		<c:choose>
@@ -364,7 +270,6 @@
 	<script
 		src="${pageContext.request.contextPath }/resources/js/bootstrap.js"></script>	
 
->>>>>>> hanbyeol
 <script src="${pageContext.request.contextPath }/resources/js/jquery-3.2.1.js"></script>
 <script>
 	//로그인 했는지 안했는지 여부 

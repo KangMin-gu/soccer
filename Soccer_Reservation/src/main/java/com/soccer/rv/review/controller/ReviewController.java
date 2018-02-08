@@ -73,7 +73,7 @@ public class ReviewController {
 	public ModelAndView authUpdateForm(HttpServletRequest request, 
 			@RequestParam int num){
 		
-		ModelAndView mView=reviewService.detail(num);
+		ModelAndView mView=reviewService.update(num);
 		mView.setViewName("review/updateform");
 		
 		return mView;
