@@ -38,11 +38,12 @@
           <input type="checkbox" id="isSave"> Remember me
         </label>
       </div>
-      <button  class="btn btn-lg  btn-block" type="submit">Sign in</button>
+      <button id="Btn"  class="btn btn-lg  btn-block" type="submit">Sign in</button>
     </form>
 <script src="${pageContext.request.contextPath }/resources/js/jquery-3.2.1.js"></script>
 <script>
-
+	
+	
 	// localStorage 에 저장된 아이디 비밀번호가 있으면 복구시켜준다.
 	if(localStorage.id != undefined){
 		$("#id").val(localStorage.id);
