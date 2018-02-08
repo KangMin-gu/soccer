@@ -244,8 +244,6 @@
 		      	//구글 맵 마커 클릭시 운동장 이름 호출	
 		      		var str = JSON.stringify(data[i].title);
 		      		var num = data[i].num;
-		      		console.log(str);
-		      		console.log(num);
 					google.maps.event.addListener(marker, 'click', (function(marker, i){
 						return function(){
 							infowindow.setContent('<p></p><p><strong>'+(data[i].title)+'</strong></p>'+'<a class="maprv btn btn-primary" href="${pageContext.request.contextPath}/reser/rv_detail.do?num='+(data[i].num)+'">'+'예약하기</a>');

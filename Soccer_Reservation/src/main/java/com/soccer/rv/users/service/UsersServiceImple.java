@@ -175,8 +175,8 @@ public class UsersServiceImple implements UsersService{
 				coords[0] = latitudeLongitude.getLat().floatValue();
 				coords[1] = latitudeLongitude.getLng().floatValue();
 				
-				Float lat = coords[0];
-				Float lng = coords[1];
+				float lat = coords[0];
+				float lng = coords[1];
 				
 				PositionDto positions = new PositionDto(num, title, lat, lng);
 				position.add(positions);
