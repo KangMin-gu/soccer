@@ -23,18 +23,7 @@
 <link href='http://fonts.googleapis.com/css?family=Poiret+One'rel='stylesheet' type='text/css'>
 
 <!-- 현재 페이지에 적용할 style.css 파일을 여기에서 로딩한다 -->
-<style>
-	#myForm input{
-		width: 50%;
-		padding: 8px 8px;
-		margin: 8px 0 0 -10px;
-		border: 1px solid #ccc;
-		border-radius: 4px;
-	}
-	
-	input:focus::-webkit-input-placeholder { 
-		color: transparent; }
-</style>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/pl-updateform.css" />
 
 </head>
 <body>

@@ -19,22 +19,9 @@
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/font-awesome.min.css">
 <link href='http://fonts.googleapis.com/css?family=Poiret+One'rel='stylesheet' type='text/css'>
-<style>
-	#myForm input, #myForm select{
-		width: 50%;
-		padding: 8px 8px;
-		margin: 8px 0 0 -10px;
-		border: 1px solid #ccc;
-		border-radius: 4px;
-	}
-	
-	input:focus::-webkit-input-placeholder { 
-		color: transparent; }
-		
-	.form-group{margin-bottom: 0px !important;}
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/us-updateform.css" />
 
-	.form-group label{width: 100px; text-align: left;}	
-</style>
+
 </head>
 <body>
 <div class="header container">

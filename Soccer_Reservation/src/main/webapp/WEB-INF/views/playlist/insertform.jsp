@@ -8,21 +8,7 @@
 
 
 <title>users/signup_form.jsp</title>
-<style>
 
-	#myForm input{
-		width: 50%;
-		padding: 8px 8px;
-		margin: 8px 0 0 -10px;
-		border: 1px solid #ccc;
-		border-radius: 4px;
-	}
-	input:focus::-webkit-input-placeholder { 
-		color: transparent; }
-	
-
-
-</style>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css">
 <!--[if lt IE 9]>
@@ -38,8 +24,8 @@
 	href="${pageContext.request.contextPath}/resources/css/font-awesome.min.css">
 <link href='http://fonts.googleapis.com/css?family=Poiret+One'
 	rel='stylesheet' type='text/css'>
-<!-- 현재 페이지에 적용할 style.css 파일을 여기에서 로딩한다 -->
-
+<!-- 현재 페이지에 적용할 style.css 파일을 여기에서 로딩한다 -->	
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/pl-insertform.css" />
 </head>
 <body>
 <div class="header container">
