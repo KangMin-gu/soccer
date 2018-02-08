@@ -2,10 +2,14 @@ package com.soccer.rv.admin.dao;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.servlet.ModelAndView;
 
+import com.soccer.rv.field.dto.FieldDto;
 import com.soccer.rv.reser.orderdto.ReservationOrderDto;
 import com.soccer.rv.users.dto.UsersDto;
 
@@ -49,5 +53,20 @@ public class AdminDaoImpl implements AdminDao{
 		List<ReservationOrderDto> list = session.selectList("admin.rvList",id);
 		return list;
 	}
+
+	@Override
+	public void rvDelete(ReservationOrderDto dto) {
+		
+		session.update("admin.rvDelete",dto);
+		
+	}
+
+	@Override
+	public FieldDto getData2(String field_name) {
+		FieldDto dto = session.selectOne("admin.gettime",field_name);
+		return dto;
+	}
+	
+
 
 }

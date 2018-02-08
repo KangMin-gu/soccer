@@ -64,6 +64,14 @@ public class AdminController {
 		mView.setViewName("admin/adminrvlist");
 		return mView;
 	}
+	//회원 예약 취소 요청 처리
+	@RequestMapping("/admin/adminrvdelete")
+	public ModelAndView adminRvDelete(HttpServletRequest request){
+		adminservice.rvDelete(request);
+		ModelAndView mView = new ModelAndView();
+		mView.setViewName("/admin/adminrvdel_result");
+		return mView;
+	}
 	
 	
 	

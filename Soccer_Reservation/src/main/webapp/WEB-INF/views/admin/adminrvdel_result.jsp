@@ -5,9 +5,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>admin/reservation.jsp</title>
+<title>admin/adminrvdel_result.jsp</title>
 </head>
 <body>
-<h3>예약 관리 페이지</h3>
+<script>
+alert("${id}님 예약취소 완료 하였습니다.");
+location.href="${pageContext.request.contextPath}/admin/adminrvlist.do";
+</script>
 </body>
 </html>
