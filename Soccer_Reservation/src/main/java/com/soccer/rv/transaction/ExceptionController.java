@@ -19,14 +19,14 @@ public class ExceptionController {
 	}
 	
 	//DB 관련 작업 도중 발생한 Exception 은 DataAccessException type 으로 받을 수 있다.
-	@ExceptionHandler(DataAccessException.class)
-	public ModelAndView handleDataAccessException(DataAccessException dae){
-		
-		ModelAndView mView = new ModelAndView();
-		mView.addObject("exception",dae);
-		mView.setViewName("error/data_access");
-		return mView;
-	}
+//	@ExceptionHandler(DataAccessException.class)
+//	public ModelAndView handleDataAccessException(DataAccessException dae){
+//		
+//		ModelAndView mView = new ModelAndView();
+//		mView.addObject("exception",dae);
+//		mView.setViewName("error/data_access");
+//		return mView;
+//	}
 	
 	//NoSuchElementException
 	@ExceptionHandler(NoSuchElementException.class)
