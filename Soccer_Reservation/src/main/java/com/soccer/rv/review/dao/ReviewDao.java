@@ -10,11 +10,7 @@ public interface ReviewDao {
 	public void update(ReviewDto dto);
 	public void delete(int num);
 	public ReviewDto getData(ReviewDto dto);
-<<<<<<< HEAD
 	public ReviewDto getData2(int num);
-=======
-	public ReviewDto getData(int num);
->>>>>>> hanbyeol
 	public List<ReviewDto> getList(ReviewDto dto);
 	public int getCount(ReviewDto dto);
 	public void increaseViewCount(int num);

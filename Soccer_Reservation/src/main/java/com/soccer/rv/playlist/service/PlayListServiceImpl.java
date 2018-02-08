@@ -10,7 +10,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.soccer.rv.playlist.dao.PlayListDao;
 import com.soccer.rv.playlist.dto.PlayListDto;
-import com.soccer.rv.users.dto.UsersDto;
 
 
 
@@ -138,11 +137,7 @@ public class PlayListServiceImpl implements PlayListService {
 	public ModelAndView update(PlayListDto dto) {
 		
 		dao.update(dto);
-<<<<<<< HEAD
-=======
-		
-		
->>>>>>> hanbyeol
+
 		ModelAndView mView= new ModelAndView();
 		
 		mView.addObject("msg","수정하였습니다");

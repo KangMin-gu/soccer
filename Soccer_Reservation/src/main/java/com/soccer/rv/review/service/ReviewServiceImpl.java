@@ -178,11 +178,8 @@ public class ReviewServiceImpl implements ReviewService{
 	@Override
 	public ModelAndView detail(int num) {
 		//글번호를 이용해서 글정보를 얻어와서 
-<<<<<<< HEAD
 		ReviewDto dto=reviewDao.getData2(num);
-=======
-		ReviewDto dto=reviewDao.getData(num);
->>>>>>> hanbyeol
+
 		//ModelAndView 객체에 담아서 
 		ModelAndView mView=new ModelAndView();
 		mView.addObject("reviewDTO", dto);

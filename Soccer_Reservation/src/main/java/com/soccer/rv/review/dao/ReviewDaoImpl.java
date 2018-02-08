@@ -38,15 +38,9 @@ public class ReviewDaoImpl implements ReviewDao{
 	}
 
 	@Override
-<<<<<<< HEAD
 	public ReviewDto getData2(int num) {
 		ReviewDto dto = session.selectOne("review.getData2", num);
 		return dto;
-=======
-	public ReviewDto getData(int num) {
-		return session.selectOne("review.getData2", num);
-
->>>>>>> hanbyeol
 	}
 
 	@Override
