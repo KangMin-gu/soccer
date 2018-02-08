@@ -38,7 +38,8 @@
 					<td>${tmp.field_m_teamNP }</td>
 					<td>${tmp.field_m_phone }</td>
 					<td>${tmp.field_m_etc }</td>
-					<td><a href="adminrvdelete.do?fieldname=${tmp.field_name}&fielddate=${tmp.field_date}&fieldmornig=${tmp.field_m_time}&fieldafternoon=${tmp.field_a_time}&fieldnight=${tmp.field_n_time}">예약취소</a></td>
+					<td><a href="adminrvdelete.do?fieldname=${tmp.field_name}&fielddate=${tmp.field_date}&fieldmornig=${tmp.field_m_time}&fieldafternoon=${tmp.field_a_time}&fieldnight=${tmp.field_n_time}&field_m_id=${tmp.field_m_id}
+					&field_a_id=${tmp.field_a_id}&field_n_id=${tmp.field_n_id}">예약취소</a></td>
 		</c:if>
 		</tr>
 		<tr>
@@ -51,7 +52,8 @@
 					<td>${tmp.field_a_teamNP }</td>
 					<td>${tmp.field_a_phone }</td>
 					<td>${tmp.field_a_etc }</td>
-					<td><a href="adminrvdelete.do?fieldname=${tmp.field_name}&fielddate=${tmp.field_date}&fieldmornig=${tmp.field_m_time}&fieldafternoon=${tmp.field_a_time}&fieldnight=${tmp.field_n_time}">예약취소</a></td>
+					<td><a href="adminrvdelete.do?fieldname=${tmp.field_name}&fielddate=${tmp.field_date}&fieldmornig=${tmp.field_m_time}&fieldafternoon=${tmp.field_a_time}&fieldnight=${tmp.field_n_time}&field_m_id=${tmp.field_m_id}
+					&field_a_id=${tmp.field_a_id}&field_n_id=${tmp.field_n_id}">예약취소</a></td>
 		</c:if>
 		</tr>
 		<tr>
@@ -64,7 +66,8 @@
 					<td>${tmp.field_n_teamNP }</td>
 					<td>${tmp.field_n_phone }</td>
 					<td>${tmp.field_n_etc }</td>
-					<td><a href="adminrvdelete.do?fieldname=${tmp.field_name}&fielddate=${tmp.field_date}&fieldmornig=${tmp.field_m_time}&fieldafternoon=${tmp.field_a_time}&fieldnight=${tmp.field_n_time}">예약취소</a></td>
+					<td><a href="adminrvdelete.do?fieldname=${tmp.field_name}&fielddate=${tmp.field_date}&fieldmornig=${tmp.field_m_time}&fieldafternoon=${tmp.field_a_time}&fieldnight=${tmp.field_n_time}&field_m_id=${tmp.field_m_id}
+					&field_a_id=${tmp.field_a_id}&field_n_id=${tmp.field_n_id}">예약취소</a></td>
 		</c:if>
 		</tr>
 			</c:forEach>
@@ -73,7 +76,7 @@
 
 	
 
-<a href="${pageContext.request.contextPath}/">홈</a>
+<a href="${pageContext.request.contextPath}/admin/adminlist.do">뒤로가기</a>
 
 <script src="${pageContext.request.contextPath}/resources/css/bootstrap.min.css"></script>
 </body>
