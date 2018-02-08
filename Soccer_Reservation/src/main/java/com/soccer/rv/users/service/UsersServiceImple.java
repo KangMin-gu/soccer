@@ -123,8 +123,8 @@ public class UsersServiceImple implements UsersService{
 	
 	//user 정보에 저장되어 있는 주소를 좌표로 변환하는 메소
 	@Override
-	public ModelAndView map(String id) {
-		
+	public ModelAndView map(HttpServletRequest request) {
+		String id = (String)request.getSession().getAttribute("id"); 
 		UsersDto dto = dao.getMap(id);
 		String location = dto.getAddr(); // DB에서 받은 주소를 location에 담는다.
 		System.out.println(location);

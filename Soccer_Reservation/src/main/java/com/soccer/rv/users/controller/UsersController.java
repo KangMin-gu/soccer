@@ -122,9 +122,8 @@ public class UsersController {
 	
 	//운동장주소와 나의 주소 위치 호출 구글맵 연동
 	@RequestMapping("/users/fieldlist")
-	public ModelAndView fieldList(HttpSession session){
-		String id = (String)session.getAttribute("id");
-		ModelAndView mView = service.map(id);
+	public ModelAndView authfieldList(HttpServletRequest request){
+		ModelAndView mView = service.map(request);
 		mView.setViewName("users/fieldlist");
 		return mView;
 	}

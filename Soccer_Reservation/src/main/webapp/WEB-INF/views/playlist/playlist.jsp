@@ -148,7 +148,7 @@
 									<tr>
 										<td>${tmp.num }</td>
 										<td>${tmp.field_name }</td>
-										<td>${tmp.field_addr }</a></td>
+										<td><a href="${pageContext.request.contextPath}/reser/rv_detail.do?num=${tmp.num}">${tmp.field_addr }</a></a></td>
 										<td>${tmp.field_morning }</td>
 										<td>${tmp.field_afternoon }</td>
 										<td>${tmp.field_night }</td>
