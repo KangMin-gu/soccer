@@ -14,6 +14,7 @@ public interface AdminService {
 	public ModelAndView List(HttpServletRequest request);
 	public ModelAndView getData(String id);
 	public ModelAndView update(UsersDto dto);
-	public void delete(String id);
+	public void delete(HttpServletRequest request);
+	public ModelAndView rvList(HttpServletRequest request);
 	
 }

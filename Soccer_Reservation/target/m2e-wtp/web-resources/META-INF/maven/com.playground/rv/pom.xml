@@ -182,6 +182,12 @@
 			<artifactId>cglib</artifactId>
 			<version>3.2.0</version>
 		</dependency>
+		<!-- Spring Transaction 관련 라이브러리 -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-tx</artifactId>
+		    <version>4.0.0.RELEASE</version>
+		</dependency>
 
 	</dependencies>
 	<build>

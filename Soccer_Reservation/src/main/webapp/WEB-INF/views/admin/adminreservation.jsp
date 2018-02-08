@@ -5,12 +5,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>admin/adminalert.jsp</title>
+<title>admin/reservation.jsp</title>
 </head>
 <body>
-<script>
-	alert("회원 정보를 수정하였습니다.");
-	location.href="adminlist.do?num=${num}";
-</script>
+<h3>예약 관리 페이지</h3>
 </body>
 </html>

@@ -21,6 +21,7 @@
 			<th>회원 전화번호</th>
 			<th>회원정보수정</th>
 			<th>회원정보 삭제</th>
+			<th>회원 예약정보</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -31,8 +32,9 @@
 				<td>${tmp.email }</td>
 				<td>${tmp.addr }${tmp.detailaddr }</td>
 				<td>${tmp.phone }</td>
-				<td><a href="adminupdateform.do">정보수정</a></td>
-				<td><a href="admindelete.do">정보삭제</a></td>
+				<td><a href="adminupdateform.do?id=${tmp.id }">정보수정</a></td>
+				<td><a href="admindelete.do?id=${tmp.id }">정보삭제</a></td>
+				<td><a href="adminrvlist.do?id=${tmp.id }">예약정보관리</a></td>
 			</tr>
 		</c:forEach>
 	</tbody>

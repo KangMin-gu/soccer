@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.soccer.rv.reser.orderdto.ReservationOrderDto;
 import com.soccer.rv.users.dto.UsersDto;
 
 @Repository
@@ -16,14 +17,15 @@ public class AdminDaoImpl implements AdminDao{
 
 	@Override
 	public UsersDto getData(String id) {
-		
+		System.out.println(id+"=dao id 값");
 		return session.selectOne("admin.getData",id);
 	}
 
 	@Override
 	public void update(UsersDto dto) {
+
 		session.update("admin.update",dto);
-		
+
 	}
 
 	@Override
@@ -35,6 +37,16 @@ public class AdminDaoImpl implements AdminDao{
 	@Override
 	public List<UsersDto> getList() {
 		List<UsersDto> list = session.selectList("admin.getList");
+		return list;
+	}
+	
+	
+	
+	/*=========================*/
+	//reservation 예약정보
+	@Override
+	public List<ReservationOrderDto> rvList(String id) {
+		List<ReservationOrderDto> list = session.selectList("admin.rvList",id);
 		return list;
 	}
 
