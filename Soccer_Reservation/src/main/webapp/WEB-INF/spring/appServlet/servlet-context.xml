@@ -60,6 +60,9 @@
 	<context:component-scan base-package="com.soccer.rv.position.*"/>
 	<context:component-scan base-package="com.soccer.rv.reser.*"/>
 	<context:component-scan base-package="com.soccer.rv.util"/>
+	<context:component-scan base-package="com.soccer.rv.aspect"/>
+	
+	<aop:aspectj-autoproxy/>
 
 
 </beans:beans>

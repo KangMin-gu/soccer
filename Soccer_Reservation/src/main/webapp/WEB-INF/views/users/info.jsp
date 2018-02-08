@@ -37,8 +37,8 @@
 		<c:when test="${not empty id }">
 			<div>
 				<ul id="loginUl">
-					<li class="loginLi"><a href="users/info.do">My info</a></li>
-					<li class="loginLi"><a href="users/logout.do">Logout</a></li>
+					<li class="loginLi"><a href="${pageContext.request.contextPath}/users/info.do">My info</a></li>
+					<li class="loginLi"><a href="${pageContext.request.contextPath}/users/logout.do">Logout</a></li>
 				</ul>	
 			</div>			
 		</c:when>
@@ -78,7 +78,7 @@
 						src="${pageContext.request.contextPath}/resources/img/soccer.png"
 						width="200" alt="logo"></a></li>
 				<li><a href="${pageContext.request.contextPath}/playlist/playlist.do">playground List</a></li>
-				<li><a href="donate.html">Review</a></li>
+				<li><a href="${pageContext.request.contextPath}/review/list.do">Review</a></li>
 				<li><a href="contact.html">Question</a></li>
 			</ul>
 		</div>

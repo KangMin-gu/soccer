@@ -44,16 +44,16 @@
 			<c:when test="${not empty id }">
 				<div>
 					<ul id="loginUl">
-						<li class="loginLi"><a href="users/info.do">My info</a></li>
-						<li class="loginLi"><a href="users/logout.do">Logout</a></li>
+						<li class="loginLi"><a href="${pageContext.request.contextPath}/users/info.do">My info</a></li>
+						<li class="loginLi"><a href="${pageContext.request.contextPath}/users/logout.do">Logout</a></li>
 					</ul>
 				</div>
 			</c:when>
 			<c:otherwise>
 				<div>
 					<ul id="loginUl">
-						<li class="loginLi"><a href="users/loginform.do">Login</a></li>
-						<li class="loginLi"><a href="users/signupform.do">SignUp</a></li>
+						<li class="loginLi"><a href="${pageContext.request.contextPath}/users/loginform.do">Login</a></li>
+						<li class="loginLi"><a href="${pageContext.request.contextPath}/users/signupform.do">SignUp</a></li>
 					</ul>
 				</div>
 			</c:otherwise>
