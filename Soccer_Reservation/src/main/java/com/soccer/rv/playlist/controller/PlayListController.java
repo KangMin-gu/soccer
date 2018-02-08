@@ -27,13 +27,6 @@ public class PlayListController {
 		return mView;
 	}
 	
-	@RequestMapping("/playlist/detail")
-	public ModelAndView detail(HttpServletRequest request){
-		ModelAndView mView= service.detail(request);
-		
-		mView.setViewName("playlist/detail");
-		return mView;
-	}
 	
 	@RequestMapping("/playlist/insertform")
 	public ModelAndView insertform(HttpServletRequest request){
