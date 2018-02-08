@@ -96,8 +96,8 @@
 						class="logo"
 						src="${pageContext.request.contextPath}/resources/img/soccer.png"
 						width="200" alt="logo"></a></li>
-				<li><a href="playlist.do">playground List</a></li>
-				<li><a href="donate.html">Review</a></li>
+				<li><a href="${pageContext.request.contextPath}/playlist/playlist.do">playground List</a></li>
+				<li><a href="${pageContext.request.contextPath}/review/list.do">Review</a></li>
 				<li><a href="contact.html">Question</a></li>
 			</ul>
 		</div>
@@ -132,7 +132,7 @@
 									<label for="content">내용</label>
 									<textarea name="content" id="content">${reviewDTO.content }</textarea>
 								</div>
-								<button  class="btn btn-default" onclick="submitContents(this);" 
+								<button class="btn btn-default" onclick="submitContents(this);" 
 									 type="submit">수정 확인</button>
 							</form>
 					</div>
