@@ -100,14 +100,19 @@
 		</div>
 	</div>
 <!-- ============TOP============= -->
-	<div class="container">
-		<div class="row">
-			<div class="divider col-sm-12 col-xs-12 col-md-12">
-					<h3 class="main-text">운동장 이용 하셨다면 후기 글 남겨보세요!</h3>
-				
+<div class="container">
+	<div class="row">
+		<div class="divider col-sm-12 col-xs-12 col-md-12">
+			<div class="header-text">
+				<span>후기 글 작성</span>
+				<div class="container header-start text-center"></div>
+				<p class="text-left sub-text">
+					<em class="first-line">운동장을 이용하셨다면 후기글을 남겨보세요~</em>
+				</p>
 			</div>
 		</div>
 	</div>
+</div>
 	<!-- ================ Main ============= -->
 <div class="container">
 	<div class="row">
@@ -131,7 +136,7 @@
 									<textarea class="form-control" rows="3" name="content" id="content" ></textarea>
 								</div>
 								<button onclick="submitContents(this);" 
-									class="btn btn-default" type="submit">확인</button>	
+									class="btn btn-default pull-right" type="submit">확인</button>	
 							</form>
 					</div>
 				</div>

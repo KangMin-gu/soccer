@@ -93,13 +93,18 @@
 	<!-- ============TOP============= -->
 
 	<div class="container">
-		<div class="row">
-			<div class="divider col-sm-12 col-xs-12 col-md-12">
-					<h3 class="main-text">운동장 이용 하셨다면 후기 글 남겨보세요!</h3>
-				
+	<div class="row">
+		<div class="divider col-sm-12 col-xs-12 col-md-12">
+			<div class="header-text">
+				<span>후기 글 페이지</span>
+				<div class="container header-start text-center"></div>
+				<p class="text-left sub-text">
+					<em class="first-line">운동장을 이용한 분들의 후기글을 읽어보세요~</em>
+				</p>
 			</div>
 		</div>
 	</div>
+</div>
 	<!-- ================ Main ============= -->
 <div class="container">
 	<div class="row">

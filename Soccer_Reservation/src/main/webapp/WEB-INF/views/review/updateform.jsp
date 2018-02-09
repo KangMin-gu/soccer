@@ -103,13 +103,19 @@
 		</div>
 	</div>
 <!-- ============TOP============= -->
-	<div class="container">
-		<div class="row">
-			<div class="divider col-sm-12 col-xs-12 col-md-12">
-					<h3 class="main-text">후기 글 수정</h3>
+<div class="container">
+	<div class="row">
+		<div class="divider col-sm-12 col-xs-12 col-md-12">
+			<div class="header-text">
+				<span>후기 글 수정</span>
+				<div class="container header-start text-center"></div>
+				<p class="text-left sub-text">
+					<em class="first-line">후기 관련사항이 아닌 광고성 글 및 회원들에게 불쾌감을 주는 내용은 조심해 주세요.!</em>
+				</p>
 			</div>
 		</div>
 	</div>
+</div>
 	<!-- ================ Main ============= -->
 <div class="container">
 	<div class="row">
@@ -132,7 +138,7 @@
 									<label for="content">내용</label>
 									<textarea name="content" id="content">${reviewDTO.content }</textarea>
 								</div>
-								<button class="btn btn-default" onclick="submitContents(this);" 
+								<button class="btn btn-default " onclick="submitContents(this);" 
 									 type="submit">수정 확인</button>
 							</form>
 					</div>

@@ -123,13 +123,15 @@
 	</div>
 <!-- ============TOP============= -->
 	<div class="container">
-		<div class="row">
-			<div class="divider col-sm-12 col-xs-12 col-md-12">
-					<h3 class="main-text">후기 글 자세히 보기</h3>
-				
+	<div class="row">
+		<div class="divider col-sm-12 col-xs-12 col-md-12">
+			<div class="header-text">
+				<span>후기글 본문</span>
+				<div class="container header-start text-center"></div>
 			</div>
 		</div>
 	</div>
+</div>
 	<!-- ================ Main ============= -->
 <div class="container">
 	<div class="row">
