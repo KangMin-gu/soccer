@@ -107,7 +107,6 @@
 				<div class="panel">
 					<div class="panel-body">
 							<div style="float:left;">
-								<a class="btn btn-default btn-md " href="insertform.do"><i class="glyphicon glyphicon-pencil"></i> 새글 작성</a>
 								<h3>후기글 목록입니다.</h3>
 								<table  id="listtable" class="table table-hover ">
 									<thead>
@@ -131,6 +130,7 @@
 										</c:forEach>
 									</tbody>
 								</table>
+								<div class="pull-right"><a class="btn btn-default btn-md " href="insertform.do"><i class="glyphicon glyphicon-pencil"></i> 새글 작성</a></div>
 								<ul class="pagination">
 									<c:choose>
 										<c:when test="${startPageNum ne 1 }">
@@ -168,10 +168,12 @@
 										</c:otherwise>
 									</c:choose>
 								</ul>
-								<div class="row">
+								
+								
+								<div  class="row" >
 									<div class="col-xs-6">
 										<!-- 검색어 관련 form -->
-										<form action="list.do" method="post">
+										<form  action="list.do" method="post" >
 											<input type="hidden" id="condition" value="${condition }" name="condition" />
 									        <div class="input-group">
 									          <div class="input-group-btn">

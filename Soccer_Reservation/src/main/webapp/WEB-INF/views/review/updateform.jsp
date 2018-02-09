@@ -38,7 +38,7 @@
 </style>
 <!-- SmartEditor 관련 javascript 로딩 -->
 
-<script src="${pageContext.request.contextPath }/smarteditor/js/HuskyEZCreator.js"></script>
+<script src="${pageContext.request.contextPath }/Smarteditor/js/HuskyEZCreator.js"></script>
 </head>
 <body>
 <div class="header container">
@@ -106,7 +106,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="divider col-sm-12 col-xs-12 col-md-12">
-					<h3 class="main-text">후기 글 자세히 보기</h3>
+					<h3 class="main-text">후기 글 수정</h3>
 			</div>
 		</div>
 	</div>
@@ -151,7 +151,7 @@ nhn.husky.EZCreator.createInIFrame({
 	oAppRef: oEditors,
 	elPlaceHolder: "content",
 
-	sSkinURI: "${pageContext.request.contextPath}/smarteditor/SmartEditor2Skin.html",	
+	sSkinURI: "${pageContext.request.contextPath}/Smarteditor/SmartEditor2Skin.html",	
 
 	htParams : {
 		bUseToolbar : true,				// 툴바 사용 여부 (true:사용/ false:사용하지 않음)

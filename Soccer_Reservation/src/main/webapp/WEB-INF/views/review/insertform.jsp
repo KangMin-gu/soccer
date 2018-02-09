@@ -29,12 +29,13 @@
 <style>
 	/* SmartEditor 를 위한 textarea 에 적용할 css */
 	#content{
+		display:none;
 		width:100%;
 		height:400px;
 	}
 </style>
 <!-- SmartEditor 관련 javascript 로딩 -->
-<script src="${pageContext.request.contextPath }/smarteditor/js/HuskyEZCreator.js"></script>
+<script src="${pageContext.request.contextPath }/Smarteditor/js/HuskyEZCreator.js"></script>
 </head>
 <body>
 <div class="header container">
@@ -114,7 +115,7 @@
 				<div class="panel">
 					<div class="panel-body">
 							<div style="float:center;">
-								<h3>후기글 목록 수정폼입니다.</h3>
+								<h3>이용후기 글 작성</h3>
 							<!-- 새글 작성 form -->
 							<form action="insert.do" method="post">
 								<div class="form-group">
@@ -130,7 +131,7 @@
 									<textarea class="form-control" rows="3" name="content" id="content" ></textarea>
 								</div>
 								<button onclick="submitContents(this);" 
-									class="btn btn-success" type="submit">확인</button>
+									class="btn btn-default" type="submit">확인</button>	
 							</form>
 					</div>
 				</div>
@@ -201,7 +202,7 @@ var oEditors = [];
 nhn.husky.EZCreator.createInIFrame({
 	oAppRef: oEditors,
 	elPlaceHolder: "content",
-	sSkinURI: "${pageContext.request.contextPath}/smarteditor/SmartEditor2Skin.html",	
+	sSkinURI: "${pageContext.request.contextPath}/Smarteditor/SmartEditor2Skin.html",	
 	htParams : {
 		bUseToolbar : true,				// 툴바 사용 여부 (true:사용/ false:사용하지 않음)
 		bUseVerticalResizer : true,		// 입력창 크기 조절바 사용 여부 (true:사용/ false:사용하지 않음)
