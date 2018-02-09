@@ -8,7 +8,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h3>${id }님 회원가입을 축하합니다.</h3>
-<a href="${pageContext.request.contextPath }/home.do">index go</a>
+<script>
+
+location.href = "${pageContext.request.contextPath }/home.do"
+alert("회원가입 완료");
+</script>
 </body>
 </html>
