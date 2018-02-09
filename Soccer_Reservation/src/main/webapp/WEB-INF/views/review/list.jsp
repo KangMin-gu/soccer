@@ -105,7 +105,7 @@
 	<div class="row">
 			<div class=" col-md-12 text-center">
 				<div class="panel">
-					<div class="panel-body">
+					<div class="panel-body"  style="background-color: #def0f1;">
 							<div style="float:left;">
 								<h3>후기글 목록입니다.</h3>
 								<table  id="listtable" class="table table-hover ">
