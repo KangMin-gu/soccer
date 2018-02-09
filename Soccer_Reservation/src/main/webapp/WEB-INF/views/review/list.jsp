@@ -84,8 +84,8 @@
 						class="logo"
 						src="${pageContext.request.contextPath}/resources/img/soccer.png"
 						width="200" alt="logo"></a></li>
-				<li><a href="playlist.do">playground List</a></li>
-				<li><a href="donate.html">Review</a></li>
+				<li><a href="${pageContext.request.contextPath}/playlist/playlist.do">playground List</a></li>
+				<li><a href="${pageContext.request.contextPath}/review/list.do">Review</a></li>
 				<li><a href="contact.html">Question</a></li>
 			</ul>
 		</div>
@@ -93,21 +93,25 @@
 	<!-- ============TOP============= -->
 
 	<div class="container">
-		<div class="row">
-			<div class="divider col-sm-12 col-xs-12 col-md-12">
-					<h3 class="main-text">운동장 이용 하셨다면 후기 글 남겨보세요!</h3>
-				
+	<div class="row">
+		<div class="divider col-sm-12 col-xs-12 col-md-12">
+			<div class="header-text">
+				<span>후기 글 페이지</span>
+				<div class="container header-start text-center"></div>
+				<p class="text-left sub-text">
+					<em class="first-line">운동장을 이용한 분들의 후기글을 읽어보세요~</em>
+				</p>
 			</div>
 		</div>
 	</div>
+</div>
 	<!-- ================ Main ============= -->
 <div class="container">
 	<div class="row">
 			<div class=" col-md-12 text-center">
 				<div class="panel">
-					<div class="panel-body">
+					<div class="panel-body"  style="background-color: #def0f1;">
 							<div style="float:left;">
-								<a class="btn btn-default btn-md " href="insertform.do"><i class="glyphicon glyphicon-pencil"></i> 새글 작성</a>
 								<h3>후기글 목록입니다.</h3>
 								<table  id="listtable" class="table table-hover ">
 									<thead>
@@ -131,6 +135,7 @@
 										</c:forEach>
 									</tbody>
 								</table>
+								<div class="pull-right"><a class="btn btn-default btn-md " href="insertform.do"><i class="glyphicon glyphicon-pencil"></i> 새글 작성</a></div>
 								<ul class="pagination">
 									<c:choose>
 										<c:when test="${startPageNum ne 1 }">
@@ -168,10 +173,12 @@
 										</c:otherwise>
 									</c:choose>
 								</ul>
-								<div class="row">
+								
+								
+								<div  class="row" >
 									<div class="col-xs-6">
 										<!-- 검색어 관련 form -->
-										<form action="list.do" method="post">
+										<form  action="list.do" method="post" >
 											<input type="hidden" id="condition" value="${condition }" name="condition" />
 									        <div class="input-group">
 									          <div class="input-group-btn">

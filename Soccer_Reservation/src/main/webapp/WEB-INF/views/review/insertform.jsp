@@ -29,12 +29,13 @@
 <style>
 	/* SmartEditor 를 위한 textarea 에 적용할 css */
 	#content{
+		display:none;
 		width:100%;
 		height:400px;
 	}
 </style>
 <!-- SmartEditor 관련 javascript 로딩 -->
-<script src="${pageContext.request.contextPath }/smarteditor/js/HuskyEZCreator.js"></script>
+<script src="${pageContext.request.contextPath }/SmartEditor/js/HuskyEZCreator.js"></script>
 </head>
 <body>
 <div class="header container">
@@ -63,7 +64,7 @@
 
 		<div
 			class="visible-xs visible-sm col-xs-12 col-sm-12 text-center sm-logo">
-			<a rel="home" href="home.do"> <img
+			<a rel="home" href="${pageContext.request.contextPath }/home.do"> <img
 				src="${pageContext.request.contextPath}/resources/img/soccer.png"
 				width="200" alt="logo">
 			</a>
@@ -92,21 +93,26 @@
 						class="logo"
 						src="${pageContext.request.contextPath}/resources/img/soccer.png"
 						width="200" alt="logo"></a></li>
-				<li><a href="playlist.do">playground List</a></li>
-				<li><a href="donate.html">Review</a></li>
+				<li><a href="${pageContext.request.contextPath}/playlist/playlist.do">playground List</a></li>
+				<li><a href="${pageContext.request.contextPath}/review/list.do">Review</a></li>
 				<li><a href="contact.html">Question</a></li>
 			</ul>
 		</div>
 	</div>
 <!-- ============TOP============= -->
-	<div class="container">
-		<div class="row">
-			<div class="divider col-sm-12 col-xs-12 col-md-12">
-					<h3 class="main-text">운동장 이용 하셨다면 후기 글 남겨보세요!</h3>
-				
+<div class="container">
+	<div class="row">
+		<div class="divider col-sm-12 col-xs-12 col-md-12">
+			<div class="header-text">
+				<span>후기 글 작성</span>
+				<div class="container header-start text-center"></div>
+				<p class="text-left sub-text">
+					<em class="first-line">운동장을 이용하셨다면 후기글을 남겨보세요~</em>
+				</p>
 			</div>
 		</div>
 	</div>
+</div>
 	<!-- ================ Main ============= -->
 <div class="container">
 	<div class="row">
@@ -114,7 +120,7 @@
 				<div class="panel">
 					<div class="panel-body">
 							<div style="float:center;">
-								<h3>후기글 목록 수정폼입니다.</h3>
+								<h3>이용후기 글 작성</h3>
 							<!-- 새글 작성 form -->
 							<form action="insert.do" method="post">
 								<div class="form-group">
@@ -130,7 +136,7 @@
 									<textarea class="form-control" rows="3" name="content" id="content" ></textarea>
 								</div>
 								<button onclick="submitContents(this);" 
-									class="btn btn-success" type="submit">확인</button>
+									class="btn btn-default pull-right" type="submit">확인</button>	
 							</form>
 					</div>
 				</div>
@@ -201,7 +207,7 @@ var oEditors = [];
 nhn.husky.EZCreator.createInIFrame({
 	oAppRef: oEditors,
 	elPlaceHolder: "content",
-	sSkinURI: "${pageContext.request.contextPath}/smarteditor/SmartEditor2Skin.html",	
+	sSkinURI: "${pageContext.request.contextPath}/SmartEditor/SmartEditor2Skin.html",	
 	htParams : {
 		bUseToolbar : true,				// 툴바 사용 여부 (true:사용/ false:사용하지 않음)
 		bUseVerticalResizer : true,		// 입력창 크기 조절바 사용 여부 (true:사용/ false:사용하지 않음)

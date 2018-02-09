@@ -37,8 +37,7 @@
 	}
 </style>
 <!-- SmartEditor 관련 javascript 로딩 -->
-
-<script src="${pageContext.request.contextPath }/smarteditor/js/HuskyEZCreator.js"></script>
+<script src="${pageContext.request.contextPath }/SmartEditor/js/HuskyEZCreator.js"></script>
 </head>
 <body>
 <div class="header container">
@@ -96,20 +95,26 @@
 						class="logo"
 						src="${pageContext.request.contextPath}/resources/img/soccer.png"
 						width="200" alt="logo"></a></li>
-				<li><a href="playlist.do">playground List</a></li>
-				<li><a href="donate.html">Review</a></li>
+				<li><a href="${pageContext.request.contextPath}/playlist/playlist.do">playground List</a></li>
+				<li><a href="${pageContext.request.contextPath}/review/list.do">Review</a></li>
 				<li><a href="contact.html">Question</a></li>
 			</ul>
 		</div>
 	</div>
 <!-- ============TOP============= -->
-	<div class="container">
-		<div class="row">
-			<div class="divider col-sm-12 col-xs-12 col-md-12">
-					<h3 class="main-text">후기 글 자세히 보기</h3>
+<div class="container">
+	<div class="row">
+		<div class="divider col-sm-12 col-xs-12 col-md-12">
+			<div class="header-text">
+				<span>후기 글 수정</span>
+				<div class="container header-start text-center"></div>
+				<p class="text-left sub-text">
+					<em class="first-line">후기 관련사항이 아닌 광고성 글 및 회원들에게 불쾌감을 주는 내용은 조심해 주세요.!</em>
+				</p>
 			</div>
 		</div>
 	</div>
+</div>
 	<!-- ================ Main ============= -->
 <div class="container">
 	<div class="row">
@@ -132,7 +137,7 @@
 									<label for="content">내용</label>
 									<textarea name="content" id="content">${reviewDTO.content }</textarea>
 								</div>
-								<button  class="btn btn-default" onclick="submitContents(this);" 
+								<button class="btn btn-default " onclick="submitContents(this);" 
 									 type="submit">수정 확인</button>
 							</form>
 					</div>
@@ -150,9 +155,7 @@ var oEditors = [];
 nhn.husky.EZCreator.createInIFrame({
 	oAppRef: oEditors,
 	elPlaceHolder: "content",
-
-	sSkinURI: "${pageContext.request.contextPath}/smarteditor/SmartEditor2Skin.html",	
-
+	sSkinURI: "${pageContext.request.contextPath}/SmartEditor/SmartEditor2Skin.html",	
 	htParams : {
 		bUseToolbar : true,				// 툴바 사용 여부 (true:사용/ false:사용하지 않음)
 		bUseVerticalResizer : true,		// 입력창 크기 조절바 사용 여부 (true:사용/ false:사용하지 않음)

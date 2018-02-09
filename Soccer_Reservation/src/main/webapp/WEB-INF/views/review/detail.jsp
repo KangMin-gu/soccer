@@ -115,21 +115,23 @@
 						class="logo"
 						src="${pageContext.request.contextPath}/resources/img/soccer.png"
 						width="200" alt="logo"></a></li>
-				<li><a href="playlist.do">playground List</a></li>
-				<li><a href="donate.html">Review</a></li>
+				<li><a href="${pageContext.request.contextPath}/playlist/playlist.do">playground List</a></li>
+				<li><a href="${pageContext.request.contextPath}/review/list.do">Review</a></li>
 				<li><a href="contact.html">Question</a></li>
 			</ul>
 		</div>
 	</div>
 <!-- ============TOP============= -->
 	<div class="container">
-		<div class="row">
-			<div class="divider col-sm-12 col-xs-12 col-md-12">
-					<h3 class="main-text">후기 글 자세히 보기</h3>
-				
+	<div class="row">
+		<div class="divider col-sm-12 col-xs-12 col-md-12">
+			<div class="header-text">
+				<span>후기글 본문</span>
+				<div class="container header-start text-center"></div>
 			</div>
 		</div>
 	</div>
+</div>
 	<!-- ================ Main ============= -->
 <div class="container">
 	<div class="row">
