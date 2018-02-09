@@ -105,12 +105,12 @@
 						<p>운동장 주소: <strong>${dto.field_addr }</strong></p>
 						<form action="rv_form.do?num=${dto.num}" method="POST" id="reservationform" class="form-inline">
 							<input type="hidden" id="field_name" name="field_name" value="${dto.field_name }" /><br/>
-								<div id="datepicker" style="margin-left: 225px; margin-bottom:18px;"></div>
+								<div id="datepicker" style="margin-left: 32%; margin-bottom:18px;"></div>
 									<input type="hidden" id="rv_date" name="rv_date"> 	
 									
 									
 								<div class="form-group">		
-									<select name="rv_time" id="rv_time" class="form-control" style="width: 264px;">
+									<select name="rv_time" id="rv_time" class="form-control" style="margin-left: 3%; width: 264px;">
 										<option>------시간 선택------</option>
 										<option id="morninga" value="${dto.field_morning}" disabled="disabled">오전 : ${dto.field_morning}</option>
 										<option id="afternoona" value="${dto.field_afternoon }" disabled="disabled">오후 : ${dto.field_afternoon }</option>

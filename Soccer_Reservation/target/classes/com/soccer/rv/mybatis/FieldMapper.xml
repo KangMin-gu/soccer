@@ -4,7 +4,7 @@
 
 <!-- 운동장의 정보 -->
 <select id="getList" resultType="fieldDto">
-	select * from field
+	select * from field 
 </select>
 	 
 </mapper>

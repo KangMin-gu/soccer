@@ -46,7 +46,7 @@
 	</update>
 	
 	<select id="gettime" parameterType="String" resultType="fieldDto">
-		select * from field where field_name=#{field_name}
+		select * from field where field_name=#{field_name} 
 	</select>
 	
 	<select id="myreser" parameterType="String" resultType="reservationOrderDto">
