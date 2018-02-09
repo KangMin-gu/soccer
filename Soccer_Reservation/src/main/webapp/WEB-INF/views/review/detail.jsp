@@ -29,7 +29,7 @@
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/css/reviewDetail.css" />	
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="${pageContext.request.contextPath}/Smarteditor/js/HuskyEZCreator.js"></script>
+<script src="${pageContext.request.contextPath}/smarteditor/js/HuskyEZCreator.js"></script>
 
 <style>
 	textarea{resize:none;}

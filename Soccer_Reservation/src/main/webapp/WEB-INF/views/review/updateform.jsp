@@ -37,8 +37,7 @@
 	}
 </style>
 <!-- SmartEditor 관련 javascript 로딩 -->
-
-<script src="${pageContext.request.contextPath }/Smarteditor/js/HuskyEZCreator.js"></script>
+<script src="${pageContext.request.contextPath }/SmartEditor/js/HuskyEZCreator.js"></script>
 </head>
 <body>
 <div class="header container">
@@ -156,9 +155,7 @@ var oEditors = [];
 nhn.husky.EZCreator.createInIFrame({
 	oAppRef: oEditors,
 	elPlaceHolder: "content",
-
-	sSkinURI: "${pageContext.request.contextPath}/Smarteditor/SmartEditor2Skin.html",	
-
+	sSkinURI: "${pageContext.request.contextPath}/SmartEditor/SmartEditor2Skin.html",	
 	htParams : {
 		bUseToolbar : true,				// 툴바 사용 여부 (true:사용/ false:사용하지 않음)
 		bUseVerticalResizer : true,		// 입력창 크기 조절바 사용 여부 (true:사용/ false:사용하지 않음)
