@@ -136,7 +136,7 @@
 											<td><strong class="btn btn-danger btn-sm">삭제불가</strong></td>
 											</c:when>
 											<c:otherwise>
-											<td><a class="btn btn-warning btn-sm" href="javascript:admindelete();">정보삭제</a></td>
+											<td><a class="btn btn-warning btn-sm" href="admindel.do?id=${tmp.id}">정보삭제</a></td>
 											</c:otherwise>
 										</c:choose>
 										<td><a class="btn btn-default btn-sm" href="adminrvlist.do?id=${tmp.id }">예약정보관리</a></td>
@@ -207,14 +207,6 @@
 	src="${pageContext.request.contextPath }/resources/js/bootstrap.js"></script>
 </body>
 <script>
-	function admindelete() {
-		var isDelete=confirm("삭제 기능 구현 안됬습니다.");
-		if(isDelete){
-			//삭제 기능 보류  
-			//location.href="admindelete.do?id=${id}";
-		}
-	}
-	
-	
+
 </script>
 </html>

@@ -48,12 +48,12 @@ public class AdminController {
 	}
 	
 	//회원 정보 삭제 요청 처리
-	@RequestMapping("/admin/admindelete")
+	@RequestMapping("/admin/admindel")
 	public ModelAndView delete(HttpServletRequest request){
 		
 		ModelAndView mView = new ModelAndView();
 		adminservice.delete(request);
-		mView.setViewName("redirect:/admin/adminlist.do");
+		mView.setViewName("admin/admindel_result");
 		return mView;
 	}
 	/*=====================================================*/
