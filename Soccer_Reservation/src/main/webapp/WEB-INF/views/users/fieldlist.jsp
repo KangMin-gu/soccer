@@ -231,13 +231,13 @@
 				var infowindow = new google.maps.InfoWindow();
 			//구글 맵 마커 등록	
 				for(var i = 0; i< data.length; i++){
-		      		var lats= data[i].lat;
-		      		var lngs= data[i].lng;
+		      		var lats= parseFloat(data[i].lat);
+		      		var lngs= parseFloat(data[i].lng);
 		      		var latlng = {lat : lats, lng : lngs};
-		      		console.log(JSON.stringify(data[i].lat));
+		
 		      		//마커 등록
 		      		var marker = new google.maps.Marker({
-		      			position: latlng,
+		      			position: {lat : lats, lng : lngs},
 		      			map: map,
 		      			icon: icon
 		      		});

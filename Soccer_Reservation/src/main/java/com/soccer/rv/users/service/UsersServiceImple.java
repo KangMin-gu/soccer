@@ -158,7 +158,7 @@ public class UsersServiceImple implements UsersService{
 	public  List<PositionDto> fieldList() {
 		
 		List<FieldDto> list = fieldDao.getList();
-		List<PositionDto> position = new ArrayList<>();
+		List<PositionDto> lis = new ArrayList<PositionDto>();
 		for(FieldDto tmp : list){
 			String location = tmp.getField_addr();
 			String title = tmp.getField_name();
@@ -178,16 +178,16 @@ public class UsersServiceImple implements UsersService{
 				float lat = coords[0];
 				float lng = coords[1];
 				
-				PositionDto positions = new PositionDto(num, title, lat, lng);
-				position.add(positions);
-				System.out.println("ㅁ"+positions.getNum());
+				PositionDto pos = new PositionDto(num, title, lat, lng);
+				lis.add(pos);
+				
 				
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
 		
-		return position;
+		return lis;
 	}
 
 }
