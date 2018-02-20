@@ -9,8 +9,8 @@
 </head>
 <body>
 <script>
-	alert("일시적으로 오류가 발생되어 페이지를 새로고침 하겠습니다. ");
-	location.href="${pageContext.request.contextPath}//users/fieldlist.do";
+	alert("일시적으로 오류가 발생되어 메인페이지로 이동하겠습니다. ");
+	location.href="${pageContext.request.contextPath}/";
 </script>
 </body>
 </html>
