@@ -132,8 +132,8 @@ public class UsersController {
 	@RequestMapping("/users/fieldPosition")
 	@ResponseBody
 	public List<PositionDto> fieldPosition(){
-		List<PositionDto> positions = service.fieldList();
-		return positions;
+		List<PositionDto> list = service.fieldList();
+		return list;
 	}
 	
 }
