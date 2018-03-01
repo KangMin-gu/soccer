@@ -11,20 +11,7 @@
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
 		
-	<beans:bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
-		<beans:property name="host" value="smtp.gmail.com"/>
-		<beans:property name="port" value="587"/>
-		<beans:property name="username" value="byeol4762@gmail.com"/>
-		<beans:property name="password" value="spqj51340!!"/>
-		<beans:property name="javaMailProperties">
-			<beans:props>
-			 	<beans:prop key="mail.transport.protocol">smtp</beans:prop>
-				<beans:prop key="mail.smtp.auth">true</beans:prop>
-				<beans:prop key="mail.smtp.starttls.enable">true</beans:prop>
-				<beans:prop key="mail.debug">true</beans:prop>
-			</beans:props>
-		</beans:property>	
-	</beans:bean>	
+	
 
 	<!-- DB 접속 정보를 가지고 있는 문서 읽어 들이기 -->
 	<beans:bean
