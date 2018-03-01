@@ -127,7 +127,7 @@
 									<tr>
 										<td>${tmp.id }</td>
 										<td>${tmp.name }</td>
-										<td>${tmp.email }</td>
+										<td><a href="${pageContext.request.contextPath }/mail/mailForm.do">${tmp.email }</a></td>
 										<td>${tmp.addr }${tmp.detailaddr }</td>
 										<td>${tmp.phone }</td>
 										<td><a class="btn btn-default btn-sm" href="adminupdateform.do?id=${tmp.id }">정보수정</a></td>
