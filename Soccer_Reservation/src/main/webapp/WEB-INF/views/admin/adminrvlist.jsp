@@ -171,6 +171,75 @@
 								</c:forEach>
 							</tbody>
 					</table>	
+					<ul class="pagination">
+						<c:choose>
+							<c:when test="${startPageNum ne 1 }">
+								<li>
+									<a href="list.do?pageNum=${startPageNum-1 }&condition=${condition}&keyword=${keyword}">&laquo;</a>
+								</li>
+							</c:when>
+							<c:otherwise>
+								<li class="disabled">
+									<a href="javascript:">&laquo;</a>
+								</li>
+							</c:otherwise>
+						</c:choose>
+						<c:forEach var="i" begin="${startPageNum }" 
+								end="${endPageNum }">	
+							<c:choose>
+								<c:when test="${i eq pageNum }">
+									<li class="active"><a href="list.do?pageNum=${i }&condition=${condition}&keyword=${keyword}">${i }</a></li>
+								</c:when>
+								<c:otherwise>
+									<li><a href="list.do?pageNum=${i }&condition=${condition}&keyword=${keyword}">${i }</a></li>
+								</c:otherwise>
+							</c:choose>
+						</c:forEach>
+						<c:choose>
+							<c:when test="${endPageNum lt totalPageCount }">
+								<li>
+									<a href="list.do?pageNum=${endPageNum+1 }&condition=${condition}&keyword=${keyword}">&raquo;</a>
+								</li>
+							</c:when>
+							<c:otherwise>
+								<li class="disabled">
+									<a href="javascript:">&raquo;</a>
+								</li>
+							</c:otherwise>
+						</c:choose>
+					</ul>
+					<div class="row">
+						<div class="col-xs-6">
+							<!-- 검색어 관련 form -->
+							<form action="list.do" method="post">
+								<input type="hidden" id="condition" value="${condition }" name="condition" />
+						        <div class="input-group">
+						          <div class="input-group-btn">
+						            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+						              <span id="conditionBtn">제목+파일명</span>
+						              <span class="caret"></span>
+						            </button>
+						            <ul class="dropdown-menu">
+						              <li><a href="javascript:set('titlecontent')">제목+파일명</a>
+						              </li>
+						              <li><a href="javascript:set('title')">제목</a>
+						              </li>
+						              <li><a href="javascript:set('writer')">작성자</a>
+						              </li>
+						            </ul>
+						          </div>
+						          <!-- /btn-group -->
+						          <input type="text" id="keyword" name="keyword" value="${keyword }" class="form-control"/>
+						          	<span class="input-group-btn">
+							            <button class="btn btn-default" type="submit">
+							              <span class="sr-only">검색</span>
+							              <span class="glyphicon glyphicon-search"></span>
+							            </button>
+				          			</span>
+						        </div>			
+							</form>
+						</div>
+					</div><!-- /.row -->
 						<a class="btn btn-default btn-sm pull-right" href="${pageContext.request.contextPath}/admin/adminlist.do">뒤로가기</a>
 					</div>
 				</div>

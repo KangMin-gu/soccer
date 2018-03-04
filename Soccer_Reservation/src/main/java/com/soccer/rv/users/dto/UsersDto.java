@@ -12,10 +12,18 @@ public class UsersDto {
 	private String findAnswer;
 	private String regdate;
 	
+	//페이징 처리 고려 
+	private int startRowNum;
+	private int endRowNum;
+	//이전글 다음글의 글번호
+	private int prevNum;
+	private int nextNum;
+	
 	public UsersDto(){}
 
-	public UsersDto(String id, String name, String pwd, String email, String phone, String addr, String findQuestion,
-			String findAnswer, String regdate, String detailaddr) {
+	public UsersDto(String id, String name, String pwd, String email, String phone, String addr, String detailaddr,
+			String findQuestion, String findAnswer, String regdate, int startRowNum, int endRowNum, int prevNum,
+			int nextNum) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -23,18 +31,14 @@ public class UsersDto {
 		this.email = email;
 		this.phone = phone;
 		this.addr = addr;
+		this.detailaddr = detailaddr;
 		this.findQuestion = findQuestion;
 		this.findAnswer = findAnswer;
 		this.regdate = regdate;
-		this.detailaddr = detailaddr;
-	}
-
-	public String getDetailaddr() {
-		return detailaddr;
-	}
-
-	public void setDetailaddr(String detailaddr) {
-		this.detailaddr = detailaddr;
+		this.startRowNum = startRowNum;
+		this.endRowNum = endRowNum;
+		this.prevNum = prevNum;
+		this.nextNum = nextNum;
 	}
 
 	public String getId() {
@@ -85,6 +89,14 @@ public class UsersDto {
 		this.addr = addr;
 	}
 
+	public String getDetailaddr() {
+		return detailaddr;
+	}
+
+	public void setDetailaddr(String detailaddr) {
+		this.detailaddr = detailaddr;
+	}
+
 	public String getFindQuestion() {
 		return findQuestion;
 	}
@@ -109,6 +121,39 @@ public class UsersDto {
 		this.regdate = regdate;
 	}
 
+	public int getStartRowNum() {
+		return startRowNum;
+	}
+
+	public void setStartRowNum(int startRowNum) {
+		this.startRowNum = startRowNum;
+	}
+
+	public int getEndRowNum() {
+		return endRowNum;
+	}
+
+	public void setEndRowNum(int endRowNum) {
+		this.endRowNum = endRowNum;
+	}
+
+	public int getPrevNum() {
+		return prevNum;
+	}
+
+	public void setPrevNum(int prevNum) {
+		this.prevNum = prevNum;
+	}
+
+	public int getNextNum() {
+		return nextNum;
+	}
+
+	public void setNextNum(int nextNum) {
+		this.nextNum = nextNum;
+	}
+
+	
 
 	
 	

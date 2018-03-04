@@ -1,4 +1,4 @@
-<<<<<<< HEAD:Soccer_Reservation/users.sql
+
 create table users 
 (id varchar2(100) primary key, 
 name varchar2(100), 
@@ -58,7 +58,3 @@ create sequence field_order_seq
 
 
 
-
-
-
->>>>>>> 65a6dae11871b1ee0e87fb481e674a24eb02882e:Soccer_Reservation/table.sql

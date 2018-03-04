@@ -36,11 +36,16 @@ public class AdminDaoImpl implements AdminDao{
 	}
 
 	@Override
-	public List<UsersDto> getList() {
-		List<UsersDto> list = session.selectList("admin.getList");
+	public List<UsersDto> getList(UsersDto dto) {
+		List<UsersDto> list = session.selectList("admin.getList",dto);
 		return list;
 	}
 	
+	@Override
+	public int getCount(UsersDto dto) {
+		int count = session.selectOne("admin.getCount",dto);
+		return count;
+	}
 	
 	
 	/*=========================*/
@@ -62,6 +67,8 @@ public class AdminDaoImpl implements AdminDao{
 		FieldDto dto = session.selectOne("admin.gettime",field_name);
 		return dto;
 	}
+
+	
 	
 
 

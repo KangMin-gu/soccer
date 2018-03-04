@@ -13,7 +13,8 @@ public interface AdminDao {
 	public UsersDto getData(String id);
 	public void update(UsersDto dto);
 	public void delete(String id);
-	public List<UsersDto> getList();
+	public List<UsersDto> getList(UsersDto dto);
+	public int getCount(UsersDto dto);
 	
 	/*=========================*/
 	//reservation 예약정보

@@ -144,6 +144,73 @@
 								</c:forEach>
 							</tbody>
 						</table>
+						<ul class="pagination">
+							<c:choose>
+								<c:when test="${startPageNum ne 1 }">
+									<li>
+										<a href="adminlist.do?pageNum=${startPageNum-1 }&condition=${condition}&keyword=${keyword}">&laquo;</a>
+									</li>
+								</c:when>
+								<c:otherwise>
+									<li class="disabled">
+										<a href="javascript:">&laquo;</a>
+									</li>
+								</c:otherwise>
+							</c:choose>
+							<c:forEach var="i" begin="${startPageNum }" 
+									end="${endPageNum }">	
+								<c:choose>
+									<c:when test="${i eq pageNum }">
+										<li class="active"><a href="adminlist.do?pageNum=${i }&condition=${condition}&keyword=${keyword}">${i }</a></li>
+									</c:when>
+									<c:otherwise>
+										<li><a href="adminlist.do?pageNum=${i }&condition=${condition}&keyword=${keyword}">${i }</a></li>
+									</c:otherwise>
+								</c:choose>
+							</c:forEach>
+							<c:choose>
+								<c:when test="${endPageNum lt totalPageCount }">
+									<li>
+										<a href="adminlist.do?pageNum=${endPageNum+1 }&condition=${condition}&keyword=${keyword}">&raquo;</a>
+									</li>
+								</c:when>
+								<c:otherwise>
+									<li class="disabled">
+										<a href="javascript:">&raquo;</a>
+									</li>
+								</c:otherwise>
+							</c:choose>
+						</ul>
+						<div class="row">
+							<div class="col-xs-6">
+								<!-- 검색어 관련 form -->
+								<form action="adminlist.do" method="post">
+									<input type="hidden" id="condition" value="${condition }" name="condition" />
+							        <div class="input-group">
+							          <div class="input-group-btn">
+							            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+							              <span id="conditionBtn">ID+이름</span>
+							              <span class="caret"></span>
+							            </button>
+							            <ul class="dropdown-menu">
+							              <li><a href="javascript:set('id')">ID</a>
+							              </li>
+							              <li><a href="javascript:set('name')">이름</a>
+							              </li>
+							            </ul>
+							          </div>
+							          <!-- /btn-group -->
+							          <input type="text" id="keyword" name="keyword" value="${keyword }" class="form-control"/>
+							          	<span class="input-group-btn">
+								            <button class="btn btn-default" type="submit">
+								              <span class="sr-only">검색</span>
+								              <span class="glyphicon glyphicon-search"></span>
+								            </button>
+					          			</span>
+							        </div>			
+								</form>
+							</div>
+						</div><!-- /.row -->
 						<a class="btn btn-default pull-right" href="${pageContext.request.contextPath}/">메인페이지바로가기</a>
 					</div>
 				</div>
@@ -207,6 +274,19 @@
 	src="${pageContext.request.contextPath }/resources/js/bootstrap.js"></script>
 </body>
 <script>
+set("${condition}");
+
+function set(condition){
+	if(condition=="id" || condition==""){
+		condition="id";
+		$("#conditionBtn").text("ID");
+	}else if(condition=="name"){
+		$("#conditionBtn").text("이름");
+	}
+	
+	$("#condition").val(condition);
+}
+
 
 </script>
 </html>
