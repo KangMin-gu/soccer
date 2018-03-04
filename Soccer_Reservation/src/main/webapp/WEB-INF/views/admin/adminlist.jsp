@@ -26,7 +26,7 @@
 <!-- 현재 페이지에 적용할 style.css 파일을 여기에서 로딩한다 -->
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/css/playlist.css" />
-</head>
+</head> 
 <body>
 <div class="header container">
 		<!-- 세션에 id의 유무에따라 보여지는 loginView -->
@@ -139,7 +139,7 @@
 											<td><a class="btn btn-warning btn-sm" href="admindel.do?id=${tmp.id}">정보삭제</a></td>
 											</c:otherwise>
 										</c:choose>
-										<td><a class="btn btn-default btn-sm" href="adminrvlist.do?id=${tmp.id }">예약정보관리</a></td>
+										<td><a class="btn btn-default btn-sm" onclick="window.open('adminrvlist.do?id=${tmp.id}', '예약정보관리','width=1000, height=500'); return false">예약정보관리</a></td>
 									</tr>
 								</c:forEach>
 							</tbody>
@@ -274,19 +274,17 @@
 	src="${pageContext.request.contextPath }/resources/js/bootstrap.js"></script>
 </body>
 <script>
-set("${condition}");
-
-function set(condition){
-	if(condition=="id" || condition==""){
-		condition="id";
-		$("#conditionBtn").text("ID");
-	}else if(condition=="name"){
-		$("#conditionBtn").text("이름");
-	}
+	set("${condition}");
 	
-	$("#condition").val(condition);
-}
-
-
+	function set(condition){
+		if(condition=="id" || condition==""){
+			condition="id";
+			$("#conditionBtn").text("ID");
+		}else if(condition=="name"){
+			$("#conditionBtn").text("이름");
+		}
+		
+		$("#condition").val(condition);
+	}
 </script>
 </html>
