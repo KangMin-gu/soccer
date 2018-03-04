@@ -31,8 +31,6 @@ public class AdminServiceIpml implements AdminService{
 		String keyword = request.getParameter("keyword");
 		String condition = request.getParameter("condition");
 		
-		System.out.println("파라미터 ="+keyword);
-		System.out.println("파라미터 ="+condition);
 		//글정보를 담을 ModelAndivew 객체
 		ModelAndView mView = new ModelAndView();
 		
@@ -41,55 +39,36 @@ public class AdminServiceIpml implements AdminService{
 		if(keyword != null) {//검색어가 전달된 경우
 			if(condition.equals("id")){ 
 				dto.setId(keyword);
-				System.out.println("condition.id="+keyword);
 			}else if(condition.equals("name")){
 				dto.setName(keyword);
-				System.out.println("condition.name="+keyword);
 			}
-			System.out.println("keyword ="+keyword);
-			System.out.println("condition="+condition);
 			mView.addObject("condition", condition);
 			mView.addObject("keyword", keyword);
 		}
 		
 		//보여줄 페이지의 번호
 		int pageNum=1;
-		System.out.println("pagwNum ="+pageNum);
 		//보여줄 페이지의 번호가 파라미터로 전달되는지 읽어온다.
 		String strPageNum=request.getParameter("pageNum");
-		
-		System.out.println("strPageNum ="+strPageNum);
 		if(strPageNum != null){//페이지 번호가 파라미터로 넘어온다면
-			System.out.println("strPageNum != null ="+strPageNum);
 			//페이지 번호를 설정한다.
-			
 			pageNum=Integer.parseInt(strPageNum);
-			System.out.println("pageNum ="+pageNum);
 		}
 		//보여줄 페이지 데이터의 시작 ResultSet row 번호
 		int startRowNum=1+(pageNum-1)*PAGE_ROW_COUNT;
-		System.out.println("startRowNum ="+startRowNum);
 		//보여줄 페이지 데이터의 끝 ResultSet row 번호
 		int endRowNum=pageNum*PAGE_ROW_COUNT;
-		System.out.println("endRowNum ="+endRowNum);
 		//전체 row 의 갯수를 DB 에서 얻어온다.
 		int totalRow = adminDao.getCount(dto);
-		System.out.println("totalRow ="+totalRow);
 		//전체 페이지의 갯수 구하기
-		int totalPageCount=
-				(int)Math.ceil(totalRow/(double)PAGE_ROW_COUNT);
-		System.out.println("totalPageCount ="+totalPageCount);
+		int totalPageCount=(int)Math.ceil(totalRow/(double)PAGE_ROW_COUNT);
 		//시작 페이지 번호
-		int startPageNum=
-			1+((pageNum-1)/PAGE_DISPLAY_COUNT)*PAGE_DISPLAY_COUNT;
-		System.out.println("startPageNum ="+startPageNum);
+		int startPageNum=1+((pageNum-1)/PAGE_DISPLAY_COUNT)*PAGE_DISPLAY_COUNT;
 		//끝 페이지 번호
 		int endPageNum=startPageNum+PAGE_DISPLAY_COUNT-1;
-		System.out.println("endPageNum ="+endPageNum);
 		//끝 페이지 번호가 잘못된 값이라면 
 		if(totalPageCount < endPageNum){
 			endPageNum=totalPageCount; //보정해준다. 
-			System.out.println(" 끝 페이지 번호가 잘못된 값이면 보정 =>endPageNum ="+endPageNum);
 		}
 		
 		dto.setStartRowNum(startRowNum);
@@ -97,12 +76,6 @@ public class AdminServiceIpml implements AdminService{
 		
 		//글목록 불러온다.
 		List<UsersDto> list = adminDao.getList(dto);
-		System.out.println("=======================================");
-		System.out.println("key="+keyword);
-		System.out.println("pageN="+pageNum);
-		System.out.println("startP="+startPageNum);
-		System.out.println("endP="+endPageNum);
-		System.out.println("totalP="+totalPageCount);
 		
 		mView.addObject("list",list);
 		mView.addObject("pageNum", pageNum);
@@ -156,10 +129,64 @@ public class AdminServiceIpml implements AdminService{
 	//회원 예약정보 확인
 	@Override
 	public ModelAndView rvList(HttpServletRequest request) {
+		
 		String id = (String)request.getParameter("id");
-		System.out.println("회원정보에서 id 가져왔다." + id);
-		List<ReservationOrderDto> list =adminDao.rvList(id);
+		
+		//검색과 관련된 파라미터를 읽어와 본다.
+		String keyword = request.getParameter("keyword");
+		String condition = request.getParameter("condition");
+	
+		
+		
+		//글정보를 담을 ModelAndivew 객체
 		ModelAndView mView = new ModelAndView();
+		
+		//UsersDto 객체 생성해서
+		ReservationOrderDto dto = new ReservationOrderDto();
+		if(keyword != null) {//검색어가 전달된 경우
+			if(condition.equals("id")){ 
+				dto.setId(keyword);
+			}else if(condition.equals("name")){
+				dto.setName(keyword);
+			}
+			mView.addObject("condition", condition);
+			mView.addObject("keyword", keyword);
+		}
+				
+		//보여줄 페이지의 번호
+		int pageNum=1;
+		//보여줄 페이지의 번호가 파라미터로 전달되는지 읽어온다.
+		String strPageNum=request.getParameter("pageNum");
+		if(strPageNum != null){//페이지 번호가 파라미터로 넘어온다면
+			//페이지 번호를 설정한다.
+			pageNum=Integer.parseInt(strPageNum);
+		}
+		//보여줄 페이지 데이터의 시작 ResultSet row 번호
+		int startRowNum=1+(pageNum-1)*PAGE_ROW_COUNT;
+		//보여줄 페이지 데이터의 끝 ResultSet row 번호
+		int endRowNum=pageNum*PAGE_ROW_COUNT;
+		//전체 row 의 갯수를 DB 에서 얻어온다.
+		int totalRow = adminDao.getCount(dto);
+		//전체 페이지의 갯수 구하기
+		int totalPageCount=(int)Math.ceil(totalRow/(double)PAGE_ROW_COUNT);
+		//시작 페이지 번호
+		int startPageNum=1+((pageNum-1)/PAGE_DISPLAY_COUNT)*PAGE_DISPLAY_COUNT;
+		//끝 페이지 번호
+		int endPageNum=startPageNum+PAGE_DISPLAY_COUNT-1;
+		//끝 페이지 번호가 잘못된 값이라면 
+		if(totalPageCount < endPageNum){
+			endPageNum=totalPageCount; //보정해준다. 
+		}
+		
+		dto.setStartRowNum(startRowNum);
+		dto.setEndRowNum(endRowNum);
+		
+		
+	
+		List<ReservationOrderDto> list =adminDao.rvList(id);
+		
+		
+		
 		mView.addObject("list",list);
 		mView.addObject("id", id);
 		return mView;

@@ -23,6 +23,12 @@ public class ReservationOrderDto {
 	private int field_n_teamNP;
 	private String field_n_id;
 	private String field_n_etc;
+	//페이징 처리 고려 
+	private int startRowNum;
+	private int endRowNum;
+	//이전글 다음글의 글번호
+	private int prevNum;
+	private int nextNum;
 
 	
 	public ReservationOrderDto(){}
@@ -32,7 +38,7 @@ public class ReservationOrderDto {
 			String field_m_phone, int field_m_teamNP, String field_m_id, String field_m_etc, String field_a_time,
 			String field_a_tname, String field_a_phone, int field_a_teamNP, String field_a_etc, String field_a_id,
 			String field_n_time, String field_n_tname, String field_n_phone, int field_n_teamNP, String field_n_id,
-			String field_n_etc) {
+			String field_n_etc, int startRowNum, int endRowNum, int prevNum, int nextNum) {
 		super();
 		this.num = num;
 		this.field_name = field_name;
@@ -55,6 +61,10 @@ public class ReservationOrderDto {
 		this.field_n_teamNP = field_n_teamNP;
 		this.field_n_id = field_n_id;
 		this.field_n_etc = field_n_etc;
+		this.startRowNum = startRowNum;
+		this.endRowNum = endRowNum;
+		this.prevNum = prevNum;
+		this.nextNum = nextNum;
 	}
 
 
@@ -267,6 +277,48 @@ public class ReservationOrderDto {
 		this.field_n_etc = field_n_etc;
 	}
 
+
+	public int getStartRowNum() {
+		return startRowNum;
+	}
+
+
+	public void setStartRowNum(int startRowNum) {
+		this.startRowNum = startRowNum;
+	}
+
+
+	public int getEndRowNum() {
+		return endRowNum;
+	}
+
+
+	public void setEndRowNum(int endRowNum) {
+		this.endRowNum = endRowNum;
+	}
+
+
+	public int getPrevNum() {
+		return prevNum;
+	}
+
+
+	public void setPrevNum(int prevNum) {
+		this.prevNum = prevNum;
+	}
+
+
+	public int getNextNum() {
+		return nextNum;
+	}
+
+
+	public void setNextNum(int nextNum) {
+		this.nextNum = nextNum;
+	}
+
+
+	
 
 	
 	

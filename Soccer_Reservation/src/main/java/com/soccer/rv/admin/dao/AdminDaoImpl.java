@@ -68,6 +68,12 @@ public class AdminDaoImpl implements AdminDao{
 		return dto;
 	}
 
+	@Override
+	public int getCount(ReservationOrderDto dto) {
+		int count = session.selectOne("admin.getCount2",dto);
+		return count;
+	}
+
 	
 	
 

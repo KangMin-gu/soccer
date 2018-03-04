@@ -86,4 +86,17 @@
 	where field_name=#{field_name} and field_date=#{field_date}
 </update>
 
+<select id="getCount2" parameterType="reservationOrderDto" resultType="int">
+	select NVL(MAX(ROWNUM), 0)
+	FROM field_order
+	<where>
+			<if test="id != null">
+				OR id LIKE '%'||#{id}||'%'
+			</if>
+			<if test="name != null">
+				OR name LIKE '%'||#{name}||'%'
+			</if>
+		</where>	
+</select>
+
 </mapper>
