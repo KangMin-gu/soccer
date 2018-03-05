@@ -10,7 +10,7 @@ detailaddr varchar2(200),
 findquestion varchar2(200), 
 findAnswer varchar2(200), 
 regdate date);
-=======
+
 
 
 운동장 정보를 저장할 테이블 

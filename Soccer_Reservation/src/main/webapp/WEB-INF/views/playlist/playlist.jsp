@@ -33,6 +33,8 @@
 
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/css/playlist.css" />
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/resources/css/dynamictable.css" />	
 </head>
 <body>
 	<div class="header container">

@@ -27,7 +27,7 @@
 	rel='stylesheet' type='text/css'>
 <!-- 현재 페이지에 적용할 style.css 파일을 여기에서 로딩한다 -->
 <link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/resources/css/playlist.css" />
+	href="${pageContext.request.contextPath}/resources/css/dynamictable.css" />
 </head> 
 <body>
 <div class="header container">
@@ -108,8 +108,7 @@
 	<div class="row">
 		<div class=" col-md-12 text-center">
 			<h3>회원목록</h3>
-			<table class="table table-hover ">
-				<thead>
+			<table  class="table table-hover rwd-table">
 					<tr>
 						<th>회원 아이디</th>
 						<th>회원 이름</th>
@@ -120,29 +119,27 @@
 						<th>회원정보 삭제</th>
 						<th>회원 예약정보</th>
 					</tr>
-				</thead>
-				<tbody>
 					<c:forEach  var="tmp" items="${list }">
 						<tr>
-							<td>${tmp.id }</td>
-							<td>${tmp.name }</td>
-							<td>${tmp.email }</td>
-							<td>${tmp.addr }${tmp.detailaddr }</td>
-							<td>${tmp.phone }</td>
-							<td><a class="btn btn-default btn-sm" href="adminupdateform.do?id=${tmp.id }">정보수정</a></td>
+							<td data-th="Id">${tmp.id }</td>
+							<td data-th="Name">${tmp.name }</td>
+							<td data-th="Email">${tmp.email }</td>
+							<td data-th="Addr">${tmp.addr }${tmp.detailaddr }</td>
+							<td data-th="Phone">${tmp.phone }</td>
+							<td data-th="Update"><a class="btn btn-default btn-sm" href="adminupdateform.do?id=${tmp.id }">정보수정</a></td>
 							<c:choose>
 								<c:when test="${tmp.id eq 'admin' }">
-								<td><strong class="btn btn-danger btn-sm">삭제불가</strong></td>
+								<td data-th="Delete"><strong class="btn btn-danger btn-sm">삭제불가</strong></td>
 								</c:when>
 								<c:otherwise>
-								<td><a class="btn btn-warning btn-sm" href="admindel.do?id=${tmp.id}">정보삭제</a></td>
+								<td data-th="Delete"><a class="btn btn-warning btn-sm" href="admindel.do?id=${tmp.id}">정보삭제</a></td>
 								</c:otherwise>
 							</c:choose>
-							<td><a class="btn btn-default btn-sm" onclick="window.open('adminrvlist.do?id=${tmp.id}', '예약정보관리','width=1000, height=500'); return false">예약정보관리</a></td>
+							<td data-th="DataList"><a class="btn btn-default btn-sm" onclick="window.open('adminrvlist.do?id=${tmp.id}', '예약정보관리','width=1000, height=500'); return false">예약정보관리</a></td>
 						</tr>
 					</c:forEach>
-				</tbody>
 			</table>
+			<div style="float:middle; class="container">
 			<ul class="pagination">
 				<c:choose>
 					<c:when test="${startPageNum ne 1 }">
@@ -180,6 +177,7 @@
 					</c:otherwise>
 				</c:choose>
 			</ul>
+			</div>
 			<div class="row">
 				<div class="col-xs-6">
 					<!-- 검색어 관련 form -->
@@ -187,7 +185,7 @@
 						<input type="hidden" id="condition" value="${condition }" name="condition" />
 				        <div class="input-group">
 				          <div class="input-group-btn">
-				            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+				            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 				              <span id="conditionBtn">ID+이름</span>
 				              <span class="caret"></span>
 				            </button>
@@ -199,7 +197,7 @@
 				            </ul>
 				          </div>
 				          <!-- /btn-group -->
-				          <input type="text" id="keyword" name="keyword" value="${keyword }" class="form-control"/>
+				          <input style="height: 35px;" type="text" id="keyword" name="keyword" value="${keyword }" class="form-control"/>
 				          	<span class="input-group-btn">
 					            <button class="btn btn-default" type="submit">
 					              <span class="sr-only">검색</span>
@@ -208,6 +206,7 @@
 		          			</span>
 				        </div>			
 					</form>
+					
 				</div>
 			</div><!-- /.row -->
 			<a class="btn btn-default pull-right" href="${pageContext.request.contextPath}/">메인페이지바로가기</a>

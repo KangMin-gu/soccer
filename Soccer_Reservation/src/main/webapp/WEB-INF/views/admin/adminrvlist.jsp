@@ -28,6 +28,8 @@
 <!-- 현재 페이지에 적용할 style.css 파일을 여기에서 로딩한다 -->
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/css/playlist.css" />
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/resources/css/dynamictable.css" />	
 </head>
 <body>
 <br />
@@ -46,8 +48,6 @@
 <div class="container">
 	<div class="row">
 		<div class=" col-md-12 text-center ">
-			<div class="panel">
-				<div class="panel-body"  style="background-color: #def0f1;">
 					<div style="float:left;">	
 						<h3>예약목록</h3>
 						<table style="margin-right:200px;" class="table table-hover">
@@ -115,9 +115,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
-</div>
-				
+		
 <!-- script references -->
 <script
 	src="${pageContext.request.contextPath}/resources/js/jquery.min.js"></script>

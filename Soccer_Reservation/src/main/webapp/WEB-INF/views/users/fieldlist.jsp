@@ -14,9 +14,6 @@
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css">
-<!--[if lt IE 9]>
-			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
 <link href="${pageContext.request.contextPath}/resources/css/styles.css"
 	rel="stylesheet">
 <link rel="stylesheet"

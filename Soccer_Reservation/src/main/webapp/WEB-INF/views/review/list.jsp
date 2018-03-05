@@ -28,6 +28,8 @@
 <!-- 현재 페이지에 적용할 style.css 파일을 여기에서 로딩한다 -->
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/css/playlist.css" />
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/resources/css/dynamictable.css" />
 </head>
 <body>
 <div class="header container">

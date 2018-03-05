@@ -13,9 +13,6 @@
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css">
-<!--[if lt IE 9]>
-			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
 <link href="${pageContext.request.contextPath}/resources/css/styles.css"
 	rel="stylesheet">
 <link rel="stylesheet"
@@ -53,7 +50,7 @@
 
 	<div
 		class="visible-xs visible-sm col-xs-12 col-sm-12 text-center sm-logo">
-		<a rel="home" href="home.do"> <img src="${pageContext.request.contextPath}/resources/img/soccer.png" width="200" alt="logo">
+		<a rel="home" href="${pageContext.request.contextPath}/"> <img src="${pageContext.request.contextPath}/resources/img/soccer.png" width="200" alt="logo">
 		</a>
 	</div>
 <div class="navbar" role="navigation">
