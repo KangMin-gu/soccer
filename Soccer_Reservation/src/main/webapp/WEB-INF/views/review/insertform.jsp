@@ -45,7 +45,7 @@
 		<c:choose>
 			<c:when test="${not empty id }">
 				<div>
-					<ul id="loginUl">
+					<ul class="nav navbar-nav" id="loginUl">
 						<li class="loginLi"><a
 							href="${pageContext.request.contextPath}/users/info.do">My
 								info</a></li>
@@ -56,7 +56,7 @@
 			</c:when>
 			<c:otherwise>
 				<div>
-					<ul id="loginUl">
+					<ul class="nav navbar-nav" id="loginUl">
 						<li class="loginLi"><a href="users/loginform.do">Login</a></li>
 						<li class="loginLi"><a href="users/signupform.do">SignUp</a></li>
 					</ul>
@@ -86,7 +86,7 @@
 			<ul class="nav navbar-nav">
 				<li class="selected"><a
 					href="${pageContext.request.contextPath}/home.do">Home</a></li>
-				<li><a href="myassist.do">Team</a></li>
+				<li><a href="${pageContext.request.contextPath}/home.do">Team</a></li>
 				<li><a
 					href="${pageContext.request.contextPath}/users/fieldlist.do">Near
 						Playground</a></li>
@@ -97,7 +97,7 @@
 						width="200" alt="logo"></a></li>
 				<li><a href="${pageContext.request.contextPath}/playlist/playlist.do">playground List</a></li>
 				<li><a href="${pageContext.request.contextPath}/review/list.do">Review</a></li>
-				<li><a href="contact.html">Question</a></li>
+				<li><a href="${pageContext.request.contextPath}/home.do">Question</a></li>
 			</ul>
 		</div>
 	</div>

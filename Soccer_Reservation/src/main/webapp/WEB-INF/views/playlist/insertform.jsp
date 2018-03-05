@@ -52,7 +52,7 @@
 
 		<div
 			class="visible-xs visible-sm col-xs-12 col-sm-12 text-center sm-logo">
-			<a rel="home" href="home.do"> <img
+			<a rel="home" href="${pageContext.request.contextPath}/home.do"> <img
 				src="${pageContext.request.contextPath}/resources/img/soccer.png"
 				width="200" alt="logo">
 			</a>
