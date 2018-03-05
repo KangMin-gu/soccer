@@ -36,7 +36,7 @@
 	<c:choose>
 		<c:when test="${not empty id }">
 			<div>
-				<ul id="loginUl">
+				<ul class="nav navbar-nav" id="loginUl">
 					<li class="loginLi"><a href="users/info.do">My info</a></li>
 					<li class="loginLi"><a href="users/logout.do">Logout</a></li>
 				</ul>	
@@ -44,7 +44,7 @@
 		</c:when>
 		<c:otherwise>
 			<div>
-				<ul id="loginUl">
+				<ul class="nav navbar-nav" id="loginUl">
 					<li class="loginLi"><a href="users/loginform.do">Login</a></li>
 					<li class="loginLi"><a href="users/signupform.do">SignUp</a></li>
 				</ul>

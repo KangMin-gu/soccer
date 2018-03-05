@@ -6,6 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>users/updateform.do</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css">
 <link rel="stylesheet"
@@ -29,7 +31,7 @@
 		<c:choose>
 			<c:when test="${not empty id }">
 				<div>
-					<ul id="loginUl">
+					<ul class="nav navbar-nav" id="loginUl">
 						<li class="loginLi"><a href="${pageContext.request.contextPath}/users/info.do">My info</a></li>
 						<li class="loginLi"><a href="${pageContext.request.contextPath}/users/logout.do">Logout</a></li>
 					</ul>
@@ -37,7 +39,7 @@
 			</c:when>
 			<c:otherwise>
 				<div>
-					<ul id="loginUl">
+					<ul class="nav navbar-nav" id="loginUl">
 						<li class="loginLi"><a href="${pageContext.request.contextPath}/users/loginform.do">Login</a></li>
 						<li class="loginLi"><a href="signupform.do">SignUp</a></li>
 					</ul>
@@ -86,16 +88,12 @@
 		<div class="row">
 			<div class="divider col-sm-12 col-xs-12 col-md-12">
 				<div class="header-text">
-					My <span>정보수정</span>
-										<div class="container header-start text-center">
-						<div class="heading-icon">
-							<img src="https://png.icons8.com/material/96/000000/stadium.png">
-						</div>
-						<h1 class="main-text">정보수정</h1>
+					<span>My정보수정</span>
+						<div class="container header-start text-center">
+						<h1 class="main-text">${dto.id }회원님</h1>
 						<p class="text-center sub-text">
 							<em class="first-line"></em>
-								<em class="next-line">
-								</em>
+							<em class="next-line"></em>
 						</p>
 					</div>	
 				</div>
@@ -104,58 +102,50 @@
 	</div>
 <div class="container">
 		<div class="row">
-			<div class="col-md-offset-2 col-md-8 text-center">
-				<div class="panel">
-					<div class="panel-body" style="background-color: #def0f1;">
-
-						<div class="text-center">
-							<form action="update.do" method="post" id="myForm">
-								<input type="hidden" name="id" value="${dto.id }"/>
-								<div class="form-group">
-									<label style="float:left; margin-top: 15px; margin-left: 70px;" for="id" >아이디</label>
-									<input type="text" name="id" id="id" value="${dto.id }" disabled />
-								</div>
-								<div class="form-group">
-									<input type="hidden" name="name" value="${dto.name }"/>
-									<label style="float:left; margin-top: 15px; margin-left: 68px;"  for="name">이름</label>
-									<input type="text" name="name" id="name" value="${dto.name }" disabled />
-								</div>
-								<div class="form-group">
-									<label style="float:left; margin-top: 15px; margin-left: 70px;"  for="pwd">비밀번호</label>
-									<input type="password" name="pwd" id="pwd" value="${dto.pwd }"/>
-								</div>
-								<div class="form-group">
-									<label style="float:left; margin-top: 15px; margin-left: 70px;" for="pwd2">비밀번호 확인</label>
-									<input type="password" name="pwd2" id="pwd2" value="${dto.pwd }" />
-								</div>
-								<div class="form-group">
-									<label style="float:left; margin-top: 15px; margin-left: 70px;"  for="email">이메일</label>
-									<input type="text" name="email" id="email" value="${dto.email }" />
-								</div>
-								<div class="form-group">
-									<label style="float:left; margin-top: 15px; margin-left: 70px;"  for="phone">전화번호</label>
-									<input type="text" name="phone" id="phone" value="${dto.phone }" />
-								</div>
-								<div class="form-group">
-									<label style="float:left; margin-top: 15px; margin-left: 70px;"  for="addr">주소</label>
-									<input type="text" name="addr" id="addr" value="${dto.addr }" />
-								</div>
-								<div class="form-group">
-									<label style="float:left; margin-top: 15px; margin-left: 70px;"  for="detailaddr">상세주소</label>
-									<input type="text" name="detailaddr" id="detailaddr" style="margin-bottom: 20px" value="${dto.detailaddr }" />
-								</div>
-								<button class="btn btn-default" type="submit" id="submit" style="margin-right:100px; float:right;">수정하기</button>
-							</form>
-							
+			<div class="col-md-offset-2 col-md-8">
+				<div class="text-left">
+					<form action="update.do" method="post">
+						<input type="hidden" name="id" value="${dto.id }"/>
+						<div class="form-group">
+							<label for="id" >아이디</label>
+							<input class="form-control" type="text" name="id" id="id" value="${dto.id }" disabled />
 						</div>
-					</div>
+						<div class="form-group">
+							<input class="form-control" type="hidden" name="name" value="${dto.name }"/>
+							<label for="name">이름</label>
+							<input class="form-control" type="text" name="name" id="name" value="${dto.name }" disabled />
+						</div>
+						<div class="form-group">
+							<label for="pwd">비밀번호</label>
+							<input class="form-control" type="password" name="pwd" id="pwd" value="${dto.pwd }"/>
+						</div>
+						<div class="form-group">
+							<label for="pwd2">비밀번호 확인</label>
+							<input class="form-control" type="password" name="pwd2" id="pwd2" value="${dto.pwd }" />
+						</div>
+						<div class="form-group">
+							<label for="email">이메일</label>
+							<input class="form-control" type="text" name="email" id="email" value="${dto.email }" />
+						</div>
+						<div class="form-group">
+							<label for="phone">전화번호</label>
+							<input class="form-control" type="text" name="phone" id="phone" value="${dto.phone }" />
+						</div>
+						<div class="form-group">
+							<label for="addr">주소</label>
+							<input class="form-control" type="text" name="addr" id="addr" value="${dto.addr }" />
+						</div>
+						<div class="form-group">
+							<label for="detailaddr">상세주소</label>
+							<input class="form-control"	 type="text" name="detailaddr" id="detailaddr" style="margin-bottom: 20px" value="${dto.detailaddr }" />
+						</div>
+						<button class="btn btn-default" type="submit" id="submit" >수정하기</button>
+					</form>
+					<hr />
 				</div>
 			</div>
 		</div>
 	</div>
-
-
-
 <footer id="footer">
 		<div class="footer-content container">
 			<div class="footer-adress text-center col-xs-12 col-sm-4 col-md-4">

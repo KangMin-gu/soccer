@@ -6,6 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>admin/adminupdateform.jsp</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css">
 <link rel="stylesheet"
@@ -19,7 +21,7 @@
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/font-awesome.min.css">
 <link href='http://fonts.googleapis.com/css?family=Poiret+One'rel='stylesheet' type='text/css'>
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/us-updateform.css" />
+
 
 </head>
 <body>
@@ -28,7 +30,7 @@
 	<c:choose>
 		<c:when test="${not empty id }">
 			<div>
-				<ul id="loginUl">
+				<ul class="nav navbar-nav" id="loginUl">
 					<li class="loginLi"><a href="${pageContext.request.contextPath}/users/info.do">My info</a></li>
 					<li class="loginLi"><a href="${pageContext.request.contextPath}/users/logout.do">Logout</a></li>
 				</ul>
@@ -36,7 +38,7 @@
 		</c:when>
 		<c:otherwise>
 			<div>
-				<ul id="loginUl">
+				<ul class="nav navbar-nav" id="loginUl">
 					<li class="loginLi"><a href="${pageContext.request.contextPath}/users/loginform.do">Login</a></li>
 					<li class="loginLi"><a href="signupform.do">SignUp</a></li>
 				</ul>
@@ -64,7 +66,7 @@
 	</div>
 	<div class="collapse navbar-collapse">
 		<ul class="nav navbar-nav">
-			<li class="selected"><a
+			<li><a
 				href="${pageContext.request.contextPath}/home.do">Home</a></li>
 			<li><a href="myassist.do">Team</a></li>
 			<li><a
@@ -100,41 +102,38 @@
 	</div>
 <div class="container">
 	<div class="row">
-		<div class="col-md-offset-2 col-md-8 text-center">
-			<div class="panel">
-				<div class="panel-body" style="background-color: #def0f1;">
-					<div class="text-center">	
-						<form action="adminupdate.do?id=${dto.id }" method="post" id="myForm">
-							<input type="hidden" name="id" vlaue="${dto.id }" disabled/>
-							<div class="form-group">
-							<label style="float:left; margin-top: 15px; margin-left: 70px;" for="id">회원 아아디</label>
-								<input type="text" name="id" value="${dto.id }" disabled/>
-							</div>
-							<div class="form-group">	
-								<input type="hidden" name="name" vlaue="${dto.name }" disabled/>
-							<label style="float:left; margin-top: 15px; margin-left: 68px;" for="name">회원 이름</label>
-								<input type="text" value="${dto.name }" disabled/>
-							</div>
-							<div class="form-group">	
-							<label style="float:left; margin-top: 15px; margin-left: 70px;" for="email">회원 이메일</label>
-								<input type="text" name="email" value="${dto.email }" />
-							</div>
-							<div class="form-group">	
-							<label style="float:left; margin-top: 15px; margin-left: 70px;" for="addr">회원 주소</label>
-								<input  type="text" name="addr" value="${dto.addr }" />
-							</div>
-							<div class="form-group">	
-							<label style="float:left; margin-top: 15px; margin-left: 70px;" for="detailaddr">상세주소</label>
-								<input type="text" name="detailaddr" value="${dto.detailaddr }" />
-							</div>
-							<div class="form-group">	
-							<label style="float:left; margin-top: 15px; margin-left: 70px;" for="phone">회원 전화번호</label>
-								<input type="text" name="phone" value="${dto.phone }" />
-							</div>	
-								<button class="btn btn-default" type="submit" id="submit" style="margin-right:100px; float:right;">수정</button>
-						</form>
+		<div class="col-md-offset-2 col-md-8 ">
+			<div class="text-left">	
+				<form action="adminupdate.do?id=${dto.id }" method="post" >
+					<input class="form-control"  type="hidden" name="id" vlaue="${dto.id }" disabled/>
+					<div class="form-group">
+					<label for="id">회원 아아디</label>
+						<input class="form-control"  type="text" name="id" value="${dto.id }" disabled/>
 					</div>
-				</div>
+					<div class="form-group">	
+						<input type="hidden" name="name" vlaue="${dto.name }" disabled/>
+					<label for="name">회원 이름</label>
+						<input class="form-control"  type="text" value="${dto.name }" disabled/>
+					</div>
+					<div class="form-group">	
+					<label  for="email">회원 이메일</label>
+						<input class="form-control"  type="text" name="email" value="${dto.email }" />
+					</div>
+					<div class="form-group">	
+					<label  for="addr">회원 주소</label>
+						<input class="form-control"  type="text" name="addr" value="${dto.addr }" />
+					</div>
+					<div class="form-group">	
+					<label for="detailaddr">상세주소</label>
+						<input class="form-control"  type="text" name="detailaddr" value="${dto.detailaddr }" />
+					</div>
+					<div class="form-group">	
+					<label  for="phone">회원 전화번호</label>
+						<input class="form-control"  type="text" name="phone" value="${dto.phone }" />
+					</div>	
+						<button class="btn btn-default" type="submit" id="submit">수정</button>
+				</form>
+				<hr />
 			</div>
 		</div>
 	</div>

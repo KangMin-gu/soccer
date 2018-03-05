@@ -36,7 +36,7 @@
 	<c:choose>
 		<c:when test="${not empty id }">
 			<div>
-				<ul id="loginUl">
+				<ul class="nav navbar-nav" id="loginUl">
 					<li class="loginLi"><a href="${pageContext.request.contextPath}/users/info.do">My info</a></li>
 					<li class="loginLi"><a href="${pageContext.request.contextPath}/users/logout.do">Logout</a></li>
 				</ul>	
@@ -44,7 +44,7 @@
 		</c:when>
 		<c:otherwise>
 			<div>
-				<ul id="loginUl">
+				<ul class="nav navbar-nav" id="loginUl">
 					<li class="loginLi"><a href="users/loginform.do">Login</a></li>
 					<li class="loginLi"><a href="users/signupform.do">SignUp</a></li>
 				</ul>
@@ -54,7 +54,7 @@
 	
 		<div
 			class="visible-xs visible-sm col-xs-12 col-sm-12 text-center sm-logo">
-			<a rel="home" href="home.do"> <img src="${pageContext.request.contextPath}/resources/img/soccer.png" width="200" alt="logo">
+			<a rel="home" href="${pageContext.request.contextPath}/home.do"> <img src="${pageContext.request.contextPath}/resources/img/soccer.png" width="200" alt="logo">
 			</a>
 		</div>
 	</div>
@@ -94,54 +94,49 @@
 </div>
 
 <!-- ============본문============== -->
-    	<div class="container">
-           <div class="row">
-            	<div class="col-md-offset-2 col-md-8 text-center" >
-                  <div class="panel">
-                    <div class="panel-body">
- 						<table id="infoTable" class="table table-hover">
- 							<thead>
- 								<tr>
- 									<th class="cells" colspan="2"><h2>${dto.name }님의 회원 정보 입니다.</h2></th>
- 								</tr>
- 							</thead>	
- 								<tbody>
- 									<tr>
- 										<td class="cell">아이디 :</td>
- 										<td class="cell">${dto.id }</td>
- 									</tr>									
- 									<tr>
- 										<td class="cell">전화번호 :</td> 								
- 										<td class="cell">${dto.phone }</td>
- 									</tr> 						
- 									<tr>
- 										<td class="cell">주소 :</td>								
- 										<td class="cell">${dto.addr } &nbsp ${dto.detailaddr }</td>
+<div class="container">
+	<div class="row">
+    	<div class="col-md-offset-2 col-md-8 text-center" >
+			<table id="infoTable" class="table table-hover">
+				<thead>
+					<tr>
+						<th class="cells" colspan="2"><h2>${dto.name }님의 회원 정보 입니다.</h2></th>
+					</tr>
+				</thead>	
+				<tbody>
+					<tr>
+						<td class="cell">아이디 :</td>
+						<td class="cell">${dto.id }</td>
+					</tr>									
+					<tr>
+						<td class="cell">전화번호 :</td> 								
+						<td class="cell">${dto.phone }</td>
+					</tr> 						
+					<tr>
+						<td class="cell">주소 :</td>								
+						<td class="cell">${dto.addr } &nbsp ${dto.detailaddr }</td>
 
- 									</tr>
- 									<tr>
- 										<td class="cell">가입하신 날짜 :</td>									
- 										<td class="cell">${dto.regdate }</td>
- 									</tr>						
- 								</tbody>
- 						</table>
-                            <div class="text-center">
-                              <ul class="list-unstyled list-inline list-social-sq-primary">
-                                <li><a class="btn btn-default" href="updateform.do">가입정보수정</a></li>
-                                <li><a class="btn btn-default" href="${pageContext.request.contextPath}/reser/myreser.do">나의 예약정보 확인</a></li>
-                                 <li><a class="btn btn-default" href="delete.do">회원탈퇴</a></li>
-                                 <!-- 관리자로 접속시 회원관리 페이지이동 버튼 생성 -->
-                                 <c:if test="${id eq 'admin' }">
-									<li><a class="btn  btn-default" href="${pageContext.request.contextPath}/admin/adminlist.do">회원관리 및 예약관리</a></li>
-								</c:if>
-                              </ul>
-                          </div>
-                        </div>
-               		 </div>
-             	</div>
-             </div>
+					</tr>
+					<tr>
+						<td class="cell">가입하신 날짜 :</td>									
+						<td class="cell">${dto.regdate }</td>
+					</tr>						
+				</tbody>
+			</table>
+			<div class="text-center">
+				<ul class="list-unstyled list-inline list-social-sq-primary">
+					<li><a class="btn btn-default" href="updateform.do">가입정보수정</a></li>
+					<li><a class="btn btn-default" onclick="window.open('${pageContext.request.contextPath}/reser/myreser.do', '나의 예약정보 확인','width=1000, height=500'); return false">나의 예약정보 확인</a></li>
+					<li><a class="btn btn-default" href="delete.do">회원탈퇴</a></li>
+					<!-- 관리자로 접속시 회원관리 페이지이동 버튼 생성 -->
+					<c:if test="${id eq 'admin' }">
+					<hr /><li><a class="btn  btn-default" href="${pageContext.request.contextPath}/admin/adminlist.do">회원관리 및 예약관리</a></li>
+					</c:if>
+				</ul>
+			</div>
 		</div>
-		
+	</div>
+</div>
 <!-- ============FOOTER============= -->
 	<footer id="footer">
 		<div class="footer-content container">

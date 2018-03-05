@@ -38,7 +38,7 @@
 	<c:choose>
 		<c:when test="${not empty id }">
 			<div>
-				<ul id="loginUl">
+				<ul class="nav navbar-nav" id="loginUl">
 					<li class="loginLi"><a href="${pageContext.request.contextPath}/users/info.do">My info</a></li>
 					<li class="loginLi"><a href="${pageContext.request.contextPath}/users/logout.do">Logout</a></li>
 				</ul>	
@@ -46,7 +46,7 @@
 		</c:when>
 		<c:otherwise>
 			<div>
-				<ul id="loginUl">
+				<ul class="nav navbar-nav" id="loginUl">
 					<li class="loginLi"><a href="${pageContext.request.contextPath}/users/loginform.do">Login</a></li>
 					<li class="loginLi"><a href="${pageContext.request.contextPath}/users/signupform.do">SignUp</a></li>
 				</ul>
