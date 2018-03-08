@@ -224,13 +224,13 @@
 												</ul>
 											</div>
 											<!-- /btn-group -->
-											<input type="text" id="keyword" name="keyword"
-												value="${keyword }" class="form-control" /> <span
-												class="input-group-btn">
-												<button class="btn btn-default" type="submit" style="margin: 10px;">
-													<span class="sr-only">검색</span> <span
-														class="glyphicon glyphicon-search"></span>
-												</button>
+										<!-- /btn-group -->
+								          <input style="height: 35px;" type="text" id="keyword" name="keyword" value="${keyword }" class="form-control"/>
+								          	<span class="input-group-btn">
+									            <button class="btn btn-default" type="submit">
+									              <span class="sr-only">검색</span>
+									              <span class="glyphicon glyphicon-search"></span>
+									            </button>
 											</span>
 										</div>
 									</form>

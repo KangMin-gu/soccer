@@ -199,7 +199,7 @@
 									            </ul>
 									          </div>
 									          <!-- /btn-group -->
-									          <input  type="text" id="keyword" name="keyword" value="${keyword }" class="form-control"/>
+									          <input  style="height: 35px;" type="text" id="keyword" name="keyword" value="${keyword }" class="form-control"/>
 									          	<span class="input-group-btn">
 										            <button class="btn btn-default" type="submit">
 										              <span class="sr-only">검색</span>

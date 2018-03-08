@@ -16,6 +16,7 @@ public class HomeController {
 	@RequestMapping("/home")
 	public ModelAndView home(HttpServletRequest request){
 		ModelAndView mView=reviewService.list(request);
+		
 		mView.setViewName("home");
 		return mView;
 	}

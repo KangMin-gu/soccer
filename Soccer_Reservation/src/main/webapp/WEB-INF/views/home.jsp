@@ -66,7 +66,7 @@
 	<div class="collapse navbar-collapse">
 		<ul class="nav navbar-nav">
 			<li class="selected"><a href="home.do">Home</a></li>
-			<li><a href="${pageContext.request.contextPath}/">Team</a></li>
+			<li><a href="#" id="close">Team</a></li>
 			<li><a href="${pageContext.request.contextPath}/users/fieldlist.do">Near Playground</a></li>
 			<li class="hidden-xs hidden-sm"><a rel="home" href="home.do"><img
 					class="logo"
@@ -74,7 +74,7 @@
 					width="200" alt="logo"></a></li>
 			<li><a href="${pageContext.request.contextPath}/playlist/playlist.do">playground List</a></li>
 			<li><a href="${pageContext.request.contextPath}/review/list.do">Review</a></li>
-			<li><a href="${pageContext.request.contextPath}/">Question</a></li>
+			<li><a href="#" id="close2">Question</a></li>
 		</ul>
 	</div>
 </div>
@@ -135,33 +135,29 @@
         <span>Review</span> News
      </div>
   </div>
-
+<c:forEach var="review" items="${list}" varStatus="status">
+<c:if test="${review.num eq 2 }">
 <section class="blog">
-   <div class="item col-md-4">
+<div class="item col-md-4">
       <div class="blok-read-sm">
-      <!-- single1.html 사진을 누르면 너어갈 경로 -->
-         <a href="review/detail.do" class="hover-image"> <img
-            src="${pageContext.request.contextPath}/resources/img/sea1.jpg"
-            alt="image"> <span class="layer-block"></span>
+         <a href="review/detail.do?num=${tmp.num }&condition=${condition}&keyword=${keyword}" class="hover-image">
+         <img src="${pageContext.request.contextPath}/resources/img/sea3.jpg"alt="image"> <span class="layer-block"></span>
          </a>
          <div class="editor-choice">
             <i class="fa fa-star"></i> <a href="#">Editor’s Choice</a>
          </div>
-         
-         <c:forEach var="review" items="${list}" varStatus="status">
-         <c:if test="${status.count eq 3 }">
+        
+         <c:if test="${status.count eq 1 }">
             <h4>${review.title }</h4>
             <p>${review.content }</p>
          </c:if>
-         </c:forEach>
-
-
+        
          <div class="content-block">
             <span class="point-caption bg-blue-point"></span> <span
                class="bottom-line bg-blue-point"></span>
             <div class="button-main bg-fio-point">read more</div>
             <div class="like-wrap">
-               <a href="#"><i class="fa fa-heart col-red"></i></a><span>224</span>
+               <a href="#"><i class="fa fa-heart col-red"></i></a><span></span>
                <a href="#"><i class="fa fa-comment col-green"></i></a><span>89</span>
             </div>
          </div>
@@ -170,47 +166,39 @@
    
    <div class="item col-md-4">
       <div class="blok-read-sm">
-         <a href="single1.html" class="hover-image"> <img
-            src="${pageContext.request.contextPath}/resources/img/sea2.jpg"
-            alt="image"> <span class="layer-block"></span>
+         <a href="review/detail.do?num=${tmp.num }&condition=${condition}&keyword=${keyword}" class="hover-image">
+         <img src="${pageContext.request.contextPath}/resources/img/sea3.jpg"alt="image"> <span class="layer-block"></span>
          </a>
          <div class="editor-choice">
             <i class="fa fa-star"></i> <a href="#">Editor’s Choice</a>
          </div>
-                     <c:forEach var="review" items="${list}" varStatus="status">
+        
          <c:if test="${status.count eq 2 }">
             <h4>${review.title }</h4>
             <p>${review.content }</p>
          </c:if>
-         </c:forEach>
-         
+        
          <div class="content-block">
             <span class="point-caption bg-blue-point"></span> <span
                class="bottom-line bg-blue-point"></span>
             <div class="button-main bg-fio-point">read more</div>
             <div class="like-wrap">
-               <a href="#"><i class="fa fa-heart col-red"></i></a><span>224</span>
+               <a href="#"><i class="fa fa-heart col-red"></i></a><span></span>
                <a href="#"><i class="fa fa-comment col-green"></i></a><span>89</span>
             </div>
          </div>
       </div>
    </div>
-
+   
    <div class="item col-md-4">
       <div class="blok-read-sm">
-         <a href="detail.do?num=${tmp.num }&condition=${condition}&keyword=${keyword}" class="hover-image"> <img
-            src="${pageContext.request.contextPath}/resources/img/sea3.jpg"
-            alt="image"> <span class="layer-block"></span>
-         </a>
-         <div class="editor-choice">
-            <i class="fa fa-star"></i> <a href="#">Editor’s Choice</a>
-         </div>
-         <c:forEach var="review" items="${list}" varStatus="status">
-         <c:if test="${status.count eq 1 }">
+         <a href="review/detail.do?num=${tmp.num }&condition=${condition}&keyword=${keyword}" class="hover-image">
+       	</a>
+         <c:if test="${status.count eq 3 }">
             <h4>${review.title }</h4>
             <p>${review.content }</p>
          </c:if>
-         </c:forEach>
+        
          <div class="content-block">
             <span class="point-caption bg-blue-point"></span> <span
                class="bottom-line bg-blue-point"></span>
@@ -223,7 +211,8 @@
       </div>
    </div>
 </section>
-
+</c:if>
+ </c:forEach>
 <!-- ============FOOTER============= -->
 <footer id="footer">
 	<div class="footer-content container">
@@ -281,6 +270,12 @@
 		autoControls : true
 	});
 	
+	$("#close").click(function(){
+		alert("준비중입니다...");
+	});
+	$("#close2").click(function(){
+		alert("준비중입니다...");
+	});
 
 </script>
 </body>
