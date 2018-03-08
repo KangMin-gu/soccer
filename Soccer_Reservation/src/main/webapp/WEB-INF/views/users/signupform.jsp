@@ -108,67 +108,78 @@
 	</div>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-offset-2 col-md-8 text-center">
-				<div class="panel">
-					<div class="panel-body" style="background-color: #def0f1;">
-
-						<div class="text-center">
-							<form action="signup.do" method="post" id="myForm">
-								<div class="form-group">
-									<label style="float:left; margin-top: 15px; margin-left: 70px;" for="id" >아이디</label>
-									<input type="text" name="id" id="id" style="width: 40%; margin-left: 0;"/>
-									<button class="btn btn-default" id="checkBtn">중복확인</button>
-									<span class="regExp"></span> 
-									<span id="checkResult"></span><br/>
-								</div>
-								<div class="form-group">
-									<label style="float:left; margin-top: 15px; margin-left: 70px;"  for="pwd">비밀번호</label>
-									<input type="password" name="pwd" id="pwd"/>
-								</div>
-								<div class="form-group">
-									<label style="float:left; margin-top: 15px; margin-left: 70px;" for="pwd2">비밀번호 확인</label>
-									<input type="password" name="pwd2" id="pwd2" />
-								</div>
-								<div class="form-group">
-									<label style="float:left; margin-top: 15px; margin-left: 70px;" for="findQuestion">비밀번호 찾기</br> 질문 선택</label>
-									<select name="findQuestion" id="findQuestion" class="">
-										<option value="나의 초등학교 이름은?">나의 초등학교 이름은?</option>
-										<option value="나의 중학교 이름은?">나의 중학교 이름은?</option>
-										<option value="나의 고등학교 이름은?">나의 고등학교 이름은?</option>
-										<option value="나의 대학교 이름은?">나의 대학교 이름은?</option>
-									</select>
-								</div>
-								
-								<div class="form-group">
-									<label style="float:left; margin-top: 15px; margin-left: -100px;" for="findAnswer">비밀번호 찾기</br> 질문 답변</label>
-									<input type="text" name="findAnswer" id="findAnswer" />
-								</div>
-								<div class="form-group">
-									<label style="float:left; margin-top: 15px; margin-left: -100px;"  for="name">이름</label>
-									<input type="text" name="name" id="name" />
-								</div>
-								<div class="form-group">
-									<label style="float:left; margin-top: 15px; margin-left: 70px;"  for="email">이메일</label>
-									<input type="text" name="email" id="email" />
-								</div>
-								<div class="form-group">
-									<label style="float:left; margin-top: 15px; margin-left: 70px;"  for="phone">전화번호</label>
-									<input type="text" name="phone" id="phone" />
-								</div>
-								<div class="form-group">
-									<label style="float:left; margin-top: 15px; margin-left: 70px;"  for="addr">주소</label>
-									<input type="text" name="addr" id="addr" />
-								</div>
-								<div class="form-group">
-									<label style="float:left; margin-top: 15px; margin-left: 70px;"  for="detailaddr">상세주소</label>
-									<input type="text" name="detailaddr" id="detailaddr" style="margin-bottom: 20px" />
-								</div>
-								<button class="btn btn-default" type="submit" id="submit" style="margin-right:100px; float:right;">가입하기</button>
-							</form>
-							
+			<div class="col-md-offset-2 col-md-8">
+				<form action="signup.do" method="post" id="myform" class="form-horizontal">
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="id" >아이디</label>
+						<div class="col-sm-10">
+							<input class="form-control" type="text" name="id" id="id"/>
+							<button class="btn btn-default pull-right" id="checkBtn">중복확인</button>
+							<span class="regExp"></span> 
+							<span id="checkResult"></span>
 						</div>
 					</div>
-				</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="pwd">비밀번호</label>
+						<div class="col-sm-10">
+							<input class="form-control" type="password" name="pwd" id="pwd"/>
+						</div>	
+					</div><br />
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="pwd2">비밀번호 확인</label>
+						<div class="col-sm-10">
+							<input class="form-control" type="password" name="pwd2" id="pwd2" />
+						</div>	
+					</div><br />
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="findQuestion">비밀번호 찾기</br> 질문 선택</label>
+						<div class="col-sm-10">
+						<select  name="findQuestion" id="findQuestion">
+							<option value="나의 초등학교 이름은?">나의 초등학교 이름은?</option>
+							<option value="나의 중학교 이름은?">나의 중학교 이름은?</option>
+							<option value="나의 고등학교 이름은?">나의 고등학교 이름은?</option>
+							<option value="나의 대학교 이름은?">나의 대학교 이름은?</option>
+						</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="findAnswer">비밀번호 찾기</br> 질문 답변</label>
+						<div class="col-sm-10">
+							<input class="form-control" type="text" name="findAnswer" id="findAnswer" />
+						</div>	
+					</div><br />
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="name">이름</label>
+						<div class="col-sm-10">
+							<input class="form-control" type="text" name="name" id="name" />
+						</div>
+					</div><br />
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="email">이메일</label>
+						<div class="col-sm-10">
+							<input class="form-control" type="text" name="email" id="email" />
+						</div>
+					</div><br />
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="phone">전화번호</label>
+						<div class="col-sm-10">
+							<input class="form-control" type="text" name="phone" id="phone" />
+						</div>
+					</div><br />
+					<div class="form-group">
+						<label class="col-sm-2 control-label"  for="addr">주소</label>
+						<div class="col-sm-10">
+							<input class="form-control" type="text" name="addr" id="addr" />
+						</div>
+					</div><br />
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="detailaddr">상세주소</label>
+						<div class="col-sm-10">
+							<input class="form-control" type="text" name="detailaddr" id="detailaddr" />
+							<button class="btn btn-default pull-right" type="submit" id="submit">가입하기</button>
+						</div>
+					</div>
+				</form><br />
 			</div>
 		</div>
 	</div>
@@ -319,7 +330,7 @@ $(function(){
 			$("#phone").focus();
 			return false;
 		}else if(regPhone.test($("#phone").val())==false){
-			alert("전화번호에 -를 빼고 숫자만 입력해주세요.");
+			alert("핸드폰번호 11자리를 -를 빼고  입력해주세요.");
 			$("#phone").focus();
 			return false;				
 		}else if($("#addr").val()==""){
