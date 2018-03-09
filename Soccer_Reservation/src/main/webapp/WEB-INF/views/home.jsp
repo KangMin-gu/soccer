@@ -135,96 +135,42 @@
         <span>Review</span> News
      </div>
   </div>
-<c:forEach var="review" items="${list}" varStatus="status">
-<c:if test="${review.num eq 2 }">
-<section class="blog">
-<div class="item col-md-4">
-      <div class="blok-read-sm">
-         <a href="review/detail.do?num=${tmp.num }&condition=${condition}&keyword=${keyword}" class="hover-image">
-         <img src="${pageContext.request.contextPath}/resources/img/sea3.jpg"alt="image"> <span class="layer-block"></span>
-         </a>
-         <div class="editor-choice">
-            <i class="fa fa-star"></i> <a href="#">Editor’s Choice</a>
-         </div>
-        
-         <c:if test="${status.count eq 1 }">
-            <h4>${review.title }</h4>
-            <p>${review.content }</p>
-         </c:if>
-        
-         <div class="content-block">
-            <span class="point-caption bg-blue-point"></span> <span
-               class="bottom-line bg-blue-point"></span>
-            <div class="button-main bg-fio-point">read more</div>
-            <div class="like-wrap">
-               <a href="#"><i class="fa fa-heart col-red"></i></a><span></span>
-               <a href="#"><i class="fa fa-comment col-green"></i></a><span>89</span>
+<c:forEach var="tmp" begin="0" end="1" step="1"  items="${list}">
+  <div class="col-md-6 col-sm-6 wow animated-longer-delay-3 fadeInDown ">
+    <div class="panel">
+        <div class="panel-body">
+                <div class="col-xs-12">
+                  <div class="avatar-team-member">
+                      <img src="${pageContext.request.contextPath }/resources/images/1.jpg" >
+                  </div>
+                </div>
+            <div class="text-center"> 
+				<h3>${tmp.title }</h3>
+				<p><strong>내용:</strong>${tmp.content }</p>
+				<p><strong>작성일:</strong>${tmp.regdate }</p> 
+                <ul class="list-unstyled list-inline list-social-sq-primary">
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                </ul>
             </div>
-         </div>
+          </div>
       </div>
-   </div>
-   
-   <div class="item col-md-4">
-      <div class="blok-read-sm">
-         <a href="review/detail.do?num=${tmp.num }&condition=${condition}&keyword=${keyword}" class="hover-image">
-         <img src="${pageContext.request.contextPath}/resources/img/sea3.jpg"alt="image"> <span class="layer-block"></span>
-         </a>
-         <div class="editor-choice">
-            <i class="fa fa-star"></i> <a href="#">Editor’s Choice</a>
-         </div>
-        
-         <c:if test="${status.count eq 2 }">
-            <h4>${review.title }</h4>
-            <p>${review.content }</p>
-         </c:if>
-        
-         <div class="content-block">
-            <span class="point-caption bg-blue-point"></span> <span
-               class="bottom-line bg-blue-point"></span>
-            <div class="button-main bg-fio-point">read more</div>
-            <div class="like-wrap">
-               <a href="#"><i class="fa fa-heart col-red"></i></a><span></span>
-               <a href="#"><i class="fa fa-comment col-green"></i></a><span>89</span>
-            </div>
-         </div>
-      </div>
-   </div>
-   
-   <div class="item col-md-4">
-      <div class="blok-read-sm">
-         <a href="review/detail.do?num=${tmp.num }&condition=${condition}&keyword=${keyword}" class="hover-image">
-       	</a>
-         <c:if test="${status.count eq 3 }">
-            <h4>${review.title }</h4>
-            <p>${review.content }</p>
-         </c:if>
-        
-         <div class="content-block">
-            <span class="point-caption bg-blue-point"></span> <span
-               class="bottom-line bg-blue-point"></span>
-            <div class="button-main bg-fio-point">read more</div>
-            <div class="like-wrap">
-               <a href="#"><i class="fa fa-heart col-red"></i></a><span></span>
-               <a href="#"><i class="fa fa-comment col-green"></i></a><span>89</span>
-            </div>
-         </div>
-      </div>
-   </div>
-</section>
-</c:if>
+  </div>
  </c:forEach>
 <!-- ============FOOTER============= -->
 <footer id="footer">
 	<div class="footer-content container">
 		<div class="footer-adress text-center col-xs-12 col-sm-4 col-md-4">
-			<h4>Great love for humanity</h4>
+			<h4>Soccer Field</h4>
 			<ul class="footer-menus">
 				<li>Home /</li>
-				<li>About</li>
+				<li>Team</li>
 				<br/>
-				<li>Service /</li>
-				<li>Gallery /</li>
-				<li>Contact</li>
+				<li>Near Playground/</li>
+				<li>playground List /</li>
+				<li>Review</li>
 			</ul>
 		</div>
 		<div class="footer-second col-xs-12 col-sm-4 col-md-4">
@@ -236,12 +182,12 @@
 						class="fa fa-2x  fa-instagram"></i>
 				</div>
 			</div>
-			<p class="text-center footer-text1">123 456 7890</p>
-			<p class="text-center footer-text">humanity@shuvohabib.com</p>
+			<p class="text-center footer-text1">010 5012 4762</p>
+			<p class="text-center footer-text">byeol4762@gmail.com</p>
 		</div>
 		<div class="footer-third col-xs-12 col-sm-4 col-md-4">
 			<div class="copyright">
-				<span>Copyright 2014 Theme</span><br> <span>All Rights
+				<span>Copyright 2018 Theme</span><br> <span>All Rights
 					Reserved</span>
 			</div>
 		</div>
