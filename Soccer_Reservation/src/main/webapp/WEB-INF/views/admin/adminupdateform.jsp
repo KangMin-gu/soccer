@@ -138,17 +138,18 @@
 		</div>
 	</div>
 </div>
+<!-- ============FOOTER============= -->
 <footer id="footer">
 	<div class="footer-content container">
 		<div class="footer-adress text-center col-xs-12 col-sm-4 col-md-4">
-			<h4>Great love for humanity</h4>
+			<h4>Soccer Field</h4>
 			<ul class="footer-menus">
 				<li>Home /</li>
-				<li>About</li>
+				<li>Team</li>
 				<br/>
-				<li>Service /</li>
-				<li>Gallery /</li>
-				<li>Contact</li>
+				<li>Near Playground/</li>
+				<li>playground List /</li>
+				<li>Review</li>
 			</ul>
 		</div>
 		<div class="footer-second col-xs-12 col-sm-4 col-md-4">
@@ -160,12 +161,12 @@
 						class="fa fa-2x  fa-instagram"></i>
 				</div>
 			</div>
-			<p class="text-center footer-text1">123 456 7890</p>
-			<p class="text-center footer-text">humanity@shuvohabib.com</p>
+			<p class="text-center footer-text1">010 5012 4762</p>
+			<p class="text-center footer-text">byeol4762@gmail.com</p>
 		</div>
 		<div class="footer-third col-xs-12 col-sm-4 col-md-4">
 			<div class="copyright">
-				<span>Copyright 2014 Theme</span><br> <span>All Rights
+				<span>Copyright 2018 Theme</span><br> <span>All Rights
 					Reserved</span>
 			</div>
 		</div>
